@@ -537,12 +537,14 @@
        BIO — Papalia style: text left, photo right
     ───────────────────────────────────────── */
     .bio-wrap {
-      display: flex;
-      gap: 1.8rem;
-      align-items: flex-start;
+      display: block;
+      /* display: flex; */
+      /* gap: 1.8rem;
+      align-items: flex-start; */
     }
 
-    .bio-body { flex: 1; min-width: 0; }
+    /* .bio-body { flex: 1; min-width: 0; } */
+    .bio-body {}
 
     .bio-lede {
       font-size: 1.05rem;
@@ -568,8 +570,12 @@
     .bio-body a:hover { text-decoration-color: var(--accent); }
 
     .bio-photo-side {
-      flex-shrink: 0;
+      float: right;
       width: 300px;
+      margin-left: 1.8rem;
+      margin-bottom: 1rem;
+      /* flex-shrink: 0;
+      width: 300px; */
     }
 
     .bio-photo-side img {
