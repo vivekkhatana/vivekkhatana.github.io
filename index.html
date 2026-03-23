@@ -34,12 +34,9 @@
       --accent-lt:   #d9e8f5;
       --font:        'Plus Jakarta Sans', sans-serif;
       --radius:      6px;
-      --cx:          2rem;   /* ← single token for all horizontal content padding */
+      --cx:          2rem;
     }
 
-    /* ─────────────────────────────────────────
-       RESET
-    ───────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
 
@@ -54,11 +51,10 @@
 
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
-
     strong { color: var(--ink); font-weight: 600; }
 
     /* ═══════════════════════════════════════════
-       LANDING — Carrd style, full viewport
+       LANDING
     ═══════════════════════════════════════════ */
     #landing {
       min-height: 100vh;
@@ -82,10 +78,7 @@
       flex-shrink: 0;
     }
 
-    .lp-photo img {
-      width: 100%; height: 100%;
-      object-fit: cover; display: block;
-    }
+    .lp-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
     #landing h1 {
       font-size: 2.15rem;
@@ -104,7 +97,6 @@
       margin-bottom: 1.6rem;
     }
 
-    /* Social links */
     .lp-socials {
       display: flex;
       flex-wrap: wrap;
@@ -130,20 +122,14 @@
     .lp-socials a:hover { color: var(--ink); }
     .lp-socials svg { width: 13px; height: 13px; flex-shrink: 0; }
 
-    .lp-divider {
-      width: 28px; height: 1px;
-      background: #ddd;
-      margin: 0.2rem auto 1.3rem;
-    }
+    .lp-divider { width: 28px; height: 1px; background: #ddd; margin: 0.2rem auto 1.3rem; }
 
-    /* Page nav */
     .lp-nav {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
       list-style: none;
-      gap: 0 0;
       margin-bottom: 1.6rem;
     }
 
@@ -160,19 +146,10 @@
     }
 
     .lp-nav li a:hover { color: var(--ink); }
+    .lp-nav li + li::before { content: '·'; color: #ccc; }
 
-    .lp-nav li + li::before {
-      content: '·';
-      color: #ccc;
-    }
+    .lp-updated { font-size: 0.73rem; color: #bbb; letter-spacing: 0.03em; }
 
-    .lp-updated {
-      font-size: 0.73rem;
-      color: #bbb;
-      letter-spacing: 0.03em;
-    }
-
-    /* Scroll chevron */
     .lp-scroll {
       position: absolute;
       bottom: 1.8rem;
@@ -189,15 +166,11 @@
     }
 
     /* ═══════════════════════════════════════════
-       MAIN — two-column layout (Carlone)
+       MAIN — two-column layout
     ═══════════════════════════════════════════ */
-    #main {
-      display: flex;
-      align-items: flex-start;
-      min-height: 100vh;
-    }
+    #main { display: flex; align-items: flex-start; min-height: 100vh; }
 
-    /* ── LEFT SIDEBAR ── */
+    /* ── SIDEBAR ── */
     #sidebar {
       position: sticky;
       top: 0;
@@ -222,10 +195,7 @@
       flex-shrink: 0;
     }
 
-    .sb-photo img {
-      width: 100%; height: 100%;
-      object-fit: cover; display: block;
-    }
+    .sb-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
     .sb-name {
       font-size: 0.97rem;
@@ -243,11 +213,7 @@
       margin-bottom: 1.6rem;
     }
 
-    /* Sidebar nav */
-    .sb-nav {
-      list-style: none;
-      margin-bottom: auto;
-    }
+    .sb-nav { list-style: none; margin-bottom: auto; }
 
     .sb-nav li a {
       display: block;
@@ -268,12 +234,7 @@
       color: #fff;
     }
 
-    /* Sidebar sub-nav (Resources dropdown) */
-    .sb-subnav {
-      list-style: none;
-      padding-left: 0.8rem;
-      margin-top: 0.1rem;
-    }
+    .sb-subnav { list-style: none; padding-left: 0.8rem; margin-top: 0.1rem; }
 
     .sb-subnav li a {
       font-size: 0.69rem;
@@ -284,195 +245,6 @@
 
     .sb-subnav li a:hover { color: rgba(255,255,255,0.75); background: none; }
 
-    /* ─────────────────────────────────────────
-       MEDIA SECTION
-    ───────────────────────────────────────── */
-    .media-intro {
-      font-size: 0.93rem;
-      color: var(--body);
-      margin-bottom: 1.6rem;
-      line-height: 1.8;
-    }
-
-    .media-intro a { color: var(--accent); }
-
-    .media-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-
-    .media-card {
-      background: var(--white);
-      border: 1px solid var(--rule);
-      border-radius: var(--radius);
-      overflow: hidden;
-      transition: box-shadow 0.15s, border-color 0.15s;
-      text-decoration: none;
-      color: inherit;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .media-card:hover {
-      border-color: #b0c8e0;
-      box-shadow: 0 2px 12px rgba(46,109,164,0.09);
-      text-decoration: none;
-    }
-
-    .media-thumb {
-      width: 100%;
-      aspect-ratio: 16/9;
-      background: #1a1a2e;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .media-thumb img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    /* YouTube play button overlay */
-    .media-thumb .play-btn {
-      position: absolute;
-      width: 44px; height: 44px;
-      background: rgba(255,255,255,0.9);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.15s, background 0.15s;
-    }
-
-    .media-card:hover .play-btn {
-      transform: scale(1.1);
-      background: #fff;
-    }
-
-    .play-btn svg { width: 18px; height: 18px; margin-left: 2px; }
-
-    .media-thumb .yt-placeholder {
-      width: 100%; height: 100%;
-      background: linear-gradient(135deg, #1a1a2e 0%, #2e3b55 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .media-info {
-      padding: 0.85rem 1rem;
-      flex: 1;
-    }
-
-    .media-type {
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--faint);
-      margin-bottom: 0.3rem;
-    }
-
-    .media-title {
-      font-size: 0.86rem;
-      font-weight: 600;
-      color: var(--ink);
-      line-height: 1.4;
-      margin-bottom: 0.2rem;
-    }
-
-    .media-venue {
-      font-size: 0.78rem;
-      color: var(--muted);
-      line-height: 1.4;
-    }
-
-    .media-add-note {
-      margin-top: 1.2rem;
-      font-size: 0.82rem;
-      color: var(--muted);
-      font-style: italic;
-    }
-
-    /* ─────────────────────────────────────────
-       RESOURCES SECTION
-    ───────────────────────────────────────── */
-    .resources-group {
-      margin-bottom: 2.4rem;
-    }
-
-    .resources-group:last-child { margin-bottom: 0; }
-
-    .resources-group-title {
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.17em;
-      text-transform: uppercase;
-      color: var(--faint);
-      margin-bottom: 0.7rem;
-      padding-bottom: 0.4rem;
-      border-bottom: 1px solid var(--rule);
-    }
-
-    .resource-list { list-style: none; }
-
-    .resource-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-      padding: 0.65rem 0;
-      border-bottom: 1px solid var(--rule);
-      font-size: 0.9rem;
-    }
-
-    .resource-list li:last-child { border-bottom: none; }
-
-    .resource-icon {
-      font-size: 1.1rem;
-      flex-shrink: 0;
-      margin-top: 0.1rem;
-      width: 24px;
-      text-align: center;
-    }
-
-    .resource-body { flex: 1; min-width: 0; }
-
-    .resource-title {
-      font-weight: 600;
-      color: var(--ink);
-      font-size: 0.88rem;
-      line-height: 1.4;
-    }
-
-    .resource-title a { color: var(--accent); text-decoration: none; }
-    .resource-title a:hover { text-decoration: underline; }
-
-    .resource-desc {
-      font-size: 0.8rem;
-      color: var(--muted);
-      margin-top: 0.15rem;
-      line-height: 1.5;
-    }
-
-    .resource-tag {
-      flex-shrink: 0;
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      padding: 0.12rem 0.45rem;
-      border-radius: 3px;
-      background: var(--accent-lt);
-      color: var(--accent);
-      margin-top: 0.25rem;
-    }
-
-    /* Sidebar socials */
     .sb-socials {
       display: flex;
       gap: 0.65rem;
@@ -482,17 +254,11 @@
       border-top: 1px solid rgba(255,255,255,0.1);
     }
 
-    .sb-socials a {
-      color: rgba(255,255,255,0.4);
-      transition: color 0.15s;
-      display: flex;
-      align-items: center;
-    }
-
+    .sb-socials a { color: rgba(255,255,255,0.4); transition: color 0.15s; display: flex; align-items: center; }
     .sb-socials a:hover { color: #fff; }
     .sb-socials svg { width: 15px; height: 15px; }
 
-    /* ── RIGHT CONTENT ── */
+    /* ── CONTENT ── */
     #content {
       flex: 1;
       min-width: 0;
@@ -500,20 +266,14 @@
       max-width: 820px;
     }
 
-    /* ─────────────────────────────────────────
-       SECTION STYLES
-    ───────────────────────────────────────── */
+    /* ── SECTIONS ── */
     .section {
       margin-bottom: 3.8rem;
       padding-bottom: 3.8rem;
       border-bottom: 1px solid var(--rule);
     }
 
-    .section:last-child {
-      border-bottom: none;
-      margin-bottom: 0;
-      padding-bottom: 2rem;
-    }
+    .section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 2rem; }
 
     .section-heading {
       font-size: 0.68rem;
@@ -534,17 +294,30 @@
     }
 
     /* ─────────────────────────────────────────
-       BIO — Papalia style: text left, photo right
+       BIO — photo floated right, text wraps
     ───────────────────────────────────────── */
     .bio-wrap {
-      display: block;
-      /* display: flex; */
-      /* gap: 1.8rem;
-      align-items: flex-start; */
+      display: block;     /* block so float works */
     }
 
-    /* .bio-body { flex: 1; min-width: 0; } */
-    .bio-body {}
+    /* clearfix so section border clears the float */
+    .bio-wrap::after {
+      content: '';
+      display: table;
+      clear: both;
+    }
+
+    .bio-photo-side {
+      float: right;
+      width: 300px;
+      margin: 0 0 1.2rem 1.8rem;  /* gap to the left and below */
+    }
+
+    .bio-photo-side img {
+      width: 100%;
+      border-radius: var(--radius);
+      display: block;
+    }
 
     .bio-lede {
       font-size: 1.05rem;
@@ -569,22 +342,6 @@
 
     .bio-body a:hover { text-decoration-color: var(--accent); }
 
-    .bio-photo-side {
-      float: right;
-      width: 300px;
-      margin-left: 1.8rem;
-      margin-bottom: 1rem;
-      /* flex-shrink: 0;
-      width: 300px; */
-    }
-
-    .bio-photo-side img {
-      width: 100%;
-      border-radius: var(--radius);
-      display: block;
-    }
-
-    /* Speaker bio toggle */
     .speaker-toggle {
       margin-top: 1.2rem;
       font-size: 0.8rem;
@@ -603,13 +360,7 @@
     }
 
     .speaker-toggle:hover { color: var(--ink); }
-
-    .speaker-toggle .arrow {
-      display: inline-block;
-      transition: transform 0.2s;
-      font-style: normal;
-    }
-
+    .speaker-toggle .arrow { display: inline-block; transition: transform 0.2s; font-style: normal; }
     .speaker-toggle.open .arrow { transform: rotate(90deg); }
 
     #speaker-bio-text {
@@ -619,18 +370,8 @@
       border-top: 1px solid var(--rule);
     }
 
-    #speaker-bio-text p {
-      font-size: 0.92rem;
-      color: var(--body);
-      margin-bottom: 0.8rem;
-      line-height: 1.8;
-    }
-
-    #speaker-bio-text a {
-      color: var(--accent);
-      text-decoration: underline;
-      text-decoration-color: var(--accent-lt);
-    }
+    #speaker-bio-text p { font-size: 0.92rem; color: var(--body); margin-bottom: 0.8rem; line-height: 1.8; }
+    #speaker-bio-text a { color: var(--accent); text-decoration: underline; text-decoration-color: var(--accent-lt); }
 
     .cv-link {
       display: inline-flex;
@@ -650,21 +391,10 @@
 
     .cv-link:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
 
-    /* ─────────────────────────────────────────
-       RESEARCH — small labeled cards
-    ───────────────────────────────────────── */
-    .research-intro {
-      font-size: 0.93rem;
-      color: var(--body);
-      line-height: 1.8;
-      margin-bottom: 1.4rem;
-    }
+    /* ── RESEARCH ── */
+    .research-intro { font-size: 0.93rem; color: var(--body); line-height: 1.8; margin-bottom: 1.4rem; }
 
-    .research-cards {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.8rem;
-    }
+    .research-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
 
     .r-card {
       background: var(--white);
@@ -677,50 +407,14 @@
       transition: border-color 0.15s, box-shadow 0.15s;
     }
 
-    .r-card:hover {
-      border-color: #b0c8e0;
-      box-shadow: 0 2px 10px rgba(46,109,164,0.07);
-    }
+    .r-card:hover { border-color: #b0c8e0; box-shadow: 0 2px 10px rgba(46,109,164,0.07); }
+    .r-card-icon { font-size: 1.3rem; line-height: 1; flex-shrink: 0; margin-top: 0.1rem; }
+    .r-card-title { font-size: 0.86rem; font-weight: 600; color: var(--ink); line-height: 1.4; }
+    .r-card-desc { font-size: 0.8rem; color: var(--muted); margin-top: 0.2rem; line-height: 1.5; }
 
-    .r-card-icon {
-      font-size: 1.3rem;
-      line-height: 1;
-      flex-shrink: 0;
-      margin-top: 0.1rem;
-    }
-
-    .r-card-title {
-      font-size: 0.86rem;
-      font-weight: 600;
-      color: var(--ink);
-      line-height: 1.4;
-    }
-
-    .r-card-desc {
-      font-size: 0.8rem;
-      color: var(--muted);
-      margin-top: 0.2rem;
-      line-height: 1.5;
-    }
-
-    /* ─────────────────────────────────────────
-       PUBLICATIONS
-    ───────────────────────────────────────── */
-    .pub-meta {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 1.3rem;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-
-    .pub-scholar-link {
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: var(--accent);
-      letter-spacing: 0.04em;
-    }
+    /* ── PUBLICATIONS ── */
+    .pub-meta { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.3rem; flex-wrap: wrap; gap: 0.5rem; }
+    .pub-scholar-link { font-size: 0.78rem; font-weight: 600; color: var(--accent); letter-spacing: 0.04em; }
 
     .pub-year-label {
       font-size: 0.67rem;
@@ -755,20 +449,11 @@
       background: var(--faint);
     }
 
-    /* Bold the author's own name */
     .pub-list li .me { font-weight: 700; color: var(--ink); }
-
     .pub-list li em { color: #666; font-style: italic; }
-
-    .pub-list li a {
-      color: var(--accent);
-      text-decoration: none;
-      font-size: 0.82rem;
-    }
-
+    .pub-list li a { color: var(--accent); text-decoration: none; font-size: 0.82rem; }
     .pub-list li a:hover { text-decoration: underline; }
 
-    /* Journal / conference badge */
     .pub-badge {
       display: inline-block;
       font-size: 0.65rem;
@@ -781,90 +466,116 @@
       vertical-align: middle;
     }
 
-    .badge-j {
-      background: #e3f0fb;
-      color: #2060a0;
-    }
+    .badge-j { background: #e3f0fb; color: #2060a0; }
+    .badge-c { background: #f0f0f0; color: #666; }
+    .badge-p { background: #fef3cd; color: #856404; }
 
-    .badge-c {
-      background: #f0f0f0;
-      color: #666;
-    }
+    /* ── MEDIA ── */
+    .media-intro { font-size: 0.93rem; color: var(--body); margin-bottom: 1.6rem; line-height: 1.8; }
+    .media-intro a { color: var(--accent); }
+    .media-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 
-    .badge-p {
-      background: #fef3cd;
-      color: #856404;
-    }
-
-    /* ─────────────────────────────────────────
-       GITHUB CARDS
-    ───────────────────────────────────────── */
-    .github-note {
-      font-size: 0.9rem;
-      color: var(--muted);
-      margin-bottom: 1.2rem;
-    }
-
-    .github-note a { color: var(--accent); }
-
-    #github-cards {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.8rem;
-    }
-
-    .gh-card {
+    .media-card {
       background: var(--white);
       border: 1px solid var(--rule);
       border-radius: var(--radius);
-      padding: 0.95rem 1rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.35rem;
+      overflow: hidden;
+      transition: box-shadow 0.15s, border-color 0.15s;
       text-decoration: none;
       color: inherit;
-      transition: border-color 0.15s, box-shadow 0.15s;
+      display: flex;
+      flex-direction: column;
     }
 
-    .gh-card:hover {
-      border-color: #b0c8e0;
-      box-shadow: 0 2px 10px rgba(46,109,164,0.07);
-      text-decoration: none;
-    }
+    .media-card:hover { border-color: #b0c8e0; box-shadow: 0 2px 12px rgba(46,109,164,0.09); text-decoration: none; }
 
-    .gh-card-name {
-      font-size: 0.86rem;
-      font-weight: 600;
-      color: var(--ink);
+    .media-thumb {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: #1a1a2e;
       display: flex;
       align-items: center;
-      gap: 0.4rem;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
     }
 
-    .gh-card-name svg { color: var(--faint); flex-shrink: 0; }
-
-    .gh-card-desc {
-      font-size: 0.79rem;
-      color: var(--muted);
-      line-height: 1.5;
-      flex: 1;
-    }
-
-    .gh-card-meta {
+    .media-thumb .play-btn {
+      position: absolute;
+      width: 44px; height: 44px;
+      background: rgba(255,255,255,0.9);
+      border-radius: 50%;
       display: flex;
-      gap: 0.85rem;
-      font-size: 0.73rem;
-      color: var(--faint);
-      margin-top: 0.1rem;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.15s, background 0.15s;
     }
 
-    .gh-card-meta span { display: flex; align-items: center; gap: 0.25rem; }
-    .lang-dot { width: 9px; height: 9px; border-radius: 50%; }
-    .gh-loading { grid-column: 1/-1; font-size: 0.84rem; color: var(--faint); padding: 1rem 0; }
+    .media-card:hover .play-btn { transform: scale(1.1); background: #fff; }
+    .play-btn svg { width: 18px; height: 18px; margin-left: 2px; }
 
-    /* ─────────────────────────────────────────
-       NEWS
-    ───────────────────────────────────────── */
+    .media-thumb .yt-placeholder {
+      width: 100%; height: 100%;
+      background: linear-gradient(135deg, #1a1a2e 0%, #2e3b55 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .media-info { padding: 0.85rem 1rem; flex: 1; }
+    .media-type { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--faint); margin-bottom: 0.3rem; }
+    .media-title { font-size: 0.86rem; font-weight: 600; color: var(--ink); line-height: 1.4; margin-bottom: 0.2rem; }
+    .media-venue { font-size: 0.78rem; color: var(--muted); line-height: 1.4; }
+    .media-add-note { margin-top: 1.2rem; font-size: 0.82rem; color: var(--muted); font-style: italic; }
+
+    /* ── RESOURCES ── */
+    .resources-group { margin-bottom: 2.4rem; }
+    .resources-group:last-child { margin-bottom: 0; }
+
+    .resources-group-title {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+      color: var(--faint);
+      margin-bottom: 0.7rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .resource-list { list-style: none; }
+
+    .resource-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 0.65rem 0;
+      border-bottom: 1px solid var(--rule);
+      font-size: 0.9rem;
+    }
+
+    .resource-list li:last-child { border-bottom: none; }
+    .resource-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 0.1rem; width: 24px; text-align: center; }
+    .resource-body { flex: 1; min-width: 0; }
+    .resource-title { font-weight: 600; color: var(--ink); font-size: 0.88rem; line-height: 1.4; }
+    .resource-title a { color: var(--accent); text-decoration: none; }
+    .resource-title a:hover { text-decoration: underline; }
+    .resource-desc { font-size: 0.8rem; color: var(--muted); margin-top: 0.15rem; line-height: 1.5; }
+
+    .resource-tag {
+      flex-shrink: 0;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      padding: 0.12rem 0.45rem;
+      border-radius: 3px;
+      background: var(--accent-lt);
+      color: var(--accent);
+      margin-top: 0.25rem;
+    }
+
+    /* ── NEWS ── */
     .news-list { list-style: none; }
 
     .news-list li {
@@ -892,9 +603,7 @@
     .news-list a { color: var(--accent); }
     .news-list a:hover { text-decoration: underline; }
 
-    /* ─────────────────────────────────────────
-       TEACHING
-    ───────────────────────────────────────── */
+    /* ── TEACHING ── */
     .teaching-list { list-style: none; }
 
     .teaching-list li {
@@ -906,35 +615,13 @@
     }
 
     .teaching-list li:last-child { border-bottom: none; }
-
-    .t-code {
-      flex-shrink: 0;
-      font-weight: 700;
-      font-size: 0.82rem;
-      color: var(--ink);
-      min-width: 72px;
-      padding-top: 0.05rem;
-    }
-
+    .t-code { flex-shrink: 0; font-weight: 700; font-size: 0.82rem; color: var(--ink); min-width: 72px; padding-top: 0.05rem; }
     .t-name { color: var(--body); }
-
-    .teaching-note {
-      margin-top: 1rem;
-      font-size: 0.84rem;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
+    .teaching-note { margin-top: 1rem; font-size: 0.84rem; color: var(--muted); line-height: 1.7; }
     .teaching-note a { color: var(--accent); }
 
-    /* ─────────────────────────────────────────
-       CONTACT
-    ───────────────────────────────────────── */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.8rem;
-    }
+    /* ── CONTACT ── */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
 
     .contact-card {
       background: var(--white);
@@ -963,9 +650,7 @@
     .contact-card a { color: var(--accent); }
     .contact-card a:hover { text-decoration: underline; }
 
-    /* ─────────────────────────────────────────
-       FOOTER
-    ───────────────────────────────────────── */
+    /* ── FOOTER ── */
     #footer {
       background: var(--sidebar-bg);
       color: rgba(255,255,255,0.35);
@@ -978,9 +663,7 @@
     #footer a { color: rgba(255,255,255,0.55); }
     #footer a:hover { color: #fff; text-decoration: none; }
 
-    /* ─────────────────────────────────────────
-       RESPONSIVE
-    ───────────────────────────────────────── */
+    /* ── RESPONSIVE ── */
     @media (max-width: 860px) {
       :root { --cx: 1.5rem; }
     }
@@ -1005,33 +688,32 @@
       .sb-role, .sb-nav, .sb-socials { display: none; }
       .sb-name { font-size: 0.9rem; margin-bottom: 0; }
 
-      .research-cards, #github-cards, .contact-grid, .media-grid { grid-template-columns: 1fr; }
-      .bio-wrap { flex-direction: column-reverse; }
-      .bio-photo-side { width: 100%; }
-      .bio-photo-side img { max-height: 220px; object-fit: cover; object-position: top; width: 100%; }
+      .research-cards, .contact-grid, .media-grid { grid-template-columns: 1fr; }
+
+      /* On mobile: cancel the float, stack photo on top */
+      .bio-photo-side {
+        float: none;
+        width: 100%;
+        margin: 0 0 1.2rem 0;
+      }
+
+      .bio-photo-side img { max-height: 280px; object-fit: cover; object-position: top; }
     }
   </style>
 </head>
 <body>
 
-<!-- ═══════════════════════════════════════════
-     LANDING — Carrd style
-═══════════════════════════════════════════ -->
+<!-- LANDING -->
 <section id="landing">
-
   <div class="lp-photo">
-    <img
-      src="images/profile.jpeg"
-      alt="Vivek Khatana"
-      onerror="this.style.display='none'"
-    />
+    <img src="images/profile.jpeg" alt="Vivek Khatana" onerror="this.style.display='none'" />
   </div>
 
   <h1>Vivek Khatana</h1>
   <p class="lp-title">Postdoctoral Scholar &nbsp;·&nbsp; Control &amp; Optimization</p>
 
   <ul class="lp-socials">
-    <li><a href="/cdn-cgi/l/email-protection#d4a2bfbcb5a0b5bab594bdb8b8bdbabbbda7fab1b0a1">
+    <li><a href="mailto:vkhatana@illinois.edu">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
       Email
     </a></li>
@@ -1073,23 +755,16 @@
       <polyline points="6 9 12 15 18 9"/>
     </svg>
   </a>
-
 </section>
 
 
-<!-- ═══════════════════════════════════════════
-     MAIN — sidebar + content (Carlone)
-═══════════════════════════════════════════ -->
+<!-- MAIN -->
 <div id="main">
 
-  <!-- ── SIDEBAR ── -->
+  <!-- SIDEBAR -->
   <aside id="sidebar">
     <div class="sb-photo">
-      <img
-        src="images/profile.jpeg"
-        alt="Vivek Khatana"
-        onerror="this.style.display='none'"
-      />
+      <img src="images/profile.jpeg" alt="Vivek Khatana" onerror="this.style.display='none'" />
     </div>
 
     <div class="sb-name">Vivek Khatana</div>
@@ -1113,26 +788,22 @@
     </ul>
 
     <div class="sb-socials">
-      <!-- Email -->
-      <a href="/cdn-cgi/l/email-protection#5224393a3326333c33123b3e3e3b3c3d3b217c373627" title="Email">
+      <a href="mailto:vkhatana@illinois.edu" title="Email">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
       </a>
-      <!-- Scholar -->
       <a href="https://scholar.google.com/citations?user=l1BYDI0AAAAJ&hl=en" target="_blank" rel="noopener" title="Google Scholar">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 10a8 8 0 0 1 7.162 3.44L24 9.5z"/></svg>
       </a>
-      <!-- LinkedIn -->
       <a href="https://www.linkedin.com/in/vivek-khatana" target="_blank" rel="noopener" title="LinkedIn">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
       </a>
-      <!-- GitHub -->
       <a href="https://github.com/vivekkhatana" target="_blank" rel="noopener" title="GitHub">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
       </a>
     </div>
   </aside>
 
-  <!-- ── CONTENT ── -->
+  <!-- CONTENT -->
   <main id="content">
 
     <!-- BIO -->
@@ -1141,6 +812,12 @@
       <h2>Bio</h2>
 
       <div class="bio-wrap">
+
+        <!-- ★ Photo FIRST in HTML so the float works correctly ★ -->
+        <div class="bio-photo-side">
+          <img src="images/bio.jpeg" alt="Vivek Khatana" onerror="this.style.display='none'" />
+        </div>
+
         <div class="bio-body">
           <p class="bio-lede">I develop algorithms for distributed decision-making in networked systems — bridging control theory, optimization, and machine learning toward resilient autonomous systems.</p>
 
@@ -1155,7 +832,6 @@
             Curriculum Vitae
           </a>
 
-          <!-- Speaker bio collapsible -->
           <button class="speaker-toggle" onclick="toggleSpeakerBio(this)" aria-expanded="false">
             <i class="arrow">▶</i> Speaker bio
           </button>
@@ -1165,13 +841,6 @@
           </div>
         </div>
 
-        <div class="bio-photo-side">
-          <img
-            src="images/bio.jpeg"
-            alt="Vivek Khatana"
-            onerror="this.style.display='none'"
-          />
-        </div>
       </div>
     </article>
 
@@ -1180,7 +849,6 @@
       <p class="section-heading">Focus Areas</p>
       <h2>Research Interests</h2>
       <p class="research-intro">My research synergistically combines control theory and optimization to advance renewable energy adoption and autonomous systems. Current focus areas:</p>
-
       <div class="research-cards">
         <div class="r-card">
           <div class="r-card-icon">⚙️</div>
@@ -1264,69 +932,39 @@
       <p class="section-heading">Talks &amp; Outreach</p>
       <h2>Media</h2>
       <p class="media-intro">Selected talks, presentations, and outreach videos. For the full list, see my <a href="https://scholar.google.com/citations?user=l1BYDI0AAAAJ&hl=en" target="_blank">Google Scholar</a> profile.</p>
-
       <div class="media-grid">
-
         <a class="media-card" href="https://iitr.ac.in/Departments/Electrical%20Engineering%20Department/static/Activities/Announcements/Technical_Talk.pdf" target="_blank" rel="noopener">
-          <div class="media-thumb">
-            <div class="yt-placeholder">
-              <div class="play-btn">
-                <svg viewBox="0 0 24 24" fill="var(--accent)"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-              </div>
-            </div>
-          </div>
+          <div class="media-thumb"><div class="yt-placeholder"><div class="play-btn"><svg viewBox="0 0 24 24" fill="var(--accent)"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div></div>
           <div class="media-info">
             <div class="media-type">Seminar Talk</div>
             <div class="media-title">Distributed Decision-Making in Networked Systems</div>
             <div class="media-venue">IIT Roorkee, Dept. of Electrical Engineering · Feb 2024</div>
           </div>
         </a>
-
         <a class="media-card" href="https://mwcgt2024.northwestern.edu/" target="_blank" rel="noopener">
-          <div class="media-thumb">
-            <div class="yt-placeholder">
-              <div class="play-btn">
-                <svg viewBox="0 0 24 24" fill="var(--accent)"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-              </div>
-            </div>
-          </div>
+          <div class="media-thumb"><div class="yt-placeholder"><div class="play-btn"><svg viewBox="0 0 24 24" fill="var(--accent)"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div></div>
           <div class="media-info">
             <div class="media-type">Lightning Talk</div>
             <div class="media-title">Algorithms for Agreement and Optimality in Networked Dynamical Systems</div>
             <div class="media-venue">Midwest Workshop on Control &amp; Game Theory · Apr 2024</div>
           </div>
         </a>
-
         <a class="media-card" href="https://midwest-ml.org/2024/" target="_blank" rel="noopener">
-          <div class="media-thumb">
-            <div class="yt-placeholder">
-              <div class="play-btn">
-                <svg viewBox="0 0 24 24" fill="var(--accent)"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-              </div>
-            </div>
-          </div>
+          <div class="media-thumb"><div class="yt-placeholder"><div class="play-btn"><svg viewBox="0 0 24 24" fill="var(--accent)"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div></div>
           <div class="media-info">
             <div class="media-type">Poster Presentation</div>
             <div class="media-title">Distributed Training of Machine Learning Models</div>
             <div class="media-venue">Midwest Machine Learning Symposium · May 2024</div>
           </div>
         </a>
-
         <a class="media-card" href="https://meetings.informs.org/wordpress/seattle2024/" target="_blank" rel="noopener">
-          <div class="media-thumb">
-            <div class="yt-placeholder">
-              <div class="play-btn">
-                <svg viewBox="0 0 24 24" fill="var(--accent)"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-              </div>
-            </div>
-          </div>
+          <div class="media-thumb"><div class="yt-placeholder"><div class="play-btn"><svg viewBox="0 0 24 24" fill="var(--accent)"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div></div>
           <div class="media-info">
             <div class="media-type">Conference Talk</div>
             <div class="media-title">Data-Driven Dynamic Behavior Identification in Networked Systems</div>
             <div class="media-venue">INFORMS Annual Meeting, Seattle · Oct 2024</div>
           </div>
         </a>
-
       </div>
       <p class="media-add-note">📌 Add links to slides or video recordings above as they become available — replace the <code>href</code> on each card.</p>
     </article>
@@ -1336,7 +974,6 @@
       <p class="section-heading">Materials &amp; Tools</p>
       <h2>Resources</h2>
 
-      <!-- Talks & Slides -->
       <div class="resources-group" id="res-talks">
         <div class="resources-group-title">Talks &amp; Slides</div>
         <ul class="resource-list">
@@ -1367,7 +1004,6 @@
         </ul>
       </div>
 
-      <!-- Code & Datasets -->
       <div class="resources-group" id="res-code">
         <div class="resources-group-title">Code &amp; Datasets</div>
         <ul class="resource-list">
@@ -1397,7 +1033,6 @@
           </li>
         </ul>
       </div>
-
     </article>
 
     <!-- NEWS -->
@@ -1440,8 +1075,8 @@
       <div class="contact-grid">
         <div class="contact-card">
           <h3>Email</h3>
-          <a href="/cdn-cgi/l/email-protection#3d4b56555c495c535c7d545151545352544e13585948"><span class="__cf_email__" data-cfemail="9fe9f4f7feebfef1fedff6f3f3f6f1f0f6ecb1fafbea">[email&#160;protected]</span></a>
-          <a href="/cdn-cgi/l/email-protection#f4829f9c9580959a95b4819a86da919081"><span class="__cf_email__" data-cfemail="6a1c01020b1e0b040b2a1f0418440f0e1f">[email&#160;protected]</span></a>
+          <a href="mailto:vkhatana@illinois.edu">vkhatana@illinois.edu</a>
+          <a href="mailto:vkhatana@unr.edu">vkhatana@unr.edu</a>
         </div>
         <div class="contact-card">
           <h3>Office</h3>
@@ -1462,23 +1097,16 @@
       </div>
     </article>
 
-  </main><!-- /content -->
-</div><!-- /main -->
+  </main>
+</div>
 
-
-<!-- FOOTER -->
 <footer id="footer">
   © 2025 Vivek Khatana &nbsp;·&nbsp;
   <a href="https://github.com/vivekkhatana" target="_blank">GitHub</a> &nbsp;·&nbsp;
   Host free on <a href="https://pages.github.com" target="_blank">GitHub Pages</a>
 </footer>
 
-
-<!-- ─────────────────────────────────────────
-     SCRIPTS
-───────────────────────────────────────── -->
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  /* Speaker bio toggle */
+<script>
   function toggleSpeakerBio(btn) {
     const box = document.getElementById('speaker-bio-text');
     const open = box.style.display === 'block';
@@ -1488,7 +1116,6 @@
     btn.classList.toggle('open', !open);
   }
 
-  /* Sidebar active link on scroll */
   const sections = document.querySelectorAll('.section');
   const navLinks = document.querySelectorAll('.sb-nav a');
 
@@ -1503,39 +1130,7 @@
   }, { rootMargin: '-30% 0px -60% 0px' });
 
   sections.forEach(s => observer.observe(s));
+</script>
 
-  /* GitHub repo cards — shown inside Resources section */
-  const LANG_COLORS = {
-    Python:'#3572A5', MATLAB:'#e16737', JavaScript:'#f1e05a',
-    C:'#555555', 'C++':'#f34b7d', Julia:'#a270ba',
-    'Jupyter Notebook':'#DA5B0B', HTML:'#e34c26', Shell:'#89e051', TeX:'#3D6117'
-  };
-
-  async function loadGitHub() {
-    const container = document.getElementById('github-cards');
-    if (!container) return;
-    try {
-      const res = await fetch('https://api.github.com/users/vivekkhatana/repos?sort=updated&per_page=6');
-      if (!res.ok) throw new Error();
-      const repos = await res.json();
-      if (!repos.length) {
-        container.innerHTML = '<div class="gh-loading">No public repositories yet. <a href="https://github.com/vivekkhatana" target="_blank">Visit GitHub ↗</a></div>';
-        return;
-      }
-      container.innerHTML = repos.map(r => {
-        const lang = r.language || '';
-        const dot  = LANG_COLORS[lang] || '#ccc';
-        const desc = r.description
-          ? (r.description.length > 85 ? r.description.slice(0, 85) + '…' : r.description)
-          : '';
-        return `
-          <a class="gh-card" href="${r.html_url}" target="_blank" rel="noopener">
-            <div class="gh-card-name">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
-              </svg>
-              ${r.name}
-            </div>
-            ${desc ? `<div class="gh-card-desc">${desc}</div>` : ''}
-            <div class="gh-card-meta">
-              ${lang ? `<span><span class=
+</body>
+</html>
