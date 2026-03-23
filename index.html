@@ -1,0 +1,1550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vivek Khatana — Postdoctoral Scholar</title>
+  <meta name="description" content="Vivek Khatana — Postdoctoral Scholar at UIUC and UNR. Research in distributed optimization, control theory, and machine learning." />
+
+  <!-- Open Graph for link previews -->
+  <meta property="og:title" content="Vivek Khatana" />
+  <meta property="og:description" content="Postdoctoral Scholar at UIUC & UNR. Distributed optimization, control theory, machine learning." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─────────────────────────────────────────
+       TOKENS
+    ───────────────────────────────────────── */
+    :root {
+      --white:       #ffffff;
+      --off-white:   #f8f8f8;
+      --bg:          #f4f5f7;
+      --sidebar-bg:  #1c2b3a;
+      --sidebar-w:   240px;
+      --ink:         #1a1a1a;
+      --body:        #3d3d3d;
+      --muted:       #7a7a7a;
+      --faint:       #c0c0c0;
+      --rule:        #e8e8e8;
+      --accent:      #2e6da4;
+      --accent-lt:   #d9e8f5;
+      --font:        'Plus Jakarta Sans', sans-serif;
+      --radius:      6px;
+      --cx:          2rem;   /* ← single token for all horizontal content padding */
+    }
+
+    /* ─────────────────────────────────────────
+       RESET
+    ───────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--body);
+      font-size: 15px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    strong { color: var(--ink); font-weight: 600; }
+
+    /* ═══════════════════════════════════════════
+       LANDING — Carrd style, full viewport
+    ═══════════════════════════════════════════ */
+    #landing {
+      min-height: 100vh;
+      background: var(--white);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4rem var(--cx) 3.5rem;
+      position: relative;
+    }
+
+    .lp-photo {
+      width: 148px;
+      height: 148px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: #dde4ec;
+      margin-bottom: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .lp-photo img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+    }
+
+    #landing h1 {
+      font-size: 2.15rem;
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+      margin-bottom: 0.3rem;
+    }
+
+    .lp-title {
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.6rem;
+    }
+
+    /* Social links */
+    .lp-socials {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.4rem 1.2rem;
+      list-style: none;
+      margin-bottom: 1.4rem;
+    }
+
+    .lp-socials a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.38rem;
+      font-size: 0.76rem;
+      font-weight: 600;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: #555;
+      transition: color 0.15s;
+      text-decoration: none;
+    }
+
+    .lp-socials a:hover { color: var(--ink); }
+    .lp-socials svg { width: 13px; height: 13px; flex-shrink: 0; }
+
+    .lp-divider {
+      width: 28px; height: 1px;
+      background: #ddd;
+      margin: 0.2rem auto 1.3rem;
+    }
+
+    /* Page nav */
+    .lp-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      list-style: none;
+      gap: 0 0;
+      margin-bottom: 1.6rem;
+    }
+
+    .lp-nav li a {
+      display: inline-block;
+      font-size: 0.76rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #888;
+      padding: 0.18rem 0.55rem;
+      transition: color 0.15s;
+      text-decoration: none;
+    }
+
+    .lp-nav li a:hover { color: var(--ink); }
+
+    .lp-nav li + li::before {
+      content: '·';
+      color: #ccc;
+    }
+
+    .lp-updated {
+      font-size: 0.73rem;
+      color: #bbb;
+      letter-spacing: 0.03em;
+    }
+
+    /* Scroll chevron */
+    .lp-scroll {
+      position: absolute;
+      bottom: 1.8rem;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #ccc;
+      display: block;
+      animation: chevron-bob 2.4s ease-in-out infinite;
+    }
+
+    @keyframes chevron-bob {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      55%       { transform: translateX(-50%) translateY(5px); }
+    }
+
+    /* ═══════════════════════════════════════════
+       MAIN — two-column layout (Carlone)
+    ═══════════════════════════════════════════ */
+    #main {
+      display: flex;
+      align-items: flex-start;
+      min-height: 100vh;
+    }
+
+    /* ── LEFT SIDEBAR ── */
+    #sidebar {
+      position: sticky;
+      top: 0;
+      width: var(--sidebar-w);
+      min-width: var(--sidebar-w);
+      height: 100vh;
+      background: var(--sidebar-bg);
+      display: flex;
+      flex-direction: column;
+      padding: 2.2rem 1.5rem 2rem;
+      overflow-y: auto;
+      flex-shrink: 0;
+    }
+
+    .sb-photo {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: #2e4560;
+      margin-bottom: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    .sb-photo img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+    }
+
+    .sb-name {
+      font-size: 0.97rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.3;
+      margin-bottom: 0.25rem;
+      letter-spacing: -0.01em;
+    }
+
+    .sb-role {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.5;
+      margin-bottom: 1.6rem;
+    }
+
+    /* Sidebar nav */
+    .sb-nav {
+      list-style: none;
+      margin-bottom: auto;
+    }
+
+    .sb-nav li a {
+      display: block;
+      font-size: 0.76rem;
+      font-weight: 500;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      padding: 0.42rem 0.6rem;
+      border-radius: 4px;
+      transition: background 0.15s, color 0.15s;
+      text-decoration: none;
+    }
+
+    .sb-nav li a:hover,
+    .sb-nav li a.active {
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+    }
+
+    /* Sidebar sub-nav (Resources dropdown) */
+    .sb-subnav {
+      list-style: none;
+      padding-left: 0.8rem;
+      margin-top: 0.1rem;
+    }
+
+    .sb-subnav li a {
+      font-size: 0.69rem;
+      letter-spacing: 0.06em;
+      padding: 0.28rem 0.6rem;
+      color: rgba(255,255,255,0.35);
+    }
+
+    .sb-subnav li a:hover { color: rgba(255,255,255,0.75); background: none; }
+
+    /* ─────────────────────────────────────────
+       MEDIA SECTION
+    ───────────────────────────────────────── */
+    .media-intro {
+      font-size: 0.93rem;
+      color: var(--body);
+      margin-bottom: 1.6rem;
+      line-height: 1.8;
+    }
+
+    .media-intro a { color: var(--accent); }
+
+    .media-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .media-card {
+      background: var(--white);
+      border: 1px solid var(--rule);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: box-shadow 0.15s, border-color 0.15s;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .media-card:hover {
+      border-color: #b0c8e0;
+      box-shadow: 0 2px 12px rgba(46,109,164,0.09);
+      text-decoration: none;
+    }
+
+    .media-thumb {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: #1a1a2e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .media-thumb img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* YouTube play button overlay */
+    .media-thumb .play-btn {
+      position: absolute;
+      width: 44px; height: 44px;
+      background: rgba(255,255,255,0.9);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.15s, background 0.15s;
+    }
+
+    .media-card:hover .play-btn {
+      transform: scale(1.1);
+      background: #fff;
+    }
+
+    .play-btn svg { width: 18px; height: 18px; margin-left: 2px; }
+
+    .media-thumb .yt-placeholder {
+      width: 100%; height: 100%;
+      background: linear-gradient(135deg, #1a1a2e 0%, #2e3b55 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .media-info {
+      padding: 0.85rem 1rem;
+      flex: 1;
+    }
+
+    .media-type {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--faint);
+      margin-bottom: 0.3rem;
+    }
+
+    .media-title {
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.4;
+      margin-bottom: 0.2rem;
+    }
+
+    .media-venue {
+      font-size: 0.78rem;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .media-add-note {
+      margin-top: 1.2rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* ─────────────────────────────────────────
+       RESOURCES SECTION
+    ───────────────────────────────────────── */
+    .resources-group {
+      margin-bottom: 2.4rem;
+    }
+
+    .resources-group:last-child { margin-bottom: 0; }
+
+    .resources-group-title {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+      color: var(--faint);
+      margin-bottom: 0.7rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .resource-list { list-style: none; }
+
+    .resource-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 0.65rem 0;
+      border-bottom: 1px solid var(--rule);
+      font-size: 0.9rem;
+    }
+
+    .resource-list li:last-child { border-bottom: none; }
+
+    .resource-icon {
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+      width: 24px;
+      text-align: center;
+    }
+
+    .resource-body { flex: 1; min-width: 0; }
+
+    .resource-title {
+      font-weight: 600;
+      color: var(--ink);
+      font-size: 0.88rem;
+      line-height: 1.4;
+    }
+
+    .resource-title a { color: var(--accent); text-decoration: none; }
+    .resource-title a:hover { text-decoration: underline; }
+
+    .resource-desc {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.15rem;
+      line-height: 1.5;
+    }
+
+    .resource-tag {
+      flex-shrink: 0;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      padding: 0.12rem 0.45rem;
+      border-radius: 3px;
+      background: var(--accent-lt);
+      color: var(--accent);
+      margin-top: 0.25rem;
+    }
+
+    /* Sidebar socials */
+    .sb-socials {
+      display: flex;
+      gap: 0.65rem;
+      flex-wrap: wrap;
+      margin-top: 1.8rem;
+      padding-top: 1.4rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .sb-socials a {
+      color: rgba(255,255,255,0.4);
+      transition: color 0.15s;
+      display: flex;
+      align-items: center;
+    }
+
+    .sb-socials a:hover { color: #fff; }
+    .sb-socials svg { width: 15px; height: 15px; }
+
+    /* ── RIGHT CONTENT ── */
+    #content {
+      flex: 1;
+      min-width: 0;
+      padding: 3.5rem var(--cx) 4rem var(--cx);
+      max-width: 820px;
+    }
+
+    /* ─────────────────────────────────────────
+       SECTION STYLES
+    ───────────────────────────────────────── */
+    .section {
+      margin-bottom: 3.8rem;
+      padding-bottom: 3.8rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .section:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 2rem;
+    }
+
+    .section-heading {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+      color: var(--faint);
+      margin-bottom: 0.5rem;
+    }
+
+    .section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+      margin-bottom: 1.4rem;
+      line-height: 1.25;
+    }
+
+    /* ─────────────────────────────────────────
+       BIO — Papalia style: text left, photo right
+    ───────────────────────────────────────── */
+    .bio-wrap {
+      display: flex;
+      gap: 1.8rem;
+      align-items: flex-start;
+    }
+
+    .bio-body { flex: 1; min-width: 0; }
+
+    .bio-lede {
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .bio-body p {
+      font-size: 0.93rem;
+      color: var(--body);
+      margin-bottom: 0.85rem;
+      line-height: 1.8;
+    }
+
+    .bio-body a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-decoration-color: var(--accent-lt);
+    }
+
+    .bio-body a:hover { text-decoration-color: var(--accent); }
+
+    .bio-photo-side {
+      flex-shrink: 0;
+      width: 130px;
+    }
+
+    .bio-photo-side img {
+      width: 100%;
+      border-radius: var(--radius);
+      display: block;
+    }
+
+    /* Speaker bio toggle */
+    .speaker-toggle {
+      margin-top: 1.2rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-family: var(--font);
+      transition: color 0.15s;
+    }
+
+    .speaker-toggle:hover { color: var(--ink); }
+
+    .speaker-toggle .arrow {
+      display: inline-block;
+      transition: transform 0.2s;
+      font-style: normal;
+    }
+
+    .speaker-toggle.open .arrow { transform: rotate(90deg); }
+
+    #speaker-bio-text {
+      display: none;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--rule);
+    }
+
+    #speaker-bio-text p {
+      font-size: 0.92rem;
+      color: var(--body);
+      margin-bottom: 0.8rem;
+      line-height: 1.8;
+    }
+
+    #speaker-bio-text a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-decoration-color: var(--accent-lt);
+    }
+
+    .cv-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      margin-top: 1.1rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink);
+      border-bottom: 1.5px solid var(--ink);
+      padding-bottom: 1px;
+      text-decoration: none;
+      transition: color 0.15s, border-color 0.15s;
+    }
+
+    .cv-link:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+
+    /* ─────────────────────────────────────────
+       RESEARCH — small labeled cards
+    ───────────────────────────────────────── */
+    .research-intro {
+      font-size: 0.93rem;
+      color: var(--body);
+      line-height: 1.8;
+      margin-bottom: 1.4rem;
+    }
+
+    .research-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
+    }
+
+    .r-card {
+      background: var(--white);
+      border: 1px solid var(--rule);
+      border-radius: var(--radius);
+      padding: 1rem 1.1rem;
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+
+    .r-card:hover {
+      border-color: #b0c8e0;
+      box-shadow: 0 2px 10px rgba(46,109,164,0.07);
+    }
+
+    .r-card-icon {
+      font-size: 1.3rem;
+      line-height: 1;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    .r-card-title {
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.4;
+    }
+
+    .r-card-desc {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.2rem;
+      line-height: 1.5;
+    }
+
+    /* ─────────────────────────────────────────
+       PUBLICATIONS
+    ───────────────────────────────────────── */
+    .pub-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.3rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .pub-scholar-link {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+    }
+
+    .pub-year-label {
+      font-size: 0.67rem;
+      font-weight: 700;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+      color: var(--faint);
+      margin: 1.8rem 0 0.65rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .pub-list { list-style: none; }
+
+    .pub-list li {
+      padding: 0.6rem 0 0.6rem 1rem;
+      border-bottom: 1px dotted #ededed;
+      font-size: 0.88rem;
+      color: var(--body);
+      line-height: 1.72;
+      position: relative;
+    }
+
+    .pub-list li:last-child { border-bottom: none; }
+
+    .pub-list li::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 1.05rem;
+      width: 4px; height: 4px;
+      border-radius: 50%;
+      background: var(--faint);
+    }
+
+    /* Bold the author's own name */
+    .pub-list li .me { font-weight: 700; color: var(--ink); }
+
+    .pub-list li em { color: #666; font-style: italic; }
+
+    .pub-list li a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.82rem;
+    }
+
+    .pub-list li a:hover { text-decoration: underline; }
+
+    /* Journal / conference badge */
+    .pub-badge {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.1rem 0.42rem;
+      border-radius: 3px;
+      margin-left: 0.4rem;
+      vertical-align: middle;
+    }
+
+    .badge-j {
+      background: #e3f0fb;
+      color: #2060a0;
+    }
+
+    .badge-c {
+      background: #f0f0f0;
+      color: #666;
+    }
+
+    .badge-p {
+      background: #fef3cd;
+      color: #856404;
+    }
+
+    /* ─────────────────────────────────────────
+       GITHUB CARDS
+    ───────────────────────────────────────── */
+    .github-note {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 1.2rem;
+    }
+
+    .github-note a { color: var(--accent); }
+
+    #github-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
+    }
+
+    .gh-card {
+      background: var(--white);
+      border: 1px solid var(--rule);
+      border-radius: var(--radius);
+      padding: 0.95rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+
+    .gh-card:hover {
+      border-color: #b0c8e0;
+      box-shadow: 0 2px 10px rgba(46,109,164,0.07);
+      text-decoration: none;
+    }
+
+    .gh-card-name {
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .gh-card-name svg { color: var(--faint); flex-shrink: 0; }
+
+    .gh-card-desc {
+      font-size: 0.79rem;
+      color: var(--muted);
+      line-height: 1.5;
+      flex: 1;
+    }
+
+    .gh-card-meta {
+      display: flex;
+      gap: 0.85rem;
+      font-size: 0.73rem;
+      color: var(--faint);
+      margin-top: 0.1rem;
+    }
+
+    .gh-card-meta span { display: flex; align-items: center; gap: 0.25rem; }
+    .lang-dot { width: 9px; height: 9px; border-radius: 50%; }
+    .gh-loading { grid-column: 1/-1; font-size: 0.84rem; color: var(--faint); padding: 1rem 0; }
+
+    /* ─────────────────────────────────────────
+       NEWS
+    ───────────────────────────────────────── */
+    .news-list { list-style: none; }
+
+    .news-list li {
+      display: flex;
+      gap: 1.2rem;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--rule);
+      font-size: 0.9rem;
+      line-height: 1.65;
+    }
+
+    .news-list li:last-child { border-bottom: none; }
+
+    .news-date {
+      flex-shrink: 0;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--faint);
+      min-width: 74px;
+      padding-top: 0.2rem;
+    }
+
+    .news-list a { color: var(--accent); }
+    .news-list a:hover { text-decoration: underline; }
+
+    /* ─────────────────────────────────────────
+       TEACHING
+    ───────────────────────────────────────── */
+    .teaching-list { list-style: none; }
+
+    .teaching-list li {
+      display: flex;
+      gap: 1rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--rule);
+      font-size: 0.9rem;
+    }
+
+    .teaching-list li:last-child { border-bottom: none; }
+
+    .t-code {
+      flex-shrink: 0;
+      font-weight: 700;
+      font-size: 0.82rem;
+      color: var(--ink);
+      min-width: 72px;
+      padding-top: 0.05rem;
+    }
+
+    .t-name { color: var(--body); }
+
+    .teaching-note {
+      margin-top: 1rem;
+      font-size: 0.84rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .teaching-note a { color: var(--accent); }
+
+    /* ─────────────────────────────────────────
+       CONTACT
+    ───────────────────────────────────────── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
+    }
+
+    .contact-card {
+      background: var(--white);
+      border: 1px solid var(--rule);
+      border-radius: var(--radius);
+      padding: 1rem 1.2rem;
+    }
+
+    .contact-card h3 {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--faint);
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-card p, .contact-card a {
+      font-size: 0.88rem;
+      color: var(--body);
+      display: block;
+      line-height: 1.7;
+      text-decoration: none;
+    }
+
+    .contact-card a { color: var(--accent); }
+    .contact-card a:hover { text-decoration: underline; }
+
+    /* ─────────────────────────────────────────
+       FOOTER
+    ───────────────────────────────────────── */
+    #footer {
+      background: var(--sidebar-bg);
+      color: rgba(255,255,255,0.35);
+      text-align: center;
+      font-size: 0.74rem;
+      letter-spacing: 0.04em;
+      padding: 1.4rem var(--cx);
+    }
+
+    #footer a { color: rgba(255,255,255,0.55); }
+    #footer a:hover { color: #fff; text-decoration: none; }
+
+    /* ─────────────────────────────────────────
+       RESPONSIVE
+    ───────────────────────────────────────── */
+    @media (max-width: 860px) {
+      :root { --cx: 1.5rem; }
+    }
+
+    @media (max-width: 680px) {
+      :root { --cx: 1.4rem; }
+
+      #main { flex-direction: column; }
+
+      #sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        align-items: center;
+        padding: 1rem var(--cx);
+        flex-wrap: wrap;
+        gap: 0.8rem;
+      }
+
+      .sb-photo { width: 40px; height: 40px; margin-bottom: 0; }
+      .sb-role, .sb-nav, .sb-socials { display: none; }
+      .sb-name { font-size: 0.9rem; margin-bottom: 0; }
+
+      .research-cards, #github-cards, .contact-grid, .media-grid { grid-template-columns: 1fr; }
+      .bio-wrap { flex-direction: column-reverse; }
+      .bio-photo-side { width: 100%; }
+      .bio-photo-side img { max-height: 220px; object-fit: cover; object-position: top; width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     LANDING — Carrd style
+═══════════════════════════════════════════ -->
+<section id="landing">
+
+  <div class="lp-photo">
+    <img
+      src="https://vivek-khatana.carrd.co/assets/images/image03.jpg?v=78bd2052"
+      alt="Vivek Khatana"
+      onerror="this.style.display='none'"
+    />
+  </div>
+
+  <h1>Vivek Khatana</h1>
+  <p class="lp-title">Postdoctoral Scholar &nbsp;·&nbsp; Control &amp; Optimization</p>
+
+  <ul class="lp-socials">
+    <li><a href="mailto:vkhatana@illinois.edu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      Email
+    </a></li>
+    <li><a href="https://scholar.google.com/citations?user=l1BYDI0AAAAJ&hl=en" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 10a8 8 0 0 1 7.162 3.44L24 9.5z"/></svg>
+      Google Scholar
+    </a></li>
+    <li><a href="https://www.linkedin.com/in/vivek-khatana" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+      LinkedIn
+    </a></li>
+    <li><a href="https://github.com/vivekkhatana" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+      GitHub
+    </a></li>
+    <li><a href="https://drive.google.com/file/d/1d8SjNnley-m1tbynsa3LOytEVcTfFdiX/view?usp=sharing" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      CV
+    </a></li>
+  </ul>
+
+  <div class="lp-divider"></div>
+
+  <ul class="lp-nav">
+    <li><a href="#bio">Bio</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#media">Media</a></li>
+    <li><a href="#resources">Resources</a></li>
+    <li><a href="#news">News</a></li>
+    <li><a href="#teaching">Teaching</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+
+  <p class="lp-updated">(Website last updated in Feb, 2025)</p><!-- UPDATE THIS DATE when you make changes -->
+
+  <a class="lp-scroll" href="#main" aria-label="Scroll to content">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="6 9 12 15 18 9"/>
+    </svg>
+  </a>
+
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     MAIN — sidebar + content (Carlone)
+═══════════════════════════════════════════ -->
+<div id="main">
+
+  <!-- ── SIDEBAR ── -->
+  <aside id="sidebar">
+    <div class="sb-photo">
+      <img
+        src="https://vivek-khatana.carrd.co/assets/images/image03.jpg?v=78bd2052"
+        alt="Vivek Khatana"
+        onerror="this.style.display='none'"
+      />
+    </div>
+
+    <div class="sb-name">Vivek Khatana</div>
+    <div class="sb-role">Postdoctoral Scholar<br>UIUC &amp; UNR</div>
+
+    <ul class="sb-nav">
+      <li><a href="#bio">Bio</a></li>
+      <li><a href="#research">Research Interests</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#media">Media</a></li>
+      <li class="sb-nav-parent">
+        <a href="#resources">Resources</a>
+        <ul class="sb-subnav">
+          <li><a href="#res-talks">Talks &amp; Slides</a></li>
+          <li><a href="#res-code">Code &amp; Datasets</a></li>
+        </ul>
+      </li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#teaching">Teaching</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="sb-socials">
+      <!-- Email -->
+      <a href="mailto:vkhatana@illinois.edu" title="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      </a>
+      <!-- Scholar -->
+      <a href="https://scholar.google.com/citations?user=l1BYDI0AAAAJ&hl=en" target="_blank" rel="noopener" title="Google Scholar">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 10a8 8 0 0 1 7.162 3.44L24 9.5z"/></svg>
+      </a>
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/in/vivek-khatana" target="_blank" rel="noopener" title="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+      <!-- GitHub -->
+      <a href="https://github.com/vivekkhatana" target="_blank" rel="noopener" title="GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+      </a>
+    </div>
+  </aside>
+
+  <!-- ── CONTENT ── -->
+  <main id="content">
+
+    <!-- BIO -->
+    <article class="section" id="bio">
+      <p class="section-heading">About</p>
+      <h2>Bio</h2>
+
+      <div class="bio-wrap">
+        <div class="bio-body">
+          <p class="bio-lede">I develop algorithms for distributed decision-making in networked systems — bridging control theory, optimization, and machine learning toward resilient autonomous systems.</p>
+
+          <p>I am a Postdoctoral Scholar at the <a href="https://aviate.illinois.edu/" target="_blank">Center for Autonomous Vehicles in Air Transportation Engineering (AVIATE)</a> at the <a href="https://illinois.edu/" target="_blank">University of Illinois Urbana-Champaign</a>, and the <a href="https://www.unr.edu/me" target="_blank">Department of Mechanical Engineering at the University of Nevada Reno</a>, working with Profs. <a href="https://www.unr.edu/me/about/people/petros-voulgaris" target="_blank">Petros Voulgaris</a>, <a href="https://mechse.illinois.edu/people/profile/nhovakim" target="_blank">Naira Hovakimyan</a>, and <a href="https://mechse.illinois.edu/people/profile/salapaka" target="_blank">Srinivasa Salapaka</a>.</p>
+
+          <p>I obtained my Ph.D from the <a href="https://twin-cities.umn.edu/" target="_blank">University of Minnesota Twin Cities</a> working with Prof. <a href="https://cse.umn.edu/ece/murti-salapaka" target="_blank">Murti Salapaka</a> at the <a href="http://nanodynamics.ece.umn.edu/" target="_blank">Nanodynamics Laboratory</a>. My thesis focused on advancing distributed decision-making by balancing information mixing and optimality in distributed optimization — developing systems that ensure resilient distributed operation while preserving the efficiencies of centralized architectures.</p>
+
+          <p>I am an active member of the <strong>IEEE Control Systems Society</strong>, the <strong>IEEE Power and Energy Society</strong>, and the <strong>INFORMS Optimization Society</strong>. Outside research, I enjoy reading, art shows, sports, hiking, and honing my culinary skills.</p>
+
+          <a class="cv-link" href="https://drive.google.com/file/d/1d8SjNnley-m1tbynsa3LOytEVcTfFdiX/view?usp=sharing" target="_blank">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Curriculum Vitae
+          </a>
+
+          <!-- Speaker bio collapsible -->
+          <button class="speaker-toggle" onclick="toggleSpeakerBio(this)" aria-expanded="false">
+            <i class="arrow">▶</i> Speaker bio
+          </button>
+          <div id="speaker-bio-text" aria-hidden="true">
+            <p>Vivek Khatana is currently a Postdoctoral Scholar at the <a href="https://aviate.illinois.edu/" target="_blank">AVIATE Center, University of Illinois Urbana-Champaign</a>, and the <a href="https://www.unr.edu/me" target="_blank">Department of Mechanical Engineering, University of Nevada Reno</a>. His research focuses on optimization, stochastic control, networks of dynamical systems, data-driven system identification, and power systems control.</p>
+            <p>He obtained his Ph.D from the <a href="https://twin-cities.umn.edu/" target="_blank">University of Minnesota Twin Cities</a> and his B.Tech in Electrical Engineering from the <strong>Indian Institute of Technology Roorkee</strong>. He was recognized as an <strong>Outstanding Teaching Assistant</strong> at UMN (2021) and received the <strong>Summer Undergraduate Research Award</strong> at IIT Roorkee (2016).</p>
+          </div>
+        </div>
+
+        <div class="bio-photo-side">
+          <img
+            src="https://vivek-khatana.carrd.co/assets/images/image01.jpg?v=78bd2052"
+            alt="Vivek Khatana"
+            onerror="this.style.display='none'"
+          />
+        </div>
+      </div>
+    </article>
+
+    <!-- RESEARCH -->
+    <article class="section" id="research">
+      <p class="section-heading">Focus Areas</p>
+      <h2>Research Interests</h2>
+      <p class="research-intro">My research synergistically combines control theory and optimization to advance renewable energy adoption and autonomous systems. Current focus areas:</p>
+
+      <div class="research-cards">
+        <div class="r-card">
+          <div class="r-card-icon">⚙️</div>
+          <div>
+            <div class="r-card-title">Distributed Nonconvex Optimization</div>
+            <div class="r-card-desc">Algorithms for multi-agent systems with non-convex objectives and communication constraints</div>
+          </div>
+        </div>
+        <div class="r-card">
+          <div class="r-card-icon">🧠</div>
+          <div>
+            <div class="r-card-title">Stochastic Optimization for ML</div>
+            <div class="r-card-desc">Scalable stochastic methods for training deep and machine learning models</div>
+          </div>
+        </div>
+        <div class="r-card">
+          <div class="r-card-icon">✈️</div>
+          <div>
+            <div class="r-card-title">Advanced Aerospace Control</div>
+            <div class="r-card-desc">Control design for autonomous vehicles and emerging aerospace platforms</div>
+          </div>
+        </div>
+        <div class="r-card">
+          <div class="r-card-icon">⚡</div>
+          <div>
+            <div class="r-card-title">Distributed Energy Systems</div>
+            <div class="r-card-desc">Aggregation, coordination, and control of distributed energy resources and microgrids</div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- PUBLICATIONS -->
+    <article class="section" id="publications">
+      <div class="pub-meta">
+        <div>
+          <p class="section-heading">Scholarly Work</p>
+          <h2 style="margin-bottom:0">Publications</h2>
+        </div>
+        <a class="pub-scholar-link" href="https://scholar.google.com/citations?hl=en&user=l1BYDI0AAAAJ&view_op=list_works" target="_blank">Full list on Google Scholar ↗</a>
+      </div>
+
+      <div class="pub-year-label">Preprints</div>
+      <ul class="pub-list">
+        <li>A. Dey, <span class="me">V. Khatana</span>, A. Mani, and M. V. Salapaka, "Guaranteeing Service in Connected Microgrids: Storage Planning and Optimal Power Sharing Policy." <span class="pub-badge badge-p">Preprint</span> <a href="https://arxiv.org/abs/2403.08114" target="_blank">arXiv:2403.08114 ↗</a></li>
+      </ul>
+
+      <div class="pub-year-label">2024</div>
+      <ul class="pub-list">
+        <li><span class="me">V. Khatana</span> and M. V. Salapaka, "Distributed difference of convex optimization." <em>60th Annual Allerton Conference</em>, 2024. <span class="pub-badge badge-c">Conf</span></li>
+        <li><span class="me">V. Khatana</span>, C.-Y. Chang, and W. Wang, "Adaptive online model update algorithm for predictive control in networked systems." <em>60th Annual Allerton Conference</em>, 2024. <span class="pub-badge badge-c">Conf</span></li>
+        <li><span class="me">V. Khatana</span>, S. Chakraborty, and M. V. Salapaka, "A plug and play distributed secondary controller for microgrids with grid-forming inverters." <em>IEEE IECON</em>, 2024. <span class="pub-badge badge-c">Conf</span></li>
+        <li><span class="me">V. Khatana</span>, S. Chakraborty, G. Saraswat, P. Sourav, and M. V. Salapaka, "A distributed malicious agent detection scheme for resilient power apportioning in microgrids." <em>IEEE IECON</em>, 2024. <span class="pub-badge badge-c">Conf</span></li>
+        <li>A. Dey, <span class="me">V. Khatana</span>, A. Mani, and M. V. Salapaka, "Guaranteeing service in connected microgrids: Storage planning and optimal power sharing policy." <em>IEEE American Control Conference</em>, 2024. <span class="pub-badge badge-c">Conf</span></li>
+      </ul>
+
+      <div class="pub-year-label">2023</div>
+      <ul class="pub-list">
+        <li><span class="me">V. Khatana</span> and M. V. Salapaka, "Noise resilient distributed average consensus over directed graphs." <em>IEEE Trans. Signal and Information Processing over Networks</em>, pp. 1–15, 2023. <span class="pub-badge badge-j">Journal</span> <a href="https://doi.org/10.1109/TSIPN.2023.3324583" target="_blank">doi ↗</a></li>
+        <li><span class="me">V. Khatana</span>, G. Saraswat, S. Patel, and M. V. Salapaka, "GradConsensus: linearly convergent algorithm for reducing disagreement in multi-agent optimization." <em>IEEE Trans. Network Science and Engineering</em>, pp. 1–13, 2023. <span class="pub-badge badge-j">Journal</span> <a href="https://doi.org/10.1109/TNSE.2023.3321757" target="_blank">doi ↗</a></li>
+        <li>J. Melbourne, G. Saraswat, <span class="me">V. Khatana</span>, S. Patel, and M. V. Salapaka, "Convex decreasing algorithms: distributed synthesis and finite-time termination in higher dimension." <em>IEEE Trans. Automatic Control</em>, pp. 1–8, 2023. <span class="pub-badge badge-j">Journal</span> <a href="https://doi.org/10.1109/TAC.2023.3344721" target="_blank">doi ↗</a></li>
+        <li>S. Chakraborty, J. Park, G. Saraswat, et al., "Emergency power supply system for critical infrastructures: Design and large scale hardware demonstration." <em>IEEE Access</em>, vol. 11, pp. 114509–114526, 2023. <span class="pub-badge badge-j">Journal</span> <a href="https://doi.org/10.1109/ACCESS.2023.3325198" target="_blank">doi ↗</a></li>
+      </ul>
+
+      <div class="pub-year-label">2022</div>
+      <ul class="pub-list">
+        <li><span class="me">V. Khatana</span> and M. V. Salapaka, "DC-DistADMM: ADMM algorithm for constrained optimization over directed graphs." <em>IEEE Trans. Automatic Control</em>, pp. 1–16, 2022. <span class="pub-badge badge-j">Journal</span> <a href="https://doi.org/10.1109/TAC.2022.3221856" target="_blank">doi ↗</a></li>
+        <li>G. Saraswat, <span class="me">V. Khatana</span>, S. Patel, and M. V. Salapaka, "Distributed finite-time termination for consensus algorithm in switching topologies." <em>IEEE Trans. Network Science and Engineering</em>, pp. 1–11, 2022. <span class="pub-badge badge-j">Journal</span> <a href="https://doi.org/10.1109/TNSE.2022.3216286" target="_blank">doi ↗</a></li>
+        <li><span class="me">V. Khatana</span>, S. Chakraborty, G. Saraswat, B. Lundstrom, and M. V. Salapaka, "Evaluation of horizon of viability optimization engine for sustained power to critical infrastructure." <em>IEEE PECI</em>, 2022. <span class="pub-badge badge-c">Conf</span></li>
+        <li>J. Wang, S. Chakraborty, <span class="me">V. Khatana</span>, B. Lundstrom, G. Saraswat, and M. Salapaka, "Evaluation of optimal net load management in microgrids using hardware-in-the-loop simulation." <em>IEEE ISGT</em>, pp. 1–5, 2022. <span class="pub-badge badge-c">Conf</span> <a href="https://doi.org/10.1109/ISGT50606.2022.9817515" target="_blank">doi ↗</a></li>
+      </ul>
+
+      <div class="pub-year-label">2020</div>
+      <ul class="pub-list">
+        <li>J. Melbourne, G. Saraswat, <span class="me">V. Khatana</span>, S. Patel, and M. V. Salapaka, "On the geometry of consensus algorithms with application to distributed termination in higher dimension." <em>IFAC-PapersOnLine</em>, vol. 53, no. 2, pp. 2951–2956, 21st IFAC World Congress, 2020. <span class="pub-badge badge-c">Conf</span> <a href="https://doi.org/10.1016/j.ifacol.2020.12.971" target="_blank">doi ↗</a></li>
+      </ul>
+    </article>
+
+    <!-- MEDIA -->
+    <article class="section" id="media">
+      <p class="section-heading">Talks &amp; Outreach</p>
+      <h2>Media</h2>
+      <p class="media-intro">Selected talks, presentations, and outreach videos. For the full list, see my <a href="https://scholar.google.com/citations?user=l1BYDI0AAAAJ&hl=en" target="_blank">Google Scholar</a> profile.</p>
+
+      <div class="media-grid">
+
+        <a class="media-card" href="https://iitr.ac.in/Departments/Electrical%20Engineering%20Department/static/Activities/Announcements/Technical_Talk.pdf" target="_blank" rel="noopener">
+          <div class="media-thumb">
+            <div class="yt-placeholder">
+              <div class="play-btn">
+                <svg viewBox="0 0 24 24" fill="var(--accent)"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </div>
+            </div>
+          </div>
+          <div class="media-info">
+            <div class="media-type">Seminar Talk</div>
+            <div class="media-title">Distributed Decision-Making in Networked Systems</div>
+            <div class="media-venue">IIT Roorkee, Dept. of Electrical Engineering · Feb 2024</div>
+          </div>
+        </a>
+
+        <a class="media-card" href="https://mwcgt2024.northwestern.edu/" target="_blank" rel="noopener">
+          <div class="media-thumb">
+            <div class="yt-placeholder">
+              <div class="play-btn">
+                <svg viewBox="0 0 24 24" fill="var(--accent)"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </div>
+            </div>
+          </div>
+          <div class="media-info">
+            <div class="media-type">Lightning Talk</div>
+            <div class="media-title">Algorithms for Agreement and Optimality in Networked Dynamical Systems</div>
+            <div class="media-venue">Midwest Workshop on Control &amp; Game Theory · Apr 2024</div>
+          </div>
+        </a>
+
+        <a class="media-card" href="https://midwest-ml.org/2024/" target="_blank" rel="noopener">
+          <div class="media-thumb">
+            <div class="yt-placeholder">
+              <div class="play-btn">
+                <svg viewBox="0 0 24 24" fill="var(--accent)"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </div>
+            </div>
+          </div>
+          <div class="media-info">
+            <div class="media-type">Poster Presentation</div>
+            <div class="media-title">Distributed Training of Machine Learning Models</div>
+            <div class="media-venue">Midwest Machine Learning Symposium · May 2024</div>
+          </div>
+        </a>
+
+        <a class="media-card" href="https://meetings.informs.org/wordpress/seattle2024/" target="_blank" rel="noopener">
+          <div class="media-thumb">
+            <div class="yt-placeholder">
+              <div class="play-btn">
+                <svg viewBox="0 0 24 24" fill="var(--accent)"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </div>
+            </div>
+          </div>
+          <div class="media-info">
+            <div class="media-type">Conference Talk</div>
+            <div class="media-title">Data-Driven Dynamic Behavior Identification in Networked Systems</div>
+            <div class="media-venue">INFORMS Annual Meeting, Seattle · Oct 2024</div>
+          </div>
+        </a>
+
+      </div>
+      <p class="media-add-note">📌 Add links to slides or video recordings above as they become available — replace the <code>href</code> on each card.</p>
+    </article>
+
+    <!-- RESOURCES -->
+    <article class="section" id="resources">
+      <p class="section-heading">Materials &amp; Tools</p>
+      <h2>Resources</h2>
+
+      <!-- Talks & Slides -->
+      <div class="resources-group" id="res-talks">
+        <div class="resources-group-title">Talks &amp; Slides</div>
+        <ul class="resource-list">
+          <li>
+            <span class="resource-icon">📄</span>
+            <div class="resource-body">
+              <div class="resource-title"><a href="https://iitr.ac.in/Departments/Electrical%20Engineering%20Department/static/Activities/Announcements/Technical_Talk.pdf" target="_blank">Distributed Decision-Making — IIT Roorkee Seminar Slides</a></div>
+              <div class="resource-desc">Overview of distributed optimization framework and results · Feb 2024</div>
+            </div>
+            <span class="resource-tag">PDF</span>
+          </li>
+          <li>
+            <span class="resource-icon">📄</span>
+            <div class="resource-body">
+              <div class="resource-title">Midwest Control &amp; Game Theory Workshop — Lightning Talk Slides</div>
+              <div class="resource-desc">Agreement and optimality in decision making in networked dynamical systems · Apr 2024</div>
+            </div>
+            <span class="resource-tag">Slides</span>
+          </li>
+          <li>
+            <span class="resource-icon">📄</span>
+            <div class="resource-body">
+              <div class="resource-title"><a href="https://drive.google.com/file/d/1d8SjNnley-m1tbynsa3LOytEVcTfFdiX/view?usp=sharing" target="_blank">Curriculum Vitae</a></div>
+              <div class="resource-desc">Full academic CV — updated Feb 2025</div>
+            </div>
+            <span class="resource-tag">PDF</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Code & Datasets -->
+      <div class="resources-group" id="res-code">
+        <div class="resources-group-title">Code &amp; Datasets</div>
+        <ul class="resource-list">
+          <li>
+            <span class="resource-icon">💻</span>
+            <div class="resource-body">
+              <div class="resource-title"><a href="https://github.com/vivekkhatana" target="_blank">GitHub — vivekkhatana</a></div>
+              <div class="resource-desc">Open-source implementations of optimization algorithms and control systems research</div>
+            </div>
+            <span class="resource-tag">Code</span>
+          </li>
+          <li>
+            <span class="resource-icon">📦</span>
+            <div class="resource-body">
+              <div class="resource-title">DC-DistADMM Implementation</div>
+              <div class="resource-desc">Code for the ADMM algorithm for constrained optimization over directed graphs (IEEE TAC 2022)</div>
+            </div>
+            <span class="resource-tag">Coming Soon</span>
+          </li>
+          <li>
+            <span class="resource-icon">📦</span>
+            <div class="resource-body">
+              <div class="resource-title">GradConsensus Implementation</div>
+              <div class="resource-desc">Linearly convergent multi-agent optimization — code to accompany IEEE TNSE 2023 paper</div>
+            </div>
+            <span class="resource-tag">Coming Soon</span>
+          </li>
+        </ul>
+      </div>
+
+    </article>
+
+    <!-- NEWS -->
+    <article class="section" id="news">
+      <p class="section-heading">Updates</p>
+      <h2>News</h2>
+      <ul class="news-list">
+        <li><span class="news-date">Feb 2025</span><span>Joined as a Postdoctoral Scholar at <a href="https://aviate.illinois.edu/" target="_blank">AVIATE, UIUC</a> and the <a href="https://www.unr.edu/me" target="_blank">Dept. of Mechanical Engineering, UNR</a>.</span></li>
+        <li><span class="news-date">Jan 2025</span><span>Defended PhD thesis: <em>"Balancing Information Mixing and Optimality: A Framework for Robust and Efficient Distributed Decision-Making"</em> at <a href="https://cse.umn.edu/ece" target="_blank">ECE, University of Minnesota Twin Cities</a>.</span></li>
+        <li><span class="news-date">Nov 2024</span><span>Presented papers on distributed control and cyber-secured operation of inverter-based distributed energy resources at <a href="https://www.iecon-2024.org/" target="_blank">IECON 2024</a>.</span></li>
+        <li><span class="news-date">Oct 2024</span><span>Presented at the <a href="https://meetings.informs.org/wordpress/seattle2024/" target="_blank">2024 INFORMS Annual Meeting</a>, Seattle — data-driven dynamic behavior identification in networked systems.</span></li>
+        <li><span class="news-date">Aug 2024</span><span>Two papers accepted at <a href="https://allerton.csl.illinois.edu/" target="_blank">Allerton 2024</a> on nonconvex distributed learning and data-driven system identification.</span></li>
+        <li><span class="news-date">May 2024</span><span>Poster on distributed ML training at the <a href="https://midwest-ml.org/2024/" target="_blank">Midwest Machine Learning Symposium</a>.</span></li>
+        <li><span class="news-date">Apr 2024</span><span>Lightning talk and poster at the <a href="https://mwcgt2024.northwestern.edu/" target="_blank">Midwest Workshop on Control and Game Theory</a>.</span></li>
+        <li><span class="news-date">Feb 2024</span><span>Seminar talk at the Dept. of Electrical Engineering, <a href="https://iitr.ac.in/" target="_blank">IIT Roorkee</a>.</span></li>
+      </ul>
+    </article>
+
+    <!-- TEACHING -->
+    <article class="section" id="teaching">
+      <p class="section-heading">Academic Service</p>
+      <h2>Teaching</h2>
+      <p style="font-size:0.92rem;color:var(--body);margin-bottom:0.95rem;">Primary instructor for undergraduate laboratory courses at the <strong>University of Minnesota Twin Cities</strong>:</p>
+      <ul class="teaching-list">
+        <li><span class="t-code">EE 4235</span><span class="t-name">Linear Control Systems Laboratory</span></li>
+        <li><span class="t-code">EE 4237</span><span class="t-name">State Space Control Laboratory</span></li>
+        <li><span class="t-code">EE 4163</span><span class="t-name">Energy Conversion and Storage Laboratory</span></li>
+        <li><span class="t-code">EE 2361</span><span class="t-name">Introduction to Microcontrollers Laboratory</span></li>
+      </ul>
+      <p class="teaching-note">
+        🏆 <strong>Outstanding Teaching Assistant</strong> — ECE Dept., University of Minnesota Twin Cities, 2021.<br>
+        <a href="https://dept.aem.umn.edu/cgi-bin/courses/noauth/course-catalog?QFCHK=0&search=yes&ns=1&subject=EE" target="_blank">UMN EE Course Catalog ↗</a>
+      </p>
+    </article>
+
+    <!-- CONTACT -->
+    <article class="section" id="contact">
+      <p class="section-heading">Get in Touch</p>
+      <h2>Contact</h2>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Email</h3>
+          <a href="mailto:vkhatana@illinois.edu">vkhatana@illinois.edu</a>
+          <a href="mailto:vkhatana@unr.edu">vkhatana@unr.edu</a>
+        </div>
+        <div class="contact-card">
+          <h3>Office</h3>
+          <p>Dept. of Mechanical Science and Engineering</p>
+          <p>105 S Mathews Ave, Urbana, IL 61801</p>
+        </div>
+        <div class="contact-card">
+          <h3>Profiles</h3>
+          <a href="https://scholar.google.com/citations?user=l1BYDI0AAAAJ&hl=en" target="_blank">Google Scholar ↗</a>
+          <a href="https://github.com/vivekkhatana" target="_blank">GitHub ↗</a>
+          <a href="https://www.linkedin.com/in/vivek-khatana" target="_blank">LinkedIn ↗</a>
+        </div>
+        <div class="contact-card">
+          <h3>CV</h3>
+          <a href="https://drive.google.com/file/d/1d8SjNnley-m1tbynsa3LOytEVcTfFdiX/view?usp=sharing" target="_blank">Download Curriculum Vitae ↗</a>
+          <p style="color:var(--faint);font-size:0.8rem;margin-top:0.3rem;">Updated Feb 2025</p>
+        </div>
+      </div>
+    </article>
+
+  </main><!-- /content -->
+</div><!-- /main -->
+
+
+<!-- FOOTER -->
+<footer id="footer">
+  © 2025 Vivek Khatana &nbsp;·&nbsp;
+  <a href="https://github.com/vivekkhatana" target="_blank">GitHub</a> &nbsp;·&nbsp;
+  Host free on <a href="https://pages.github.com" target="_blank">GitHub Pages</a>
+</footer>
+
+
+<!-- ─────────────────────────────────────────
+     SCRIPTS
+───────────────────────────────────────── -->
+<script>
+  /* Speaker bio toggle */
+  function toggleSpeakerBio(btn) {
+    const box = document.getElementById('speaker-bio-text');
+    const open = box.style.display === 'block';
+    box.style.display = open ? 'none' : 'block';
+    box.setAttribute('aria-hidden', open);
+    btn.setAttribute('aria-expanded', !open);
+    btn.classList.toggle('open', !open);
+  }
+
+  /* Sidebar active link on scroll */
+  const sections = document.querySelectorAll('.section');
+  const navLinks = document.querySelectorAll('.sb-nav a');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(a => {
+          a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id);
+        });
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+
+  sections.forEach(s => observer.observe(s));
+
+  /* GitHub repo cards — shown inside Resources section */
+  const LANG_COLORS = {
+    Python:'#3572A5', MATLAB:'#e16737', JavaScript:'#f1e05a',
+    C:'#555555', 'C++':'#f34b7d', Julia:'#a270ba',
+    'Jupyter Notebook':'#DA5B0B', HTML:'#e34c26', Shell:'#89e051', TeX:'#3D6117'
+  };
+
+  async function loadGitHub() {
+    const container = document.getElementById('github-cards');
+    if (!container) return;
+    try {
+      const res = await fetch('https://api.github.com/users/vivekkhatana/repos?sort=updated&per_page=6');
+      if (!res.ok) throw new Error();
+      const repos = await res.json();
+      if (!repos.length) {
+        container.innerHTML = '<div class="gh-loading">No public repositories yet. <a href="https://github.com/vivekkhatana" target="_blank">Visit GitHub ↗</a></div>';
+        return;
+      }
+      container.innerHTML = repos.map(r => {
+        const lang = r.language || '';
+        const dot  = LANG_COLORS[lang] || '#ccc';
+        const desc = r.description
+          ? (r.description.length > 85 ? r.description.slice(0, 85) + '…' : r.description)
+          : '';
+        return `
+          <a class="gh-card" href="${r.html_url}" target="_blank" rel="noopener">
+            <div class="gh-card-name">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
+              </svg>
+              ${r.name}
+            </div>
+            ${desc ? `<div class="gh-card-desc">${desc}</div>` : ''}
+            <div class="gh-card-meta">
+              ${lang ? `<span><span class="lang-dot" style="background:${dot}"></span>${lang}</span>` : ''}
+              <span>★ ${r.stargazers_count}</span>
+              <span>⑂ ${r.forks_count}</span>
+            </div>
+          </a>`;
+      }).join('');
+    } catch(e) {
+      container.innerHTML = `<div class="gh-loading">Could not load repositories. <a href="https://github.com/vivekkhatana" target="_blank">View on GitHub ↗</a></div>`;
+    }
+  }
+
+  loadGitHub();
+</script>
+
+</body>
+</html>
