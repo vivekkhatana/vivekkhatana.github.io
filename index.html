@@ -58,7 +58,7 @@
     strong { color: var(--ink); font-weight: 600; }
 
     /* ═══════════════════════════════════════════
-       LANDING — Full viewport
+       LANDING — Carrd style, full viewport
     ═══════════════════════════════════════════ */
     #landing {
       min-height: 100vh;
@@ -189,7 +189,7 @@
     }
 
     /* ═══════════════════════════════════════════
-       MAIN — two-column layout
+       MAIN — two-column layout (Carlone)
     ═══════════════════════════════════════════ */
     #main {
       display: flex;
@@ -995,7 +995,7 @@
         gap: 0.8rem;
       }
 
-      .sb-photo { width: 400px; height: 400px; margin-bottom: 0; }
+      .sb-photo { width: 40px; height: 40px; margin-bottom: 0; }
       .sb-role, .sb-nav, .sb-socials { display: none; }
       .sb-name { font-size: 0.9rem; margin-bottom: 0; }
 
@@ -1009,13 +1009,13 @@
 <body>
 
 <!-- ═══════════════════════════════════════════
-     LANDING
+     LANDING — Carrd style
 ═══════════════════════════════════════════ -->
 <section id="landing">
 
   <div class="lp-photo">
     <img
-      src="images/profile.jpg"
+      src="https://vivek-khatana.carrd.co/assets/images/image03.jpg?v=78bd2052"
       alt="Vivek Khatana"
       onerror="this.style.display='none'"
     />
@@ -1025,7 +1025,7 @@
   <p class="lp-title">Postdoctoral Scholar &nbsp;·&nbsp; Control &amp; Optimization</p>
 
   <ul class="lp-socials">
-    <li><a href="mailto:vkhatana@illinois.edu">
+    <li><a href="/cdn-cgi/l/email-protection#d4a2bfbcb5a0b5bab594bdb8b8bdbabbbda7fab1b0a1">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
       Email
     </a></li>
@@ -1072,7 +1072,7 @@
 
 
 <!-- ═══════════════════════════════════════════
-     MAIN — sidebar + content
+     MAIN — sidebar + content (Carlone)
 ═══════════════════════════════════════════ -->
 <div id="main">
 
@@ -1080,7 +1080,7 @@
   <aside id="sidebar">
     <div class="sb-photo">
       <img
-        src="images/profile.jpg"
+        src="https://vivek-khatana.carrd.co/assets/images/image03.jpg?v=78bd2052"
         alt="Vivek Khatana"
         onerror="this.style.display='none'"
       />
@@ -1108,7 +1108,7 @@
 
     <div class="sb-socials">
       <!-- Email -->
-      <a href="mailto:vkhatana@illinois.edu" title="Email">
+      <a href="/cdn-cgi/l/email-protection#5224393a3326333c33123b3e3e3b3c3d3b217c373627" title="Email">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
       </a>
       <!-- Scholar -->
@@ -1161,7 +1161,7 @@
 
         <div class="bio-photo-side">
           <img
-            src="images/profile.jpg"
+            src="https://vivek-khatana.carrd.co/assets/images/image01.jpg?v=78bd2052"
             alt="Vivek Khatana"
             onerror="this.style.display='none'"
           />
@@ -1434,8 +1434,8 @@
       <div class="contact-grid">
         <div class="contact-card">
           <h3>Email</h3>
-          <a href="mailto:vkhatana@illinois.edu">vkhatana@illinois.edu</a>
-          <a href="mailto:vkhatana@unr.edu">vkhatana@unr.edu</a>
+          <a href="/cdn-cgi/l/email-protection#3d4b56555c495c535c7d545151545352544e13585948"><span class="__cf_email__" data-cfemail="9fe9f4f7feebfef1fedff6f3f3f6f1f0f6ecb1fafbea">[email&#160;protected]</span></a>
+          <a href="/cdn-cgi/l/email-protection#f4829f9c9580959a95b4819a86da919081"><span class="__cf_email__" data-cfemail="6a1c01020b1e0b040b2a1f0418440f0e1f">[email&#160;protected]</span></a>
         </div>
         <div class="contact-card">
           <h3>Office</h3>
@@ -1471,7 +1471,7 @@
 <!-- ─────────────────────────────────────────
      SCRIPTS
 ───────────────────────────────────────── -->
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   /* Speaker bio toggle */
   function toggleSpeakerBio(btn) {
     const box = document.getElementById('speaker-bio-text');
@@ -1532,19 +1532,4 @@
             </div>
             ${desc ? `<div class="gh-card-desc">${desc}</div>` : ''}
             <div class="gh-card-meta">
-              ${lang ? `<span><span class="lang-dot" style="background:${dot}"></span>${lang}</span>` : ''}
-              <span>★ ${r.stargazers_count}</span>
-              <span>⑂ ${r.forks_count}</span>
-            </div>
-          </a>`;
-      }).join('');
-    } catch(e) {
-      container.innerHTML = `<div class="gh-loading">Could not load repositories. <a href="https://github.com/vivekkhatana" target="_blank">View on GitHub ↗</a></div>`;
-    }
-  }
-
-  loadGitHub();
-</script>
-
-</body>
-</html>
+              ${lang ? `<span><span class=
