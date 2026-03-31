@@ -699,6 +699,44 @@
 
       .bio-photo-side img { max-height: 280px; object-fit: cover; object-position: top; }
     }
+    /* ── LANDING NEWS TICKER ── */
+    .lp-news-ticker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1.2rem;
+      margin-bottom: 0.4rem;
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      background: #f0f6ff;
+      border: 1px solid #c8ddf5;
+      font-size: 0.76rem;
+      font-weight: 500;
+      color: var(--accent);
+      text-decoration: none;
+      transition: background 0.15s, border-color 0.15s;
+    }
+
+    .lp-news-ticker:hover {
+      background: #ddeeff;
+      border-color: var(--accent);
+      text-decoration: none;
+    }
+
+    .lp-news-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #2ecc71;
+      flex-shrink: 0;
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.5; transform: scale(0.75); }
+    }
+
   </style>
 </head>
 <body>
@@ -712,7 +750,7 @@
   <h1>Vivek Khatana</h1>
 
   <ul class="lp-socials">
-    <li><a href="mailto:vkhatana@illinois.edu">
+    <li><a href="/cdn-cgi/l/email-protection#493f2221283d28272809202525202726203a672c2d3c">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
       Email
     </a></li>
@@ -738,14 +776,19 @@
 
   <ul class="lp-nav">
     <li><a href="#bio">Bio</a></li>
+    <li><a href="#news">News</a></li>
     <li><a href="#research">Research</a></li>
     <li><a href="#publications">Publications</a></li>
     <li><a href="#media">Media</a></li>
     <li><a href="#resources">Resources</a></li>
-    <li><a href="#news">News</a></li>
     <li><a href="#teaching">Teaching</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+
+  <a class="lp-news-ticker" href="#news">
+    <span class="lp-news-dot"></span>
+    🗞 New: Session Co-Chair, IEEE ACC 2026 &amp; CDC 2025 paper accepted
+  </a>
 
   <a class="lp-scroll" href="#main" aria-label="Scroll to content">
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -769,6 +812,7 @@
 
     <ul class="sb-nav">
       <li><a href="#bio">Bio</a></li>
+      <li><a href="#news">News</a></li>
       <li><a href="#research">Research Interests</a></li>
       <li><a href="#publications">Publications</a></li>
       <li><a href="#media">Media</a></li>
@@ -779,13 +823,12 @@
           <li><a href="#res-code">Code &amp; Datasets</a></li>
         </ul>
       </li>
-      <li><a href="#news">News</a></li>
       <li><a href="#teaching">Teaching</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
 
     <div class="sb-socials">
-      <a href="mailto:vkhatana@illinois.edu" title="Email">
+      <a href="/cdn-cgi/l/email-protection#c1b7aaa9a0b5a0afa081a8adada8afaea8b2efa4a5b4" title="Email">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
       </a>
       <a href="https://scholar.google.com/citations?user=l1BYDI0AAAAJ&hl=en" target="_blank" rel="noopener" title="Google Scholar">
@@ -1213,8 +1256,8 @@
       <div class="contact-grid">
         <div class="contact-card">
           <h3>Email</h3>
-          <a href="mailto:vkhatana@illinois.edu">vkhatana@illinois.edu</a>
-          <a href="mailto:vkhatana@unr.edu">vkhatana@unr.edu</a>
+          <a href="/cdn-cgi/l/email-protection#c2b4a9aaa3b6a3aca382abaeaeabacadabb1eca7a6b7"><span class="__cf_email__" data-cfemail="7b0d10131a0f1a151a3b1217171215141208551e1f0e">[email&#160;protected]</span></a>
+          <a href="/cdn-cgi/l/email-protection#8bfde0e3eaffeae5eacbfee5f9a5eeeffe"><span class="__cf_email__" data-cfemail="30465b585144515e5170455e421e555445">[email&#160;protected]</span></a>
         </div>
         <div class="contact-card">
           <h3>Office</h3>
@@ -1243,7 +1286,7 @@
   Host free on <a href="https://pages.github.com" target="_blank">GitHub Pages</a>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   function toggleSpeakerBio(btn) {
     const box = document.getElementById('speaker-bio-text');
     const open = box.style.display === 'block';
@@ -1253,21 +1296,4 @@
     btn.classList.toggle('open', !open);
   }
 
-  const sections = document.querySelectorAll('.section');
-  const navLinks = document.querySelectorAll('.sb-nav a');
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        navLinks.forEach(a => {
-          a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id);
-        });
-      }
-    });
-  }, { rootMargin: '-30% 0px -60% 0px' });
-
-  sections.forEach(s => observer.observe(s));
-</script>
-
-</body>
-</html>
+  const sections = document.querySelectorAl
