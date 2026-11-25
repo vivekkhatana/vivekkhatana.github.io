@@ -415,6 +415,29 @@
 
     /* ── SELECTED RESEARCH PROJECTS ── */
     #selected-projects .project-gallery { display: grid; gap: 1rem; }
+    #selected-projects .project-filters { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    #selected-projects .project-filter {
+      min-height: 2.5rem;
+      padding: 0.45rem 0.75rem;
+      border: 1px solid var(--rule);
+      border-radius: var(--radius);
+      background: var(--white);
+      color: var(--body);
+      font-family: var(--font);
+      font-size: 0.78rem;
+      font-weight: 500;
+      line-height: 1.4;
+      cursor: pointer;
+      transition: none;
+    }
+    #selected-projects .project-filter:hover { background: var(--off-white); }
+    #selected-projects .project-filter[aria-pressed="true"] { background: var(--accent-lt); color: var(--ink); border-color: var(--accent); font-weight: 700; }
+    #selected-projects .project-filter:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+    #selected-projects .project-filter-status,
+    #selected-projects .project-filter-empty { margin: 0.65rem 0 1rem; font-size: 0.78rem; line-height: 1.5; color: var(--muted); }
+    #selected-projects .project-filter-tools[hidden],
+    #selected-projects .project-card[hidden],
+    #selected-projects .project-filter-empty[hidden] { display: none; }
 
     #selected-projects .project-card {
       display: grid;
@@ -984,8 +1007,19 @@
       </div>
       <div class="resources-group" id="selected-projects">
         <h3 class="pub-year-label">Selected Research Projects</h3>
-        <div class="project-gallery">
-          <article class="project-card" aria-labelledby="project-covariance-steering">
+        <div class="project-filter-tools" hidden>
+          <div class="project-filters" role="group" aria-label="Filter research projects by category">
+            <button class="project-filter" type="button" data-project-filter="all" aria-pressed="true" aria-controls="selected-project-gallery">All</button>
+            <button class="project-filter" type="button" data-project-filter="robotics" aria-pressed="false" aria-controls="selected-project-gallery">Robotics</button>
+            <button class="project-filter" type="button" data-project-filter="control" aria-pressed="false" aria-controls="selected-project-gallery">Control</button>
+            <button class="project-filter" type="button" data-project-filter="artificial-intelligence" aria-pressed="false" aria-controls="selected-project-gallery">Artificial Intelligence</button>
+            <button class="project-filter" type="button" data-project-filter="optimization" aria-pressed="false" aria-controls="selected-project-gallery">Optimization</button>
+            <button class="project-filter" type="button" data-project-filter="energy-systems" aria-pressed="false" aria-controls="selected-project-gallery">Energy Systems</button>
+          </div>
+          <p class="project-filter-status" role="status" aria-live="polite" aria-atomic="true"></p>
+        </div>
+        <div class="project-gallery" id="selected-project-gallery">
+          <article class="project-card" data-categories="control optimization" aria-labelledby="project-covariance-steering">
             <div class="project-media project-media-placeholder" role="group" aria-label="Media placeholder for Wasserstein Distributionally Robust Adaptive Covariance Steering">
               <p class="project-media-label">Development placeholder</p>
               <p>Research figure or video pending.</p>
@@ -998,7 +1032,7 @@
               <ul class="project-links" aria-label="Project resources"><li><a href="https://arxiv.org/abs/2509.04593" target="_blank" rel="noopener">arXiv</a></li></ul>
             </div>
           </article>
-          <article class="project-card" aria-labelledby="project-small-body-planning">
+          <article class="project-card" data-categories="robotics control optimization" aria-labelledby="project-small-body-planning">
             <div class="project-media project-media-placeholder" role="group" aria-label="Media placeholder for Distributionally Robust Planning for Small-Body Proximity Operations">
               <p class="project-media-label">Development placeholder</p>
               <p>Research figure or video pending.</p>
@@ -1011,7 +1045,7 @@
               <ul class="project-links" aria-label="Project resources"><li><a href="https://arxiv.org/abs/2610.12774" target="_blank" rel="noopener">arXiv</a></li></ul>
             </div>
           </article>
-          <article class="project-card" aria-labelledby="project-mean-field-control">
+          <article class="project-card" data-categories="control optimization" aria-labelledby="project-mean-field-control">
             <div class="project-media project-media-placeholder" role="group" aria-label="Media placeholder for Networked Control and Mean-Field Optimality under Diagonal Dominance">
               <p class="project-media-label">Development placeholder</p>
               <p>Research figure or video pending.</p>
@@ -1024,7 +1058,7 @@
               <ul class="project-links" aria-label="Project resources"><li><a href="https://arxiv.org/abs/2510.01067" target="_blank" rel="noopener">arXiv</a></li></ul>
             </div>
           </article>
-          <article class="project-card" aria-labelledby="project-virtual-power-plants">
+          <article class="project-card" data-categories="control optimization energy-systems" aria-labelledby="project-virtual-power-plants">
             <div class="project-media project-media-placeholder" role="group" aria-label="Media placeholder for Distributed Control of Virtual Power Plants">
               <p class="project-media-label">Development placeholder</p>
               <p>Research figure or video pending.</p>
@@ -1037,7 +1071,7 @@
               <ul class="project-links" aria-label="Project resources"><li><a href="https://arxiv.org/abs/2409.19866" target="_blank" rel="noopener">Related paper</a></li><li><a href="https://github.com/vivekkhatana/VPP_Primary_Node/tree/main/Primary_Node_Repo" target="_blank" rel="noopener">Primary-node code</a></li><li><a href="https://github.com/vivekkhatana/VPP_Secondary_Node/tree/main/Secondary_Node_Repo" target="_blank" rel="noopener">Secondary-node code</a></li></ul>
             </div>
           </article>
-          <article class="project-card" aria-labelledby="project-directed-optimization">
+          <article class="project-card" data-categories="optimization" aria-labelledby="project-directed-optimization">
             <div class="project-media project-media-placeholder" role="group" aria-label="Media placeholder for Distributed Optimization over Directed Communication Networks">
               <p class="project-media-label">Development placeholder</p>
               <p>Research figure or video pending.</p>
@@ -1050,7 +1084,7 @@
               <ul class="project-links" aria-label="Project resources"><li><a href="https://doi.org/10.1109/TAC.2022.3221856" target="_blank" rel="noopener">DC-DistADMM paper</a></li><li><a href="https://doi.org/10.1109/TNSE.2023.3321757" target="_blank" rel="noopener">GradConsensus paper</a></li><li><a href="https://github.com/vivekkhatana/DC-DistADMM" target="_blank" rel="noopener">DC-DistADMM code</a></li><li><a href="https://github.com/vivekkhatana/GradConsensus" target="_blank" rel="noopener">GradConsensus code</a></li></ul>
             </div>
           </article>
-          <article class="project-card" aria-labelledby="project-microgrid-risk-sharing">
+          <article class="project-card" data-categories="control optimization energy-systems" aria-labelledby="project-microgrid-risk-sharing">
             <div class="project-media project-media-placeholder" role="group" aria-label="Media placeholder for Risk Sharing in Interconnected Microgrids">
               <p class="project-media-label">Development placeholder</p>
               <p>Research figure or video pending.</p>
@@ -1064,6 +1098,43 @@
             </div>
           </article>
         </div>
+        <p class="project-filter-empty" hidden>No projects are currently listed in this category.</p>
+        <script>
+          (() => {
+            const section = document.getElementById('selected-projects');
+            const tools = section.querySelector('.project-filter-tools');
+            const buttons = Array.from(section.querySelectorAll('[data-project-filter]'));
+            const cards = Array.from(section.querySelectorAll('.project-gallery > .project-card'));
+            const status = section.querySelector('.project-filter-status');
+            const empty = section.querySelector('.project-filter-empty');
+            const categories = new Map(cards.map(card => [card, (card.dataset.categories || '').split(/\s+/)]));
+
+            function selectCategory(button) {
+              const category = button.dataset.projectFilter;
+              let count = 0;
+
+              cards.forEach(card => {
+                const visible = category === 'all' || categories.get(card).includes(category);
+                card.hidden = !visible;
+                if (visible) count += 1;
+              });
+
+              buttons.forEach(option => {
+                option.setAttribute('aria-pressed', String(option === button));
+              });
+              status.textContent = category === 'all'
+                ? `Showing all ${count} projects.`
+                : `${count} ${count === 1 ? 'project' : 'projects'} in ${button.textContent.trim()}.`;
+              empty.hidden = count > 0;
+            }
+
+            buttons.forEach(button => {
+              button.addEventListener('click', () => selectCategory(button));
+            });
+            selectCategory(buttons[0]);
+            tools.hidden = false;
+          })();
+        </script>
       </div>
     </article>
 
