@@ -244,3 +244,50 @@ and off-screen pausing, reduced-motion behavior, and desktop/mobile dimensions.
 Check DevTools Network after a fresh homepage load to ensure unplayed research
 videos are not eagerly transferred. Then update the planning manifest to match
 the approved HTML; it is documentation, not an automatic renderer.
+
+## Standalone research project pages
+
+`projects/template.html` is a generic, unlinked scaffold, not a published research
+claim. Preview it at <http://127.0.0.1:8000/projects/template.html>. Its `noindex`
+directive discourages indexing; it does not provide privacy. Keep private drafts
+outside this checkout and outside the server's document root. The named prototype
+is kept separately for private review and must not be copied into the website
+until disclosure is explicitly approved.
+
+The homepage and project pages share `styles/site.css`, extracted unchanged from
+the homepage's inline stylesheet. `styles/project-page.css` adds only rules scoped
+to standalone pages. Keep shared typography, palette, sidebar, and spacing in the
+shared stylesheet; do not duplicate those rules in individual project pages.
+
+After approval, copy the template to an appropriate filename in `projects/`.
+Replace the title, description, visible heading, overview, author/collaborator
+credits, and venue/status with verified information. The `data-field` attributes
+identify editable content for maintainers; there is no renderer or build step.
+Explicitly distinguish accepted/published papers, workshop papers, preprints, and
+under-review manuscripts. Do not infer acceptance from a conference year.
+
+The template includes motivation, mathematical/algorithmic contribution,
+architecture, separate quantitative and qualitative results, publications, and
+code/supplement/poster/slide resources. Keep pending material as clearly identified
+development placeholders during review; omit unavailable material on an approved
+public page. Never fill gaps with invented results, equations, collaborator roles,
+or placeholder URLs. Plain HTML `var`, `sub`, `sup`, native MathML, or `pre`/`code`
+can express approved mathematics/algorithms without a library. Use
+`project-page-math` for a scrollable formula block, and `project-page-table-wrap`
+around a `project-page-table` with a caption and scoped column/row headings for
+verified tabular results. Explain assumptions, baselines, units, and limitations.
+
+For media, replace a placeholder with the figure/video markup documented above.
+Keep media within `#selected-projects` so shared responsive styles and
+`scripts/research-media.js` work on both kinds of page. Use a unique descriptive
+accessible label on every player and meaningful alt text/captions on figures;
+the standalone page does not inherit a gallery card title. Keep optional resource
+links outside the player and omit missing URLs. No research assets are bundled
+with this template.
+
+Use relative paths (`../styles/`, `../scripts/`, `../images/`, and
+`../index.html#selected-projects`) so nested pages work on GitHub Pages and the
+local server. Add a gallery link only after the project and page are approved.
+Test keyboard skip/navigation/back links, all local assets, media fallbacks,
+small screens, reduced motion, and readability without JavaScript. Do not create
+the remaining project pages before prototype approval.
