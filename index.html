@@ -17,6 +17,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
 
   <script src="scripts/research-media.js" defer></script>
+  <script src="scripts/site-navigation.js" defer></script>
 
   <link rel="stylesheet" href="styles/site.css" />
 </head>
@@ -58,18 +59,13 @@
   <ul class="lp-nav">
     <li><a href="#bio">Bio</a></li>
     <li><a href="#news">News</a></li>
-    <li><a href="#honors">Honors</a></li>
-    <li><a href="#funding">Funding</a></li>
+    <li><a href="#awards">Awards</a></li>
     <li><a href="#research">Research</a></li>
-    <li><a href="#publications">Publications</a></li>
-    <li><a href="#media">Media</a></li>
-    <li><a href="#resources">Resources</a></li>
-    <li><a href="#teaching">Teaching</a></li>
-    <li><a href="#service">Service</a></li>
+    <li><a href="#teaching">Teaching &amp; Service</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 
-  <a class="lp-news-ticker" href="#honors">
+  <a class="lp-news-ticker" href="#awards">
     <span class="lp-news-dot"></span>
     🏆 Distinguished Dissertation Award (Honorable Mention), University of Minnesota · 2026
   </a>
@@ -94,25 +90,55 @@
     <div class="sb-name">Vivek Khatana</div>
     <div class="sb-role">Postdoctoral Scholar<br>Mechanical Engineering, UNR<br>Research Affiliate<br>AVIATE Center, UIUC</div>
 
-    <ul class="sb-nav">
-      <li><a href="#bio">Bio</a></li>
-      <li><a href="#news">News</a></li>
-    <li><a href="#honors">Honors</a></li>
-    <li><a href="#funding">Funding</a></li>
-      <li><a href="#research">Research Interests</a></li>
-      <li><a href="#publications">Publications</a></li>
-      <li><a href="#media">Media</a></li>
-      <li class="sb-nav-parent">
-        <a href="#resources">Resources</a>
-        <ul class="sb-subnav">
-          <li><a href="#res-talks">Talks &amp; Slides</a></li>
-          <li><a href="#res-code">Code &amp; Datasets</a></li>
+    <nav class="desktop-navigation" aria-label="Primary navigation">
+      <ul class="sb-nav">
+        <li><a href="#bio">Bio</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#awards">Awards</a></li>
+        <li class="sb-research-item">
+          <a href="#research">Research</a>
+          <details class="research-menu" data-research-menu>
+            <summary aria-label="Research subsections"><span aria-hidden="true">▸</span></summary>
+            <ul class="sb-subnav">
+              <li><a href="#research-interests">Research Interests</a></li>
+              <li><a href="#selected-projects">Selected Research Projects</a></li>
+              <li><a href="#publications">Publications</a></li>
+              <li><a href="#funding">Research Funding</a></li>
+              <li><a href="#res-talks">Talks &amp; Presentations</a></li>
+              <li><a href="#res-code">Research Software</a></li>
+            </ul>
+          </details>
+        </li>
+        <li><a href="#teaching">Teaching &amp; Service</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <details class="mobile-navigation">
+      <summary>Menu</summary>
+      <nav aria-label="Mobile navigation">
+        <ul class="sb-nav">
+          <li><a href="#bio">Bio</a></li>
+          <li><a href="#news">News</a></li>
+          <li><a href="#awards">Awards</a></li>
+          <li class="sb-research-item">
+            <a href="#research">Research</a>
+            <details class="research-menu" data-research-menu>
+              <summary aria-label="Research subsections"><span aria-hidden="true">▸</span></summary>
+              <ul class="sb-subnav">
+                <li><a href="#research-interests">Research Interests</a></li>
+                <li><a href="#selected-projects">Selected Research Projects</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#funding">Research Funding</a></li>
+                <li><a href="#res-talks">Talks &amp; Presentations</a></li>
+                <li><a href="#res-code">Research Software</a></li>
+              </ul>
+            </details>
+          </li>
+          <li><a href="#teaching">Teaching &amp; Service</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
-      </li>
-      <li><a href="#teaching">Teaching</a></li>
-    <li><a href="#service">Service</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+      </nav>
+    </details>
 
     <div class="sb-socials">
       <a href="mailto:vkhatana@illinois.edu" title="Email">
@@ -133,7 +159,6 @@
   <!-- CONTENT -->
   <main id="content">
 
-    <!-- BIO -->
     <article class="section" id="bio">
       <p class="section-heading">About</p>
       <h2>Bio</h2>
@@ -159,55 +184,105 @@
             Curriculum Vitae
           </a>
 
-          <button class="speaker-toggle" onclick="toggleSpeakerBio(this)" aria-expanded="false">
-            <i class="arrow">▶</i> Speaker bio
-          </button>
-          <div id="speaker-bio-text" aria-hidden="true">
+          <details class="speaker-bio">
+            <summary class="speaker-toggle">Speaker bio</summary>
+            <div id="speaker-bio-text">
             <p>Vivek Khatana is a Postdoctoral Scholar in the <a href="https://www.unr.edu/me" target="_blank">Department of Mechanical Engineering, University of Nevada, Reno</a>, and a Research Affiliate at the <a href="https://aviate.illinois.edu/" target="_blank">AVIATE Center, University of Illinois Urbana-Champaign</a>. He develops mathematical and algorithmic foundations for intelligent, safe, and resilient physical systems, drawing on distributed optimization, control theory, and machine learning. His research seeks to enable autonomous systems to reason, learn, and coordinate under uncertainty while maintaining verifiable safety, feasibility, and performance guarantees. Applications of his work span robotics, autonomous mobility, energy systems, and critical infrastructure.</p>
             <p>He received his Ph.D. in Electrical Engineering with a minor in Mathematics (2025) and his M.S. in Electrical and Computer Engineering (2020) from the <a href="https://twin-cities.umn.edu/" target="_blank">University of Minnesota Twin Cities</a>, and his B.Tech. in Electrical Engineering from the <strong>Indian Institute of Technology Roorkee</strong> (2018). He received the <strong>Distinguished Dissertation Award (Honorable Mention)</strong> from the University of Minnesota (2026). He was honored with the <strong>Teaching Assistant Award</strong> at UMN (2021), and the <strong>Undergraduate Research Award</strong> from IIT Roorkee (2016). He is a recipient of the <strong>Kishor Vagyanik Protsahan Yojana Fellowship</strong> from the Government of India (2013). He is a member of the IEEE Control Systems Society, Power &amp; Energy Society, and Robotics and Automation Society, and the INFORMS Optimization Society and Decision Analysis Society.</p>
-          </div>
+            </div>
+          </details>
         </div>
 
       </div>
     </article>
 
-    <!-- RESEARCH -->
+    <article class="section" id="news">
+      <p class="section-heading">Updates</p>
+      <h2>News</h2>
+      <p class="research-intro"><a href="#awards">Awards</a> &nbsp;·&nbsp; <a href="#funding">Research Funding</a></p>
+      <ul class="news-list">
+        <li><span class="news-date">2026</span><span>Received the <strong>Distinguished Dissertation Award (Honorable Mention)</strong> from the University of Minnesota.</span></li>
+        <li><span class="news-date">2026</span><span>Contributed to proposal conception, mathematical formulation, and learning algorithm development for <strong>NSF Future CoRe: Performativity-Aware Intelligent Autonomous Systems (PIAS)</strong>, awarded in 2026.</span></li>
+        <li><span class="news-date">2026</span><span>Gave a lightning talk at <strong>IEEE/RSJ IROS 2026</strong>, with two workshop papers on multi-robot planning and distributionally robust covariance steering.</span></li>
+        <li><span class="news-date">2026</span><span>Presented at the <a href="https://allerton.csl.illinois.edu/" target="_blank">Allerton Conference on Communication, Control, and Computing</a>.</span></li>
+        <li><span class="news-date">2026</span><span>Organized the <strong>NASA ULI Annual Review</strong> at <a href="https://aviate.illinois.edu/" target="_blank">AVIATE, University of Illinois Urbana-Champaign</a>, developing the technical program and coordinating stakeholder engagement and logistics.</span></li>
+        <li><span class="news-date">2026</span><span>Serving as <strong>Session Co-Chair</strong> for the "Large-Scale Systems" session at the <a href="https://acc2026.a2c2.org/" target="_blank">2026 IEEE American Control Conference</a>.</span></li>
+      </ul>
+      <details class="content-disclosure news-archive" id="older-news">
+        <summary><span class="when-closed">Show Older News</span><span class="when-open">Hide Older News</span> (15)</summary>
+        <ul class="news-list">
+        <li><span class="news-date">2026</span><span>Presented a poster and gave a lightning talk on <em>"Architectures for Resilient, Safe and Predictable Autonomy"</em> at the <a href="https://sites.google.com/view/mwcgt" target="_blank">12th Midwest Workshop on Control and Game Theory</a>.</span></li>
+        <li><span class="news-date">2026</span><span>Paper on networked control and mean field problems under diagonal dominance accepted at <strong>The 2026 IEEE American Control Conference</strong>.</span></li>
+        <li><span class="news-date">2025</span><span>Presented at the <a href="https://allerton.csl.illinois.edu/" target="_blank">Allerton Conference on Communication, Control, and Computing</a>.</span></li>
+        <li><span class="news-date">2025</span><span>Paper on Wasserstein distributionally robust adaptive covariance steering accepted at <strong>64th IEEE CDC 2025</strong>.</span></li>
+        <li><span class="news-date">2025</span><span>Started as a <strong>Volunteer Member</strong> of the <a href="https://www.nationalpostdoc.org/" target="_blank">National Postdoctoral Association</a>.</span></li>
+        <li><span class="news-date">Feb 2025</span><span>Joined as Postdoctoral Scholar in the <a href="https://www.unr.edu/me" target="_blank">Department of Mechanical Engineering, University of Nevada, Reno</a>, and as Research Affiliate at <a href="https://aviate.illinois.edu/" target="_blank">AVIATE, University of Illinois Urbana-Champaign</a>.</span></li>
+        <li><span class="news-date">Jan 2025</span><span>Successfully defended PhD thesis: <em>"Balancing Information Mixing and Optimality: A Framework for Robust and Efficient Distributed Decision-Making"</em> at <a href="https://cse.umn.edu/ece" target="_blank">ECE, University of Minnesota Twin Cities</a>.</span></li>
+        <li><span class="news-date">2024</span><span>Received the <strong>Alumni Recognition Award</strong> from the Department of Electrical Engineering, IIT Roorkee.</span></li>
+        <li><span class="news-date">Nov 2024</span><span>Presented two papers on distributed control and cyber-secured operation of inverter-based DERs at <a href="https://www.iecon-2024.org/" target="_blank">IECON 2024</a>.</span></li>
+        <li><span class="news-date">Oct 2024</span><span>Invited session talk at the <a href="https://meetings.informs.org/wordpress/seattle2024/" target="_blank">2024 INFORMS Annual Meeting</a>, Seattle — data-enabled decision-making in energy systems and markets.</span></li>
+        <li><span class="news-date">Aug 2024</span><span>Two papers accepted at <a href="https://allerton.csl.illinois.edu/" target="_blank">Allerton 2024</a> on distributed difference-of-convex optimization and data-driven predictive control in networked systems.</span></li>
+        <li><span class="news-date">May 2024</span><span>Lightning talk and poster at the <a href="https://midwest-ml.org/2024/" target="_blank">Midwest Machine Learning Symposium</a> on distributed training of ML models.</span></li>
+        <li><span class="news-date">Apr 2024</span><span>Lightning talk at the <a href="https://mwcgt2024.northwestern.edu/" target="_blank">10th Midwest Workshop on Control and Game Theory</a>.</span></li>
+        <li><span class="news-date">Feb 2024</span><span>Gave a guest seminar at the Dept. of Electrical Engineering, <a href="https://iitr.ac.in/" target="_blank">IIT Roorkee</a> on distributed decision-making frameworks.</span></li>
+        <li><span class="news-date">2023</span><span>Contributed to proposal conception, mathematical formulation, and distributed control algorithm development for <strong>ARPA-E OPEN: The Dynamic, Resilient Hybrid Grid</strong>, awarded in 2023.</span></li>
+        </ul>
+      </details>
+    </article>
+
+    <article class="section" id="awards">
+      <span class="anchor-alias" id="honors"></span>
+
+      <p class="section-heading">Recognition</p>
+      <h2>Awards</h2>
+      <ul class="news-list">
+        <li><span class="news-date">2026</span><span><strong>Distinguished Dissertation Award (Honorable Mention)</strong> — University of Minnesota.</span></li>
+        <li><span class="news-date">2024</span><span><strong>Alumni Recognition Award</strong> — Department of Electrical Engineering, IIT Roorkee.</span></li>
+        <li><span class="news-date">2021</span><span><strong>Teaching Assistant Award</strong> — University of Minnesota Twin Cities.</span></li>
+        <li><span class="news-date">2016</span><span><strong>Undergraduate Research Award</strong> — Indian Institute of Technology Roorkee.</span></li>
+        <li><span class="news-date">2013</span><span><strong>Kishore Vaigyanik Protsahan Yojana (KVPY) Fellowship</strong> — Government of India.</span></li>
+      </ul>
+    </article>
+
     <article class="section" id="research">
       <p class="section-heading">Research Vision</p>
       <h2>Research</h2>
+      <section class="academic-subsection" id="research-interests">
+        <h3 class="subsection-heading">Research Interests</h3>
       <p class="research-intro">My research asks how interconnected physical systems can learn, coordinate, and act reliably under uncertainty. I combine distributed optimization, control theory, and machine learning to study verifiable safety, feasibility, and performance across robotics, autonomous mobility, energy systems, and critical infrastructure.</p>
       <div class="research-cards">
         <div class="r-card">
           <div class="r-card-icon">⚙️</div>
           <div>
-            <h3 class="r-card-title">Distributed Optimization and Networked Intelligence</h3>
+            <h4 class="r-card-title">Distributed Optimization and Networked Intelligence</h4>
             <p class="r-card-desc">I study how agents coordinate decisions over directed networks with limited communication. My work spans consensus, distributed and decentralized optimization, and networked control, including nonconvex, difference-of-convex, and federated learning formulations and finite-time feasibility and optimality certificates.</p>
           </div>
         </div>
         <div class="r-card">
           <div class="r-card-icon">🛡️</div>
           <div>
-            <h3 class="r-card-title">Safe and Adaptive Autonomy Under Uncertainty</h3>
+            <h4 class="r-card-title">Safe and Adaptive Autonomy Under Uncertainty</h4>
             <p class="r-card-desc">I study how autonomous systems maintain safety as uncertainty and models change. My work combines stochastic, distributionally robust, model predictive, and adaptive control, including Wasserstein ambiguity sets and L1-adaptive architectures.</p>
           </div>
         </div>
         <div class="r-card">
           <div class="r-card-icon">🤖</div>
           <div>
-            <h3 class="r-card-title">Learning-Enabled Autonomy and Collective Physical AI</h3>
+            <h4 class="r-card-title">Learning-Enabled Autonomy and Collective Physical AI</h4>
             <p class="r-card-desc">I study how learning supports reliable collective autonomy. My work connects data-driven modeling, online learning, and learning–control co-design to the coordination of heterogeneous agents in robotics and autonomous mobility.</p>
           </div>
         </div>
         <div class="r-card">
           <div class="r-card-icon">⚡</div>
           <div>
-            <h3 class="r-card-title">Resilient Energy and Critical Infrastructure</h3>
+            <h4 class="r-card-title">Resilient Energy and Critical Infrastructure</h4>
             <p class="r-card-desc">I study how interconnected infrastructure sustains critical services under uncertainty. My work addresses distributed control of microgrids and virtual power plants, storage planning, risk sharing, and resilient coordination of distributed energy resources.</p>
           </div>
         </div>
       </div>
-      <div class="resources-group" id="selected-projects">
-        <h3 class="pub-year-label">Selected Research Projects</h3>
+      </section>
+      <section class="academic-subsection" id="selected-projects">
+        <h3 class="subsection-heading">Selected Research Projects</h3>
         <div class="project-filter-tools" hidden>
           <div class="project-filters" role="group" aria-label="Filter research projects by category">
             <button class="project-filter" type="button" data-project-filter="all" aria-pressed="true" aria-controls="selected-project-gallery">All</button>
@@ -336,20 +411,17 @@
             tools.hidden = false;
           })();
         </script>
-      </div>
-    </article>
-
-    <!-- PUBLICATIONS -->
-    <article class="section" id="publications">
-      <div class="pub-meta">
+      </section>
+      <section class="academic-subsection" id="publications">
+        <div class="pub-meta">
         <div>
-          <p class="section-heading">Scholarly Work</p>
-          <h2 style="margin-bottom:0">Publications</h2>
+
+          <h3 class="subsection-heading">Publications</h3>
         </div>
         <a class="pub-scholar-link" href="https://scholar.google.com/citations?hl=en&user=l1BYDI0AAAAJ&view_op=list_works" target="_blank">Full list on Google Scholar ↗</a>
       </div>
 
-      <div class="pub-year-label">Peer-Reviewed Journal Articles</div>
+      <h4 class="pub-year-label">Peer-Reviewed Journal Articles</h4>
       <ul class="pub-list">
         <li><span class="me">V. Khatana</span>, G. Saraswat, S. Patel, and M. V. Salapaka, "GradConsensus: Linearly convergent algorithm for reducing disagreement in multi-agent optimization." <em>IEEE Trans. Network Science and Engineering</em>, vol. 11, no. 1, pp. 1251–1264, 2024 (issue year). <span class="pub-badge badge-j">Journal</span> <a href="https://doi.org/10.1109/TNSE.2023.3321757" target="_blank">doi ↗</a></li>
         <li>J. Melbourne, G. Saraswat, <span class="me">V. Khatana</span>, S. Patel, and M. V. Salapaka, "Convex decreasing algorithms: Distributed synthesis and finite-time termination in higher dimension." <em>IEEE Trans. Automatic Control</em>, vol. 69, no. 6, pp. 3960–3967, 2024 (issue year). <span class="pub-badge badge-j">Journal</span> <a href="https://doi.org/10.1109/TAC.2023.3344721" target="_blank">doi ↗</a></li>
@@ -359,19 +431,19 @@
         <li>G. Saraswat, <span class="me">V. Khatana</span>, S. Patel, and M. V. Salapaka, "Distributed finite-time termination for consensus algorithm in switching topologies." <em>IEEE Trans. Network Science and Engineering</em>, vol. 10, no. 1, pp. 489–499, 2023 (issue year). <span class="pub-badge badge-j">Journal</span> <a href="https://doi.org/10.1109/TNSE.2022.3216286" target="_blank">doi ↗</a></li>
       </ul>
 
-      <div class="pub-year-label">Peer-Reviewed Conference Articles — 2026</div>
+      <h4 class="pub-year-label">Peer-Reviewed Conference Articles — 2026</h4>
       <ul class="pub-list">
         <li><span class="me">V. Khatana</span>, S. Chakraborty, and M. V. Salapaka, "Large-signal stability analysis of optimization-based secondary control for distributed energy resources." <em>62nd Annual Allerton Conference on Communication, Control, and Computing</em>, 2026. <span class="pub-badge badge-c">Conf</span></li>
         <li><span class="me">V. Khatana</span>, D. Wang, P. Voulgaris, N. Elia, and N. Hovakimyan, "Networked control and mean field problems under diagonal dominance: Decentralized and social optimality." <em>2026 IEEE American Control Conference (ACC)</em>, 2026. <span class="pub-badge badge-c">Conf</span></li>
       </ul>
 
-      <div class="pub-year-label">Peer-Reviewed Conference Articles — 2025</div>
+      <h4 class="pub-year-label">Peer-Reviewed Conference Articles — 2025</h4>
       <ul class="pub-list">
         <li>A. Dey, <span class="me">V. Khatana</span>, A. Mani, and M. V. Salapaka, "Risk sharing among microgrids: Connectivity requirements and optimal control." <em>61st Allerton Conference on Communication, Control, and Computing</em>, 2025. <span class="pub-badge badge-c">Conf</span></li>
         <li>A. Gahlawat, <span class="me">V. Khatana</span>, D. Wang, S. H. Karumanchi, N. Hovakimyan, and P. Voulgaris, "Wasserstein distributionally robust adaptive covariance steering." <em>64th IEEE Conference on Decision and Control (CDC)</em>, 2025. <span class="pub-badge badge-c">Conf</span></li>
       </ul>
 
-      <div class="pub-year-label">Peer-Reviewed Conference Articles — 2024</div>
+      <h4 class="pub-year-label">Peer-Reviewed Conference Articles — 2024</h4>
       <ul class="pub-list">
         <li><span class="me">V. Khatana</span> and M. V. Salapaka, "Distributed difference of convex optimization." <em>60th Annual Allerton Conference on Communication, Control, and Computing</em>, 2024. <span class="pub-badge badge-c">Conf</span></li>
         <li><span class="me">V. Khatana</span>, C.-Y. Chang, and W. Wang, "Adaptive online model update algorithm for predictive control in networked systems." <em>60th Annual Allerton Conference on Communication, Control, and Computing</em>, 2024. <span class="pub-badge badge-c">Conf</span></li>
@@ -380,13 +452,13 @@
         <li>A. Dey, <span class="me">V. Khatana</span>, A. Mani, and M. V. Salapaka, "Guaranteeing service in connected microgrids: Storage planning and optimal power sharing policy." <em>IEEE American Control Conference</em>, 2024. <span class="pub-badge badge-c">Conf</span></li>
       </ul>
 
-      <div class="pub-year-label">Peer-Reviewed Conference Articles — 2022</div>
+      <h4 class="pub-year-label">Peer-Reviewed Conference Articles — 2022</h4>
       <ul class="pub-list">
         <li><span class="me">V. Khatana</span>, S. Chakraborty, G. Saraswat, B. Lundstrom, and M. V. Salapaka, "Evaluation of horizon of viability optimization engine for sustained power to critical infrastructure." <em>IEEE Power and Energy Conference at Illinois (PECI)</em>, 2022, pp. 1–8. <span class="pub-badge badge-c">Conf</span></li>
         <li>J. Wang, S. Chakraborty, <span class="me">V. Khatana</span>, B. Lundstrom, G. Saraswat, and M. Salapaka, "Evaluation of optimal net load management in microgrids using hardware-in-the-loop simulation." <em>IEEE Power &amp; Energy Society Innovative Smart Grid Technologies Conference (ISGT)</em>, 2022, pp. 1–5. <span class="pub-badge badge-c">Conf</span> <a href="https://doi.org/10.1109/ISGT50606.2022.9817515" target="_blank">doi ↗</a></li>
       </ul>
 
-      <div class="pub-year-label">Peer-Reviewed Conference Articles — 2020</div>
+      <h4 class="pub-year-label">Peer-Reviewed Conference Articles — 2020</h4>
       <ul class="pub-list">
         <li><span class="me">V. Khatana</span> and M. V. Salapaka, "D-DistADMM: A O(1/k) distributed ADMM for distributed optimization in directed graph topologies." <em>59th IEEE Conference on Decision and Control (CDC)</em>, 2020, pp. 2992–2997. <span class="pub-badge badge-c">Conf</span> <a href="https://doi.org/10.1109/CDC42340.2020.9304086" target="_blank">doi ↗</a></li>
         <li><span class="me">V. Khatana</span>, G. Saraswat, S. Patel, and M. V. Salapaka, "Gradient-Consensus method for distributed optimization in directed multi-agent networks." <em>IEEE American Control Conference (ACC)</em>, 2020, pp. 4689–4694. <span class="pub-badge badge-c">Conf</span> <a href="https://doi.org/10.23919/ACC45564.2020.9147544" target="_blank">doi ↗</a></li>
@@ -394,386 +466,116 @@
         <li>J. Melbourne, G. Saraswat, <span class="me">V. Khatana</span>, S. Patel, and M. V. Salapaka, "On the geometry of consensus algorithms with application to distributed termination in higher dimension." <em>IFAC-PapersOnLine</em>, vol. 53, no. 2, pp. 2951–2956, 21st IFAC World Congress, 2020. <span class="pub-badge badge-c">Conf</span> <a href="https://doi.org/10.1016/j.ifacol.2020.12.971" target="_blank">doi ↗</a></li>
       </ul>
 
-      <div class="pub-year-label">Peer-Reviewed Conference Articles — 2017</div>
+      <h4 class="pub-year-label">Peer-Reviewed Conference Articles — 2017</h4>
       <ul class="pub-list">
         <li><span class="me">V. Khatana</span> and R. Bhimasingu, "Review on three-phase PLLs for grid integration of renewable energy sources." <em>14th IEEE India Council International Conference (INDICON)</em>, 2017, pp. 1–6. <span class="pub-badge badge-c">Conf</span></li>
       </ul>
 
-      <div class="pub-year-label">Workshop Papers — 2026</div>
+      <h4 class="pub-year-label">Workshop Papers — 2026</h4>
       <ul class="pub-list">
         <li><span class="me">V. Khatana</span>, Z. Song, N. Hovakimyan, and P. Voulgaris, "Verifier-mediated multi-LLM coordination for multi-robot path planning." <em>Foundation Models in Multi-Robot Systems Workshop, IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</em>, 2026. <span class="pub-badge badge-c">Workshop</span></li>
         <li><span class="me">V. Khatana</span>, A. Gahlawat, N. Hovakimyan, and P. Voulgaris, "Distributionally robust adaptive iterative covariance steering for small-body proximity operations." <em>Space Exploration and Sustained Operations Beyond Earth Workshop, IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</em>, 2026. <span class="pub-badge badge-c">Workshop</span></li>
       </ul>
 
-      <div class="pub-year-label">Preprints</div>
+      <h4 class="pub-year-label">Preprints</h4>
       <ul class="pub-list">
         <li>A. Dey, <span class="me">V. Khatana</span>, A. Mani, and M. V. Salapaka, "Transactive framework for dynamic energy storage allocation for critical load management." 2021. <span class="pub-badge badge-p">arXiv</span> <a href="https://arxiv.org/abs/2101.05890" target="_blank">arXiv:2101.05890 ↗</a></li>
         <li>A. Dey, <span class="me">V. Khatana</span>, A. Mani, and M. V. Salapaka, "On Mitigating the Uncertainty in Renewable Generation in Distribution Microgrids." 2020. <span class="pub-badge badge-p">arXiv</span> <a href="https://arxiv.org/abs/2007.08641" target="_blank">arXiv:2007.08641 ↗</a></li>
       </ul>
 
-      <div class="pub-year-label">Manuscripts Under Review</div>
+      <h4 class="pub-year-label">Manuscripts Under Review</h4>
       <ul class="pub-list">
         <li>A. Dey, <span class="me">V. Khatana</span>, A. Mani, and M. V. Salapaka, "Optimal multi-microgrid feedback policies: Guaranteed demand fulfillment under renewable uncertainty." <em>Under Review, IEEE Transactions on Control of Network Systems.</em> <span class="pub-badge badge-p">Under Review</span></li>
         <li><span class="me">V. Khatana</span>, S. Chakraborty, and M. V. Salapaka, "Distributed control of inverter-interfaced virtual power plants: Design and stability guarantees." <em>Under Review, IEEE Transactions on Smart Grid.</em> <span class="pub-badge badge-p">Under Review</span></li>
       </ul>
 
-      <div class="pub-year-label">Manuscripts Under Preparation — Previously Listed</div>
+      <h4 class="pub-year-label">Manuscripts Under Preparation — Previously Listed</h4>
       <p class="research-intro">These manuscripts were previously listed in preparation; their current status remains to be confirmed.</p>
       <ul class="pub-list">
         <li><span class="me">V. Khatana</span>, A. Dey, A. Mani, and M. V. Salapaka, "Risk sharing among microgrids: Connectivity requirements and optimal control." <em>Previously listed for submission to INFORMS Operations Research.</em> <span class="pub-badge badge-p">Status to Confirm</span></li>
         <li><span class="me">V. Khatana</span> and P. Voulgaris, "Distributed difference of convex machine learning." <em>Previously listed for submission to IEEE Trans. Neural Networks and Learning Systems.</em> <span class="pub-badge badge-p">Status to Confirm</span></li>
         <li>A. Gahlawat, <span class="me">V. Khatana</span>, S. H. Karumanchi, N. Hovakimyan, and P. Voulgaris, "Wasserstein distributionally robust stochastic control with safety guarantees." <em>Previously listed for submission to IEEE Trans. Robotics.</em> <span class="pub-badge badge-p">Status to Confirm</span></li>
       </ul>
-
-    </article>
-
-    <!-- MEDIA -->
-    <article class="section" id="media">
-      <p class="section-heading">Talks &amp; Outreach</p>
-      <h2>Media</h2>
-      <p class="media-intro">Selected invited talks, conference presentations, and outreach. For a complete list see my <a href="https://scholar.google.com/citations?user=l1BYDI0AAAAJ&hl=en" target="_blank">Google Scholar</a> profile.</p>
-
-      <div class="media-grid">
-        <div class="media-card">
-          <div class="media-info">
-            <div class="media-type">Lightning Talk</div>
-            <div class="media-title">IROS 2026</div>
-            <div class="media-venue">IEEE/RSJ International Conference on Intelligent Robots and Systems · 2026</div>
-          </div>
-        </div>
-        <a class="media-card" href="https://aviate.illinois.edu/nasa-uli-annual-review-2026/" target="_blank" rel="noopener">
-          <div class="media-info">
-            <div class="media-type">Event Organization</div>
-            <div class="media-title">NASA ULI Annual Review</div>
-            <div class="media-venue">AVIATE Center, UIUC · 2026 · Event recordings, slides, and photo gallery</div>
-          </div>
-        </a>
-        <a class="media-card" href="https://allerton.csl.illinois.edu/" target="_blank" rel="noopener">
-          <div class="media-info">
-            <div class="media-type">Conference Presentation</div>
-            <div class="media-title">Allerton Conference Presentations</div>
-            <div class="media-venue">Allerton Conference on Communication, Control, and Computing · 2025–2026 · Conference website</div>
-          </div>
-        </a>
-        <a class="media-card" href="#res-talks">
-          <div class="media-thumb"><div class="yt-placeholder"><div class="play-btn"><svg viewBox="0 0 24 24" fill="var(--accent)"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div></div>
-          <div class="media-info">
-            <div class="media-type">Conference Talk</div>
-            <div class="media-title">Networked Control and Mean Field Problems under Diagonal Dominance</div>
-            <div class="media-venue">IEEE American Control Conference (ACC) · 2026</div>
-          </div>
-        </a>
-        <a class="media-card" href="https://sites.google.com/view/mwcgt" target="_blank" rel="noopener">
-          <div class="media-thumb"><div class="yt-placeholder"><div class="play-btn"><svg viewBox="0 0 24 24" fill="var(--accent)"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div></div>
-          <div class="media-info">
-            <div class="media-type">Lightning Talk &amp; Poster</div>
-            <div class="media-title">Architectures for Resilient, Safe and Predictable Autonomy</div>
-            <div class="media-venue">12th Midwest Workshop on Control &amp; Game Theory · 2026</div>
-          </div>
-        </a>        
-        <a class="media-card" href="https://allerton.csl.illinois.edu/" target="_blank" rel="noopener">
-          <div class="media-thumb"><div class="yt-placeholder"><div class="play-btn"><svg viewBox="0 0 24 24" fill="var(--accent)"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div></div>
-          <div class="media-info">
-            <div class="media-type">Conference Talk</div>
-            <div class="media-title">Distributed Difference of Convex Optimization &amp; Adaptive Online Model Update</div>
-            <div class="media-venue">IEEE Annual Allerton Conference · 2024</div>
-          </div>
-        </a>
-        <a class="media-card" href="https://meetings.informs.org/wordpress/seattle2024/" target="_blank" rel="noopener">
-          <div class="media-thumb"><div class="yt-placeholder"><div class="play-btn"><svg viewBox="0 0 24 24" fill="var(--accent)"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div></div>
-          <div class="media-info">
-            <div class="media-type">Invited Session Talk</div>
-            <div class="media-title">Data-Enabled Decision-Making in Energy Systems and Markets</div>
-            <div class="media-venue">INFORMS Annual Meeting, Seattle · Oct 2024</div>
-          </div>
-        </a>
-        <a class="media-card" href="https://midwest-ml.org/2024/" target="_blank" rel="noopener">
-          <div class="media-thumb"><div class="yt-placeholder"><div class="play-btn"><svg viewBox="0 0 24 24" fill="var(--accent)"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div></div>
-          <div class="media-info">
-            <div class="media-type">Lightning Talk &amp; Poster</div>
-            <div class="media-title">Distributed Training of Machine Learning Models</div>
-            <div class="media-venue">Midwest Machine Learning Symposium · 2024</div>
-          </div>
-        </a>
-        <a class="media-card" href="https://mwcgt2024.northwestern.edu/" target="_blank" rel="noopener">
-          <div class="media-thumb"><div class="yt-placeholder"><div class="play-btn"><svg viewBox="0 0 24 24" fill="var(--accent)"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div></div>
-          <div class="media-info">
-            <div class="media-type">Lightning Talk</div>
-            <div class="media-title">Algorithms for Agreement and Optimality in Networked Dynamical Systems</div>
-            <div class="media-venue">10th Midwest Workshop on Control &amp; Game Theory · 2024</div>
-          </div>
-        </a>
-        <a class="media-card" href="https://iitr.ac.in/Departments/Electrical%20Engineering%20Department/static/Activities/Announcements/Technical_Talk.pdf" target="_blank" rel="noopener">
-          <div class="media-thumb"><div class="yt-placeholder"><div class="play-btn"><svg viewBox="0 0 24 24" fill="var(--accent)"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div></div>
-          <div class="media-info">
-            <div class="media-type">Invited Guest Seminar</div>
-            <div class="media-title">Distributed Decision-Making in Networked Systems</div>
-            <div class="media-venue">IIT Roorkee, Dept. of Electrical Engineering · Feb 2024</div>
-          </div>
-        </a>
-      </div>
-    </article>
-
-    <!-- RESOURCES -->
-    <article class="section" id="resources">
-      <p class="section-heading">Materials &amp; Tools</p>
-      <h2>Resources</h2>
-
-      <!-- Talks & Slides -->
-      <div class="resources-group" id="res-talks">
-        <div class="resources-group-title">Talks &amp; Slides</div>
-        <ul class="resource-list">
-          <li>
-            <span class="resource-icon">📄</span>
-            <div class="resource-body">
-              <div class="resource-title">IROS 2026 Lightning Talk</div>
-              <div class="resource-desc">IEEE/RSJ International Conference on Intelligent Robots and Systems, 2026</div>
-            </div>
-            <span class="resource-tag">2026</span>
-          </li>
-          <li>
-            <span class="resource-icon">📄</span>
-            <div class="resource-body">
-              <div class="resource-title">Allerton Conference Presentation</div>
-              <div class="resource-desc">Allerton Conference on Communication, Control, and Computing, 2026</div>
-            </div>
-            <span class="resource-tag">2026</span>
-          </li>
-          <li>
-            <span class="resource-icon">📄</span>
-            <div class="resource-body">
-              <div class="resource-title">Allerton Conference Presentation</div>
-              <div class="resource-desc">Allerton Conference on Communication, Control, and Computing, 2025</div>
-            </div>
-            <span class="resource-tag">2025</span>
-          </li>
-          <li>
-            <span class="resource-icon">📄</span>
-            <div class="resource-body">
-              <div class="resource-title"><a href="https://aviate.illinois.edu/nasa-uli-annual-review-2026/" target="_blank" rel="noopener">NASA ULI Annual Review — Event Recordings and Slides</a></div>
-              <div class="resource-desc">AVIATE Center, University of Illinois Urbana-Champaign · Event organization, 2026</div>
-            </div>
-            <span class="resource-tag">2026</span>
-          </li>
-          <li>
-            <span class="resource-icon">📄</span>
-            <div class="resource-body">
-              <div class="resource-title">Networked Control and Mean Field Problems under Diagonal Dominance</div>
-              <div class="resource-desc">2026 IEEE American Control Conference (ACC) — Session co-chair talk on decentralized and social optimality</div>
-            </div>
-            <span class="resource-tag">2026</span>
-          </li>
-          <li>
-          <span class="resource-icon">📄</span>
-          <div class="resource-body">
-            <div class="resource-title">Architectures for Resilient, Safe and Predictable Autonomy</div>
-            <div class="resource-desc">Lightning talk &amp; poster · 12th Midwest Workshop on Control and Game Theory · 2026</div>
-          </div>
-          <span class="resource-tag">2026</span>
-          </li>
-          <li>
-            <span class="resource-icon">📄</span>
-            <div class="resource-body">
-              <div class="resource-title">Wasserstein Distributionally Robust Adaptive Covariance Steering</div>
-              <div class="resource-desc">64th IEEE Conference on Decision and Control (CDC), 2025</div>
-            </div>
-            <span class="resource-tag">2025</span>
-          </li>
-          <li>
-            <span class="resource-icon">📄</span>
-            <div class="resource-body">
-              <div class="resource-title">Distributed Difference of Convex Optimization</div>
-              <div class="resource-desc">60th Annual Allerton Conference on Communication, Control, and Computing, 2024</div>
-            </div>
-            <span class="resource-tag">2024</span>
-          </li>
-          <li>
-            <span class="resource-icon">📄</span>
-            <div class="resource-body">
-              <div class="resource-title">Adaptive Online Model Update Algorithm for Predictive Control in Networked Systems</div>
-              <div class="resource-desc">60th Annual Allerton Conference, 2024</div>
-            </div>
-            <span class="resource-tag">2024</span>
-          </li>
-          <li>
-            <span class="resource-icon">📄</span>
-            <div class="resource-body">
-              <div class="resource-title">Data-Enabled Decision-Making in Energy Systems and Markets</div>
-              <div class="resource-desc">INFORMS Annual Meeting, Invited Session, Seattle · Oct 2024</div>
-            </div>
-            <span class="resource-tag">2024</span>
-          </li>
-          <li>
-            <span class="resource-icon">📄</span>
-            <div class="resource-body">
-              <div class="resource-title">Distributed Training of Machine Learning Models — Lightning Talk</div>
-              <div class="resource-desc">Midwest Machine Learning Symposium, 2024</div>
-            </div>
-            <span class="resource-tag">2024</span>
-          </li>
-          <li>
-            <span class="resource-icon">📄</span>
-            <div class="resource-body">
-              <div class="resource-title">Algorithms for Agreement and Optimality in Networked Dynamical Systems</div>
-              <div class="resource-desc">10th Midwest Workshop on Control and Game Theory, Lightning Talk, 2024</div>
-            </div>
-            <span class="resource-tag">2024</span>
-          </li>
-          <li>
-            <span class="resource-icon">📄</span>
-            <div class="resource-body">
-              <div class="resource-title">Distributed Decision-Making in Networked Systems — IIT Roorkee Seminar Slides</div>
-              <div class="resource-desc">Guest Seminar, Dept. of Electrical Engineering, IIT Roorkee · Feb 2024</div>
-            </div>
-            <span class="resource-tag">2024</span>
-          </li>
-          <li>
-            <span class="resource-icon">📄</span>
-            <div class="resource-body">
-              <div class="resource-title">Evaluation of Horizon of Viability Optimization Engine for Sustained Power to Critical Infrastructure</div>
-              <div class="resource-desc">IEEE Power and Energy Conference at Illinois (PECI), 2022</div>
-            </div>
-            <span class="resource-tag">2022</span>
-          </li>
-          <li>
-            <span class="resource-icon">📄</span>
-            <div class="resource-body">
-              <div class="resource-title">D-DistADMM &amp; Gradient-Consensus for Distributed Optimization</div>
-              <div class="resource-desc">IEEE Conference on Decision and Control (CDC) &amp; IEEE American Control Conference (ACC), 2020</div>
-            </div>
-            <span class="resource-tag">2020</span>
-          </li>
+      </section>
+      <section class="academic-subsection" id="funding">
+        <h3 class="subsection-heading">Research Funding</h3>
+        <ul class="news-list compact-chronology">
+          <li><span class="news-date">Awarded 2026</span><div><strong>NSF Future CoRe: Performativity-Aware Intelligent Autonomous Systems (PIAS)</strong><p class="funding-role">Role: Contributor to proposal conception, mathematical formulation, and learning algorithm development for physical AI and robotic navigation.</p></div></li>
+          <li><span class="news-date">Awarded 2023</span><div><strong>ARPA-E OPEN: The Dynamic, Resilient Hybrid Grid</strong><p class="funding-role">Role: Contributor to proposal conception, mathematical formulation, and distributed control algorithm development for renewable energy-interfaced power inverters.</p></div></li>
         </ul>
-      </div>
-
-      <!-- Code & Datasets -->
-      <div class="resources-group" id="res-code">
-        <div class="resources-group-title">Open-Source Software</div>
+      </section>
+      <section class="academic-subsection" id="res-talks">
+        <span class="anchor-alias" id="media"></span><span class="anchor-alias" id="resources"></span>
+        <h3 class="subsection-heading">Talks &amp; Presentations</h3>
+        <p class="research-intro">Selected invited talks, conference presentations, and outreach. For a complete list see my <a href="https://scholar.google.com/citations?user=l1BYDI0AAAAJ&hl=en" target="_blank">Google Scholar</a> profile.</p>
+        <ul class="news-list presentation-list">
+          <li><span class="news-date">2026</span><div class="presentation-body"><div class="resource-title">IROS 2026 Lightning Talk</div><div class="resource-desc">IEEE/RSJ International Conference on Intelligent Robots and Systems, 2026</div></div></li>
+          <li><span class="news-date">2026</span><div class="presentation-body"><div class="resource-title">Allerton Conference Presentation</div><div class="resource-desc">Allerton Conference on Communication, Control, and Computing, 2026</div><div class="presentation-links"><a href="https://allerton.csl.illinois.edu/" target="_blank" rel="noopener">Conference website</a></div></div></li>
+          <li><span class="news-date">2026</span><div class="presentation-body"><div class="resource-title"><a href="https://aviate.illinois.edu/nasa-uli-annual-review-2026/" target="_blank" rel="noopener">NASA ULI Annual Review — Event Recordings and Slides</a></div><div class="resource-desc">AVIATE Center, University of Illinois Urbana-Champaign · Event organization, 2026 · Event recordings, slides, and photo gallery</div></div></li>
+          <li><span class="news-date">2026</span><div class="presentation-body"><div class="resource-title">Networked Control and Mean Field Problems under Diagonal Dominance</div><div class="resource-desc">2026 IEEE American Control Conference (ACC) — Session co-chair talk on decentralized and social optimality</div></div></li>
+          <li><span class="news-date">2026</span><div class="presentation-body"><div class="resource-title">Architectures for Resilient, Safe and Predictable Autonomy</div><div class="resource-desc">Lightning talk &amp; poster · 12th Midwest Workshop on Control and Game Theory · 2026</div><div class="presentation-links"><a href="https://sites.google.com/view/mwcgt" target="_blank" rel="noopener">Workshop website</a></div></div></li>
+          <li><span class="news-date">2025</span><div class="presentation-body"><div class="resource-title">Allerton Conference Presentation</div><div class="resource-desc">Allerton Conference on Communication, Control, and Computing, 2025</div><div class="presentation-links"><a href="https://allerton.csl.illinois.edu/" target="_blank" rel="noopener">Conference website</a></div></div></li>
+          <li><span class="news-date">2025</span><div class="presentation-body"><div class="resource-title">Wasserstein Distributionally Robust Adaptive Covariance Steering</div><div class="resource-desc">64th IEEE Conference on Decision and Control (CDC), 2025</div></div></li>
+          <li><span class="news-date">2024</span><div class="presentation-body"><div class="resource-title">Distributed Difference of Convex Optimization</div><div class="resource-desc">60th Annual Allerton Conference on Communication, Control, and Computing, 2024</div><div class="presentation-links"><a href="https://allerton.csl.illinois.edu/" target="_blank" rel="noopener">Conference website</a></div></div></li>
+          <li><span class="news-date">2024</span><div class="presentation-body"><div class="resource-title">Adaptive Online Model Update Algorithm for Predictive Control in Networked Systems</div><div class="resource-desc">60th Annual Allerton Conference, 2024</div><div class="presentation-links"><a href="https://allerton.csl.illinois.edu/" target="_blank" rel="noopener">Conference website</a></div></div></li>
+          <li><span class="news-date">2024</span><div class="presentation-body"><div class="resource-title">Data-Enabled Decision-Making in Energy Systems and Markets</div><div class="resource-desc">INFORMS Annual Meeting, Invited Session, Seattle · Oct 2024</div><div class="presentation-links"><a href="https://meetings.informs.org/wordpress/seattle2024/" target="_blank" rel="noopener">Meeting website</a></div></div></li>
+          <li><span class="news-date">2024</span><div class="presentation-body"><div class="resource-title">Distributed Training of Machine Learning Models — Lightning Talk</div><div class="resource-desc">Midwest Machine Learning Symposium, 2024 · Lightning talk &amp; poster</div><div class="presentation-links"><a href="https://midwest-ml.org/2024/" target="_blank" rel="noopener">Symposium website</a></div></div></li>
+          <li><span class="news-date">2024</span><div class="presentation-body"><div class="resource-title">Algorithms for Agreement and Optimality in Networked Dynamical Systems</div><div class="resource-desc">10th Midwest Workshop on Control and Game Theory, Lightning Talk, 2024</div><div class="presentation-links"><a href="https://mwcgt2024.northwestern.edu/" target="_blank" rel="noopener">Workshop website</a></div></div></li>
+          <li><span class="news-date">2024</span><div class="presentation-body"><div class="resource-title">Distributed Decision-Making in Networked Systems — IIT Roorkee Seminar Slides</div><div class="resource-desc">Guest Seminar, Dept. of Electrical Engineering, IIT Roorkee · Feb 2024</div><div class="presentation-links"><a href="https://iitr.ac.in/Departments/Electrical%20Engineering%20Department/static/Activities/Announcements/Technical_Talk.pdf" target="_blank" rel="noopener">Seminar announcement (PDF)</a></div></div></li>
+          <li><span class="news-date">2022</span><div class="presentation-body"><div class="resource-title">Evaluation of Horizon of Viability Optimization Engine for Sustained Power to Critical Infrastructure</div><div class="resource-desc">IEEE Power and Energy Conference at Illinois (PECI), 2022</div></div></li>
+          <li><span class="news-date">2020</span><div class="presentation-body"><div class="resource-title">D-DistADMM &amp; Gradient-Consensus for Distributed Optimization</div><div class="resource-desc">IEEE Conference on Decision and Control (CDC) &amp; IEEE American Control Conference (ACC), 2020</div></div></li>
+        </ul>
+      </section>
+      <section class="academic-subsection" id="res-code">
+        <h3 class="subsection-heading">Research Software</h3>
         <ul class="resource-list">
           <li>
-            <span class="resource-icon">💻</span>
             <div class="resource-body">
               <div class="resource-title"><a href="https://github.com/vivekkhatana/DC-DistADMM" target="_blank">DC-DistADMM</a></div>
               <div class="resource-desc">Implementation of Distributed Directed ADMM for constrained optimization over directed graphs (IEEE TAC 2022)</div>
             </div>
-            <span class="resource-tag">Code</span>
           </li>
           <li>
-            <span class="resource-icon">💻</span>
             <div class="resource-body">
               <div class="resource-title"><a href="https://github.com/vivekkhatana/GradConsensus" target="_blank">GradConsensus</a></div>
               <div class="resource-desc">Every-iterate feasible distributed optimization algorithm — linearly convergent gradient-consensus (IEEE TNSE 2023)</div>
             </div>
-            <span class="resource-tag">Code</span>
           </li>
           <li>
-            <span class="resource-icon">💻</span>
             <div class="resource-body">
               <div class="resource-title"><a href="https://github.com/vivekkhatana/NRPushSum" target="_blank">NRPushSum</a></div>
               <div class="resource-desc">First noise-resilient distributed consensus algorithm over directed communication networks (IEEE TSIPN 2023)</div>
             </div>
-            <span class="resource-tag">Code</span>
           </li>
           <li>
-            <span class="resource-icon">💻</span>
             <div class="resource-body">
               <div class="resource-title"><a href="https://github.com/vivekkhatana/Horizon_of_Viability_Engine" target="_blank">Horizon of Viability Engine</a></div>
               <div class="resource-desc">Integer optimization-based cost-optimal generation and load dispatch for sustained power delivery to critical infrastructure (DOE project)</div>
             </div>
-            <span class="resource-tag">Code</span>
           </li>
           <li>
-            <span class="resource-icon">💻</span>
             <div class="resource-body">
               <div class="resource-title"><a href="https://github.com/vivekkhatana/VPP_Primary_Node/tree/main/Primary_Node_Repo" target="_blank">Virtual Power Plant (Primary Node)</a></div>
               <div class="resource-title"><a href="https://github.com/vivekkhatana/VPP_Secondary_Node/tree/main/Secondary_Node_Repo" target="_blank">Virtual Power Plant (Secondary Node)</a></div>
               <div class="resource-desc">Distributed optimization engines for real-time coordination of distributed energy resources in virtual power plant architectures</div>
             </div>
-            <span class="resource-tag">Code</span>
           </li>
           <li>
-            <span class="resource-icon">💻</span>
             <div class="resource-body">
               <div class="resource-title"><a href="https://github.com/Cainiao1053Jr/Human-AI-Reasoning-for-Mission-planning-and-shared-autonomy" target="_blank">Human–AI Reasoning for Mission Planning and Shared Autonomy</a></div>
               <div class="resource-desc">Python framework for LLM-based mission planning and shared autonomy in multi-agent systems; co-developed with Zijian Song at UIUC</div>
             </div>
-            <span class="resource-tag">Code</span>
           </li>
         </ul>
-      </div>
+      </section>
     </article>
 
-    <!-- NEWS -->
-    <article class="section" id="news">
-      <p class="section-heading">Updates</p>
-      <h2>News</h2>
-      <p class="research-intro"><a href="#honors">Honors and Awards</a> &nbsp;·&nbsp; <a href="#funding">Research Funding</a></p>
-      <ul class="news-list">
-        <li><span class="news-date">2026</span><span>Received the <strong>Distinguished Dissertation Award (Honorable Mention)</strong> from the University of Minnesota.</span></li>
-        <li><span class="news-date">2026</span><span>Contributed to proposal conception, mathematical formulation, and learning algorithm development for <strong>NSF Future CoRe: Performativity-Aware Intelligent Autonomous Systems (PIAS)</strong>, awarded in 2026.</span></li>
-        <li><span class="news-date">2026</span><span>Gave a lightning talk at <strong>IEEE/RSJ IROS 2026</strong>, with two workshop papers on multi-robot planning and distributionally robust covariance steering.</span></li>
-        <li><span class="news-date">2026</span><span>Presented at the <a href="https://allerton.csl.illinois.edu/" target="_blank">Allerton Conference on Communication, Control, and Computing</a>.</span></li>
-        <li><span class="news-date">2026</span><span>Organized the <strong>NASA ULI Annual Review</strong> at <a href="https://aviate.illinois.edu/" target="_blank">AVIATE, University of Illinois Urbana-Champaign</a>, developing the technical program and coordinating stakeholder engagement and logistics.</span></li>
-        <li><span class="news-date">2026</span><span>Serving as <strong>Session Co-Chair</strong> for the "Large-Scale Systems" session at the <a href="https://acc2026.a2c2.org/" target="_blank">2026 IEEE American Control Conference</a>.</span></li>
-        <li><span class="news-date">2026</span><span>Presented a poster and gave a lightning talk on <em>"Architectures for Resilient, Safe and Predictable Autonomy"</em> at the <a href="https://sites.google.com/view/mwcgt" target="_blank">12th Midwest Workshop on Control and Game Theory</a>.</span></li>
-        <li><span class="news-date">2026</span><span>Paper on networked control and mean field problems under diagonal dominance accepted at <strong>The 2026 IEEE American Control Conference</strong>.</span></li>
-        <li><span class="news-date">2025</span><span>Presented at the <a href="https://allerton.csl.illinois.edu/" target="_blank">Allerton Conference on Communication, Control, and Computing</a>.</span></li>
-        <li><span class="news-date">2025</span><span>Paper on Wasserstein distributionally robust adaptive covariance steering accepted at <strong>64th IEEE CDC 2025</strong>.</span></li>
-        <li><span class="news-date">2025</span><span>Started as a <strong>Volunteer Member</strong> of the <a href="https://www.nationalpostdoc.org/" target="_blank">National Postdoctoral Association</a>.</span></li>
-        <li><span class="news-date">Feb 2025</span><span>Joined as Postdoctoral Scholar in the <a href="https://www.unr.edu/me" target="_blank">Department of Mechanical Engineering, University of Nevada, Reno</a>, and as Research Affiliate at <a href="https://aviate.illinois.edu/" target="_blank">AVIATE, University of Illinois Urbana-Champaign</a>.</span></li>
-        <li><span class="news-date">Jan 2025</span><span>Successfully defended PhD thesis: <em>"Balancing Information Mixing and Optimality: A Framework for Robust and Efficient Distributed Decision-Making"</em> at <a href="https://cse.umn.edu/ece" target="_blank">ECE, University of Minnesota Twin Cities</a>.</span></li>
-        <li><span class="news-date">2024</span><span>Received the <strong>Alumni Recognition Award</strong> from the Department of Electrical Engineering, IIT Roorkee.</span></li>
-        <li><span class="news-date">Nov 2024</span><span>Presented two papers on distributed control and cyber-secured operation of inverter-based DERs at <a href="https://www.iecon-2024.org/" target="_blank">IECON 2024</a>.</span></li>
-        <li><span class="news-date">Oct 2024</span><span>Invited session talk at the <a href="https://meetings.informs.org/wordpress/seattle2024/" target="_blank">2024 INFORMS Annual Meeting</a>, Seattle — data-enabled decision-making in energy systems and markets.</span></li>
-        <li><span class="news-date">Aug 2024</span><span>Two papers accepted at <a href="https://allerton.csl.illinois.edu/" target="_blank">Allerton 2024</a> on distributed difference-of-convex optimization and data-driven predictive control in networked systems.</span></li>
-        <li><span class="news-date">May 2024</span><span>Lightning talk and poster at the <a href="https://midwest-ml.org/2024/" target="_blank">Midwest Machine Learning Symposium</a> on distributed training of ML models.</span></li>
-        <li><span class="news-date">Apr 2024</span><span>Lightning talk at the <a href="https://mwcgt2024.northwestern.edu/" target="_blank">10th Midwest Workshop on Control and Game Theory</a>.</span></li>
-        <li><span class="news-date">Feb 2024</span><span>Gave a guest seminar at the Dept. of Electrical Engineering, <a href="https://iitr.ac.in/" target="_blank">IIT Roorkee</a> on distributed decision-making frameworks.</span></li>
-        <li><span class="news-date">2023</span><span>Contributed to proposal conception, mathematical formulation, and distributed control algorithm development for <strong>ARPA-E OPEN: The Dynamic, Resilient Hybrid Grid</strong>, awarded in 2023.</span></li>
-      </ul>
-    </article>
-
-    <!-- HONORS AND AWARDS -->
-    <article class="section" id="honors">
-      <p class="section-heading">Recognition</p>
-      <h2>Honors and Awards</h2>
-      <ul class="news-list">
-        <li><span class="news-date">2026</span><span><strong>Distinguished Dissertation Award (Honorable Mention)</strong> — University of Minnesota.</span></li>
-        <li><span class="news-date">2024</span><span><strong>Alumni Recognition Award</strong> — Department of Electrical Engineering, IIT Roorkee.</span></li>
-        <li><span class="news-date">2021</span><span><strong>Teaching Assistant Award</strong> — University of Minnesota Twin Cities.</span></li>
-        <li><span class="news-date">2016</span><span><strong>Undergraduate Research Award</strong> — Indian Institute of Technology Roorkee.</span></li>
-        <li><span class="news-date">2013</span><span><strong>Kishore Vaigyanik Protsahan Yojana (KVPY) Fellowship</strong> — Government of India.</span></li>
-      </ul>
-    </article>
-
-    <!-- RESEARCH FUNDING -->
-    <article class="section" id="funding">
-      <p class="section-heading">Awarded Projects</p>
-      <h2>Research Funding</h2>
-      <ul class="resource-list">
-        <li>
-          <div class="resource-body">
-            <div class="resource-title">NSF Future CoRe: Performativity-Aware Intelligent Autonomous Systems (PIAS)</div>
-            <div class="resource-desc">Role: Contributor to proposal conception, mathematical formulation, and learning algorithm development for physical AI and robotic navigation.</div>
-          </div>
-          <span class="resource-tag">Awarded 2026</span>
-        </li>
-        <li>
-          <div class="resource-body">
-            <div class="resource-title">ARPA-E OPEN: The Dynamic, Resilient Hybrid Grid</div>
-            <div class="resource-desc">Role: Contributor to proposal conception, mathematical formulation, and distributed control algorithm development for renewable energy-interfaced power inverters.</div>
-          </div>
-          <span class="resource-tag">Awarded 2023</span>
-        </li>
-      </ul>
-    </article>
-
-    <!-- TEACHING -->
     <article class="section" id="teaching">
-      <p class="section-heading">Academic Service</p>
-      <h2>Teaching</h2>
-
-      <p style="font-size:0.93rem;color:var(--body);margin-bottom:1.1rem;">I am deeply committed to student success and creating inclusive, intellectually stimulating learning environments. My teaching philosophy centers on developing critical thinkers who understand the real-world impact of their engineering work. To me, effective teaching goes beyond simply delivering content — it’s about fostering curiosity, clarity, and confidence. I currently mentor <strong>graduate and undergraduate</strong> students at UIUC in robotics, AI-enabled safe control, and energy systems.</p>
+      <p class="section-heading">Academic Community</p>
+      <h2>Teaching &amp; Service</h2>
+      <section class="academic-subsection" id="teaching-experience">
+        <h3 class="subsection-heading">Teaching Experience</h3>
+<p style="font-size:0.93rem;color:var(--body);margin-bottom:1.1rem;">I am deeply committed to student success and creating inclusive, intellectually stimulating learning environments. My teaching philosophy centers on developing critical thinkers who understand the real-world impact of their engineering work. To me, effective teaching goes beyond simply delivering content — it’s about fostering curiosity, clarity, and confidence. I currently mentor <strong>graduate and undergraduate</strong> students at UIUC in robotics, AI-enabled safe control, and energy systems.</p>
 
       <p style="font-size:0.82rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--faint);margin-bottom:0.6rem;">University of Minnesota Twin Cities — Laboratory Instructor</p>
       <ul class="teaching-list">
@@ -784,8 +586,15 @@
       </ul>
 
       <p class="research-intro">Laboratory instruction responsibilities included experimental demonstrations, student assessment, and technical guidance.</p>
+      <p class="teaching-note" style="margin-top:1.2rem;">
+        🏆 <strong>Teaching Assistant Award</strong> — jointly selected by students and faculty, ECE Dept., University of Minnesota Twin Cities, 2021.<br><br>
+        Selected student feedback: <em>"Vivek would ask us questions throughout the lab, making sure we were doing more than just following a recipe."</em> · <em>"He gave a lot of background knowledge regarding how things would behave in reality rather than mathematically."</em> · <em>"If it weren't for having such a great TA this lab would have been a nightmare. Instead, I learned a ton."</em>
+      </p>
+      </section>
+      <section class="academic-subsection" id="research-mentorship">
+        <h3 class="subsection-heading">Research Mentorship</h3>
+<p class="research-intro">University of Illinois Urbana-Champaign</p>
 
-      <p class="resources-group-title">Research Mentorship — University of Illinois Urbana-Champaign</p>
       <ul class="resource-list">
         <li><div class="resource-body">
           <div class="resource-title">8 Ph.D. students · 2025–present</div>
@@ -807,17 +616,10 @@
         <li><span class="t-code" style="min-width:90px;">UMN</span><span class="t-name">Graduate Student Mentorship Program, ECE Dept. (2023)</span></li>
         <li><span class="t-code" style="min-width:90px;">IIT Roorkee</span><span class="t-name">Student Mentorship Program, undergraduate research mentoring (2016–2018)</span></li>
       </ul>
+      </section>
+      <section class="academic-subsection" id="service">
+        <h3 class="subsection-heading">Professional Service</h3>
 
-      <p class="teaching-note" style="margin-top:1.2rem;">
-        🏆 <strong>Teaching Assistant Award</strong> — jointly selected by students and faculty, ECE Dept., University of Minnesota Twin Cities, 2021.<br><br>
-        Selected student feedback: <em>"Vivek would ask us questions throughout the lab, making sure we were doing more than just following a recipe."</em> · <em>"He gave a lot of background knowledge regarding how things would behave in reality rather than mathematically."</em> · <em>"If it weren't for having such a great TA this lab would have been a nightmare. Instead, I learned a ton."</em>
-      </p>
-    </article>
-
-    <!-- PROFESSIONAL SERVICE -->
-    <article class="section" id="service">
-      <p class="section-heading">Academic Community</p>
-      <h2>Professional Service</h2>
       <ul class="news-list">
         <li><span class="news-date">2026</span><span><strong>Session Co-Chair, Large-Scale Systems</strong> — <a href="https://acc2026.a2c2.org/" target="_blank">American Control Conference (ACC)</a>.</span></li>
         <li><span class="news-date">2026</span><span><strong>Event Organizer, NASA ULI Annual Review</strong> — <a href="https://aviate.illinois.edu/nasa-uli-annual-review-2026/" target="_blank" rel="noopener">AVIATE Center, University of Illinois Urbana-Champaign</a>. Developed the technical program and coordinated stakeholder engagement and logistics for the two-day NASA–academia–industry research conclave.</span></li>
@@ -839,9 +641,9 @@
           <div class="resource-desc">AAAI Conference on Artificial Intelligence (AAAI); International Conference on Autonomous Agents and Multiagent Systems (AAMAS); IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS); American Control Conference (ACC); IEEE Conference on Decision and Control (CDC); IEEE Power and Energy Conference at Illinois (PECI).</div>
         </div></li>
       </ul>
+      </section>
     </article>
 
-    <!-- CONTACT -->
     <article class="section" id="contact">
       <p class="section-heading">Get in Touch</p>
       <h2>Contact</h2>
@@ -880,14 +682,6 @@
   Host free on <a href="https://pages.github.com" target="_blank">GitHub Pages</a>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  function toggleSpeakerBio(btn) {
-    const box = document.getElementById('speaker-bio-text');
-    const open = box.style.display === 'block';
-    box.style.display = open ? 'none' : 'block';
-    box.setAttribute('aria-hidden', open);
-    btn.setAttribute('aria-expanded', !open);
-    btn.classList.toggle('open', !open);
-  }
-
-  const sections = document.querySelectorAl
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+</body>
+</html>

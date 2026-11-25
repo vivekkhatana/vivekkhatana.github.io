@@ -291,3 +291,50 @@ local server. Add a gallery link only after the project and page are approved.
 Test keyboard skip/navigation/back links, all local assets, media fallbacks,
 small screens, reduced motion, and readability without JavaScript. Do not create
 the remaining project pages before prototype approval.
+
+## Consolidated navigation and content
+
+The homepage's six main sections are Bio, News, Awards, Research, Teaching &
+Service, and Contact, in that order. Landing, desktop, and mobile navigation use
+the same labels and destinations. Desktop Research has a separate native
+disclosure beside its main anchor; the compact mobile Menu uses the same research
+sub-navigation. Both remain manually usable without JavaScript.
+
+Research subsections, in order: `#research-interests`, `#selected-projects`,
+`#publications`, `#funding`, `#res-talks` (Talks & Presentations), and `#res-code`
+(Research Software). Keep `#selected-projects` intact for filtering, media,
+manifest keys and standalone project-page back links. The former `#honors` is an
+alias at Awards; `#media` and `#resources` are aliases at Talks & Presentations.
+Old URLs still reach meaningful destinations without redirects. Do not duplicate
+IDs when adding further compatibility anchors.
+
+`#teaching` now contains Teaching Experience (`#teaching-experience`), Research
+Mentorship (`#research-mentorship`) and Professional Service (`#service`). Keep
+teaching philosophy, courses, award/testimonials and mentoring/program records
+with their corresponding subsection when updating content.
+
+Keep exactly six most recent entries in News's first list; place all remaining
+items in the native Show Older News disclosure, preserving chronological order
+and the date precision actually known. Update its displayed count when adding or
+moving an item. Speaker bio is also a native disclosure, replacing the inherited
+broken toggle. Both controls work with keyboard and JavaScript disabled.
+
+Talks & Presentations is one chronological list merging the former Media and
+Talks & Slides records. It has 15 distinct entries after consolidation. Retain
+separate talks at the same conference and separate years. Attach each valid
+event, paper, recording, slide, poster or PDF link to its relevant entry; never
+use a play button for an event page or a placeholder for an unavailable URL.
+Software remains a separate list of six records (seven repository URLs).
+
+`scripts/site-navigation.js` opens Research sub-navigation for subsection hashes,
+including compatibility aliases and browser history, and opens ancestor native
+disclosures when a fragment targets their content. It supplements native anchors
+rather than intercepting navigation. Filtering and research media scripts retain
+their existing scope. The obsolete unfinished speaker script is removed and the
+document now has closing body/html tags; the pre-existing Cloudflare script URL
+is retained and still requires separate review of its local 404.
+
+Regression checks should compare external URL sets and academic content against
+the preceding commit, verify all old fragments and project back links, exercise
+native disclosures with/without JS and keyboard input, and check desktop/mobile
+navigation plus every project filter. Publication lists remain fully visible.
