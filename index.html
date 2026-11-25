@@ -413,6 +413,62 @@
     .r-card-title { font-size: 0.86rem; font-weight: 600; color: var(--ink); line-height: 1.4; }
     .r-card-desc { font-size: 0.8rem; color: var(--muted); margin-top: 0.2rem; line-height: 1.5; }
 
+    /* ── SELECTED RESEARCH PROJECTS ── */
+    #selected-projects .project-gallery { display: grid; gap: 1rem; }
+
+    #selected-projects .project-card {
+      display: grid;
+      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr);
+      align-items: start;
+      gap: 1.1rem;
+      padding: 1rem;
+      background: var(--white);
+      border: 1px solid var(--rule);
+      border-radius: var(--radius);
+    }
+
+    #selected-projects .project-card--text-only { grid-template-columns: 1fr; }
+    #selected-projects .project-content { min-width: 0; }
+    #selected-projects .project-media { min-width: 0; margin: 0; }
+    #selected-projects .project-media img,
+    #selected-projects .project-media video,
+    #selected-projects .project-media iframe { display: block; width: 100%; height: auto; border: 0; border-radius: var(--radius); }
+    #selected-projects .project-media iframe { aspect-ratio: 16/9; }
+    #selected-projects .project-media figcaption { margin-top: 0.4rem; font-size: 0.75rem; line-height: 1.5; color: var(--muted); }
+
+    #selected-projects .project-media-placeholder {
+      aspect-ratio: 4/3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 1rem;
+      border: 1px dashed var(--rule);
+      border-radius: var(--radius);
+      background: var(--off-white);
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.78rem;
+      line-height: 1.5;
+    }
+
+    #selected-projects .project-media-label { font-weight: 600; }
+    #selected-projects .project-title { font-size: 0.98rem; font-weight: 600; line-height: 1.45; color: var(--ink); margin-bottom: 0.5rem; overflow-wrap: anywhere; }
+    #selected-projects .project-description { font-size: 0.85rem; line-height: 1.65; color: var(--body); }
+    #selected-projects .project-status { margin: 0.65rem 0; font-size: 0.75rem; line-height: 1.5; color: var(--muted); }
+    #selected-projects .project-tags,
+    #selected-projects .project-links { display: flex; flex-wrap: wrap; gap: 0.35rem 0.65rem; list-style: none; }
+    #selected-projects .project-tags { margin: 0.65rem 0; }
+    #selected-projects .project-tags li { padding: 0.12rem 0.45rem; border-radius: 3px; background: var(--accent-lt); color: var(--accent); font-size: 0.68rem; font-weight: 600; line-height: 1.5; }
+    #selected-projects .project-links a { font-size: 0.78rem; font-weight: 600; }
+    #selected-projects .project-links a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+    @media (max-width: 960px) {
+      #selected-projects .project-card { grid-template-columns: 1fr; }
+      #selected-projects .project-media-placeholder { aspect-ratio: 16/9; }
+    }
+
     /* ── PUBLICATIONS ── */
     .pub-meta { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.3rem; flex-wrap: wrap; gap: 0.5rem; }
     .pub-scholar-link { font-size: 0.78rem; font-weight: 600; color: var(--accent); letter-spacing: 0.04em; }
@@ -928,7 +984,86 @@
       </div>
       <div class="resources-group" id="selected-projects">
         <h3 class="pub-year-label">Selected Research Projects</h3>
-        <p class="media-add-note">Project summaries, technical figures, and demonstrations are coming soon.</p>
+        <div class="project-gallery">
+          <article class="project-card" aria-labelledby="project-covariance-steering">
+            <div class="project-media project-media-placeholder" role="group" aria-label="Media placeholder for Wasserstein Distributionally Robust Adaptive Covariance Steering">
+              <p class="project-media-label">Development placeholder</p>
+              <p>Research figure or video pending.</p>
+            </div>
+            <div class="project-content">
+              <h4 class="project-title" id="project-covariance-steering">Wasserstein Distributionally Robust Adaptive Covariance Steering</h4>
+              <p class="project-description">Steering state distributions becomes difficult when dynamics and disturbances are uncertain. This work couples L1-adaptive control with Wasserstein distributional certificates to inform covariance-steering safety constraints.</p>
+              <p class="project-status">Published conference paper — IEEE CDC 2025.</p>
+              <ul class="project-tags" aria-label="Research categories"><li>Safe Autonomy</li><li>Adaptive Control</li><li>Stochastic Systems</li></ul>
+              <ul class="project-links" aria-label="Project resources"><li><a href="https://arxiv.org/abs/2509.04593" target="_blank" rel="noopener">arXiv</a></li></ul>
+            </div>
+          </article>
+          <article class="project-card" aria-labelledby="project-small-body-planning">
+            <div class="project-media project-media-placeholder" role="group" aria-label="Media placeholder for Distributionally Robust Planning for Small-Body Proximity Operations">
+              <p class="project-media-label">Development placeholder</p>
+              <p>Research figure or video pending.</p>
+            </div>
+            <div class="project-content">
+              <h4 class="project-title" id="project-small-body-planning">Distributionally Robust Planning for Small-Body Proximity Operations</h4>
+              <p class="project-description">Uncertain gravity and disturbances complicate spacecraft guidance near small bodies. This work combines iterative covariance steering with distributionally robust adaptive control for risk-aware collision avoidance under model mismatch.</p>
+              <p class="project-status">Workshop paper — Space Exploration and Sustained Operations Beyond Earth Workshop, IEEE/RSJ IROS 2026.</p>
+              <ul class="project-tags" aria-label="Research categories"><li>Safe Autonomy</li><li>Space Robotics</li><li>Robust Planning</li></ul>
+              <ul class="project-links" aria-label="Project resources"><li><a href="https://arxiv.org/abs/2610.12774" target="_blank" rel="noopener">arXiv</a></li></ul>
+            </div>
+          </article>
+          <article class="project-card" aria-labelledby="project-mean-field-control">
+            <div class="project-media project-media-placeholder" role="group" aria-label="Media placeholder for Networked Control and Mean-Field Optimality under Diagonal Dominance">
+              <p class="project-media-label">Development placeholder</p>
+              <p>Research figure or video pending.</p>
+            </div>
+            <div class="project-content">
+              <h4 class="project-title" id="project-mean-field-control">Networked Control and Mean-Field Optimality under Diagonal Dominance</h4>
+              <p class="project-description">Large populations of interacting agents can make centralized control impractical. This work studies when diagonal dominance allows decentralized control to approach social optimality in large, heterogeneous populations under the paper’s assumptions.</p>
+              <p class="project-status">Published conference paper — IEEE ACC 2026.</p>
+              <ul class="project-tags" aria-label="Research categories"><li>Networked Intelligence</li><li>Decentralized Control</li><li>Mean-Field Systems</li></ul>
+              <ul class="project-links" aria-label="Project resources"><li><a href="https://arxiv.org/abs/2510.01067" target="_blank" rel="noopener">arXiv</a></li></ul>
+            </div>
+          </article>
+          <article class="project-card" aria-labelledby="project-virtual-power-plants">
+            <div class="project-media project-media-placeholder" role="group" aria-label="Media placeholder for Distributed Control of Virtual Power Plants">
+              <p class="project-media-label">Development placeholder</p>
+              <p>Research figure or video pending.</p>
+            </div>
+            <div class="project-content">
+              <h4 class="project-title" id="project-virtual-power-plants">Distributed Control of Virtual Power Plants</h4>
+              <p class="project-description">Coordinating inverter-based energy resources requires decisions that respect local measurements and network interactions. Related published work develops optimization-based secondary control for voltage regulation and reactive power sharing in microgrids.</p>
+              <p class="project-status">Related published work — IEEE IECON 2024. Journal manuscript — IEEE Transactions on Smart Grid, under review.</p>
+              <ul class="project-tags" aria-label="Research categories"><li>Resilient Energy</li><li>Distributed Control</li><li>Microgrids</li></ul>
+              <ul class="project-links" aria-label="Project resources"><li><a href="https://arxiv.org/abs/2409.19866" target="_blank" rel="noopener">Related paper</a></li><li><a href="https://github.com/vivekkhatana/VPP_Primary_Node/tree/main/Primary_Node_Repo" target="_blank" rel="noopener">Primary-node code</a></li><li><a href="https://github.com/vivekkhatana/VPP_Secondary_Node/tree/main/Secondary_Node_Repo" target="_blank" rel="noopener">Secondary-node code</a></li></ul>
+            </div>
+          </article>
+          <article class="project-card" aria-labelledby="project-directed-optimization">
+            <div class="project-media project-media-placeholder" role="group" aria-label="Media placeholder for Distributed Optimization over Directed Communication Networks">
+              <p class="project-media-label">Development placeholder</p>
+              <p>Research figure or video pending.</p>
+            </div>
+            <div class="project-content">
+              <h4 class="project-title" id="project-directed-optimization">Distributed Optimization over Directed Communication Networks</h4>
+              <p class="project-description">Networked agents must optimize shared objectives without centralized coordination. DC-DistADMM and GradConsensus address constrained optimization over directed communication graphs, with attention to feasibility and convergence.</p>
+              <p class="project-status">Published journal articles — IEEE Transactions on Automatic Control, 2023; IEEE Transactions on Network Science and Engineering, 2024 (issue years).</p>
+              <ul class="project-tags" aria-label="Research categories"><li>Distributed Optimization</li><li>Directed Networks</li><li>Networked Intelligence</li></ul>
+              <ul class="project-links" aria-label="Project resources"><li><a href="https://doi.org/10.1109/TAC.2022.3221856" target="_blank" rel="noopener">DC-DistADMM paper</a></li><li><a href="https://doi.org/10.1109/TNSE.2023.3321757" target="_blank" rel="noopener">GradConsensus paper</a></li><li><a href="https://github.com/vivekkhatana/DC-DistADMM" target="_blank" rel="noopener">DC-DistADMM code</a></li><li><a href="https://github.com/vivekkhatana/GradConsensus" target="_blank" rel="noopener">GradConsensus code</a></li></ul>
+            </div>
+          </article>
+          <article class="project-card" aria-labelledby="project-microgrid-risk-sharing">
+            <div class="project-media project-media-placeholder" role="group" aria-label="Media placeholder for Risk Sharing in Interconnected Microgrids">
+              <p class="project-media-label">Development placeholder</p>
+              <p>Research figure or video pending.</p>
+            </div>
+            <div class="project-content">
+              <h4 class="project-title" id="project-microgrid-risk-sharing">Risk Sharing in Interconnected Microgrids</h4>
+              <p class="project-description">Renewable uncertainty creates a trade-off between local storage and power sharing. This work studies chance-constrained storage sizing and power-transfer policies, including how network connectivity and line capacity affect risk pooling.</p>
+              <p class="project-status">Published conference paper — 61st Allerton Conference on Communication, Control, and Computing, 2025.</p>
+              <ul class="project-tags" aria-label="Research categories"><li>Resilient Energy</li><li>Risk-Aware Planning</li><li>Networked Infrastructure</li></ul>
+              <ul class="project-links" aria-label="Project resources"><li><a href="https://www.ideals.illinois.edu/items/137370" target="_blank" rel="noopener">Paper and abstract</a></li></ul>
+            </div>
+          </article>
+        </div>
       </div>
     </article>
 
