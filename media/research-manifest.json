@@ -1,0 +1,164 @@
+{
+  "description": "Planning inventory only; not fetched by the homepage. Null values mean no approved asset supplied. No media path is activated until an existing file or verified external URL is approved.",
+  "defaults": {
+    "preload": "none",
+    "autoplay": false,
+    "clickToPlay": true,
+    "loopPreview": false,
+    "figureDirectory": "images/research/",
+    "smallVideoDirectory": "media/research/",
+    "largeVideoPolicy": "Keep raw/large recordings outside Git; use an approved external video link."
+  },
+  "projects": {
+    "covariance-steering": {
+      "headingId": "project-covariance-steering",
+      "title": "Wasserstein Distributionally Robust Adaptive Covariance Steering",
+      "status": "awaiting-user-assets",
+      "requiredMedia": "Approved control-architecture figure or covariance-steering demonstration.",
+      "figure": {
+        "src": null,
+        "alt": null,
+        "width": null,
+        "height": null,
+        "caption": null
+      },
+      "video": {
+        "mp4": null,
+        "webm": null,
+        "poster": null,
+        "posterAlt": null,
+        "width": null,
+        "height": null,
+        "captions": null,
+        "transcript": null,
+        "loopPreview": false
+      },
+      "externalVideo": null
+    },
+    "small-body-planning": {
+      "headingId": "project-small-body-planning",
+      "title": "Distributionally Robust Planning for Small-Body Proximity Operations",
+      "status": "awaiting-user-assets",
+      "requiredMedia": "Approved small-body geometry/keep-out figure or simulation video.",
+      "figure": {
+        "src": null,
+        "alt": null,
+        "width": null,
+        "height": null,
+        "caption": null
+      },
+      "video": {
+        "mp4": null,
+        "webm": null,
+        "poster": null,
+        "posterAlt": null,
+        "width": null,
+        "height": null,
+        "captions": null,
+        "transcript": null,
+        "loopPreview": false
+      },
+      "externalVideo": null
+    },
+    "mean-field-control": {
+      "headingId": "project-mean-field-control",
+      "title": "Networked Control and Mean-Field Optimality under Diagonal Dominance",
+      "status": "awaiting-user-assets",
+      "requiredMedia": "Approved network/controller diagram or illustrative animation.",
+      "figure": {
+        "src": null,
+        "alt": null,
+        "width": null,
+        "height": null,
+        "caption": null
+      },
+      "video": {
+        "mp4": null,
+        "webm": null,
+        "poster": null,
+        "posterAlt": null,
+        "width": null,
+        "height": null,
+        "captions": null,
+        "transcript": null,
+        "loopPreview": false
+      },
+      "externalVideo": null
+    },
+    "virtual-power-plants": {
+      "headingId": "project-virtual-power-plants",
+      "title": "Distributed Control of Virtual Power Plants",
+      "status": "awaiting-user-assets",
+      "requiredMedia": "Approved control-architecture figure or inverter/microgrid demonstration; identify which published work it illustrates.",
+      "figure": {
+        "src": null,
+        "alt": null,
+        "width": null,
+        "height": null,
+        "caption": null
+      },
+      "video": {
+        "mp4": null,
+        "webm": null,
+        "poster": null,
+        "posterAlt": null,
+        "width": null,
+        "height": null,
+        "captions": null,
+        "transcript": null,
+        "loopPreview": false
+      },
+      "externalVideo": null
+    },
+    "directed-optimization": {
+      "headingId": "project-directed-optimization",
+      "title": "Distributed Optimization over Directed Communication Networks",
+      "status": "awaiting-user-assets",
+      "requiredMedia": "Approved directed-graph or convergence figure; include algorithm assumptions and axis labels.",
+      "figure": {
+        "src": null,
+        "alt": null,
+        "width": null,
+        "height": null,
+        "caption": null
+      },
+      "video": {
+        "mp4": null,
+        "webm": null,
+        "poster": null,
+        "posterAlt": null,
+        "width": null,
+        "height": null,
+        "captions": null,
+        "transcript": null,
+        "loopPreview": false
+      },
+      "externalVideo": null
+    },
+    "microgrid-risk-sharing": {
+      "headingId": "project-microgrid-risk-sharing",
+      "title": "Risk Sharing in Interconnected Microgrids",
+      "status": "awaiting-user-assets",
+      "requiredMedia": "Approved connectivity/storage-planning figure; identify the published paper and assumptions.",
+      "figure": {
+        "src": null,
+        "alt": null,
+        "width": null,
+        "height": null,
+        "caption": null
+      },
+      "video": {
+        "mp4": null,
+        "webm": null,
+        "poster": null,
+        "posterAlt": null,
+        "width": null,
+        "height": null,
+        "captions": null,
+        "transcript": null,
+        "loopPreview": false
+      },
+      "externalVideo": null
+    }
+  }
+}

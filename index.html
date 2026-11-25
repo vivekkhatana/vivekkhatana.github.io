@@ -16,6 +16,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
 
+  <script src="scripts/research-media.js" defer></script>
+
   <style>
     /* ─────────────────────────────────────────
        TOKENS
@@ -458,6 +460,12 @@
     #selected-projects .project-media iframe { display: block; width: 100%; height: auto; border: 0; border-radius: var(--radius); }
     #selected-projects .project-media iframe { aspect-ratio: 16/9; }
     #selected-projects .project-media figcaption { margin-top: 0.4rem; font-size: 0.75rem; line-height: 1.5; color: var(--muted); }
+    #selected-projects .project-media [hidden] { display: none; }
+    #selected-projects .project-media img,
+    #selected-projects .project-media video { max-width: 100%; object-fit: contain; }
+    #selected-projects .project-media-fallback { margin-top: 0.5rem; font-size: 0.78rem; line-height: 1.5; color: var(--muted); }
+    #selected-projects .project-media a[data-external-video] { font-size: 0.78rem; font-weight: 600; }
+    #selected-projects .project-media a[data-external-video]:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
     #selected-projects .project-media-placeholder {
       aspect-ratio: 4/3;
@@ -1019,7 +1027,7 @@
           <p class="project-filter-status" role="status" aria-live="polite" aria-atomic="true"></p>
         </div>
         <div class="project-gallery" id="selected-project-gallery">
-          <article class="project-card" data-categories="control optimization" aria-labelledby="project-covariance-steering">
+          <article class="project-card" data-categories="control optimization" data-media-project="covariance-steering" aria-labelledby="project-covariance-steering">
             <div class="project-media project-media-placeholder" role="group" aria-label="Media placeholder for Wasserstein Distributionally Robust Adaptive Covariance Steering">
               <p class="project-media-label">Development placeholder</p>
               <p>Research figure or video pending.</p>
@@ -1032,7 +1040,7 @@
               <ul class="project-links" aria-label="Project resources"><li><a href="https://arxiv.org/abs/2509.04593" target="_blank" rel="noopener">arXiv</a></li></ul>
             </div>
           </article>
-          <article class="project-card" data-categories="robotics control optimization" aria-labelledby="project-small-body-planning">
+          <article class="project-card" data-categories="robotics control optimization" data-media-project="small-body-planning" aria-labelledby="project-small-body-planning">
             <div class="project-media project-media-placeholder" role="group" aria-label="Media placeholder for Distributionally Robust Planning for Small-Body Proximity Operations">
               <p class="project-media-label">Development placeholder</p>
               <p>Research figure or video pending.</p>
@@ -1045,7 +1053,7 @@
               <ul class="project-links" aria-label="Project resources"><li><a href="https://arxiv.org/abs/2610.12774" target="_blank" rel="noopener">arXiv</a></li></ul>
             </div>
           </article>
-          <article class="project-card" data-categories="control optimization" aria-labelledby="project-mean-field-control">
+          <article class="project-card" data-categories="control optimization" data-media-project="mean-field-control" aria-labelledby="project-mean-field-control">
             <div class="project-media project-media-placeholder" role="group" aria-label="Media placeholder for Networked Control and Mean-Field Optimality under Diagonal Dominance">
               <p class="project-media-label">Development placeholder</p>
               <p>Research figure or video pending.</p>
@@ -1058,7 +1066,7 @@
               <ul class="project-links" aria-label="Project resources"><li><a href="https://arxiv.org/abs/2510.01067" target="_blank" rel="noopener">arXiv</a></li></ul>
             </div>
           </article>
-          <article class="project-card" data-categories="control optimization energy-systems" aria-labelledby="project-virtual-power-plants">
+          <article class="project-card" data-categories="control optimization energy-systems" data-media-project="virtual-power-plants" aria-labelledby="project-virtual-power-plants">
             <div class="project-media project-media-placeholder" role="group" aria-label="Media placeholder for Distributed Control of Virtual Power Plants">
               <p class="project-media-label">Development placeholder</p>
               <p>Research figure or video pending.</p>
@@ -1071,7 +1079,7 @@
               <ul class="project-links" aria-label="Project resources"><li><a href="https://arxiv.org/abs/2409.19866" target="_blank" rel="noopener">Related paper</a></li><li><a href="https://github.com/vivekkhatana/VPP_Primary_Node/tree/main/Primary_Node_Repo" target="_blank" rel="noopener">Primary-node code</a></li><li><a href="https://github.com/vivekkhatana/VPP_Secondary_Node/tree/main/Secondary_Node_Repo" target="_blank" rel="noopener">Secondary-node code</a></li></ul>
             </div>
           </article>
-          <article class="project-card" data-categories="optimization" aria-labelledby="project-directed-optimization">
+          <article class="project-card" data-categories="optimization" data-media-project="directed-optimization" aria-labelledby="project-directed-optimization">
             <div class="project-media project-media-placeholder" role="group" aria-label="Media placeholder for Distributed Optimization over Directed Communication Networks">
               <p class="project-media-label">Development placeholder</p>
               <p>Research figure or video pending.</p>
@@ -1084,7 +1092,7 @@
               <ul class="project-links" aria-label="Project resources"><li><a href="https://doi.org/10.1109/TAC.2022.3221856" target="_blank" rel="noopener">DC-DistADMM paper</a></li><li><a href="https://doi.org/10.1109/TNSE.2023.3321757" target="_blank" rel="noopener">GradConsensus paper</a></li><li><a href="https://github.com/vivekkhatana/DC-DistADMM" target="_blank" rel="noopener">DC-DistADMM code</a></li><li><a href="https://github.com/vivekkhatana/GradConsensus" target="_blank" rel="noopener">GradConsensus code</a></li></ul>
             </div>
           </article>
-          <article class="project-card" data-categories="control optimization energy-systems" aria-labelledby="project-microgrid-risk-sharing">
+          <article class="project-card" data-categories="control optimization energy-systems" data-media-project="microgrid-risk-sharing" aria-labelledby="project-microgrid-risk-sharing">
             <div class="project-media project-media-placeholder" role="group" aria-label="Media placeholder for Risk Sharing in Interconnected Microgrids">
               <p class="project-media-label">Development placeholder</p>
               <p>Research figure or video pending.</p>

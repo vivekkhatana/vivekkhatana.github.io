@@ -109,3 +109,138 @@ repository files. Preserve them when moving this checkout.
 5. Run `git diff --check`, inspect the diff, and make a focused commit. Report
    changes, verification results, and the commit hash. Deployment and merges into
    `main` require explicit approval.
+
+## Research media infrastructure
+
+Existing portraits remain at `images/profile.jpeg` and `images/bio.jpeg`.
+Keep future research figures and video posters under `images/research/<project>/`.
+Small, web-ready video clips and caption tracks can live under
+`media/research/<project>/`. Create these directories only when approved files
+are supplied; the current website still uses its labeled development placeholders.
+
+`media/research-manifest.json` is the asset planning inventory. It is not fetched
+by the homepage and does not create media requests. Every asset URL starts as
+`null`; fill a field only after the file exists or an external URL is verified.
+The card's `data-media-project` value matches its manifest key.
+
+| Project key | Required approved media |
+| --- | --- |
+| `covariance-steering` | Control-architecture figure or covariance-steering demonstration |
+| `small-body-planning` | Small-body geometry/keep-out figure or simulation clip |
+| `mean-field-control` | Network/controller diagram or illustrative animation |
+| `virtual-power-plants` | Control architecture or inverter/microgrid demonstration, with the related publication identified |
+| `directed-optimization` | Directed-graph or convergence figure with assumptions and labeled axes |
+| `microgrid-risk-sharing` | Connectivity/storage-planning figure with its paper and assumptions identified |
+
+Two other project drafts remain private. Their media requirements are kept in
+the existing private review package outside this checkout, not in this manifest.
+Do not add private titles, assets, or paths to tracked files before disclosure is
+approved.
+
+### Adding a static figure
+
+Replace the card's `.project-media-placeholder` with a native figure. The paths
+below are examples of future filenames, not currently available assets. Use the
+actual dimensions, meaningful alt text, and a source/credit when needed.
+
+```html
+<figure class="project-media">
+  <img data-research-figure
+       src="images/research/covariance-steering/figure.webp"
+       width="1280" height="720" loading="lazy" decoding="async"
+       alt="Describe the actual diagram, variables, and relationships shown.">
+  <figcaption>Approved explanation and source for this figure.</figcaption>
+</figure>
+```
+
+The enhancement preserves native image behavior, applies lazy loading, and shows
+a text fallback if an image fails. It does not generate research descriptions.
+
+### Adding MP4/WebM video
+
+Use native controls and `preload="none"` in the HTML itself. Supply whichever
+formats actually exist; using both lets the browser choose a supported source.
+Use MP4/H.264 for broad compatibility and optionally WebM/VP8 or VP9. Encoding
+support depends on the browser and device; test the actual files before release.
+
+```html
+<figure class="project-media">
+  <video data-research-video controls playsinline preload="none"
+         width="1280" height="720"
+         poster="images/research/covariance-steering/poster.webp"
+         data-poster-alt="Describe the actual poster frame."
+         aria-label="Describe the specific research demonstration."
+         aria-describedby="covariance-demo-caption">
+    <source src="media/research/covariance-steering/demo.webm" type="video/webm">
+    <source src="media/research/covariance-steering/demo.mp4" type="video/mp4">
+    <track kind="captions" srclang="en" label="English" default
+           src="media/research/covariance-steering/captions.en.vtt">
+    Your browser does not support inline video. Use the video link below.
+  </video>
+  <p class="project-media-fallback" data-media-fallback hidden>
+    This video could not be played. Use the video link below or the related
+    project resources.
+  </p>
+  <p><a href="media/research/covariance-steering/demo.mp4">Open video file</a></p>
+  <figcaption id="covariance-demo-caption">
+    Approved explanation of the demonstration, its conditions, and limitations.
+  </figcaption>
+</figure>
+```
+
+Use caption tracks for speech or meaningful audio and provide a descriptive
+caption/transcript for visual information that is not otherwise explained.
+Omit absent sources, poster, or caption-track URLs entirely; never use empty
+`src`/`href` values. If only one format exists, link that actual file below the
+player. Keep important resource links outside the video element so they remain
+available with JavaScript disabled or unsupported codecs.
+
+An optional external video link is an ordinary anchor with `data-external-video`,
+a verified `href`, and meaningful link text. Use `target="_blank" rel="noopener"`
+if opening another tab. Do not insert an embed or fetch a remote player just to
+display the link. Keep this link outside the hidden error-message container so
+it is available without JavaScript too. The error handler can focus this
+recovery link if the player had keyboard focus when it failed.
+
+### Playback and fallbacks
+
+`scripts/research-media.js` enhances only marked media inside Selected Research
+Projects. It also initializes marked media inserted later into that section.
+
+- Every video starts click-to-play, with controls, inline playback and no autoplay.
+  The script never calls `play()` or `load()` and does not fetch the manifest.
+- `preload="none"` avoids eager video loading in supporting browsers; it is a
+  browser hint, not an absolute network guarantee. Posters may load separately.
+- For an appropriate short, silent preview, add `muted data-preview` to the
+  native video. It still requires a click to start. JavaScript enables muted
+  looping only when reduced motion and data-saving preferences allow it.
+  Do not add a static `loop` or `autoplay` attribute.
+- Reduced-motion or data-saving changes pause previews and disable looping.
+  They do not prevent a visitor from deliberately playing an ordinary video.
+- IntersectionObserver pauses off-screen videos when available. Filtering a
+  card out, removing it, or hiding the document also pauses playback. Returning
+  to view does not restart it. Without IntersectionObserver, hidden-card and
+  document-visibility pausing still work.
+- Failed video sources reveal a text fallback. A supplied poster becomes an
+  image fallback; `data-poster-alt` supplies its description. A failed poster is
+  removed rather than displaying a broken-image icon. External/file links remain.
+- Native controls, poster, figure, and links remain usable without JavaScript;
+  enhanced pausing and error recovery then depend on browser behavior.
+- Existing responsive media styles keep intrinsic image/video aspect ratios and
+  never crop research figures. For a card without media, omit the media element
+  and add `project-card--text-only` to the card.
+
+### File-size and release checks
+
+Keep raw recordings, private drafts, and large originals outside Git. Prefer a
+short compressed clip and small poster; use an approved external video link for
+large recordings. Inspect byte size and visual legibility before staging. Do not
+download unrelated images or commit test fixtures. No media binaries are added
+by this infrastructure change.
+
+For each supplied asset, verify disclosure/credit, file existence and MIME type,
+alt text/caption, source fallback, actual playback, keyboard controls, filtering
+and off-screen pausing, reduced-motion behavior, and desktop/mobile dimensions.
+Check DevTools Network after a fresh homepage load to ensure unplayed research
+videos are not eagerly transferred. Then update the planning manifest to match
+the approved HTML; it is documentation, not an automatic renderer.
