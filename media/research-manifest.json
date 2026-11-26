@@ -258,14 +258,14 @@
     "virtual-power-plants": {
       "headingId": "project-virtual-power-plants",
       "title": "Distributed Control of Virtual Power Plants",
-      "status": "awaiting-user-assets",
+      "status": "media-integrated",
       "requiredMedia": "Approved control-architecture figure or inverter/microgrid demonstration; identify which published work it illustrates.",
       "figure": {
-        "src": null,
-        "alt": null,
-        "width": null,
-        "height": null,
-        "caption": null
+        "src": "images/research/virtual-power-plants/01-hil.png",
+        "alt": "Distributed optimization and control pipeline linked to real-time hardware-in-the-loop power-system equipment.",
+        "width": 2130,
+        "height": 548,
+        "caption": "End-to-end distributed optimization and control platform with hardware-in-the-loop implementation."
       },
       "video": {
         "mp4": null,
@@ -278,7 +278,45 @@
         "transcript": null,
         "loopPreview": false
       },
-      "externalVideo": null
+      "externalVideo": null,
+      "slides": [
+        {
+          "type": "image",
+          "caption": "End-to-end distributed optimization and control platform with hardware-in-the-loop implementation.",
+          "assets": [
+            {
+              "type": "image",
+              "src": "images/research/virtual-power-plants/01-hil.png",
+              "preview": "images/research/virtual-power-plants/01-hil-preview.png",
+              "width": 2130,
+              "height": 548,
+              "previewWidth": 1000,
+              "previewHeight": 257,
+              "alt": "Distributed optimization and control pipeline linked to real-time hardware-in-the-loop power-system equipment.",
+              "label": null,
+              "sourceOriginal": "HIL.pdf"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "caption": "Distributed optimization-based control architecture for networks of inverter-interfaced energy resources.",
+          "assets": [
+            {
+              "type": "image",
+              "src": "images/research/virtual-power-plants/02-system.png",
+              "preview": "images/research/virtual-power-plants/02-system.png",
+              "width": 1624,
+              "height": 750,
+              "previewWidth": 1624,
+              "previewHeight": 750,
+              "alt": "Inverter-interfaced energy-resource network, communication layer, and grid-following and grid-forming control hierarchies.",
+              "label": null,
+              "sourceOriginal": "system.pdf"
+            }
+          ]
+        }
+      ]
     },
     "directed-optimization": {
       "headingId": "project-directed-optimization",
@@ -465,14 +503,14 @@
     "online-model-updates": {
       "headingId": "project-online-model-updates",
       "title": "Adaptive Online Model Updates for Networked Predictive Control",
-      "status": "awaiting-user-assets",
+      "status": "media-integrated",
       "requiredMedia": "Approved online model-update/control architecture or power-distribution simulation figure from the published work.",
       "figure": {
-        "src": null,
-        "alt": null,
-        "width": null,
-        "height": null,
-        "caption": null
+        "src": "images/research/online-model-updates/01-ieee37.png",
+        "alt": "Modified IEEE 37-bus network with photovoltaic energy-source buses indicated.",
+        "width": 928,
+        "height": 739,
+        "caption": "IEEE 37-bus distribution network used for evaluating networked predictive control."
       },
       "video": {
         "mp4": null,
@@ -485,7 +523,58 @@
         "transcript": null,
         "loopPreview": false
       },
-      "externalVideo": null
+      "externalVideo": null,
+      "slides": [
+        {
+          "type": "image",
+          "caption": "IEEE 37-bus distribution network used for evaluating networked predictive control.",
+          "assets": [
+            {
+              "type": "image",
+              "src": "images/research/online-model-updates/01-ieee37.png",
+              "preview": "images/research/online-model-updates/01-ieee37.png",
+              "width": 928,
+              "height": 739,
+              "previewWidth": 928,
+              "previewHeight": 739,
+              "alt": "Modified IEEE 37-bus network with photovoltaic energy-source buses indicated.",
+              "label": null,
+              "sourceOriginal": "IEEE37.eps"
+            }
+          ]
+        },
+        {
+          "type": "comparison",
+          "caption": "Voltage trajectories with online gradient-based model updates. Voltage trajectories using the linear online gradient-based model update formulation.",
+          "assets": [
+            {
+              "type": "image",
+              "src": "images/research/online-model-updates/02-nonlinear-voltage.png",
+              "preview": "images/research/online-model-updates/02-nonlinear-voltage.png",
+              "width": 1456,
+              "height": 1237,
+              "previewWidth": 1456,
+              "previewHeight": 1237,
+              "alt": "Voltage trajectories using online updates of the nonlinear constant-power-load model.",
+              "label": "Nonlinear model",
+              "sourceOriginal": "online_gd_varying_etak.eps"
+            },
+            {
+              "type": "image",
+              "src": "images/research/online-model-updates/03-linear-voltage.png",
+              "preview": "images/research/online-model-updates/03-linear-voltage.png",
+              "width": 1452,
+              "height": 1245,
+              "previewWidth": 1452,
+              "previewHeight": 1245,
+              "alt": "Voltage trajectories using online updates of the linear LinDistFlow model.",
+              "label": "Linear model",
+              "sourceOriginal": "online_linear_gd_varying_etak.eps"
+            }
+          ]
+        }
+      ],
+      "verificationNote": "Figure filenames and methodological distinction verified against arXiv:2405.00637v2, Section VI-B and Figures 3/4: linear LinDistFlow versus nonlinear constant-power-load model. https://arxiv.org/html/2405.00637v2"
     },
     "distributed-dc-optimization": {
       "headingId": "project-distributed-dc-optimization",

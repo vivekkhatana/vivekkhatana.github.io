@@ -106,25 +106,28 @@ mean-field-control — Networked Control and Mean-Field Optimality under Diagona
 virtual-power-plants — Distributed Control of Virtual Power Plants
   Images / figures / video posters: images/research/virtual-power-plants/
   Videos / captions / transcripts:  media/research/virtual-power-plants/
-  Supplied local originals (not committed or activated yet):
-    HIL.pdf (844,041 bytes)
-    system.pdf (196,122 bytes)
-  Awaiting prototype approval: conversion, poster extraction where applicable,
-  scientific-label inspection and carousel integration. See supplied captions
-  and ordering in the project request; do not activate guessed assets.
-  Publication/methodology checks remain pending where requested.
+  Integrated media in requested order:
+    Slide 1: End-to-end distributed optimization and control platform with hardware-in-the-loop implementation.
+      HIL.pdf -> images/research/virtual-power-plants/01-hil.png (1,092,041 bytes; 2130x548)
+      Preview: images/research/virtual-power-plants/01-hil-preview.png (298,308 bytes)
+    Slide 2: Distributed optimization-based control architecture for networks of inverter-interfaced energy resources.
+      system.pdf -> images/research/virtual-power-plants/02-system.png (214,317 bytes; 1624x750)
+  HIL slide whitespace and bottom page number removed; diagram preserved.
+  Original assets backed up byte-for-byte outside Git. Detailed images open
+  individually in the existing accessible lightbox; no thumbnails or auto-advance.
 
 online-model-updates — Adaptive Online Model Updates for Networked Predictive Control
   Images / figures / video posters: images/research/online-model-updates/
   Videos / captions / transcripts:  media/research/online-model-updates/
-  Supplied local originals (not committed or activated yet):
-    IEEE37.eps (38,896 bytes)
-    online_gd_varying_etak.eps (134,126 bytes)
-    online_linear_gd_varying_etak.eps (140,638 bytes)
-  Awaiting prototype approval: conversion, poster extraction where applicable,
-  scientific-label inspection and carousel integration. See supplied captions
-  and ordering in the project request; do not activate guessed assets.
-  Publication/methodology checks remain pending where requested.
+  Integrated media in requested order:
+    Slide 1: IEEE 37-bus distribution network used for evaluating networked predictive control.
+      IEEE37.eps -> images/research/online-model-updates/01-ieee37.png (39,802 bytes; 928x739)
+    Slide 2: Voltage trajectories with online gradient-based model updates. Voltage trajectories using the linear online gradient-based model update formulation.
+      online_gd_varying_etak.eps -> images/research/online-model-updates/02-nonlinear-voltage.png (147,141 bytes; 1456x1237)
+      online_linear_gd_varying_etak.eps -> images/research/online-model-updates/03-linear-voltage.png (154,649 bytes; 1452x1245)
+  Figure filenames and methodological distinction verified against arXiv:2405.00637v2, Section VI-B and Figures 3/4: linear LinDistFlow versus nonlinear constant-power-load model. https://arxiv.org/html/2405.00637v2
+  Original assets backed up byte-for-byte outside Git. Detailed images open
+  individually in the existing accessible lightbox; no thumbnails or auto-advance.
 
 distributed-dc-optimization — Distributed Difference-of-Convex Optimization
   Images / figures / video posters: images/research/distributed-dc-optimization/
