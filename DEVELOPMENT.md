@@ -383,3 +383,35 @@ venues. Paper links point to accessible author PDFs, with separate publisher
 links where applicable. New descriptions are 40–60 words and contain no invented
 quantitative results. The media manifest includes all ten cards with null asset
 paths until approved media arrives; PDFs used for review are not committed.
+
+## Fluid content layout
+
+`styles/site.css` allows `#content` to fill the available space beside the
+unchanged desktop sidebar, up to a 1440px border-box width. Auto margins center
+that content within the remaining space on ultrawide screens. Padding uses
+`clamp()` independently of the landing/sidebar spacing token, preserving their
+existing appearance and mobile navigation breakpoint.
+
+The main content is a named inline-size CSS container. Theme cards, project
+media/text stacking and biography photo layout respond to its usable width,
+rather than assuming a viewport width means the same amount of content space.
+Auto-fitting grids provide one or two project columns and flexible media/contact
+columns. The four theme cards use balanced two/four-column layouts on sufficiently
+wide containers and stack when their minimum readable width cannot fit.
+
+Long prose is bounded to 75ch (project descriptions 70ch), and academic lists to
+90ch. These reading measures do not constrain the full-width card/gallery region.
+Only biography, research-vision and teaching prose is justified when the content
+container is at least 50rem wide; narrower layouts, citations and project cards
+remain left-aligned. No font size, palette or academic text is changed.
+
+Research figures/videos keep intrinsic proportions through width limits and
+automatic height. The biography portrait now also retains its full aspect ratio
+on narrow screens, rather than using the former 280px crop. Landing/sidebar
+portrait treatments and image files remain unchanged. Use the native media
+markup documented above when supplying research assets.
+
+Check at 1920, 1440, 1280, 1024, 768, 390 and 320px, including open/closed mobile
+menus, expanded Research sub-navigation, all project filters and no-JS reading.
+Also check the content cap on ultrawide screens, long prose line lengths, native
+image/video proportions and standalone pages using the shared stylesheet.
