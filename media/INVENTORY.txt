@@ -73,27 +73,35 @@ covariance-steering — Wasserstein Distributionally Robust Adaptive Covariance 
 small-body-planning — Distributionally Robust Planning for Small-Body Proximity Operations
   Images / figures / video posters: images/research/small-body-planning/
   Videos / captions / transcripts:  media/research/small-body-planning/
-  Supplied local originals (not committed or activated yet):
-    clearance.png (272,305 bytes)
-    covariance_hdr_l1_off.png (252,849 bytes)
-    covariance_hdr_l1_on.png (261,677 bytes)
-    trajectory_3d_l1_off.png (973,398 bytes)
-    trajectory_3d_l1_on.png (877,023 bytes)
-  Awaiting prototype approval: conversion, poster extraction where applicable,
-  scientific-label inspection and carousel integration. See supplied captions
-  and ordering in the project request; do not activate guessed assets.
-  Publication/methodology checks remain pending where requested.
+  Integrated media in requested order:
+    Slide 1: Three-dimensional stochastic proximity trajectories with and without L1 adaptive control.
+      trajectory_3d_l1_on.png -> images/research/small-body-planning/01-trajectory-l1-on.png (840,434 bytes; 2591x2510)
+      Preview: images/research/small-body-planning/01-trajectory-l1-on-preview.png (237,397 bytes)
+      trajectory_3d_l1_off.png -> images/research/small-body-planning/01-trajectory-l1-off.png (938,673 bytes; 2583x2510)
+      Preview: images/research/small-body-planning/01-trajectory-l1-off-preview.png (247,297 bytes)
+    Slide 2: Median and lower-tail CVaR of keep-out clearance.
+      clearance.png -> images/research/small-body-planning/02-clearance.png (269,217 bytes; 2180x1396)
+      Preview: images/research/small-body-planning/02-clearance-preview.png (137,847 bytes)
+    Slide 3: State distributions and 95% highest-density regions with and without adaptive control.
+      covariance_hdr_l1_on.png -> images/research/small-body-planning/03-distribution-l1-on.png (257,954 bytes; 1830x1734)
+      Preview: images/research/small-body-planning/03-distribution-l1-on-preview.png (160,914 bytes)
+      covariance_hdr_l1_off.png -> images/research/small-body-planning/03-distribution-l1-off.png (250,111 bytes; 1752x1734)
+      Preview: images/research/small-body-planning/03-distribution-l1-off-preview.png (173,049 bytes)
+  Original assets backed up byte-for-byte outside Git. Detailed images open
+  individually in the existing accessible lightbox; no thumbnails or auto-advance.
 
 mean-field-control — Networked Control and Mean-Field Optimality under Diagonal Dominance
   Images / figures / video posters: images/research/mean-field-control/
   Videos / captions / transcripts:  media/research/mean-field-control/
-  Supplied local originals (not committed or activated yet):
-    caseB_alpha_N120.png (1,175,026 bytes)
-    caseB_alpha_N60.png (1,215,762 bytes)
-  Awaiting prototype approval: conversion, poster extraction where applicable,
-  scientific-label inspection and carousel integration. See supplied captions
-  and ordering in the project request; do not activate guessed assets.
-  Publication/methodology checks remain pending where requested.
+  Integrated media in requested order:
+    Slide 1: Networked control performance under different diagonal dominance regimes for 120 agents.
+      caseB_alpha_N120.png -> images/research/mean-field-control/01-control-120-agents.png (620,059 bytes; 3200x968)
+      Preview: images/research/mean-field-control/01-control-120-agents-preview.png (103,786 bytes)
+    Slide 2: Comparative networked control performance for 60 agents.
+      caseB_alpha_N60.png -> images/research/mean-field-control/02-control-60-agents.png (627,610 bytes; 3200x968)
+      Preview: images/research/mean-field-control/02-control-60-agents-preview.png (104,568 bytes)
+  Original assets backed up byte-for-byte outside Git. Detailed images open
+  individually in the existing accessible lightbox; no thumbnails or auto-advance.
 
 virtual-power-plants — Distributed Control of Virtual Power Plants
   Images / figures / video posters: images/research/virtual-power-plants/
