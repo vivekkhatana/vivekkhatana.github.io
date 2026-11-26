@@ -344,10 +344,23 @@
               <ul class="project-links" aria-label="Project resources"><li><a href="https://arxiv.org/pdf/2610.12761" target="_blank" rel="noopener">Paper</a></li></ul>
             </div>
           </article>
-          <article class="project-card" data-categories="robotics-autonomy control-stochastic-decision-making learning-data-driven-decision-making optimization" data-media-project="aerial-refueling" aria-labelledby="project-aerial-refueling">
-            <div class="project-media project-media-placeholder" role="group" aria-label="Media placeholder for Uncertainty-Aware Vision-Based Aerial Refueling">
-              <p class="project-media-label">Development placeholder</p>
-              <p>Research figure or video pending.</p>
+          <article class="project-card project-card--media" data-categories="robotics-autonomy control-stochastic-decision-making learning-data-driven-decision-making optimization" data-media-project="aerial-refueling" aria-labelledby="project-aerial-refueling">
+            <div class="research-carousel" data-research-carousel role="region" aria-roledescription="carousel" aria-label="aerial refueling research media">
+              <div id="aerial-refueling-media-slides">
+                <figure class="project-media" data-media-slide role="group" aria-roledescription="slide" aria-label="1 of 1">
+                  <video data-research-video controls playsinline preload="none" width="1280" height="720" poster="images/research/aerial-refueling/01-refueling-poster.jpg" aria-label="Autonomous aerial-refueling simulation with aircraft alignment and docking guidance." aria-describedby="aerial-refueling-media-caption-1" data-poster-alt="Autonomous aerial-refueling simulation with aircraft alignment and docking guidance.">
+                    <source src="media/research/aerial-refueling/AAR.mp4" type="video/mp4" />
+                    Your browser does not support this video.
+                  </video>
+                  <figcaption id="aerial-refueling-media-caption-1">Uncertainty-aware autonomous aerial refueling integrating vision-based state estimation, conformal calibration, and predictive docking control.</figcaption>
+                  <a data-external-video href="media/research/aerial-refueling/AAR.mp4">Open video file</a>
+                </figure>
+              </div>
+              <div class="research-carousel-controls" data-carousel-controls hidden>
+                <button type="button" data-carousel-previous aria-controls="aerial-refueling-media-slides" aria-label="Previous aerial refueling media slide">Previous</button>
+                <span data-carousel-counter role="status" aria-live="polite" aria-atomic="true">Slide 1 of 1</span>
+                <button type="button" data-carousel-next aria-controls="aerial-refueling-media-slides" aria-label="Next aerial refueling media slide">Next</button>
+              </div>
             </div>
             <div class="project-content">
               <h4 class="project-title" id="project-aerial-refueling">Uncertainty-Aware Vision-Based Aerial Refueling</h4>
@@ -357,10 +370,37 @@
               <ul class="project-links" aria-label="Project resources"><li><a href="https://arxiv.org/pdf/2610.07501" target="_blank" rel="noopener">Paper</a></li></ul>
             </div>
           </article>
-          <article class="project-card" data-categories="robotics-autonomy control-stochastic-decision-making optimization" data-media-project="covariance-steering" aria-labelledby="project-covariance-steering">
-            <div class="project-media project-media-placeholder" role="group" aria-label="Media placeholder for Wasserstein Distributionally Robust Adaptive Covariance Steering">
-              <p class="project-media-label">Development placeholder</p>
-              <p>Research figure or video pending.</p>
+          <article class="project-card project-card--media" data-categories="robotics-autonomy control-stochastic-decision-making optimization" data-media-project="covariance-steering" aria-labelledby="project-covariance-steering">
+            <div class="research-carousel" data-research-carousel role="region" aria-roledescription="carousel" aria-label="covariance steering research media">
+              <div id="covariance-steering-media-slides">
+                <figure class="project-media" data-media-slide role="group" aria-roledescription="slide" aria-label="1 of 3">
+                  <span class="research-comparison-label">Large-ρ setting</span>
+                  <video data-research-video controls playsinline preload="none" muted data-preview width="800" height="600" poster="images/research/covariance-steering/01-large-rho-poster.png" aria-label="Animated stochastic sample paths and state distributions for the large-rho experiment." aria-describedby="covariance-steering-media-caption-1" data-poster-alt="Animated stochastic sample paths and state distributions for the large-rho experiment.">
+                    <source src="media/research/covariance-steering/01-large-rho.mp4" type="video/mp4" />
+                    Your browser does not support this video.
+                  </video>
+                  <figcaption id="covariance-steering-media-caption-1">Adaptive covariance steering with Wasserstein distributional uncertainty certificates.</figcaption>
+                  <a data-external-video href="media/research/covariance-steering/01-large-rho.mp4">Open video file</a>
+                </figure>
+                <figure class="project-media" data-media-slide role="group" aria-roledescription="slide" aria-label="2 of 3">
+                  <span class="research-comparison-label">Small-ρ setting</span>
+                  <video data-research-video controls playsinline preload="none" muted data-preview width="800" height="600" poster="images/research/covariance-steering/02-small-rho-poster.png" aria-label="Animated stochastic sample paths and state distributions for the separate small-rho experiment." aria-describedby="covariance-steering-media-caption-2" data-poster-alt="Animated stochastic sample paths and state distributions for the separate small-rho experiment.">
+                    <source src="media/research/covariance-steering/02-small-rho.mp4" type="video/mp4" />
+                    Your browser does not support this video.
+                  </video>
+                  <figcaption id="covariance-steering-media-caption-2">Effect of model uncertainty on stochastic trajectories and state distributions.</figcaption>
+                  <a data-external-video href="media/research/covariance-steering/02-small-rho.mp4">Open video file</a>
+                </figure>
+                <figure class="project-media" data-media-slide role="group" aria-roledescription="slide" aria-label="3 of 3">
+                  <a data-research-enlarge href="images/research/covariance-steering/03-architecture.png" aria-label="Enlarge: Covariance-steering controller and L1 distributionally robust adaptive-control feedback around the uncertain system."><img data-research-figure src="images/research/covariance-steering/03-architecture-preview.png" width="1000" height="590" loading="lazy" decoding="async" alt="Covariance-steering controller and L1 distributionally robust adaptive-control feedback around the uncertain system." /><span class="research-enlarge-label">Enlarge figure</span></a>
+                  <figcaption id="covariance-steering-media-caption-3">Architecture coupling covariance steering with L1 distributionally robust adaptive control.</figcaption>
+                </figure>
+              </div>
+              <div class="research-carousel-controls" data-carousel-controls hidden>
+                <button type="button" data-carousel-previous aria-controls="covariance-steering-media-slides" aria-label="Previous covariance steering media slide">Previous</button>
+                <span data-carousel-counter role="status" aria-live="polite" aria-atomic="true">Slide 1 of 3</span>
+                <button type="button" data-carousel-next aria-controls="covariance-steering-media-slides" aria-label="Next covariance steering media slide">Next</button>
+              </div>
             </div>
             <div class="project-content">
               <h4 class="project-title" id="project-covariance-steering">Wasserstein Distributionally Robust Adaptive Covariance Steering</h4>

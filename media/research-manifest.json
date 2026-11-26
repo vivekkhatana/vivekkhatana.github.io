@@ -1,5 +1,5 @@
 {
-  "description": "Asset inventory; not fetched by the homepage. The Multi-LLM carousel is a local development prototype awaiting review; other projects have no activated media. Null values mean no web asset assigned.",
+  "description": "Research asset inventory; not fetched by the homepage. Slides record existing web assets in display order. Null values mean no asset or alternative encoding assigned. Original research files are retained locally outside Git; no automatic publication or deployment.",
   "defaults": {
     "preload": "none",
     "autoplay": false,
@@ -13,27 +13,79 @@
     "covariance-steering": {
       "headingId": "project-covariance-steering",
       "title": "Wasserstein Distributionally Robust Adaptive Covariance Steering",
-      "status": "awaiting-user-assets",
+      "status": "media-integrated",
       "requiredMedia": "Approved control-architecture figure or covariance-steering demonstration.",
       "figure": {
-        "src": null,
-        "alt": null,
-        "width": null,
-        "height": null,
-        "caption": null
+        "src": "images/research/covariance-steering/03-architecture.png",
+        "alt": "Covariance-steering controller and L1 distributionally robust adaptive-control feedback around the uncertain system.",
+        "width": 1892,
+        "height": 1116,
+        "caption": "Architecture coupling covariance steering with L1 distributionally robust adaptive control."
       },
       "video": {
-        "mp4": null,
+        "mp4": "media/research/covariance-steering/01-large-rho.mp4",
         "webm": null,
-        "poster": null,
-        "posterAlt": null,
-        "width": null,
-        "height": null,
+        "poster": "images/research/covariance-steering/01-large-rho-poster.png",
+        "posterAlt": "Animated stochastic sample paths and state distributions for the large-rho experiment.",
+        "width": 800,
+        "height": 600,
         "captions": null,
         "transcript": null,
-        "loopPreview": false
+        "loopPreview": true
       },
-      "externalVideo": null
+      "externalVideo": null,
+      "slides": [
+        {
+          "type": "video",
+          "src": "media/research/covariance-steering/01-large-rho.mp4",
+          "poster": "images/research/covariance-steering/01-large-rho-poster.png",
+          "caption": "Adaptive covariance steering with Wasserstein distributional uncertainty certificates.",
+          "alt": "Animated stochastic sample paths and state distributions for the large-rho experiment.",
+          "width": 800,
+          "height": 600,
+          "durationSeconds": 5.02,
+          "sourceOriginal": "nominal_vs_L1_sample_paths_large_rho.gif",
+          "loopPreview": true,
+          "label": "Large-ρ setting",
+          "audio": false,
+          "frameCount": 251,
+          "frameDelaySeconds": 0.02
+        },
+        {
+          "type": "video",
+          "src": "media/research/covariance-steering/02-small-rho.mp4",
+          "poster": "images/research/covariance-steering/02-small-rho-poster.png",
+          "caption": "Effect of model uncertainty on stochastic trajectories and state distributions.",
+          "alt": "Animated stochastic sample paths and state distributions for the separate small-rho experiment.",
+          "width": 800,
+          "height": 600,
+          "durationSeconds": 5.02,
+          "sourceOriginal": "nominal_vs_tru_sample_paths_small_rho.gif",
+          "loopPreview": true,
+          "label": "Small-ρ setting",
+          "audio": false,
+          "frameCount": 251,
+          "frameDelaySeconds": 0.02
+        },
+        {
+          "type": "image",
+          "caption": "Architecture coupling covariance steering with L1 distributionally robust adaptive control.",
+          "assets": [
+            {
+              "type": "image",
+              "src": "images/research/covariance-steering/03-architecture.png",
+              "preview": "images/research/covariance-steering/03-architecture-preview.png",
+              "width": 1892,
+              "height": 1116,
+              "previewWidth": 1000,
+              "previewHeight": 590,
+              "alt": "Covariance-steering controller and L1 distributionally robust adaptive-control feedback around the uncertain system.",
+              "label": null,
+              "sourceOriginal": "Arch.png"
+            }
+          ]
+        }
+      ]
     },
     "small-body-planning": {
       "headingId": "project-small-body-planning",
@@ -255,7 +307,7 @@
     "aerial-refueling": {
       "headingId": "project-aerial-refueling",
       "title": "Uncertainty-Aware Vision-Based Aerial Refueling",
-      "status": "awaiting-user-assets",
+      "status": "media-integrated",
       "requiredMedia": "Approved estimator/uncertainty-margin architecture figure or FlightGear/JSBSim docking simulation video. Do not imply demonstrated mechanical engagement or fuel transfer.",
       "figure": {
         "src": null,
@@ -265,17 +317,32 @@
         "caption": null
       },
       "video": {
-        "mp4": null,
+        "mp4": "media/research/aerial-refueling/AAR.mp4",
         "webm": null,
-        "poster": null,
-        "posterAlt": null,
-        "width": null,
-        "height": null,
+        "poster": "images/research/aerial-refueling/01-refueling-poster.jpg",
+        "posterAlt": "Autonomous aerial-refueling simulation with aircraft alignment and docking guidance.",
+        "width": 1280,
+        "height": 720,
         "captions": null,
         "transcript": null,
         "loopPreview": false
       },
-      "externalVideo": null
+      "externalVideo": null,
+      "slides": [
+        {
+          "type": "video",
+          "src": "media/research/aerial-refueling/AAR.mp4",
+          "poster": "images/research/aerial-refueling/01-refueling-poster.jpg",
+          "caption": "Uncertainty-aware autonomous aerial refueling integrating vision-based state estimation, conformal calibration, and predictive docking control.",
+          "alt": "Autonomous aerial-refueling simulation with aircraft alignment and docking guidance.",
+          "width": 1280,
+          "height": 720,
+          "durationSeconds": 173.758333,
+          "sourceOriginal": "AAR.mp4",
+          "posterTimeSeconds": 87,
+          "audio": true
+        }
+      ]
     },
     "online-model-updates": {
       "headingId": "project-online-model-updates",

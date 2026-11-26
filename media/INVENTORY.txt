@@ -3,8 +3,8 @@ Inventory date: November 25, 2026
 
 Paths below are relative to the repository root. This is a planning document,
 not a runtime asset loader. Research originals have been supplied for all ten
-projects. Only the Multi-LLM development prototype is activated, pending review.
-The remaining nine projects await prototype approval before conversion/integration.
+projects. The Multi-LLM prototype presentation is approved for use throughout the
+gallery. Integrated assets are recorded below; local review does not deploy them.
 The existing profile.jpeg and bio.jpeg portraits are unrelated to these projects.
 
 DIRECTORY CONVENTIONS
@@ -41,24 +41,34 @@ verifier-multi-llm — Verifier-Mediated Multi-LLM Coordination for Multi-Robot 
 aerial-refueling — Uncertainty-Aware Vision-Based Aerial Refueling
   Images / figures / video posters: images/research/aerial-refueling/
   Videos / captions / transcripts:  media/research/aerial-refueling/
-  Supplied local originals (not committed or activated yet):
-    AAR.mp4 (17,238,931 bytes)
-  Awaiting prototype approval: conversion, poster extraction where applicable,
-  scientific-label inspection and carousel integration. See supplied captions
-  and ordering in the project request; do not activate guessed assets.
-  Publication/methodology checks remain pending where requested.
+  Integrated media in requested order:
+    Slide 1: Uncertainty-aware autonomous aerial refueling integrating vision-based state estimation, conformal calibration, and predictive docking control.
+      AAR.mp4 -> media/research/aerial-refueling/AAR.mp4 (17,238,931 bytes)
+      Poster: images/research/aerial-refueling/01-refueling-poster.jpg (122,756 bytes)
+  Original compact H.264/AAC MP4 unchanged, metadata already first.
+  Poster at 87s; no carousel navigation for this single visual.
+  Audio preserved; no timed captions/transcript supplied.
+  Original assets backed up byte-for-byte outside Git. Detailed images open
+  individually in the existing accessible lightbox; no thumbnails or auto-advance.
 
 covariance-steering — Wasserstein Distributionally Robust Adaptive Covariance Steering
   Images / figures / video posters: images/research/covariance-steering/
   Videos / captions / transcripts:  media/research/covariance-steering/
-  Supplied local originals (not committed or activated yet):
-    Arch.png (178,375 bytes)
-    nominal_vs_L1_sample_paths_large_rho.gif (1,853,898 bytes)
-    nominal_vs_tru_sample_paths_small_rho.gif (2,288,484 bytes)
-  Awaiting prototype approval: conversion, poster extraction where applicable,
-  scientific-label inspection and carousel integration. See supplied captions
-  and ordering in the project request; do not activate guessed assets.
-  Publication/methodology checks remain pending where requested.
+  Integrated media in requested order:
+    Slide 1: Adaptive covariance steering with Wasserstein distributional uncertainty certificates.
+      nominal_vs_L1_sample_paths_large_rho.gif -> media/research/covariance-steering/01-large-rho.mp4 (742,459 bytes)
+      Poster: images/research/covariance-steering/01-large-rho-poster.png (35,630 bytes)
+    Slide 2: Effect of model uncertainty on stochastic trajectories and state distributions.
+      nominal_vs_tru_sample_paths_small_rho.gif -> media/research/covariance-steering/02-small-rho.mp4 (889,556 bytes)
+      Poster: images/research/covariance-steering/02-small-rho-poster.png (36,971 bytes)
+    Slide 3: Architecture coupling covariance steering with L1 distributionally robust adaptive control.
+      Arch.png -> images/research/covariance-steering/03-architecture.png (112,852 bytes; 1892x1116)
+      Preview: images/research/covariance-steering/03-architecture-preview.png (73,875 bytes)
+  GIFs converted to controllable H.264 MP4: all 251 frames, 20ms/frame,
+  5.02s each, no audio; distinct large-rho/small-rho settings retained.
+  Looping is click-initiated and disabled under reduced-motion/data saving.
+  Original assets backed up byte-for-byte outside Git. Detailed images open
+  individually in the existing accessible lightbox; no thumbnails or auto-advance.
 
 small-body-planning — Distributionally Robust Planning for Small-Body Proximity Operations
   Images / figures / video posters: images/research/small-body-planning/

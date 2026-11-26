@@ -479,6 +479,9 @@
       padding: 0.4rem 0.55rem; min-height: 32px; cursor: pointer;
     }
     #selected-projects .research-enlarge-label { display: block; margin-top: 0.3rem; font-size: 0.75rem; }
+    #selected-projects .research-comparison-label { display: block; margin-bottom: 0.35rem; font-size: 0.75rem; font-weight: 600; color: var(--body); }
+    #selected-projects .research-media-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.6rem; align-items: start; }
+    #selected-projects .research-media-pair > a { min-width: 0; }
     #selected-projects [data-research-enlarge] { display: block; }
     #selected-projects [data-research-enlarge]:focus-visible,
     #selected-projects .research-carousel-controls button:focus-visible,
