@@ -1,0 +1,31 @@
+/* Standalone project-page additions; shared site tokens/styles stay in site.css. */
+.project-page .project-page-back { display: inline-block; margin-bottom: 1.5rem; font-size: 0.8rem; font-weight: 600; }
+.project-page .project-page-header { margin-bottom: 2.5rem; }
+.project-page h1 { margin: 0.5rem 0 1rem; color: var(--ink); font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; line-height: 1.25; overflow-wrap: anywhere; }
+.project-page .project-page-authors { display: flex; flex-wrap: wrap; gap: 0.35rem 1rem; list-style: none; margin: 1rem 0; font-size: 0.9rem; }
+.project-page .project-page-authors strong { font-weight: 700; }
+.project-page .project-page-status { margin: 1rem 0; font-size: 0.85rem; }
+.project-page .project-page-note { font-size: 0.82rem; color: var(--muted); line-height: 1.65; }
+.project-page .project-page-review { margin-bottom: 1rem; padding: 0.65rem 0.8rem; border: 1px solid var(--rule); border-radius: var(--radius); background: var(--white); font-size: 0.82rem; }
+.project-page .project-page-subheading { margin: 1.4rem 0 0.5rem; color: var(--ink); font-size: 1rem; font-weight: 600; line-height: 1.45; }
+.project-page .project-page-nav { margin-bottom: auto; }
+.project-page .project-page-table-wrap { overflow-x: auto; }
+.project-page .project-page-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+.project-page .project-page-table caption { padding-bottom: 0.65rem; text-align: left; color: var(--ink); font-weight: 600; }
+.project-page .project-page-table th,
+.project-page .project-page-table td { padding: 0.6rem; border-bottom: 1px solid var(--rule); text-align: left; }
+.project-page .project-page-table th { color: var(--ink); }
+.project-page .project-page-math { overflow-x: auto; padding: 1rem; border: 1px solid var(--rule); border-radius: var(--radius); background: var(--white); }
+.project-page #selected-projects .project-media-placeholder { aspect-ratio: 16/9; }
+.project-page #selected-projects .project-media iframe { aspect-ratio: 16/9; }
+.project-page .project-page-footer { padding-top: 1rem; border-top: 1px solid var(--rule); font-size: 0.8rem; }
+.project-page a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.project-page .project-page-skip { position: absolute; left: 0.75rem; top: 0.75rem; z-index: 1; padding: 0.6rem 0.8rem; border-radius: var(--radius); background: var(--white); transform: translateY(-200%); }
+.project-page .project-page-skip:focus { transform: translateY(0); }
+@media (max-width: 680px) {
+  .project-page h1 { font-size: 1.6rem; }
+  .project-page .project-page-nav { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html:has(body.project-page) { scroll-behavior: auto; }
+}

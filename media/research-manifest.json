@@ -1,0 +1,804 @@
+{
+  "description": "Research asset inventory; not fetched by the homepage. Slides record existing web assets in display order. Null values mean no asset or alternative encoding assigned. Original research files are retained locally outside Git; no automatic publication or deployment.",
+  "defaults": {
+    "preload": "none",
+    "autoplay": false,
+    "clickToPlay": true,
+    "loopPreview": false,
+    "figureDirectory": "images/research/",
+    "smallVideoDirectory": "media/research/",
+    "largeVideoPolicy": "Keep raw/large recordings outside Git; use an approved external video link."
+  },
+  "projects": {
+    "covariance-steering": {
+      "headingId": "project-covariance-steering",
+      "title": "Wasserstein Distributionally Robust Adaptive Covariance Steering",
+      "status": "media-integrated",
+      "requiredMedia": "Approved control-architecture figure or covariance-steering demonstration.",
+      "figure": {
+        "src": "images/research/covariance-steering/03-architecture.png",
+        "alt": "Covariance-steering controller and L1 distributionally robust adaptive-control feedback around the uncertain system.",
+        "width": 1892,
+        "height": 1116,
+        "caption": "Architecture coupling covariance steering with L1 distributionally robust adaptive control."
+      },
+      "video": {
+        "mp4": "media/research/covariance-steering/01-large-rho.mp4",
+        "webm": null,
+        "poster": "images/research/covariance-steering/01-large-rho-poster.png",
+        "posterAlt": "Animated stochastic sample paths and state distributions for the large-rho experiment.",
+        "width": 800,
+        "height": 600,
+        "captions": null,
+        "transcript": null,
+        "loopPreview": true
+      },
+      "externalVideo": null,
+      "slides": [
+        {
+          "type": "video",
+          "src": "media/research/covariance-steering/01-large-rho.mp4",
+          "poster": "images/research/covariance-steering/01-large-rho-poster.png",
+          "caption": "Adaptive covariance steering with Wasserstein distributional uncertainty certificates.",
+          "alt": "Animated stochastic sample paths and state distributions for the large-rho experiment.",
+          "width": 800,
+          "height": 600,
+          "durationSeconds": 5.02,
+          "sourceOriginal": "nominal_vs_L1_sample_paths_large_rho.gif",
+          "loopPreview": true,
+          "label": "Large-ρ setting",
+          "audio": false,
+          "frameCount": 251,
+          "frameDelaySeconds": 0.02,
+          "bytes": 742459,
+          "posterBytes": 35630
+        },
+        {
+          "type": "video",
+          "src": "media/research/covariance-steering/02-small-rho.mp4",
+          "poster": "images/research/covariance-steering/02-small-rho-poster.png",
+          "caption": "Effect of model uncertainty on stochastic trajectories and state distributions.",
+          "alt": "Animated stochastic sample paths and state distributions for the separate small-rho experiment.",
+          "width": 800,
+          "height": 600,
+          "durationSeconds": 5.02,
+          "sourceOriginal": "nominal_vs_tru_sample_paths_small_rho.gif",
+          "loopPreview": true,
+          "label": "Small-ρ setting",
+          "audio": false,
+          "frameCount": 251,
+          "frameDelaySeconds": 0.02,
+          "bytes": 889556,
+          "posterBytes": 36971
+        },
+        {
+          "type": "image",
+          "caption": "Architecture coupling covariance steering with L1 distributionally robust adaptive control.",
+          "assets": [
+            {
+              "type": "image",
+              "src": "images/research/covariance-steering/03-architecture.png",
+              "preview": "images/research/covariance-steering/03-architecture-preview.png",
+              "width": 1892,
+              "height": 1116,
+              "previewWidth": 1000,
+              "previewHeight": 590,
+              "alt": "Covariance-steering controller and L1 distributionally robust adaptive-control feedback around the uncertain system.",
+              "label": null,
+              "sourceOriginal": "Arch.png",
+              "bytes": 112852,
+              "previewBytes": 73875
+            }
+          ]
+        }
+      ]
+    },
+    "small-body-planning": {
+      "headingId": "project-small-body-planning",
+      "title": "Distributionally Robust Planning for Small-Body Proximity Operations",
+      "status": "media-integrated",
+      "requiredMedia": "Approved small-body geometry/keep-out figure or simulation video.",
+      "figure": {
+        "src": "images/research/small-body-planning/01-trajectory-l1-on.png",
+        "alt": "Three-dimensional stochastic proximity trajectories with L1 adaptive control enabled.",
+        "width": 2591,
+        "height": 2510,
+        "caption": "Three-dimensional stochastic proximity trajectories with and without L1 adaptive control."
+      },
+      "video": {
+        "mp4": null,
+        "webm": null,
+        "poster": null,
+        "posterAlt": null,
+        "width": null,
+        "height": null,
+        "captions": null,
+        "transcript": null,
+        "loopPreview": false
+      },
+      "externalVideo": null,
+      "slides": [
+        {
+          "type": "comparison",
+          "caption": "Three-dimensional stochastic proximity trajectories with and without L1 adaptive control.",
+          "assets": [
+            {
+              "type": "image",
+              "src": "images/research/small-body-planning/01-trajectory-l1-on.png",
+              "preview": "images/research/small-body-planning/01-trajectory-l1-on-preview.png",
+              "width": 2591,
+              "height": 2510,
+              "previewWidth": 1000,
+              "previewHeight": 969,
+              "alt": "Three-dimensional stochastic proximity trajectories with L1 adaptive control enabled.",
+              "label": "L1 on",
+              "sourceOriginal": "trajectory_3d_l1_on.png",
+              "bytes": 840434,
+              "previewBytes": 237397
+            },
+            {
+              "type": "image",
+              "src": "images/research/small-body-planning/01-trajectory-l1-off.png",
+              "preview": "images/research/small-body-planning/01-trajectory-l1-off-preview.png",
+              "width": 2583,
+              "height": 2510,
+              "previewWidth": 1000,
+              "previewHeight": 972,
+              "alt": "Three-dimensional stochastic proximity trajectories with L1 adaptive control disabled.",
+              "label": "L1 off",
+              "sourceOriginal": "trajectory_3d_l1_off.png",
+              "bytes": 938673,
+              "previewBytes": 247297
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "caption": "Median and lower-tail CVaR of keep-out clearance.",
+          "assets": [
+            {
+              "type": "image",
+              "src": "images/research/small-body-planning/02-clearance.png",
+              "preview": "images/research/small-body-planning/02-clearance-preview.png",
+              "width": 2180,
+              "height": 1396,
+              "previewWidth": 1000,
+              "previewHeight": 640,
+              "alt": "Keep-out clearance comparison showing median and lower-tail conditional value-at-risk.",
+              "label": null,
+              "sourceOriginal": "clearance.png",
+              "bytes": 269217,
+              "previewBytes": 137847
+            }
+          ]
+        },
+        {
+          "type": "comparison",
+          "caption": "State distributions and 95% highest-density regions with and without adaptive control.",
+          "assets": [
+            {
+              "type": "image",
+              "src": "images/research/small-body-planning/03-distribution-l1-on.png",
+              "preview": "images/research/small-body-planning/03-distribution-l1-on-preview.png",
+              "width": 1830,
+              "height": 1734,
+              "previewWidth": 1000,
+              "previewHeight": 948,
+              "alt": "State distributions and 95% highest-density regions with L1 adaptive control enabled.",
+              "label": "L1 on",
+              "sourceOriginal": "covariance_hdr_l1_on.png",
+              "bytes": 257954,
+              "previewBytes": 160914
+            },
+            {
+              "type": "image",
+              "src": "images/research/small-body-planning/03-distribution-l1-off.png",
+              "preview": "images/research/small-body-planning/03-distribution-l1-off-preview.png",
+              "width": 1752,
+              "height": 1734,
+              "previewWidth": 1000,
+              "previewHeight": 990,
+              "alt": "State distributions and 95% highest-density regions with L1 adaptive control disabled.",
+              "label": "L1 off",
+              "sourceOriginal": "covariance_hdr_l1_off.png",
+              "bytes": 250111,
+              "previewBytes": 173049
+            }
+          ]
+        }
+      ]
+    },
+    "mean-field-control": {
+      "headingId": "project-mean-field-control",
+      "title": "Networked Control and Mean-Field Optimality under Diagonal Dominance",
+      "status": "media-integrated",
+      "requiredMedia": "Approved network/controller diagram or illustrative animation.",
+      "figure": {
+        "src": "images/research/mean-field-control/01-control-120-agents.png",
+        "alt": "Complete three-panel comparison of 120-agent networked control across decentralized and two alpha-dominant regimes.",
+        "width": 3200,
+        "height": 968,
+        "caption": "Networked control performance under different diagonal dominance regimes for 120 agents."
+      },
+      "video": {
+        "mp4": null,
+        "webm": null,
+        "poster": null,
+        "posterAlt": null,
+        "width": null,
+        "height": null,
+        "captions": null,
+        "transcript": null,
+        "loopPreview": false
+      },
+      "externalVideo": null,
+      "slides": [
+        {
+          "type": "image",
+          "caption": "Networked control performance under different diagonal dominance regimes for 120 agents.",
+          "assets": [
+            {
+              "type": "image",
+              "src": "images/research/mean-field-control/01-control-120-agents.png",
+              "preview": "images/research/mean-field-control/01-control-120-agents-preview.png",
+              "width": 3200,
+              "height": 968,
+              "previewWidth": 1000,
+              "previewHeight": 303,
+              "alt": "Complete three-panel comparison of 120-agent networked control across decentralized and two alpha-dominant regimes.",
+              "label": null,
+              "sourceOriginal": "caseB_alpha_N120.png",
+              "bytes": 620059,
+              "previewBytes": 103786
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "caption": "Comparative networked control performance for 60 agents.",
+          "assets": [
+            {
+              "type": "image",
+              "src": "images/research/mean-field-control/02-control-60-agents.png",
+              "preview": "images/research/mean-field-control/02-control-60-agents-preview.png",
+              "width": 3200,
+              "height": 968,
+              "previewWidth": 1000,
+              "previewHeight": 303,
+              "alt": "Complete three-panel comparison of 60-agent networked control across decentralized and two alpha-dominant regimes.",
+              "label": null,
+              "sourceOriginal": "caseB_alpha_N60.png",
+              "bytes": 627610,
+              "previewBytes": 104568
+            }
+          ]
+        }
+      ]
+    },
+    "virtual-power-plants": {
+      "headingId": "project-virtual-power-plants",
+      "title": "Distributed Control of Virtual Power Plants",
+      "status": "media-integrated",
+      "requiredMedia": "Approved control-architecture figure or inverter/microgrid demonstration; identify which published work it illustrates.",
+      "figure": {
+        "src": "images/research/virtual-power-plants/01-hil.png",
+        "alt": "Distributed optimization and control pipeline linked to real-time hardware-in-the-loop power-system equipment.",
+        "width": 2130,
+        "height": 548,
+        "caption": "End-to-end distributed optimization and control platform with hardware-in-the-loop implementation."
+      },
+      "video": {
+        "mp4": null,
+        "webm": null,
+        "poster": null,
+        "posterAlt": null,
+        "width": null,
+        "height": null,
+        "captions": null,
+        "transcript": null,
+        "loopPreview": false
+      },
+      "externalVideo": null,
+      "slides": [
+        {
+          "type": "image",
+          "caption": "End-to-end distributed optimization and control platform with hardware-in-the-loop implementation.",
+          "assets": [
+            {
+              "type": "image",
+              "src": "images/research/virtual-power-plants/01-hil.png",
+              "preview": "images/research/virtual-power-plants/01-hil-preview.png",
+              "width": 2130,
+              "height": 548,
+              "previewWidth": 1000,
+              "previewHeight": 257,
+              "alt": "Distributed optimization and control pipeline linked to real-time hardware-in-the-loop power-system equipment.",
+              "label": null,
+              "sourceOriginal": "HIL.pdf",
+              "bytes": 1092041,
+              "previewBytes": 298308
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "caption": "Distributed optimization-based control architecture for networks of inverter-interfaced energy resources.",
+          "assets": [
+            {
+              "type": "image",
+              "src": "images/research/virtual-power-plants/02-system.png",
+              "preview": "images/research/virtual-power-plants/02-system.png",
+              "width": 1624,
+              "height": 750,
+              "previewWidth": 1624,
+              "previewHeight": 750,
+              "alt": "Inverter-interfaced energy-resource network, communication layer, and grid-following and grid-forming control hierarchies.",
+              "label": null,
+              "sourceOriginal": "system.pdf",
+              "bytes": 214317,
+              "previewBytes": 214317
+            }
+          ]
+        }
+      ]
+    },
+    "directed-optimization": {
+      "headingId": "project-directed-optimization",
+      "title": "Distributed Optimization over Directed Communication Networks",
+      "status": "media-integrated",
+      "requiredMedia": "Approved directed-graph or convergence figure; include algorithm assumptions and axis labels.",
+      "figure": {
+        "src": "images/research/directed-optimization/01-huber-convergence.png",
+        "alt": "Huber-regression solution residual versus iteration count, with DC-DistADMM algorithm iterations and total iterations shown separately.",
+        "width": 1747,
+        "height": 1366,
+        "caption": "Comparative convergence of DC-DistADMM and distributed optimization algorithms for Huber regression."
+      },
+      "video": {
+        "mp4": null,
+        "webm": null,
+        "poster": null,
+        "posterAlt": null,
+        "width": null,
+        "height": null,
+        "captions": null,
+        "transcript": null,
+        "loopPreview": false
+      },
+      "externalVideo": null,
+      "slides": [
+        {
+          "type": "image",
+          "caption": "Comparative convergence of DC-DistADMM and distributed optimization algorithms for Huber regression.",
+          "assets": [
+            {
+              "type": "image",
+              "src": "images/research/directed-optimization/01-huber-convergence.png",
+              "preview": "images/research/directed-optimization/01-huber-convergence-preview.png",
+              "width": 1747,
+              "height": 1366,
+              "previewWidth": 1000,
+              "previewHeight": 782,
+              "alt": "Huber-regression solution residual versus iteration count, with DC-DistADMM algorithm iterations and total iterations shown separately.",
+              "label": null,
+              "sourceOriginal": "huber_sol.eps",
+              "bytes": 164224,
+              "previewBytes": 156072
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "caption": "Computational performance comparison in terms of CPU time.",
+          "assets": [
+            {
+              "type": "image",
+              "src": "images/research/directed-optimization/02-huber-time.png",
+              "preview": "images/research/directed-optimization/02-huber-time-preview.png",
+              "width": 1745,
+              "height": 1348,
+              "previewWidth": 1000,
+              "previewHeight": 772,
+              "alt": "Huber-regression convergence comparison plotted against CPU time, retaining the original algorithm legend.",
+              "label": null,
+              "sourceOriginal": "huber_sol_time.eps",
+              "bytes": 142165,
+              "previewBytes": 126815
+            }
+          ]
+        }
+      ]
+    },
+    "microgrid-risk-sharing": {
+      "headingId": "project-microgrid-risk-sharing",
+      "title": "Risk Sharing in Interconnected Microgrids",
+      "status": "media-integrated",
+      "requiredMedia": "Approved connectivity/storage-planning figure; identify the published paper and assumptions.",
+      "figure": {
+        "src": "images/research/microgrid-risk-sharing/01-network.png",
+        "alt": "Stochastic resource network with local storage Xi(t) at node i and transfers uij(t) and uik(t).",
+        "width": 1186,
+        "height": 618,
+        "caption": "Interconnected stochastic resource network with local storage and inter-node resource transfers."
+      },
+      "video": {
+        "mp4": null,
+        "webm": null,
+        "poster": null,
+        "posterAlt": null,
+        "width": null,
+        "height": null,
+        "captions": null,
+        "transcript": null,
+        "loopPreview": false
+      },
+      "externalVideo": null,
+      "slides": [
+        {
+          "type": "image",
+          "caption": "Interconnected stochastic resource network with local storage and inter-node resource transfers.",
+          "assets": [
+            {
+              "type": "image",
+              "src": "images/research/microgrid-risk-sharing/01-network.png",
+              "preview": "images/research/microgrid-risk-sharing/01-network.png",
+              "width": 1186,
+              "height": 618,
+              "previewWidth": 1186,
+              "previewHeight": 618,
+              "alt": "Stochastic resource network with local storage Xi(t) at node i and transfers uij(t) and uik(t).",
+              "label": null,
+              "sourceOriginal": "multi_node_system.pdf",
+              "bytes": 51886,
+              "previewBytes": 51886
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "caption": "Survival probability as a function of rescaled transport capacity for different operating horizons.",
+          "assets": [
+            {
+              "type": "image",
+              "src": "images/research/microgrid-risk-sharing/02-survival.jpg",
+              "preview": "images/research/microgrid-risk-sharing/02-survival-preview.png",
+              "width": 2046,
+              "height": 1758,
+              "previewWidth": 1000,
+              "previewHeight": 857,
+              "alt": "Survival probability versus rescaled transport capacity for the operating horizons labeled in the supplied plot.",
+              "label": null,
+              "sourceOriginal": "sim1.jpg",
+              "bytes": 449940,
+              "previewBytes": 191947
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "caption": "Empirical power-law scaling of threshold transport capacity with operating horizon.",
+          "assets": [
+            {
+              "type": "image",
+              "src": "images/research/microgrid-risk-sharing/03-threshold-scaling.jpg",
+              "preview": "images/research/microgrid-risk-sharing/03-threshold-scaling-preview.png",
+              "width": 2070,
+              "height": 1686,
+              "previewWidth": 1000,
+              "previewHeight": 814,
+              "alt": "Threshold transport capacity versus operating horizon, with the empirical points and fitted scaling curve shown in the supplied figure.",
+              "label": null,
+              "sourceOriginal": "sim2.jpg",
+              "bytes": 314510,
+              "previewBytes": 136490
+            }
+          ]
+        }
+      ],
+      "verificationNote": "Author verification pending: exact source/publication association of the supplied network and scaling figures. Captions supplied by the author; no claim these are numbered figures in the linked paper."
+    },
+    "verifier-multi-llm": {
+      "headingId": "project-verifier-multi-llm",
+      "title": "Verifier-Mediated Multi-LLM Coordination for Multi-Robot Planning",
+      "status": "media-integrated",
+      "requiredMedia": "Approved geometric-verifier architecture figure or CARLA/Crazyflie coordination video from the public workshop paper.",
+      "figure": {
+        "src": "images/research/verifier-multi-llm/02-framework.png",
+        "alt": "Feasibility-aware multi-robot planning framework showing symbolic task planning, geometric grounding, verification, targeted replanning, and execution.",
+        "width": 3200,
+        "height": 1801,
+        "caption": "Framework integrating symbolic planning, geometric grounding, execution-level verification, and targeted replanning."
+      },
+      "video": {
+        "mp4": "media/research/verifier-multi-llm/Single-Crazyflie_Hardware_Experiment_Route1.mp4",
+        "webm": null,
+        "poster": "images/research/verifier-multi-llm/01-route1-poster.jpg",
+        "posterAlt": "Crazyflie laboratory flight with a planned path inset and virtual obstacles marked in red.",
+        "width": 1280,
+        "height": 720,
+        "captions": null,
+        "transcript": null,
+        "loopPreview": false
+      },
+      "externalVideo": null,
+      "slides": [
+        {
+          "type": "video",
+          "sourceOriginal": "Single-Crazyflie_Hardware_Experiment_Route1.mp4",
+          "src": "media/research/verifier-multi-llm/Single-Crazyflie_Hardware_Experiment_Route1.mp4",
+          "bytes": 1812078,
+          "width": 1280,
+          "height": 720,
+          "caption": "Hardware demonstration of feasibility-aware LLM-based trajectory planning.",
+          "alt": "Crazyflie laboratory flight with a planned path inset and virtual obstacles marked in red.",
+          "poster": "images/research/verifier-multi-llm/01-route1-poster.jpg",
+          "posterTimeSeconds": 27,
+          "posterBytes": 146867,
+          "durationSeconds": 54.666,
+          "audio": true,
+          "captions": null,
+          "transcript": null
+        },
+        {
+          "type": "image",
+          "sourceOriginal": "Fig4HD.png",
+          "src": "images/research/verifier-multi-llm/02-framework.png",
+          "bytes": 5594135,
+          "width": 3200,
+          "height": 1801,
+          "caption": "Framework integrating symbolic planning, geometric grounding, execution-level verification, and targeted replanning.",
+          "alt": "Feasibility-aware multi-robot planning framework showing symbolic task planning, geometric grounding, verification, targeted replanning, and execution.",
+          "preview": "images/research/verifier-multi-llm/02-framework-preview.png",
+          "previewWidth": 1200,
+          "previewHeight": 675,
+          "previewBytes": 1167106
+        },
+        {
+          "type": "video",
+          "sourceOriginal": "Two-Crazyflie_Multi-agent_Coordination.mp4",
+          "src": "media/research/verifier-multi-llm/03-coordination.mp4",
+          "bytes": 5254633,
+          "width": 1920,
+          "height": 1080,
+          "caption": "Multi-agent coordination and execution of jointly planned trajectories.",
+          "alt": "Gazebo simulation of two Crazyflie robots following coordinated paths, alongside a dual-robot path preview.",
+          "poster": "images/research/verifier-multi-llm/03-coordination-poster.jpg",
+          "posterTimeSeconds": 65,
+          "posterBytes": 140551,
+          "durationSeconds": 131.133,
+          "audio": true,
+          "captions": null,
+          "transcript": null
+        },
+        {
+          "type": "video",
+          "sourceOriginal": "Single-Crazyflie_Hardware_Experiment_Route2.mp4",
+          "src": "media/research/verifier-multi-llm/Single-Crazyflie_Hardware_Experiment_Route2.mp4",
+          "bytes": 1009134,
+          "width": 1280,
+          "height": 720,
+          "caption": "Hardware demonstration of an alternative obstacle-avoiding trajectory.",
+          "alt": "Crazyflie laboratory flight along an alternative planned obstacle-avoiding route.",
+          "poster": "images/research/verifier-multi-llm/04-route2-poster.jpg",
+          "posterTimeSeconds": 25,
+          "posterBytes": 145492,
+          "durationSeconds": 50.034,
+          "audio": true,
+          "captions": null,
+          "transcript": null
+        }
+      ]
+    },
+    "aerial-refueling": {
+      "headingId": "project-aerial-refueling",
+      "title": "Uncertainty-Aware Vision-Based Aerial Refueling",
+      "status": "media-integrated",
+      "requiredMedia": "Approved estimator/uncertainty-margin architecture figure or FlightGear/JSBSim docking simulation video. Do not imply demonstrated mechanical engagement or fuel transfer.",
+      "figure": {
+        "src": null,
+        "alt": null,
+        "width": null,
+        "height": null,
+        "caption": null
+      },
+      "video": {
+        "mp4": "media/research/aerial-refueling/AAR.mp4",
+        "webm": null,
+        "poster": "images/research/aerial-refueling/01-refueling-poster.jpg",
+        "posterAlt": "Autonomous aerial-refueling simulation with aircraft alignment and docking guidance.",
+        "width": 1280,
+        "height": 720,
+        "captions": null,
+        "transcript": null,
+        "loopPreview": false
+      },
+      "externalVideo": null,
+      "slides": [
+        {
+          "type": "video",
+          "src": "media/research/aerial-refueling/AAR.mp4",
+          "poster": "images/research/aerial-refueling/01-refueling-poster.jpg",
+          "caption": "Uncertainty-aware autonomous aerial refueling integrating vision-based state estimation, conformal calibration, and predictive docking control.",
+          "alt": "Autonomous aerial-refueling simulation with aircraft alignment and docking guidance.",
+          "width": 1280,
+          "height": 720,
+          "durationSeconds": 173.758333,
+          "sourceOriginal": "AAR.mp4",
+          "posterTimeSeconds": 87,
+          "audio": true,
+          "bytes": 17238931,
+          "posterBytes": 122756
+        }
+      ]
+    },
+    "online-model-updates": {
+      "headingId": "project-online-model-updates",
+      "title": "Adaptive Online Model Updates for Networked Predictive Control",
+      "status": "media-integrated",
+      "requiredMedia": "Approved online model-update/control architecture or power-distribution simulation figure from the published work.",
+      "figure": {
+        "src": "images/research/online-model-updates/01-ieee37.png",
+        "alt": "Modified IEEE 37-bus network with photovoltaic energy-source buses indicated.",
+        "width": 928,
+        "height": 739,
+        "caption": "IEEE 37-bus distribution network used for evaluating networked predictive control."
+      },
+      "video": {
+        "mp4": null,
+        "webm": null,
+        "poster": null,
+        "posterAlt": null,
+        "width": null,
+        "height": null,
+        "captions": null,
+        "transcript": null,
+        "loopPreview": false
+      },
+      "externalVideo": null,
+      "slides": [
+        {
+          "type": "image",
+          "caption": "IEEE 37-bus distribution network used for evaluating networked predictive control.",
+          "assets": [
+            {
+              "type": "image",
+              "src": "images/research/online-model-updates/01-ieee37.png",
+              "preview": "images/research/online-model-updates/01-ieee37.png",
+              "width": 928,
+              "height": 739,
+              "previewWidth": 928,
+              "previewHeight": 739,
+              "alt": "Modified IEEE 37-bus network with photovoltaic energy-source buses indicated.",
+              "label": null,
+              "sourceOriginal": "IEEE37.eps",
+              "bytes": 39802,
+              "previewBytes": 39802
+            }
+          ]
+        },
+        {
+          "type": "comparison",
+          "caption": "Voltage trajectories with online gradient-based model updates. Voltage trajectories using the linear online gradient-based model update formulation.",
+          "assets": [
+            {
+              "type": "image",
+              "src": "images/research/online-model-updates/02-nonlinear-voltage.png",
+              "preview": "images/research/online-model-updates/02-nonlinear-voltage.png",
+              "width": 1456,
+              "height": 1237,
+              "previewWidth": 1456,
+              "previewHeight": 1237,
+              "alt": "Voltage trajectories using online updates of the nonlinear constant-power-load model.",
+              "label": "Nonlinear model",
+              "sourceOriginal": "online_gd_varying_etak.eps",
+              "bytes": 147141,
+              "previewBytes": 147141
+            },
+            {
+              "type": "image",
+              "src": "images/research/online-model-updates/03-linear-voltage.png",
+              "preview": "images/research/online-model-updates/03-linear-voltage.png",
+              "width": 1452,
+              "height": 1245,
+              "previewWidth": 1452,
+              "previewHeight": 1245,
+              "alt": "Voltage trajectories using online updates of the linear LinDistFlow model.",
+              "label": "Linear model",
+              "sourceOriginal": "online_linear_gd_varying_etak.eps",
+              "bytes": 154649,
+              "previewBytes": 154649
+            }
+          ]
+        }
+      ],
+      "verificationNote": "Figure filenames and methodological distinction verified against arXiv:2405.00637v2, Section VI-B and Figures 3/4: linear LinDistFlow versus nonlinear constant-power-load model. https://arxiv.org/html/2405.00637v2"
+    },
+    "distributed-dc-optimization": {
+      "headingId": "project-distributed-dc-optimization",
+      "title": "Distributed Difference-of-Convex Optimization",
+      "status": "media-integrated",
+      "requiredMedia": "Approved DDC-Consensus algorithm/directed-network figure or regularized least-squares convergence figure; distinguish this algorithm from DC-DistADMM and GradConsensus.",
+      "figure": {
+        "src": "images/research/distributed-dc-optimization/01-objective-residual.png",
+        "alt": "Objective residual versus iteration for DDC-Consensus and its Inexact-10 and Inexact-100 variants.",
+        "width": 1700,
+        "height": 1491,
+        "caption": "Objective residual comparison for DDC-Consensus and its inexact variants."
+      },
+      "video": {
+        "mp4": null,
+        "webm": null,
+        "poster": null,
+        "posterAlt": null,
+        "width": null,
+        "height": null,
+        "captions": null,
+        "transcript": null,
+        "loopPreview": false
+      },
+      "externalVideo": null,
+      "slides": [
+        {
+          "type": "image",
+          "caption": "Objective residual comparison for DDC-Consensus and its inexact variants.",
+          "assets": [
+            {
+              "type": "image",
+              "src": "images/research/distributed-dc-optimization/01-objective-residual.png",
+              "preview": "images/research/distributed-dc-optimization/01-objective-residual.png",
+              "width": 1700,
+              "height": 1491,
+              "previewWidth": 1700,
+              "previewHeight": 1491,
+              "alt": "Objective residual versus iteration for DDC-Consensus and its Inexact-10 and Inexact-100 variants.",
+              "label": null,
+              "sourceOriginal": "fres_inexact_compare.pdf",
+              "bytes": 99685,
+              "previewBytes": 99685
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "caption": "Stationarity residual across distributed optimization iterations.",
+          "assets": [
+            {
+              "type": "image",
+              "src": "images/research/distributed-dc-optimization/02-stationarity-residual.png",
+              "preview": "images/research/distributed-dc-optimization/02-stationarity-residual.png",
+              "width": 1700,
+              "height": 1461,
+              "previewWidth": 1700,
+              "previewHeight": 1461,
+              "alt": "Stationarity residual versus iteration for DDC-Consensus and its inexact variants.",
+              "label": null,
+              "sourceOriginal": "station_inexact_compare.pdf",
+              "bytes": 95680,
+              "previewBytes": 95680
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "caption": "Solution residual comparison under different consensus approximations.",
+          "assets": [
+            {
+              "type": "image",
+              "src": "images/research/distributed-dc-optimization/03-solution-residual.png",
+              "preview": "images/research/distributed-dc-optimization/03-solution-residual.png",
+              "width": 1695,
+              "height": 1452,
+              "previewWidth": 1695,
+              "previewHeight": 1452,
+              "alt": "Solution residual versus iteration for DDC-Consensus and its inexact variants.",
+              "label": null,
+              "sourceOriginal": "sol_inexact_compare.pdf",
+              "bytes": 83203,
+              "previewBytes": 83203
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

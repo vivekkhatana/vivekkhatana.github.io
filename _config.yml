@@ -1,0 +1,7 @@
+# GitHub Pages already uses Jekyll. Keep development-only files out of its output.
+exclude:
+  - AGENTS.md
+  - DEVELOPMENT.md
+  - media/INVENTORY.txt
+  - media/research-manifest.json
+  - projects/template.html

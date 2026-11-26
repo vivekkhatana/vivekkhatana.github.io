@@ -4,741 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vivek Khatana</title>
-  <meta name="description" content="Vivek Khatana — Postdoctoral Scholar at UIUC and UNR. Research in distributed optimization, control theory, and machine learning." />
-  <meta name="keywords" content="Vivek Khatana, distributed optimization, control theory, UIUC, postdoctoral researcher, machine learning, autonomous systems">
+  <meta name="description" content="Vivek Khatana — Postdoctoral Scholar, Department of Mechanical Engineering, University of Nevada, Reno; Research Affiliate, AVIATE Center, University of Illinois Urbana-Champaign. Research in distributed optimization, control theory, and machine learning." />
+  <meta name="keywords" content="Vivek Khatana, distributed optimization, control theory, University of Nevada Reno, University of Illinois Urbana-Champaign, AVIATE, postdoctoral scholar, research affiliate, machine learning, autonomous systems">
 
   <!-- Open Graph for link previews -->
   <meta property="og:title" content="Vivek Khatana" />
-  <meta property="og:description" content="Postdoctoral Scholar at UIUC & UNR. Distributed optimization, control theory, machine learning." />
+  <meta property="og:description" content="Postdoctoral Scholar, Department of Mechanical Engineering, University of Nevada, Reno; Research Affiliate, AVIATE Center, University of Illinois Urbana-Champaign. Distributed optimization, control theory, machine learning." />
   <meta property="og:type" content="website" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
 
-  <style>
-    /* ─────────────────────────────────────────
-       TOKENS
-    ───────────────────────────────────────── */
-    :root {
-      --white:       #ffffff;
-      --off-white:   #f8f8f8;
-      --bg:          #f4f5f7;
-      --sidebar-bg:  #1c2b3a;
-      --sidebar-w:   240px;
-      --ink:         #1a1a1a;
-      --body:        #3d3d3d;
-      --muted:       #7a7a7a;
-      --faint:       #c0c0c0;
-      --rule:        #e8e8e8;
-      --accent:      #2e6da4;
-      --accent-lt:   #d9e8f5;
-      --font:        'Plus Jakarta Sans', sans-serif;
-      --radius:      6px;
-      --cx:          2rem;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: var(--font);
-      background: var(--bg);
-      color: var(--body);
-      font-size: 15px;
-      line-height: 1.75;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    strong { color: var(--ink); font-weight: 600; }
-
-    /* ═══════════════════════════════════════════
-       LANDING
-    ═══════════════════════════════════════════ */
-    #landing {
-      min-height: 100vh;
-      background: var(--white);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 4rem var(--cx) 3.5rem;
-      position: relative;
-    }
-
-    .lp-photo {
-      width: 190px;
-      height: 190px;
-      border-radius: 50%;
-      overflow: hidden;
-      background: #dde4ec;
-      margin-bottom: 1.5rem;
-      flex-shrink: 0;
-    }
-
-    .lp-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-    #landing h1 {
-      font-size: 2.15rem;
-      font-weight: 700;
-      color: var(--ink);
-      letter-spacing: -0.02em;
-      margin-bottom: 0.3rem;
-    }
-
-    .lp-title {
-      font-size: 0.82rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 1.6rem;
-    }
-
-    .lp-socials {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.4rem 1.2rem;
-      list-style: none;
-      margin-bottom: 1.4rem;
-    }
-
-    .lp-socials a {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.38rem;
-      font-size: 0.76rem;
-      font-weight: 600;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-      color: #555;
-      transition: color 0.15s;
-      text-decoration: none;
-    }
-
-    .lp-socials a:hover { color: var(--ink); }
-    .lp-socials svg { width: 13px; height: 13px; flex-shrink: 0; }
-
-    .lp-divider { width: 28px; height: 1px; background: #ddd; margin: 0.2rem auto 1.3rem; }
-
-    .lp-nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      list-style: none;
-      margin-bottom: 1.6rem;
-    }
-
-    .lp-nav li a {
-      display: inline-block;
-      font-size: 0.76rem;
-      font-weight: 500;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: #888;
-      padding: 0.18rem 0.55rem;
-      transition: color 0.15s;
-      text-decoration: none;
-    }
-
-    .lp-nav li a:hover { color: var(--ink); }
-    .lp-nav li + li::before { content: '·'; color: #ccc; }
-
-    .lp-updated { font-size: 0.73rem; color: #bbb; letter-spacing: 0.03em; }
-
-    .lp-scroll {
-      position: absolute;
-      bottom: 1.8rem;
-      left: 50%;
-      transform: translateX(-50%);
-      color: #ccc;
-      display: block;
-      animation: chevron-bob 2.4s ease-in-out infinite;
-    }
-
-    @keyframes chevron-bob {
-      0%, 100% { transform: translateX(-50%) translateY(0); }
-      55%       { transform: translateX(-50%) translateY(5px); }
-    }
-
-    /* ═══════════════════════════════════════════
-       MAIN — two-column layout
-    ═══════════════════════════════════════════ */
-    #main { display: flex; align-items: flex-start; min-height: 100vh; }
-
-    /* ── SIDEBAR ── */
-    #sidebar {
-      position: sticky;
-      top: 0;
-      width: var(--sidebar-w);
-      min-width: var(--sidebar-w);
-      height: 100vh;
-      background: var(--sidebar-bg);
-      display: flex;
-      flex-direction: column;
-      padding: 2.2rem 1.5rem 2rem;
-      overflow-y: auto;
-      flex-shrink: 0;
-    }
-
-    .sb-photo {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      overflow: hidden;
-      background: #2e4560;
-      margin-bottom: 0.9rem;
-      flex-shrink: 0;
-    }
-
-    .sb-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-    .sb-name {
-      font-size: 0.97rem;
-      font-weight: 700;
-      color: #fff;
-      line-height: 1.3;
-      margin-bottom: 0.25rem;
-      letter-spacing: -0.01em;
-    }
-
-    .sb-role {
-      font-size: 0.72rem;
-      color: rgba(255,255,255,0.5);
-      line-height: 1.5;
-      margin-bottom: 1.6rem;
-    }
-
-    .sb-nav { list-style: none; margin-bottom: auto; }
-
-    .sb-nav li a {
-      display: block;
-      font-size: 0.76rem;
-      font-weight: 500;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.5);
-      padding: 0.42rem 0.6rem;
-      border-radius: 4px;
-      transition: background 0.15s, color 0.15s;
-      text-decoration: none;
-    }
-
-    .sb-nav li a:hover,
-    .sb-nav li a.active {
-      background: rgba(255,255,255,0.08);
-      color: #fff;
-    }
-
-    .sb-subnav { list-style: none; padding-left: 0.8rem; margin-top: 0.1rem; }
-
-    .sb-subnav li a {
-      font-size: 0.69rem;
-      letter-spacing: 0.06em;
-      padding: 0.28rem 0.6rem;
-      color: rgba(255,255,255,0.35);
-    }
-
-    .sb-subnav li a:hover { color: rgba(255,255,255,0.75); background: none; }
-
-    .sb-socials {
-      display: flex;
-      gap: 0.65rem;
-      flex-wrap: wrap;
-      margin-top: 1.8rem;
-      padding-top: 1.4rem;
-      border-top: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .sb-socials a { color: rgba(255,255,255,0.4); transition: color 0.15s; display: flex; align-items: center; }
-    .sb-socials a:hover { color: #fff; }
-    .sb-socials svg { width: 15px; height: 15px; }
-
-    /* ── CONTENT ── */
-    #content {
-      flex: 1;
-      min-width: 0;
-      padding: 3.5rem var(--cx) 4rem var(--cx);
-      max-width: 820px;
-    }
-
-    /* ── SECTIONS ── */
-    .section {
-      margin-bottom: 3.8rem;
-      padding-bottom: 3.8rem;
-      border-bottom: 1px solid var(--rule);
-    }
-
-    .section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 2rem; }
-
-    .section-heading {
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.17em;
-      text-transform: uppercase;
-      color: var(--faint);
-      margin-bottom: 0.5rem;
-    }
-
-    .section h2 {
-      font-size: 1.45rem;
-      font-weight: 700;
-      color: var(--ink);
-      letter-spacing: -0.02em;
-      margin-bottom: 1.4rem;
-      line-height: 1.25;
-    }
-
-    /* ─────────────────────────────────────────
-       BIO — photo floated right, text wraps
-    ───────────────────────────────────────── */
-    .bio-wrap {
-      display: block;     /* block so float works */
-    }
-
-    /* clearfix so section border clears the float */
-    .bio-wrap::after {
-      content: '';
-      display: table;
-      clear: both;
-    }
-
-    .bio-photo-side {
-      float: right;
-      width: 300px;
-      margin: 0 0 1.2rem 1.8rem;  /* gap to the left and below */
-    }
-
-    .bio-photo-side img {
-      width: 100%;
-      border-radius: var(--radius);
-      display: block;
-    }
-
-    .bio-lede {
-      font-size: 1.05rem;
-      font-weight: 500;
-      color: var(--ink);
-      line-height: 1.7;
-      margin-bottom: 1rem;
-    }
-
-    .bio-body p {
-      font-size: 0.93rem;
-      color: var(--body);
-      margin-bottom: 0.85rem;
-      line-height: 1.8;
-    }
-
-    .bio-body a {
-      color: var(--accent);
-      text-decoration: underline;
-      text-decoration-color: var(--accent-lt);
-    }
-
-    .bio-body a:hover { text-decoration-color: var(--accent); }
-
-    .speaker-toggle {
-      margin-top: 1.2rem;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      color: var(--muted);
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 0;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      font-family: var(--font);
-      transition: color 0.15s;
-    }
-
-    .speaker-toggle:hover { color: var(--ink); }
-    .speaker-toggle .arrow { display: inline-block; transition: transform 0.2s; font-style: normal; }
-    .speaker-toggle.open .arrow { transform: rotate(90deg); }
-
-    #speaker-bio-text {
-      display: none;
-      margin-top: 1rem;
-      padding-top: 1rem;
-      border-top: 1px solid var(--rule);
-    }
-
-    #speaker-bio-text p { font-size: 0.92rem; color: var(--body); margin-bottom: 0.8rem; line-height: 1.8; }
-    #speaker-bio-text a { color: var(--accent); text-decoration: underline; text-decoration-color: var(--accent-lt); }
-
-    .cv-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      margin-top: 1.1rem;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--ink);
-      border-bottom: 1.5px solid var(--ink);
-      padding-bottom: 1px;
-      text-decoration: none;
-      transition: color 0.15s, border-color 0.15s;
-    }
-
-    .cv-link:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
-
-    /* ── RESEARCH ── */
-    .research-intro { font-size: 0.93rem; color: var(--body); line-height: 1.8; margin-bottom: 1.4rem; }
-
-    .research-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
-
-    .r-card {
-      background: var(--white);
-      border: 1px solid var(--rule);
-      border-radius: var(--radius);
-      padding: 1rem 1.1rem;
-      display: flex;
-      gap: 0.75rem;
-      align-items: flex-start;
-      transition: border-color 0.15s, box-shadow 0.15s;
-    }
-
-    .r-card:hover { border-color: #b0c8e0; box-shadow: 0 2px 10px rgba(46,109,164,0.07); }
-    .r-card-icon { font-size: 1.3rem; line-height: 1; flex-shrink: 0; margin-top: 0.1rem; }
-    .r-card-title { font-size: 0.86rem; font-weight: 600; color: var(--ink); line-height: 1.4; }
-    .r-card-desc { font-size: 0.8rem; color: var(--muted); margin-top: 0.2rem; line-height: 1.5; }
-
-    /* ── PUBLICATIONS ── */
-    .pub-meta { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.3rem; flex-wrap: wrap; gap: 0.5rem; }
-    .pub-scholar-link { font-size: 0.78rem; font-weight: 600; color: var(--accent); letter-spacing: 0.04em; }
-
-    .pub-year-label {
-      font-size: 0.67rem;
-      font-weight: 700;
-      letter-spacing: 0.17em;
-      text-transform: uppercase;
-      color: var(--faint);
-      margin: 1.8rem 0 0.65rem;
-      padding-bottom: 0.4rem;
-      border-bottom: 1px solid var(--rule);
-    }
-
-    .pub-list { list-style: none; }
-
-    .pub-list li {
-      padding: 0.6rem 0 0.6rem 1rem;
-      border-bottom: 1px dotted #ededed;
-      font-size: 0.88rem;
-      color: var(--body);
-      line-height: 1.72;
-      position: relative;
-    }
-
-    .pub-list li:last-child { border-bottom: none; }
-
-    .pub-list li::before {
-      content: '';
-      position: absolute;
-      left: 0; top: 1.05rem;
-      width: 4px; height: 4px;
-      border-radius: 50%;
-      background: var(--faint);
-    }
-
-    .pub-list li .me { font-weight: 700; color: var(--ink); }
-    .pub-list li em { color: #666; font-style: italic; }
-    .pub-list li a { color: var(--accent); text-decoration: none; font-size: 0.82rem; }
-    .pub-list li a:hover { text-decoration: underline; }
-
-    .pub-badge {
-      display: inline-block;
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      padding: 0.1rem 0.42rem;
-      border-radius: 3px;
-      margin-left: 0.4rem;
-      vertical-align: middle;
-    }
-
-    .badge-j { background: #e3f0fb; color: #2060a0; }
-    .badge-c { background: #f0f0f0; color: #666; }
-    .badge-p { background: #fef3cd; color: #856404; }
-
-    /* ── MEDIA ── */
-    .media-intro { font-size: 0.93rem; color: var(--body); margin-bottom: 1.6rem; line-height: 1.8; }
-    .media-intro a { color: var(--accent); }
-    .media-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-
-    .media-card {
-      background: var(--white);
-      border: 1px solid var(--rule);
-      border-radius: var(--radius);
-      overflow: hidden;
-      transition: box-shadow 0.15s, border-color 0.15s;
-      text-decoration: none;
-      color: inherit;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .media-card:hover { border-color: #b0c8e0; box-shadow: 0 2px 12px rgba(46,109,164,0.09); text-decoration: none; }
-
-    .media-thumb {
-      width: 100%;
-      aspect-ratio: 16/9;
-      background: #1a1a2e;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .media-thumb .play-btn {
-      position: absolute;
-      width: 44px; height: 44px;
-      background: rgba(255,255,255,0.9);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.15s, background 0.15s;
-    }
-
-    .media-card:hover .play-btn { transform: scale(1.1); background: #fff; }
-    .play-btn svg { width: 18px; height: 18px; margin-left: 2px; }
-
-    .media-thumb .yt-placeholder {
-      width: 100%; height: 100%;
-      background: linear-gradient(135deg, #1a1a2e 0%, #2e3b55 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .media-info { padding: 0.85rem 1rem; flex: 1; }
-    .media-type { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--faint); margin-bottom: 0.3rem; }
-    .media-title { font-size: 0.86rem; font-weight: 600; color: var(--ink); line-height: 1.4; margin-bottom: 0.2rem; }
-    .media-venue { font-size: 0.78rem; color: var(--muted); line-height: 1.4; }
-    .media-add-note { margin-top: 1.2rem; font-size: 0.82rem; color: var(--muted); font-style: italic; }
-
-    /* ── RESOURCES ── */
-    .resources-group { margin-bottom: 2.4rem; }
-    .resources-group:last-child { margin-bottom: 0; }
-
-    .resources-group-title {
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.17em;
-      text-transform: uppercase;
-      color: var(--faint);
-      margin-bottom: 0.7rem;
-      padding-bottom: 0.4rem;
-      border-bottom: 1px solid var(--rule);
-    }
-
-    .resource-list { list-style: none; }
-
-    .resource-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-      padding: 0.65rem 0;
-      border-bottom: 1px solid var(--rule);
-      font-size: 0.9rem;
-    }
-
-    .resource-list li:last-child { border-bottom: none; }
-    .resource-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 0.1rem; width: 24px; text-align: center; }
-    .resource-body { flex: 1; min-width: 0; }
-    .resource-title { font-weight: 600; color: var(--ink); font-size: 0.88rem; line-height: 1.4; }
-    .resource-title a { color: var(--accent); text-decoration: none; }
-    .resource-title a:hover { text-decoration: underline; }
-    .resource-desc { font-size: 0.8rem; color: var(--muted); margin-top: 0.15rem; line-height: 1.5; }
-
-    .resource-tag {
-      flex-shrink: 0;
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      padding: 0.12rem 0.45rem;
-      border-radius: 3px;
-      background: var(--accent-lt);
-      color: var(--accent);
-      margin-top: 0.25rem;
-    }
-
-    /* ── NEWS ── */
-    .news-list { list-style: none; }
-
-    .news-list li {
-      display: flex;
-      gap: 1.2rem;
-      padding: 0.6rem 0;
-      border-bottom: 1px solid var(--rule);
-      font-size: 0.9rem;
-      line-height: 1.65;
-    }
-
-    .news-list li:last-child { border-bottom: none; }
-
-    .news-date {
-      flex-shrink: 0;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--faint);
-      min-width: 74px;
-      padding-top: 0.2rem;
-    }
-
-    .news-list a { color: var(--accent); }
-    .news-list a:hover { text-decoration: underline; }
-
-    /* ── TEACHING ── */
-    .teaching-list { list-style: none; }
-
-    .teaching-list li {
-      display: flex;
-      gap: 1rem;
-      padding: 0.5rem 0;
-      border-bottom: 1px solid var(--rule);
-      font-size: 0.9rem;
-    }
-
-    .teaching-list li:last-child { border-bottom: none; }
-    .t-code { flex-shrink: 0; font-weight: 700; font-size: 0.82rem; color: var(--ink); min-width: 72px; padding-top: 0.05rem; }
-    .t-name { color: var(--body); }
-    .teaching-note { margin-top: 1rem; font-size: 0.84rem; color: var(--muted); line-height: 1.7; }
-    .teaching-note a { color: var(--accent); }
-
-    /* ── CONTACT ── */
-    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
-
-    .contact-card {
-      background: var(--white);
-      border: 1px solid var(--rule);
-      border-radius: var(--radius);
-      padding: 1rem 1.2rem;
-    }
-
-    .contact-card h3 {
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--faint);
-      margin-bottom: 0.5rem;
-    }
-
-    .contact-card p, .contact-card a {
-      font-size: 0.88rem;
-      color: var(--body);
-      display: block;
-      line-height: 1.7;
-      text-decoration: none;
-    }
-
-    .contact-card a { color: var(--accent); }
-    .contact-card a:hover { text-decoration: underline; }
-
-    /* ── FOOTER ── */
-    #footer {
-      background: var(--sidebar-bg);
-      color: rgba(255,255,255,0.35);
-      text-align: center;
-      font-size: 0.74rem;
-      letter-spacing: 0.04em;
-      padding: 1.4rem var(--cx);
-    }
-
-    #footer a { color: rgba(255,255,255,0.55); }
-    #footer a:hover { color: #fff; text-decoration: none; }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 860px) {
-      :root { --cx: 1.5rem; }
-    }
-
-    @media (max-width: 680px) {
-      :root { --cx: 1.4rem; }
-
-      #main { flex-direction: column; }
-
-      #sidebar {
-        position: relative;
-        width: 100%;
-        height: auto;
-        flex-direction: row;
-        align-items: center;
-        padding: 1rem var(--cx);
-        flex-wrap: wrap;
-        gap: 0.8rem;
-      }
-
-      .sb-photo { width: 40px; height: 40px; margin-bottom: 0; }
-      .sb-role, .sb-nav, .sb-socials { display: none; }
-      .sb-name { font-size: 0.9rem; margin-bottom: 0; }
-
-      .research-cards, .contact-grid, .media-grid { grid-template-columns: 1fr; }
-
-      /* On mobile: cancel the float, stack photo on top */
-      .bio-photo-side {
-        float: none;
-        width: 100%;
-        margin: 0 0 1.2rem 0;
-      }
-
-      .bio-photo-side img { max-height: 280px; object-fit: cover; object-position: top; }
-    }
-    /* ── LANDING NEWS TICKER ── */
-    .lp-news-ticker {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-top: 1.2rem;
-      margin-bottom: 0.4rem;
-      padding: 0.35rem 0.9rem;
-      border-radius: 999px;
-      background: #f0f6ff;
-      border: 1px solid #c8ddf5;
-      font-size: 0.76rem;
-      font-weight: 500;
-      color: var(--accent);
-      text-decoration: none;
-      transition: background 0.15s, border-color 0.15s;
-    }
-
-    .lp-news-ticker:hover {
-      background: #ddeeff;
-      border-color: var(--accent);
-      text-decoration: none;
-    }
-
-    .lp-news-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: #2ecc71;
-      flex-shrink: 0;
-      animation: pulse-dot 2s ease-in-out infinite;
-    }
-
-    @keyframes pulse-dot {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50%       { opacity: 0.5; transform: scale(0.75); }
-    }
-
-  </style>
+  <script src="scripts/research-media.js" defer></script>
+  <script src="scripts/site-navigation.js" defer></script>
+
+  <link rel="stylesheet" href="styles/site.css" />
+  <link rel="icon" href="favicon.ico" sizes="32x32" />
 </head>
 <body>
 
@@ -778,17 +60,15 @@
   <ul class="lp-nav">
     <li><a href="#bio">Bio</a></li>
     <li><a href="#news">News</a></li>
+    <li><a href="#awards">Awards</a></li>
     <li><a href="#research">Research</a></li>
-    <li><a href="#publications">Publications</a></li>
-    <li><a href="#media">Media</a></li>
-    <li><a href="#resources">Resources</a></li>
-    <li><a href="#teaching">Teaching</a></li>
+    <li><a href="#teaching">Teaching &amp; Service</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 
-  <a class="lp-news-ticker" href="#news">
+  <a class="lp-news-ticker" href="#awards">
     <span class="lp-news-dot"></span>
-    🗞 New: Session Co-Chair, IEEE ACC 2026 &amp; Papers at IEEE ACC 2026, CDC 2025
+    🏆 Distinguished Dissertation Award (Honorable Mention), University of Minnesota · 2026
   </a>
 
   <a class="lp-scroll" href="#main" aria-label="Scroll to content">
@@ -809,24 +89,57 @@
     </div>
 
     <div class="sb-name">Vivek Khatana</div>
-    <div class="sb-role">Postdoctoral Scholar<br>UIUC &amp; UNR</div>
+    <div class="sb-role">Postdoctoral Scholar<br>Mechanical Engineering, UNR<br>Research Affiliate<br>AVIATE Center, UIUC</div>
 
-    <ul class="sb-nav">
-      <li><a href="#bio">Bio</a></li>
-      <li><a href="#news">News</a></li>
-      <li><a href="#research">Research Interests</a></li>
-      <li><a href="#publications">Publications</a></li>
-      <li><a href="#media">Media</a></li>
-      <li class="sb-nav-parent">
-        <a href="#resources">Resources</a>
-        <ul class="sb-subnav">
-          <li><a href="#res-talks">Talks &amp; Slides</a></li>
-          <li><a href="#res-code">Code &amp; Datasets</a></li>
+    <nav class="desktop-navigation" aria-label="Primary navigation">
+      <ul class="sb-nav">
+        <li><a href="#bio">Bio</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#awards">Awards</a></li>
+        <li class="sb-research-item">
+          <a href="#research">Research</a>
+          <details class="research-menu" data-research-menu>
+            <summary aria-label="Research subsections"><span aria-hidden="true">▸</span></summary>
+            <ul class="sb-subnav">
+              <li><a href="#research-interests">Research Interests</a></li>
+              <li><a href="#selected-projects">Selected Research Projects</a></li>
+              <li><a href="#publications">Publications</a></li>
+              <li><a href="#funding">Research Funding</a></li>
+              <li><a href="#res-talks">Talks &amp; Presentations</a></li>
+              <li><a href="#res-code">Research Software</a></li>
+            </ul>
+          </details>
+        </li>
+        <li><a href="#teaching">Teaching &amp; Service</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <details class="mobile-navigation">
+      <summary>Menu</summary>
+      <nav aria-label="Mobile navigation">
+        <ul class="sb-nav">
+          <li><a href="#bio">Bio</a></li>
+          <li><a href="#news">News</a></li>
+          <li><a href="#awards">Awards</a></li>
+          <li class="sb-research-item">
+            <a href="#research">Research</a>
+            <details class="research-menu" data-research-menu>
+              <summary aria-label="Research subsections"><span aria-hidden="true">▸</span></summary>
+              <ul class="sb-subnav">
+                <li><a href="#research-interests">Research Interests</a></li>
+                <li><a href="#selected-projects">Selected Research Projects</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#funding">Research Funding</a></li>
+                <li><a href="#res-talks">Talks &amp; Presentations</a></li>
+                <li><a href="#res-code">Research Software</a></li>
+              </ul>
+            </details>
+          </li>
+          <li><a href="#teaching">Teaching &amp; Service</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
-      </li>
-      <li><a href="#teaching">Teaching</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+      </nav>
+    </details>
 
     <div class="sb-socials">
       <a href="mailto:vkhatana@illinois.edu" title="Email">
@@ -842,12 +155,12 @@
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
       </a>
     </div>
+    <p class="sb-updated">Last updated: November 2026</p>
   </aside>
 
   <!-- CONTENT -->
   <main id="content">
 
-    <!-- BIO -->
     <article class="section" id="bio">
       <p class="section-heading">About</p>
       <h2>Bio</h2>
@@ -860,393 +173,646 @@
         </div>
 
         <div class="bio-body">
-          <p class="bio-lede">I build the mathematical and algorithmic foundations for scalable, resilient, and certifiably safe autonomy — uniting distributed optimization, control theory, and machine learning to tackle real-world challenges in energy systems, robotics, and autonomous mobility.</p>
+          <p class="bio-lede">I develop mathematical and algorithmic foundations for intelligent, safe, and resilient physical systems, drawing on distributed optimization, control theory, and machine learning. My research seeks to enable autonomous systems to reason, learn, and coordinate under uncertainty while maintaining verifiable safety, feasibility, and performance guarantees. Applications of my work span robotics, autonomous mobility, energy systems, and critical infrastructure.</p>
 
-          <p>I am a Postdoctoral Scholar at the <a href="https://aviate.illinois.edu/" target="_blank">Center for Autonomous Vehicles in Air Transportation Engineering (AVIATE)</a> at the <a href="https://illinois.edu/" target="_blank">University of Illinois Urbana-Champaign</a>, and the <a href="https://www.unr.edu/me" target="_blank">Department of Mechanical Engineering at the University of Nevada Reno</a>, working with Profs. <a href="https://mechse.illinois.edu/people/profile/nhovakim" target="_blank">Naira Hovakimyan</a>, <a href="https://www.unr.edu/me/about/people/petros-voulgaris" target="_blank">Petros Voulgaris</a>, and <a href="https://mechse.illinois.edu/people/profile/salapaka" target="_blank">Srinivasa Salapaka</a>.</p>
+          <p>I am a Postdoctoral Scholar in the <a href="https://www.unr.edu/me" target="_blank">Department of Mechanical Engineering at the University of Nevada, Reno</a>, and a Research Affiliate at the <a href="https://aviate.illinois.edu/" target="_blank">Center for Autonomous Vehicles in Air Transportation Engineering (AVIATE)</a> at the <a href="https://illinois.edu/" target="_blank">University of Illinois Urbana-Champaign</a>, working with Profs. <a href="https://mechse.illinois.edu/people/profile/nhovakim" target="_blank">Naira Hovakimyan</a>, <a href="https://www.unr.edu/me/about/people/petros-voulgaris" target="_blank">Petros Voulgaris</a>, and <a href="https://mechse.illinois.edu/people/profile/salapaka" target="_blank">Srinivasa Salapaka</a>.</p>
 
-          <p>I received my Ph.D. in Electrical Engineering (minor in Mathematics) from the <a href="https://twin-cities.umn.edu/" target="_blank">University of Minnesota Twin Cities</a> in 2025, advised by Prof. <a href="https://cse.umn.edu/ece/murti-salapaka" target="_blank">Murti V. Salapaka</a>. My thesis, <em>Balancing Information Mixing and Optimality: A Framework for Robust and Efficient Distributed Decision-Making</em>, was the first to establish finite-time optimality and feasibility certificates for constrained distributed optimization — closing a longstanding gap in the field. Prior to Minnesota, I received my B.Tech. in Electrical Engineering from the <a href="https://www.iitr.ac.in/" target="_blank">Indian Institute of Technology Roorkee</a> in 2018. I have also held research positions at the <a href="https://www.nlr.gov/" target="_blank">National Laboratory of the Rockies</a> (2023) and the <a href="https://www.iith.ac.in/" target="_blank">Indian Institute of Technology Hyderabad</a> (2017).</p>
+          <p>I received my Ph.D. in Electrical Engineering with a minor in Mathematics from the <a href="https://twin-cities.umn.edu/" target="_blank">University of Minnesota Twin Cities</a> in 2025, advised by Prof. <a href="https://cse.umn.edu/ece/murti-salapaka" target="_blank">Murti V. Salapaka</a>. My thesis is titled <em>Balancing Information Mixing and Optimality: A Framework for Robust and Efficient Distributed Decision-Making</em>. I also received my M.S. in Electrical and Computer Engineering from the University of Minnesota in 2020, and my B.Tech. in Electrical Engineering from the <a href="https://www.iitr.ac.in/" target="_blank">Indian Institute of Technology Roorkee</a> in 2018. I received the <strong>Distinguished Dissertation Award (Honorable Mention)</strong> from the University of Minnesota in 2026. I have also held research positions at the <a href="https://www.nlr.gov/" target="_blank">National Laboratory of the Rockies</a> (2023) and the <a href="https://www.iith.ac.in/" target="_blank">Indian Institute of Technology Hyderabad</a> (2017).</p>
 
-          <p>I am an active member of the <strong>IEEE Control Systems Society</strong>, the <strong>IEEE Power and Energy Society</strong>, and the <strong>INFORMS Optimization Society</strong>. I am also a <strong>Volunteer Member</strong> of the <a href="https://www.nationalpostdoc.org/" target="_blank">National Postdoctoral Association</a>. Outside the lab, I enjoy reading, art shows, sports, hiking, and honing my culinary skills.</p>
+          <p>I am an active member of the <strong>IEEE Control Systems Society</strong>, the <strong>IEEE Power &amp; Energy Society</strong>, the <strong>IEEE Robotics and Automation Society</strong>, the <strong>INFORMS Optimization Society</strong>, and the <strong>INFORMS Decision Analysis Society</strong>. I am also a <strong>Volunteer Member</strong> of the <a href="https://www.nationalpostdoc.org/" target="_blank">National Postdoctoral Association</a>. Outside the lab, I enjoy reading, art shows, sports, hiking, and honing my culinary skills.</p>
 
           <a class="cv-link" href="https://drive.google.com/file/d/1d8SjNnley-m1tbynsa3LOytEVcTfFdiX/view?usp=sharing" target="_blank">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             Curriculum Vitae
           </a>
 
-          <button class="speaker-toggle" onclick="toggleSpeakerBio(this)" aria-expanded="false">
-            <i class="arrow">▶</i> Speaker bio
-          </button>
-          <div id="speaker-bio-text" aria-hidden="true">
-            <p>Vivek Khatana is a Postdoctoral Scholar at the <a href="https://aviate.illinois.edu/" target="_blank">AVIATE Center, University of Illinois Urbana-Champaign</a>, and the <a href="https://www.unr.edu/me" target="_blank">Department of Mechanical Engineering, University of Nevada Reno</a>. His research advances resilient, scalable, and intelligent autonomy in complex interconnected systems, drawing on distributed optimization, control theory, and machine learning. His work spans energy systems, autonomous mobility, and robotics, combining rigorous theory with real-world experimental validation.</p>
-            <p>He received his Ph.D. in Electrical Engineering from the <a href="https://twin-cities.umn.edu/" target="_blank">University of Minnesota Twin Cities</a> and his B.Tech. in Electrical Engineering from the <strong>Indian Institute of Technology Roorkee</strong>. He was honored with the <strong>Teaching Assistant Award</strong> at UMN (2021), and the <strong>Undergraduate Research Award</strong> from IIT Roorkee (2016). He is a recipient of the <strong>Kishor Vagyanik Protsahan Yojana Fellowship</strong> from the Government of India (2013).</p>
-          </div>
+          <details class="speaker-bio">
+            <summary class="speaker-toggle">Speaker bio</summary>
+            <div id="speaker-bio-text">
+            <p>Vivek Khatana is a Postdoctoral Scholar in the <a href="https://www.unr.edu/me" target="_blank">Department of Mechanical Engineering, University of Nevada, Reno</a>, and a Research Affiliate at the <a href="https://aviate.illinois.edu/" target="_blank">AVIATE Center, University of Illinois Urbana-Champaign</a>. He develops mathematical and algorithmic foundations for intelligent, safe, and resilient physical systems, drawing on distributed optimization, control theory, and machine learning. His research seeks to enable autonomous systems to reason, learn, and coordinate under uncertainty while maintaining verifiable safety, feasibility, and performance guarantees. Applications of his work span robotics, autonomous mobility, energy systems, and critical infrastructure.</p>
+            <p>He received his Ph.D. in Electrical Engineering with a minor in Mathematics (2025) and his M.S. in Electrical and Computer Engineering (2020) from the <a href="https://twin-cities.umn.edu/" target="_blank">University of Minnesota Twin Cities</a>, and his B.Tech. in Electrical Engineering from the <strong>Indian Institute of Technology Roorkee</strong> (2018). He received the <strong>Distinguished Dissertation Award (Honorable Mention)</strong> from the University of Minnesota (2026). He was honored with the <strong>Teaching Assistant Award</strong> at UMN (2021), and the <strong>Undergraduate Research Award</strong> from IIT Roorkee (2016). He is a recipient of the <strong>Kishor Vagyanik Protsahan Yojana Fellowship</strong> from the Government of India (2013). He is a member of the IEEE Control Systems Society, Power &amp; Energy Society, and Robotics and Automation Society, and the INFORMS Optimization Society and Decision Analysis Society.</p>
+            </div>
+          </details>
         </div>
 
       </div>
     </article>
 
-    <!-- RESEARCH -->
-    <article class="section" id="research">
-      <p class="section-heading">Focus Areas</p>
-      <h2>Research Interests</h2>
-      <p class="research-intro">My research addresses three pressing challenges in the next generation of intelligent infrastructures: how to make scalable decisions across large networks, how to ensure resilience and safety under uncertainty, and how to achieve adaptivity through learning from data. I pursue these through a combination of theoretical foundations, algorithmic innovation, and real-world experimental validation across energy systems, robotics, and autonomous mobility.</p>
-      <div class="research-cards">
-        <div class="r-card">
-          <div class="r-card-icon">⚙️</div>
-          <div>
-            <div class="r-card-title">Distributed Nonconvex Optimization</div>
-            <div class="r-card-desc">Finite-time feasible and optimal algorithms for constrained multi-agent systems over directed networks, including difference-of-convex and federated learning formulations</div>
-          </div>
-        </div>
-        <div class="r-card">
-          <div class="r-card-icon">🛡️</div>
-          <div>
-            <div class="r-card-title">Safe &amp; Predictable Autonomy</div>
-            <div class="r-card-desc">Distributionally robust stochastic control with Wasserstein ambiguity sets; L1-adaptive architectures for certifiable safety under uncertainty in physical AI systems</div>
-          </div>
-        </div>
-        <div class="r-card">
-          <div class="r-card-icon">⚡</div>
-          <div>
-            <div class="r-card-title">Power &amp; Energy Systems</div>
-            <div class="r-card-desc">Distributed control and optimization of microgrids and virtual power plants; storage planning and risk pooling for resilient distributed energy resource coordination</div>
-          </div>
-        </div>
-        <div class="r-card">
-          <div class="r-card-icon">🤖</div>
-          <div>
-            <div class="r-card-title">Learning-Enabled Autonomous Systems</div>
-            <div class="r-card-desc">Coordination of learning-based and model-based agents for robotics, urban air mobility, and data-driven networked control under limited communication</div>
-          </div>
-        </div>
-      </div>
-    </article>
-
-    <!-- PUBLICATIONS -->
-    <article class="section" id="publications">
-      <div class="pub-meta">
-        <div>
-          <p class="section-heading">Scholarly Work</p>
-          <h2 style="margin-bottom:0">Publications</h2>
-        </div>
-        <a class="pub-scholar-link" href="https://scholar.google.com/citations?hl=en&user=l1BYDI0AAAAJ&view_op=list_works" target="_blank">Full list on Google Scholar ↗</a>
-      </div>
-
-      <div class="pub-year-label">Journal — In Preparation</div>
-      <ul class="pub-list">
-        <li><span class="me">V. Khatana</span>, S. Chakraborty, and M. V. Salapaka, "Distributed control of inverter-interfaced virtual power plants: Design and stability guarantees." <em>To be submitted to IEEE Trans. Smart Grid.</em> <span class="pub-badge badge-p">In Prep</span></li>
-        <li><span class="me">V. Khatana</span>, A. Dey, A. Mani, and M. V. Salapaka, "Risk sharing among microgrids: Connectivity requirements and optimal control." <em>To be submitted to INFORMS Operations Research.</em> <span class="pub-badge badge-p">In Prep</span></li>
-        <li><span class="me">V. Khatana</span> and P. Voulgaris, "Distributed difference of convex machine learning." <em>To be submitted to IEEE Trans. Neural Networks and Learning Systems.</em> <span class="pub-badge badge-p">In Prep</span></li>
-        <li>A. Gahlawat, <span class="me">V. Khatana</span>, S. H. Karumanchi, N. Hovakimyan, and P. Voulgaris, "Wasserstein distributionally robust stochastic control with safety guarantees." <em>To be submitted to IEEE Trans. Robotics.</em> <span class="pub-badge badge-p">In Prep</span></li>
-      </ul>
-
-      <div class="pub-year-label">Journal — Under Review</div>
-      <ul class="pub-list">
-        <li>A. Dey, <span class="me">V. Khatana</span>, A. Mani, and M. V. Salapaka, "Optimal multi-microgrid feedback policies: Guaranteed demand fulfillment under renewable uncertainty." <em>Under Review, Automatica.</em> <span class="pub-badge badge-p">Under Review</span></li>
-      </ul>
-
-      <div class="pub-year-label">2025 — Conference</div>
-      <ul class="pub-list">
-        <li><span class="me">V. Khatana</span>, D. Wang, P. Voulgaris, N. Elia, and N. Hovakimyan, "Networked control and mean field problems under diagonal dominance: Decentralized and social optimality." <em>2026 IEEE American Control Conference (ACC)</em>. <span class="pub-badge badge-c">Conf</span></li>
-        <li>A. Gahlawat, <span class="me">V. Khatana</span>, D. Wang, S. H. Karumanchi, N. Hovakimyan, and P. Voulgaris, "Wasserstein distributionally robust adaptive covariance steering." <em>64th IEEE Conference on Decision and Control (CDC)</em>, 2025. <span class="pub-badge badge-c">Conf</span></li>
-      </ul>
-
-      <div class="pub-year-label">2024 — Conference</div>
-      <ul class="pub-list">
-        <li><span class="me">V. Khatana</span> and M. V. Salapaka, "Distributed difference of convex optimization." <em>60th Annual Allerton Conference</em>, 2024. <span class="pub-badge badge-c">Conf</span></li>
-        <li><span class="me">V. Khatana</span>, C.-Y. Chang, and W. Wang, "Adaptive online model update algorithm for predictive control in networked systems." <em>60th Annual Allerton Conference</em>, 2024. <span class="pub-badge badge-c">Conf</span></li>
-        <li><span class="me">V. Khatana</span>, S. Chakraborty, and M. V. Salapaka, "A plug and play distributed secondary controller for microgrids with grid-forming inverters." <em>IEEE IECON</em>, 2024. <span class="pub-badge badge-c">Conf</span></li>
-        <li><span class="me">V. Khatana</span>, S. Chakraborty, G. Saraswat, P. Sourav, and M. V. Salapaka, "A distributed malicious agent detection scheme for resilient power apportioning in microgrids." <em>IEEE IECON</em>, 2024. <span class="pub-badge badge-c">Conf</span></li>
-        <li>A. Dey, <span class="me">V. Khatana</span>, A. Mani, and M. V. Salapaka, "Guaranteeing service in connected microgrids: Storage planning and optimal power sharing policy." <em>IEEE American Control Conference</em>, 2024. <span class="pub-badge badge-c">Conf</span></li>
-      </ul>
-
-      <div class="pub-year-label">2023 — Journal</div>
-      <ul class="pub-list">
-        <li><span class="me">V. Khatana</span> and M. V. Salapaka, "Noise resilient distributed average consensus over directed graphs." <em>IEEE Trans. Signal and Information Processing over Networks</em>, vol. 9, pp. 770–785, 2023. <span class="pub-badge badge-j">Journal</span> <a href="https://doi.org/10.1109/TSIPN.2023.3324583" target="_blank">doi ↗</a></li>
-        <li><span class="me">V. Khatana</span>, G. Saraswat, S. Patel, and M. V. Salapaka, "GradConsensus: Linearly convergent algorithm for reducing disagreement in multi-agent optimization." <em>IEEE Trans. Network Science and Engineering</em>, vol. 11, no. 1, pp. 1251–1264, 2023. <span class="pub-badge badge-j">Journal</span> <a href="https://doi.org/10.1109/TNSE.2023.3321757" target="_blank">doi ↗</a></li>
-        <li>J. Melbourne, G. Saraswat, <span class="me">V. Khatana</span>, S. Patel, and M. V. Salapaka, "Convex decreasing algorithms: Distributed synthesis and finite-time termination in higher dimension." <em>IEEE Trans. Automatic Control</em>, vol. 69, no. 6, pp. 3960–3967, 2023. <span class="pub-badge badge-j">Journal</span> <a href="https://doi.org/10.1109/TAC.2023.3344721" target="_blank">doi ↗</a></li>
-        <li>S. Chakraborty, J. Park, G. Saraswat, T. Meyers, J. Wang, S. Tiwari, <span class="me">V. Khatana</span>, et al., "Emergency power supply system for critical infrastructures: Design and large scale hardware demonstration." <em>IEEE Access</em>, vol. 11, pp. 114509–114526, 2023. <span class="pub-badge badge-j">Journal</span> <a href="https://doi.org/10.1109/ACCESS.2023.3325198" target="_blank">doi ↗</a></li>
-      </ul>
-
-      <div class="pub-year-label">2022 — Journal</div>
-      <ul class="pub-list">
-        <li><span class="me">V. Khatana</span> and M. V. Salapaka, "DC-DistADMM: ADMM algorithm for constrained optimization over directed graphs." <em>IEEE Trans. Automatic Control</em>, vol. 68, no. 9, pp. 5365–5380, 2022. <span class="pub-badge badge-j">Journal</span> <a href="https://doi.org/10.1109/TAC.2022.3221856" target="_blank">doi ↗</a></li>
-        <li>G. Saraswat, <span class="me">V. Khatana</span>, S. Patel, and M. V. Salapaka, "Distributed finite-time termination for consensus algorithm in switching topologies." <em>IEEE Trans. Network Science and Engineering</em>, vol. 10, no. 1, pp. 489–499, 2022. <span class="pub-badge badge-j">Journal</span> <a href="https://doi.org/10.1109/TNSE.2022.3216286" target="_blank">doi ↗</a></li>
-      </ul>
-
-      <div class="pub-year-label">2022 — Conference</div>
-      <ul class="pub-list">
-        <li><span class="me">V. Khatana</span>, S. Chakraborty, G. Saraswat, B. Lundstrom, and M. V. Salapaka, "Evaluation of horizon of viability optimization engine for sustained power to critical infrastructure." <em>IEEE Power and Energy Conference at Illinois (PECI)</em>, 2022, pp. 1–8. <span class="pub-badge badge-c">Conf</span></li>
-        <li>J. Wang, S. Chakraborty, <span class="me">V. Khatana</span>, B. Lundstrom, G. Saraswat, and M. Salapaka, "Evaluation of optimal net load management in microgrids using hardware-in-the-loop simulation." <em>IEEE Power &amp; Energy Society ISGT</em>, 2022, pp. 1–5. <span class="pub-badge badge-c">Conf</span> <a href="https://doi.org/10.1109/ISGT50606.2022.9817515" target="_blank">doi ↗</a></li>
-      </ul>
-
-      <div class="pub-year-label">2020 — Conference</div>
-      <ul class="pub-list">
-        <li><span class="me">V. Khatana</span> and M. V. Salapaka, "D-DistADMM: A O(1/k) distributed ADMM for distributed optimization in directed graph topologies." <em>59th IEEE Conference on Decision and Control (CDC)</em>, 2020, pp. 2992–2997. <span class="pub-badge badge-c">Conf</span> <a href="https://doi.org/10.1109/CDC42340.2020.9304086" target="_blank">doi ↗</a></li>
-        <li><span class="me">V. Khatana</span>, G. Saraswat, S. Patel, and M. V. Salapaka, "Gradient-consensus method for distributed optimization in directed multi-agent networks." <em>IEEE American Control Conference (ACC)</em>, 2020, pp. 4689–4694. <span class="pub-badge badge-c">Conf</span> <a href="https://doi.org/10.23919/ACC45564.2020.9147544" target="_blank">doi ↗</a></li>
-        <li>S. Patel, <span class="me">V. Khatana</span>, G. Saraswat, and M. V. Salapaka, "Distributed detection of malicious attacks on consensus algorithms with applications in power networks." <em>7th International Conference on Control, Decision and Information Technologies (CoDIT)</em>, 2020, vol. 1, pp. 397–402. <span class="pub-badge badge-c">Conf</span> <a href="https://doi.org/10.1109/CoDIT49905.2020.9263882" target="_blank">doi ↗</a></li>
-        <li>J. Melbourne, G. Saraswat, <span class="me">V. Khatana</span>, S. Patel, and M. V. Salapaka, "On the geometry of consensus algorithms with application to distributed termination in higher dimension." <em>IFAC-PapersOnLine</em>, vol. 53, no. 2, pp. 2951–2956, 21st IFAC World Congress, 2020. <span class="pub-badge badge-c">Conf</span> <a href="https://doi.org/10.1016/j.ifacol.2020.12.971" target="_blank">doi ↗</a></li>
-      </ul>
-
-      <div class="pub-year-label">Preprints &amp; arXiv</div>
-      <ul class="pub-list">
-        <li>A. Dey, <span class="me">V. Khatana</span>, A. Mani, and M. V. Salapaka, "Transactive framework for dynamic energy storage allocation for critical load management." <span class="pub-badge badge-p">arXiv</span> <a href="https://arxiv.org/abs/2101.05890" target="_blank">arXiv:2101.05890 ↗</a></li>
-        <li>A. Dey, <span class="me">V. Khatana</span>, A. Mani, and M. V. Salapaka, "On mitigating the uncertainty in renewable generation in distribution microgrids." <span class="pub-badge badge-p">arXiv</span> <a href="https://arxiv.org/abs/2007.08641" target="_blank">arXiv:2007.08641 ↗</a></li>
-      </ul>
-    </article>
-
-    <!-- MEDIA -->
-    <article class="section" id="media">
-      <p class="section-heading">Talks &amp; Outreach</p>
-      <h2>Media</h2>
-      <p class="media-intro">Selected invited talks, conference presentations, and outreach. For a complete list see my <a href="https://scholar.google.com/citations?user=l1BYDI0AAAAJ&hl=en" target="_blank">Google Scholar</a> profile.</p>
-
-      <div class="media-grid">
-        <a class="media-card" href="#res-talks">
-          <div class="media-thumb"><div class="yt-placeholder"><div class="play-btn"><svg viewBox="0 0 24 24" fill="var(--accent)"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div></div>
-          <div class="media-info">
-            <div class="media-type">Conference Talk</div>
-            <div class="media-title">Networked Control and Mean Field Problems under Diagonal Dominance</div>
-            <div class="media-venue">IEEE American Control Conference (ACC) · 2026</div>
-          </div>
-        </a>
-        <a class="media-card" href="https://sites.google.com/view/mwcgt" target="_blank" rel="noopener">
-          <div class="media-thumb"><div class="yt-placeholder"><div class="play-btn"><svg viewBox="0 0 24 24" fill="var(--accent)"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div></div>
-          <div class="media-info">
-            <div class="media-type">Lightning Talk &amp; Poster</div>
-            <div class="media-title">Architectures for Resilient, Safe and Predictable Autonomy</div>
-            <div class="media-venue">12th Midwest Workshop on Control &amp; Game Theory · 2026</div>
-          </div>
-        </a>        
-        <a class="media-card" href="https://allerton.csl.illinois.edu/" target="_blank" rel="noopener">
-          <div class="media-thumb"><div class="yt-placeholder"><div class="play-btn"><svg viewBox="0 0 24 24" fill="var(--accent)"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div></div>
-          <div class="media-info">
-            <div class="media-type">Conference Talk</div>
-            <div class="media-title">Distributed Difference of Convex Optimization &amp; Adaptive Online Model Update</div>
-            <div class="media-venue">IEEE Annual Allerton Conference · 2024 &amp; 2025</div>
-          </div>
-        </a>
-        <a class="media-card" href="https://meetings.informs.org/wordpress/seattle2024/" target="_blank" rel="noopener">
-          <div class="media-thumb"><div class="yt-placeholder"><div class="play-btn"><svg viewBox="0 0 24 24" fill="var(--accent)"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div></div>
-          <div class="media-info">
-            <div class="media-type">Invited Session Talk</div>
-            <div class="media-title">Data-Enabled Decision-Making in Energy Systems and Markets</div>
-            <div class="media-venue">INFORMS Annual Meeting, Seattle · Oct 2024</div>
-          </div>
-        </a>
-        <a class="media-card" href="https://midwest-ml.org/2024/" target="_blank" rel="noopener">
-          <div class="media-thumb"><div class="yt-placeholder"><div class="play-btn"><svg viewBox="0 0 24 24" fill="var(--accent)"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div></div>
-          <div class="media-info">
-            <div class="media-type">Lightning Talk &amp; Poster</div>
-            <div class="media-title">Distributed Training of Machine Learning Models</div>
-            <div class="media-venue">Midwest Machine Learning Symposium · 2024</div>
-          </div>
-        </a>
-        <a class="media-card" href="https://mwcgt2024.northwestern.edu/" target="_blank" rel="noopener">
-          <div class="media-thumb"><div class="yt-placeholder"><div class="play-btn"><svg viewBox="0 0 24 24" fill="var(--accent)"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div></div>
-          <div class="media-info">
-            <div class="media-type">Lightning Talk</div>
-            <div class="media-title">Algorithms for Agreement and Optimality in Networked Dynamical Systems</div>
-            <div class="media-venue">10th Midwest Workshop on Control &amp; Game Theory · 2024</div>
-          </div>
-        </a>
-        <a class="media-card" href="https://iitr.ac.in/Departments/Electrical%20Engineering%20Department/static/Activities/Announcements/Technical_Talk.pdf" target="_blank" rel="noopener">
-          <div class="media-thumb"><div class="yt-placeholder"><div class="play-btn"><svg viewBox="0 0 24 24" fill="var(--accent)"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div></div>
-          <div class="media-info">
-            <div class="media-type">Invited Guest Seminar</div>
-            <div class="media-title">Distributed Decision-Making in Networked Systems</div>
-            <div class="media-venue">IIT Roorkee, Dept. of Electrical Engineering · Feb 2024</div>
-          </div>
-        </a>
-      </div>
-    </article>
-
-    <!-- RESOURCES -->
-    <article class="section" id="resources">
-      <p class="section-heading">Materials &amp; Tools</p>
-      <h2>Resources</h2>
-
-      <!-- Talks & Slides -->
-      <div class="resources-group" id="res-talks">
-        <div class="resources-group-title">Talks &amp; Slides</div>
-        <ul class="resource-list">
-          <li>
-            <span class="resource-icon">📄</span>
-            <div class="resource-body">
-              <div class="resource-title">Networked Control and Mean Field Problems under Diagonal Dominance</div>
-              <div class="resource-desc">2026 IEEE American Control Conference (ACC) — Session co-chair talk on decentralized and social optimality</div>
-            </div>
-            <span class="resource-tag">2026</span>
-          </li>
-          <li>
-          <span class="resource-icon">📄</span>
-          <div class="resource-body">
-            <div class="resource-title">Architectures for Resilient, Safe and Predictable Autonomy</div>
-            <div class="resource-desc">Lightning talk &amp; poster · 12th Midwest Workshop on Control and Game Theory · 2026</div>
-          </div>
-          <span class="resource-tag">2026</span>
-          </li>
-          <li>
-            <span class="resource-icon">📄</span>
-            <div class="resource-body">
-              <div class="resource-title">Wasserstein Distributionally Robust Adaptive Covariance Steering</div>
-              <div class="resource-desc">64th IEEE Conference on Decision and Control (CDC), 2025</div>
-            </div>
-            <span class="resource-tag">2025</span>
-          </li>
-          <li>
-            <span class="resource-icon">📄</span>
-            <div class="resource-body">
-              <div class="resource-title">Distributed Difference of Convex Optimization</div>
-              <div class="resource-desc">60th Annual Allerton Conference on Communication, Control, and Computing, 2024</div>
-            </div>
-            <span class="resource-tag">2024</span>
-          </li>
-          <li>
-            <span class="resource-icon">📄</span>
-            <div class="resource-body">
-              <div class="resource-title">Adaptive Online Model Update Algorithm for Predictive Control in Networked Systems</div>
-              <div class="resource-desc">60th Annual Allerton Conference, 2024</div>
-            </div>
-            <span class="resource-tag">2024</span>
-          </li>
-          <li>
-            <span class="resource-icon">📄</span>
-            <div class="resource-body">
-              <div class="resource-title">Data-Enabled Decision-Making in Energy Systems and Markets</div>
-              <div class="resource-desc">INFORMS Annual Meeting, Invited Session, Seattle · Oct 2024</div>
-            </div>
-            <span class="resource-tag">2024</span>
-          </li>
-          <li>
-            <span class="resource-icon">📄</span>
-            <div class="resource-body">
-              <div class="resource-title">Distributed Training of Machine Learning Models — Lightning Talk</div>
-              <div class="resource-desc">Midwest Machine Learning Symposium, 2024</div>
-            </div>
-            <span class="resource-tag">2024</span>
-          </li>
-          <li>
-            <span class="resource-icon">📄</span>
-            <div class="resource-body">
-              <div class="resource-title">Algorithms for Agreement and Optimality in Networked Dynamical Systems</div>
-              <div class="resource-desc">10th Midwest Workshop on Control and Game Theory, Lightning Talk, 2024</div>
-            </div>
-            <span class="resource-tag">2024</span>
-          </li>
-          <li>
-            <span class="resource-icon">📄</span>
-            <div class="resource-body">
-              <div class="resource-title">Distributed Decision-Making in Networked Systems — IIT Roorkee Seminar Slides</div>
-              <div class="resource-desc">Guest Seminar, Dept. of Electrical Engineering, IIT Roorkee · Feb 2024</div>
-            </div>
-            <span class="resource-tag">2024</span>
-          </li>
-          <li>
-            <span class="resource-icon">📄</span>
-            <div class="resource-body">
-              <div class="resource-title">Evaluation of Horizon of Viability Optimization Engine for Sustained Power to Critical Infrastructure</div>
-              <div class="resource-desc">IEEE Power and Energy Conference at Illinois (PECI), 2022</div>
-            </div>
-            <span class="resource-tag">2022</span>
-          </li>
-          <li>
-            <span class="resource-icon">📄</span>
-            <div class="resource-body">
-              <div class="resource-title">D-DistADMM &amp; Gradient-Consensus for Distributed Optimization</div>
-              <div class="resource-desc">IEEE Conference on Decision and Control (CDC) &amp; IEEE American Control Conference (ACC), 2020</div>
-            </div>
-            <span class="resource-tag">2020</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Code & Datasets -->
-      <div class="resources-group" id="res-code">
-        <div class="resources-group-title">Open-Source Software</div>
-        <ul class="resource-list">
-          <li>
-            <span class="resource-icon">💻</span>
-            <div class="resource-body">
-              <div class="resource-title"><a href="https://github.com/vivekkhatana/DC-DistADMM" target="_blank">DC-DistADMM</a></div>
-              <div class="resource-desc">Implementation of Distributed Directed ADMM for constrained optimization over directed graphs (IEEE TAC 2022)</div>
-            </div>
-            <span class="resource-tag">Code</span>
-          </li>
-          <li>
-            <span class="resource-icon">💻</span>
-            <div class="resource-body">
-              <div class="resource-title"><a href="https://github.com/vivekkhatana/GradConsensus" target="_blank">GradConsensus</a></div>
-              <div class="resource-desc">Every-iterate feasible distributed optimization algorithm — linearly convergent gradient-consensus (IEEE TNSE 2023)</div>
-            </div>
-            <span class="resource-tag">Code</span>
-          </li>
-          <li>
-            <span class="resource-icon">💻</span>
-            <div class="resource-body">
-              <div class="resource-title"><a href="https://github.com/vivekkhatana/NRPushSum" target="_blank">NRPushSum</a></div>
-              <div class="resource-desc">First noise-resilient distributed consensus algorithm over directed communication networks (IEEE TSIPN 2023)</div>
-            </div>
-            <span class="resource-tag">Code</span>
-          </li>
-          <li>
-            <span class="resource-icon">💻</span>
-            <div class="resource-body">
-              <div class="resource-title"><a href="https://github.com/vivekkhatana/Horizon_of_Viability_Engine" target="_blank">Horizon of Viability Engine</a></div>
-              <div class="resource-desc">Integer optimization-based cost-optimal generation and load dispatch for sustained power delivery to critical infrastructure (DOE project)</div>
-            </div>
-            <span class="resource-tag">Code</span>
-          </li>
-          <li>
-            <span class="resource-icon">💻</span>
-            <div class="resource-body">
-              <div class="resource-title"><a href="https://github.com/vivekkhatana/VPP_Primary_Node/tree/main/Primary_Node_Repo" target="_blank">Virtual Power Plant (Primary Node)</a></div>
-              <div class="resource-title"><a href="https://github.com/vivekkhatana/VPP_Secondary_Node/tree/main/Secondary_Node_Repo" target="_blank">Virtual Power Plant (Secondary Node)</a></div>
-              <div class="resource-desc">Distributed optimization engines for real-time coordination of distributed energy resources in virtual power plant architectures</div>
-            </div>
-            <span class="resource-tag">Code</span>
-          </li>
-          <li>
-            <span class="resource-icon">💻</span>
-            <div class="resource-body">
-              <div class="resource-title"><a href="https://github.com/Cainiao1053Jr/Human-AI-Reasoning-for-Mission-planning-and-shared-autonomy" target="_blank">Human-AI Reasoning for Mission Planning</a></div>
-              <div class="resource-desc">LLM-based path planning for shared autonomy in mission-critical scenarios (developed at UIUC, co-developed with Zijian Song)</div>
-            </div>
-            <span class="resource-tag">Code</span>
-          </li>
-        </ul>
-      </div>
-    </article>
-
-    <!-- NEWS -->
     <article class="section" id="news">
       <p class="section-heading">Updates</p>
       <h2>News</h2>
+      <p class="research-intro"><a href="#awards">Awards</a> &nbsp;·&nbsp; <a href="#funding">Research Funding</a></p>
       <ul class="news-list">
-        <li><span class="news-date">2026</span><span>Serving as <strong>Session Co-Chair</strong> for the "Large-Scale Systems" session at the <a href="https://acc2026.a2c2.org/" target="_blank">2026 IEEE American Control Conference</a>. Paper on networked control and mean field problems accepted.</span></li>
+        <li><span class="news-date">2026</span><span>Received the <strong>Distinguished Dissertation Award (Honorable Mention)</strong> from the University of Minnesota.</span></li>
+        <li><span class="news-date">2026</span><span>Contributed to proposal conception, mathematical formulation, and learning algorithm development for <strong>NSF Future CoRe: Performativity-Aware Intelligent Autonomous Systems (PIAS)</strong>, awarded in 2026.</span></li>
+        <li><span class="news-date">2026</span><span>Gave a lightning talk at <strong>IEEE/RSJ IROS 2026</strong>, with two workshop papers on multi-robot planning and distributionally robust covariance steering.</span></li>
+        <li><span class="news-date">2026</span><span>Presented at the <a href="https://allerton.csl.illinois.edu/" target="_blank">Allerton Conference on Communication, Control, and Computing</a>.</span></li>
+        <li><span class="news-date">2026</span><span>Organized the <strong>NASA ULI Annual Review</strong> at <a href="https://aviate.illinois.edu/" target="_blank">AVIATE, University of Illinois Urbana-Champaign</a>, developing the technical program and coordinating stakeholder engagement and logistics.</span></li>
+        <li><span class="news-date">2026</span><span>Serving as <strong>Session Co-Chair</strong> for the "Large-Scale Systems" session at the <a href="https://acc2026.a2c2.org/" target="_blank">2026 IEEE American Control Conference</a>.</span></li>
+      </ul>
+      <details class="content-disclosure news-archive" id="older-news">
+        <summary><span class="when-closed">Show Older News</span><span class="when-open">Hide Older News</span> (15)</summary>
+        <ul class="news-list">
         <li><span class="news-date">2026</span><span>Presented a poster and gave a lightning talk on <em>"Architectures for Resilient, Safe and Predictable Autonomy"</em> at the <a href="https://sites.google.com/view/mwcgt" target="_blank">12th Midwest Workshop on Control and Game Theory</a>.</span></li>
         <li><span class="news-date">2026</span><span>Paper on networked control and mean field problems under diagonal dominance accepted at <strong>The 2026 IEEE American Control Conference</strong>.</span></li>
+        <li><span class="news-date">2025</span><span>Presented at the <a href="https://allerton.csl.illinois.edu/" target="_blank">Allerton Conference on Communication, Control, and Computing</a>.</span></li>
         <li><span class="news-date">2025</span><span>Paper on Wasserstein distributionally robust adaptive covariance steering accepted at <strong>64th IEEE CDC 2025</strong>.</span></li>
         <li><span class="news-date">2025</span><span>Started as a <strong>Volunteer Member</strong> of the <a href="https://www.nationalpostdoc.org/" target="_blank">National Postdoctoral Association</a>.</span></li>
-        <li><span class="news-date">Feb 2025</span><span>Joined as Postdoctoral Scholar at <a href="https://aviate.illinois.edu/" target="_blank">AVIATE, UIUC</a> and the <a href="https://www.unr.edu/me" target="_blank">Dept. of Mechanical Engineering, UNR</a>.</span></li>
+        <li><span class="news-date">Feb 2025</span><span>Joined as Postdoctoral Scholar in the <a href="https://www.unr.edu/me" target="_blank">Department of Mechanical Engineering, University of Nevada, Reno</a>, and as Research Affiliate at <a href="https://aviate.illinois.edu/" target="_blank">AVIATE, University of Illinois Urbana-Champaign</a>.</span></li>
         <li><span class="news-date">Jan 2025</span><span>Successfully defended PhD thesis: <em>"Balancing Information Mixing and Optimality: A Framework for Robust and Efficient Distributed Decision-Making"</em> at <a href="https://cse.umn.edu/ece" target="_blank">ECE, University of Minnesota Twin Cities</a>.</span></li>
+        <li><span class="news-date">2024</span><span>Received the <strong>Alumni Recognition Award</strong> from the Department of Electrical Engineering, IIT Roorkee.</span></li>
         <li><span class="news-date">Nov 2024</span><span>Presented two papers on distributed control and cyber-secured operation of inverter-based DERs at <a href="https://www.iecon-2024.org/" target="_blank">IECON 2024</a>.</span></li>
         <li><span class="news-date">Oct 2024</span><span>Invited session talk at the <a href="https://meetings.informs.org/wordpress/seattle2024/" target="_blank">2024 INFORMS Annual Meeting</a>, Seattle — data-enabled decision-making in energy systems and markets.</span></li>
         <li><span class="news-date">Aug 2024</span><span>Two papers accepted at <a href="https://allerton.csl.illinois.edu/" target="_blank">Allerton 2024</a> on distributed difference-of-convex optimization and data-driven predictive control in networked systems.</span></li>
         <li><span class="news-date">May 2024</span><span>Lightning talk and poster at the <a href="https://midwest-ml.org/2024/" target="_blank">Midwest Machine Learning Symposium</a> on distributed training of ML models.</span></li>
         <li><span class="news-date">Apr 2024</span><span>Lightning talk at the <a href="https://mwcgt2024.northwestern.edu/" target="_blank">10th Midwest Workshop on Control and Game Theory</a>.</span></li>
         <li><span class="news-date">Feb 2024</span><span>Gave a guest seminar at the Dept. of Electrical Engineering, <a href="https://iitr.ac.in/" target="_blank">IIT Roorkee</a> on distributed decision-making frameworks.</span></li>
+        <li><span class="news-date">2023</span><span>Contributed to proposal conception, mathematical formulation, and distributed control algorithm development for <strong>ARPA-E OPEN: The Dynamic, Resilient Hybrid Grid</strong>, awarded in 2023.</span></li>
+        </ul>
+      </details>
+    </article>
+
+    <article class="section" id="awards">
+      <span class="anchor-alias" id="honors"></span>
+
+      <p class="section-heading">Recognition</p>
+      <h2>Awards</h2>
+      <ul class="news-list">
+        <li><span class="news-date">2026</span><span><strong>Distinguished Dissertation Award (Honorable Mention)</strong> — University of Minnesota.</span></li>
+        <li><span class="news-date">2024</span><span><strong>Alumni Recognition Award</strong> — Department of Electrical Engineering, IIT Roorkee.</span></li>
+        <li><span class="news-date">2021</span><span><strong>Teaching Assistant Award</strong> — University of Minnesota Twin Cities.</span></li>
+        <li><span class="news-date">2016</span><span><strong>Undergraduate Research Award</strong> — Indian Institute of Technology Roorkee.</span></li>
+        <li><span class="news-date">2013</span><span><strong>Kishore Vaigyanik Protsahan Yojana (KVPY) Fellowship</strong> — Government of India.</span></li>
       </ul>
     </article>
 
-    <!-- TEACHING -->
+    <article class="section" id="research">
+      <p class="section-heading">Research Vision</p>
+      <h2>Research</h2>
+      <section class="academic-subsection" id="research-interests">
+        <h3 class="subsection-heading">Research Interests</h3>
+      <p class="research-intro">My research asks how interconnected physical systems can learn, coordinate, and act reliably under uncertainty. I combine distributed optimization, control theory, and machine learning to study verifiable safety, feasibility, and performance across robotics, autonomous mobility, energy systems, and critical infrastructure.</p>
+      <div class="research-cards">
+        <div class="r-card">
+          <div class="r-card-icon"><img src="images/icons/network-optimization.svg" width="44" height="44" alt="" /></div>
+          <div>
+            <h4 class="r-card-title">Distributed Optimization and Networked Intelligence</h4>
+            <p class="r-card-desc">I study how agents coordinate decisions over directed networks with limited communication. My work spans consensus, distributed and decentralized optimization, and networked control, including nonconvex, difference-of-convex, and federated learning formulations and finite-time feasibility and optimality certificates.</p>
+          </div>
+        </div>
+        <div class="r-card">
+          <div class="r-card-icon"><img src="images/icons/stochastic-control.svg" width="44" height="44" alt="" /></div>
+          <div>
+            <h4 class="r-card-title">Safe and Adaptive Autonomy Under Uncertainty</h4>
+            <p class="r-card-desc">I study how autonomous systems maintain safety as uncertainty and models change. My work combines stochastic, distributionally robust, model predictive, and adaptive control, including Wasserstein ambiguity sets and L1-adaptive architectures.</p>
+          </div>
+        </div>
+        <div class="r-card">
+          <div class="r-card-icon"><img src="images/icons/learning-autonomy.svg" width="44" height="44" alt="" /></div>
+          <div>
+            <h4 class="r-card-title">Learning-Enabled Autonomy and Collective Physical AI</h4>
+            <p class="r-card-desc">I study how learning supports reliable collective autonomy. My work connects data-driven modeling, online learning, and learning–control co-design to the coordination of heterogeneous agents in robotics and autonomous mobility.</p>
+          </div>
+        </div>
+        <div class="r-card">
+          <div class="r-card-icon"><img src="images/icons/energy-networks.svg" width="44" height="44" alt="" /></div>
+          <div>
+            <h4 class="r-card-title">Resilient Energy and Critical Infrastructure</h4>
+            <p class="r-card-desc">I study how interconnected infrastructure sustains critical services under uncertainty. My work addresses distributed control of microgrids and virtual power plants, storage planning, risk sharing, and resilient coordination of distributed energy resources.</p>
+          </div>
+        </div>
+      </div>
+      </section>
+      <section class="academic-subsection" id="selected-projects">
+        <h3 class="subsection-heading">Selected Research Projects</h3>
+        <div class="project-filter-tools" hidden>
+          <div class="project-filters" role="group" aria-label="Filter selected research projects by research category">
+            <button class="project-filter" type="button" data-project-filter="all" aria-pressed="true" aria-controls="selected-project-gallery">All</button>
+            <button class="project-filter" type="button" data-project-filter="robotics-autonomy" aria-pressed="false" aria-controls="selected-project-gallery">Robotics and Autonomy</button>
+            <button class="project-filter" type="button" data-project-filter="control-stochastic-decision-making" aria-pressed="false" aria-controls="selected-project-gallery">Control and Stochastic Decision-Making</button>
+            <button class="project-filter" type="button" data-project-filter="learning-data-driven-decision-making" aria-pressed="false" aria-controls="selected-project-gallery">Learning and Data-Driven Decision-Making</button>
+            <button class="project-filter" type="button" data-project-filter="optimization" aria-pressed="false" aria-controls="selected-project-gallery">Optimization</button>
+            <button class="project-filter" type="button" data-project-filter="energy-systems" aria-pressed="false" aria-controls="selected-project-gallery">Energy Systems</button>
+          </div>
+          <p class="project-filter-status" role="status" aria-live="polite" aria-atomic="true"></p>
+        </div>
+        <div class="project-gallery" id="selected-project-gallery">
+          <article class="project-card project-card--media" data-categories="robotics-autonomy learning-data-driven-decision-making" data-media-project="verifier-multi-llm" aria-labelledby="project-verifier-multi-llm">
+            <div class="research-carousel" data-research-carousel role="region" aria-roledescription="carousel" aria-label="Multi-LLM coordination research media">
+              <div id="multi-llm-media-slides">
+                <figure class="project-media" data-media-slide role="group" aria-roledescription="slide" aria-label="1 of 4: Route 1 hardware experiment">
+                  <video data-research-video controls playsinline preload="none" width="1280" height="720" poster="images/research/verifier-multi-llm/01-route1-poster.jpg" aria-label="Route 1 Crazyflie hardware demonstration" aria-describedby="multi-llm-caption-1" data-poster-alt="Crazyflie laboratory flight with a planned path inset and virtual obstacles marked in red.">
+                    <source src="media/research/verifier-multi-llm/Single-Crazyflie_Hardware_Experiment_Route1.mp4" type="video/mp4" />
+                    Your browser does not support this video.
+                  </video>
+                  <figcaption id="multi-llm-caption-1">Hardware demonstration of feasibility-aware LLM-based trajectory planning.</figcaption>
+                  <a data-external-video href="media/research/verifier-multi-llm/Single-Crazyflie_Hardware_Experiment_Route1.mp4">Open video file</a>
+                </figure>
+                <figure class="project-media" data-media-slide role="group" aria-roledescription="slide" aria-label="2 of 4: Planning framework">
+                  <a data-research-enlarge href="images/research/verifier-multi-llm/02-framework.png" aria-label="Enlarge the multi-robot planning framework figure">
+                    <img data-research-figure src="images/research/verifier-multi-llm/02-framework-preview.png" width="1200" height="675" loading="lazy" decoding="async" alt="Feasibility-aware multi-robot planning framework showing symbolic task planning, geometric grounding, verification, targeted replanning, and execution." />
+                    <span class="research-enlarge-label">Enlarge figure</span>
+                  </a>
+                  <figcaption id="multi-llm-caption-2">Framework integrating symbolic planning, geometric grounding, execution-level verification, and targeted replanning.</figcaption>
+                </figure>
+                <figure class="project-media" data-media-slide role="group" aria-roledescription="slide" aria-label="3 of 4: Two-robot coordination">
+                  <video data-research-video controls playsinline preload="none" width="1920" height="1080" poster="images/research/verifier-multi-llm/03-coordination-poster.jpg" aria-label="Two-Crazyflie multi-agent coordination demonstration" aria-describedby="multi-llm-caption-3" data-poster-alt="Gazebo simulation of two Crazyflie robots following coordinated paths, alongside a dual-robot path preview.">
+                    <source src="media/research/verifier-multi-llm/03-coordination.mp4" type="video/mp4" />
+                    Your browser does not support this video.
+                  </video>
+                  <figcaption id="multi-llm-caption-3">Multi-agent coordination and execution of jointly planned trajectories.</figcaption>
+                  <a data-external-video href="media/research/verifier-multi-llm/03-coordination.mp4">Open video file</a>
+                </figure>
+                <figure class="project-media" data-media-slide role="group" aria-roledescription="slide" aria-label="4 of 4: Route 2 hardware experiment">
+                  <video data-research-video controls playsinline preload="none" width="1280" height="720" poster="images/research/verifier-multi-llm/04-route2-poster.jpg" aria-label="Route 2 Crazyflie hardware demonstration" aria-describedby="multi-llm-caption-4" data-poster-alt="Crazyflie laboratory flight along an alternative planned obstacle-avoiding route.">
+                    <source src="media/research/verifier-multi-llm/Single-Crazyflie_Hardware_Experiment_Route2.mp4" type="video/mp4" />
+                    Your browser does not support this video.
+                  </video>
+                  <figcaption id="multi-llm-caption-4">Hardware demonstration of an alternative obstacle-avoiding trajectory.</figcaption>
+                  <a data-external-video href="media/research/verifier-multi-llm/Single-Crazyflie_Hardware_Experiment_Route2.mp4">Open video file</a>
+                </figure>
+              </div>
+              <div class="research-carousel-controls" data-carousel-controls hidden>
+                <button type="button" data-carousel-previous aria-controls="multi-llm-media-slides" aria-label="Previous Multi-LLM media slide">Previous</button>
+                <span data-carousel-counter role="status" aria-live="polite" aria-atomic="true">Slide 1 of 4</span>
+                <button type="button" data-carousel-next aria-controls="multi-llm-media-slides" aria-label="Next Multi-LLM media slide">Next</button>
+              </div>
+            </div>
+            <div class="project-content">
+              <h4 class="project-title" id="project-verifier-multi-llm">Verifier-Mediated Multi-LLM Coordination for Multi-Robot Planning</h4>
+              <p class="project-description">Independently generated robot plans can conflict after geometric grounding. This work compares centralized LLM planning with decentralized planners coordinated by a geometric verifier. Structured conflict feedback guides targeted replanning, connecting semantic reasoning to execution feasibility. CARLA and Crazyflie evaluations examine coordination as task complexity increases.</p>
+              <p class="project-status">Workshop paper — Foundation Models in Multi-Robot Systems Workshop, IEEE/RSJ IROS 2026.</p>
+              <ul class="project-tags" aria-label="Research categories"><li>Robotics and Autonomy</li><li>Learning and Data-Driven Decision-Making</li></ul>
+              <ul class="project-links" aria-label="Project resources"><li><a href="https://arxiv.org/pdf/2610.12761" target="_blank" rel="noopener">Paper</a></li></ul>
+            </div>
+          </article>
+          <article class="project-card project-card--media" data-categories="robotics-autonomy control-stochastic-decision-making learning-data-driven-decision-making optimization" data-media-project="aerial-refueling" aria-labelledby="project-aerial-refueling">
+            <div class="research-carousel" data-research-carousel role="region" aria-roledescription="carousel" aria-label="aerial refueling research media">
+              <div id="aerial-refueling-media-slides">
+                <figure class="project-media" data-media-slide role="group" aria-roledescription="slide" aria-label="1 of 1">
+                  <video data-research-video controls playsinline preload="none" width="1280" height="720" poster="images/research/aerial-refueling/01-refueling-poster.jpg" aria-label="Autonomous aerial-refueling simulation with aircraft alignment and docking guidance." aria-describedby="aerial-refueling-media-caption-1" data-poster-alt="Autonomous aerial-refueling simulation with aircraft alignment and docking guidance.">
+                    <source src="media/research/aerial-refueling/AAR.mp4" type="video/mp4" />
+                    Your browser does not support this video.
+                  </video>
+                  <figcaption id="aerial-refueling-media-caption-1">Uncertainty-aware autonomous aerial refueling integrating vision-based state estimation, conformal calibration, and predictive docking control.</figcaption>
+                  <a data-external-video href="media/research/aerial-refueling/AAR.mp4">Open video file</a>
+                </figure>
+              </div>
+              <div class="research-carousel-controls" data-carousel-controls hidden>
+                <button type="button" data-carousel-previous aria-controls="aerial-refueling-media-slides" aria-label="Previous aerial refueling media slide">Previous</button>
+                <span data-carousel-counter role="status" aria-live="polite" aria-atomic="true">Slide 1 of 1</span>
+                <button type="button" data-carousel-next aria-controls="aerial-refueling-media-slides" aria-label="Next aerial refueling media slide">Next</button>
+              </div>
+            </div>
+            <div class="project-content">
+              <h4 class="project-title" id="project-aerial-refueling">Uncertainty-Aware Vision-Based Aerial Refueling</h4>
+              <p class="project-description">Terminal probe-and-drogue docking requires reliable alignment despite uncertain visual estimates and aircraft motion. This architecture fuses vision, differential GPS, and avionics in an extended Kalman filter, then uses conformal calibration and covariance-based uncertainty budgets to set predictive-control margins. High-fidelity simulations assess the trade-off between docking accuracy and corrective control effort.</p>
+              <p class="project-status">Preprint — arXiv, 2026.</p>
+              <ul class="project-tags" aria-label="Research categories"><li>Robotics and Autonomy</li><li>Control and Stochastic Decision-Making</li><li>Learning and Data-Driven Decision-Making</li><li>Optimization</li></ul>
+              <ul class="project-links" aria-label="Project resources"><li><a href="https://arxiv.org/pdf/2610.07501" target="_blank" rel="noopener">Paper</a></li></ul>
+            </div>
+          </article>
+          <article class="project-card project-card--media" data-categories="robotics-autonomy control-stochastic-decision-making optimization" data-media-project="covariance-steering" aria-labelledby="project-covariance-steering">
+            <div class="research-carousel" data-research-carousel role="region" aria-roledescription="carousel" aria-label="covariance steering research media">
+              <div id="covariance-steering-media-slides">
+                <figure class="project-media" data-media-slide role="group" aria-roledescription="slide" aria-label="1 of 3">
+                  <span class="research-comparison-label">Large-ρ setting</span>
+                  <video data-research-video controls playsinline preload="none" muted data-preview width="800" height="600" poster="images/research/covariance-steering/01-large-rho-poster.png" aria-label="Animated stochastic sample paths and state distributions for the large-rho experiment." aria-describedby="covariance-steering-media-caption-1" data-poster-alt="Animated stochastic sample paths and state distributions for the large-rho experiment.">
+                    <source src="media/research/covariance-steering/01-large-rho.mp4" type="video/mp4" />
+                    Your browser does not support this video.
+                  </video>
+                  <figcaption id="covariance-steering-media-caption-1">Adaptive covariance steering with Wasserstein distributional uncertainty certificates.</figcaption>
+                  <a data-external-video href="media/research/covariance-steering/01-large-rho.mp4">Open video file</a>
+                </figure>
+                <figure class="project-media" data-media-slide role="group" aria-roledescription="slide" aria-label="2 of 3">
+                  <span class="research-comparison-label">Small-ρ setting</span>
+                  <video data-research-video controls playsinline preload="none" muted data-preview width="800" height="600" poster="images/research/covariance-steering/02-small-rho-poster.png" aria-label="Animated stochastic sample paths and state distributions for the separate small-rho experiment." aria-describedby="covariance-steering-media-caption-2" data-poster-alt="Animated stochastic sample paths and state distributions for the separate small-rho experiment.">
+                    <source src="media/research/covariance-steering/02-small-rho.mp4" type="video/mp4" />
+                    Your browser does not support this video.
+                  </video>
+                  <figcaption id="covariance-steering-media-caption-2">Effect of model uncertainty on stochastic trajectories and state distributions.</figcaption>
+                  <a data-external-video href="media/research/covariance-steering/02-small-rho.mp4">Open video file</a>
+                </figure>
+                <figure class="project-media" data-media-slide role="group" aria-roledescription="slide" aria-label="3 of 3">
+                  <a data-research-enlarge href="images/research/covariance-steering/03-architecture.png" aria-label="Enlarge: Covariance-steering controller and L1 distributionally robust adaptive-control feedback around the uncertain system."><img data-research-figure src="images/research/covariance-steering/03-architecture-preview.png" width="1000" height="590" loading="lazy" decoding="async" alt="Covariance-steering controller and L1 distributionally robust adaptive-control feedback around the uncertain system." /><span class="research-enlarge-label">Enlarge figure</span></a>
+                  <figcaption id="covariance-steering-media-caption-3">Architecture coupling covariance steering with L1 distributionally robust adaptive control.</figcaption>
+                </figure>
+              </div>
+              <div class="research-carousel-controls" data-carousel-controls hidden>
+                <button type="button" data-carousel-previous aria-controls="covariance-steering-media-slides" aria-label="Previous covariance steering media slide">Previous</button>
+                <span data-carousel-counter role="status" aria-live="polite" aria-atomic="true">Slide 1 of 3</span>
+                <button type="button" data-carousel-next aria-controls="covariance-steering-media-slides" aria-label="Next covariance steering media slide">Next</button>
+              </div>
+            </div>
+            <div class="project-content">
+              <h4 class="project-title" id="project-covariance-steering">Wasserstein Distributionally Robust Adaptive Covariance Steering</h4>
+              <p class="project-description">Steering state distributions becomes difficult when dynamics and disturbances are uncertain. This work couples L1-adaptive control with Wasserstein distributional certificates to inform covariance-steering safety constraints.</p>
+              <p class="project-status">Published conference paper — IEEE CDC 2025.</p>
+              <ul class="project-tags" aria-label="Research categories"><li>Robotics and Autonomy</li><li>Control and Stochastic Decision-Making</li><li>Optimization</li></ul>
+              <ul class="project-links" aria-label="Project resources"><li><a href="https://arxiv.org/pdf/2509.04593" target="_blank" rel="noopener">Paper</a></li><li><a href="https://ieeexplore.ieee.org/abstract/document/11312198" target="_blank" rel="noopener">Publisher</a></li><li><a href="https://arxiv.org/abs/2509.04593" target="_blank" rel="noopener">arXiv</a></li></ul>
+            </div>
+          </article>
+          <article class="project-card project-card--media" data-categories="robotics-autonomy control-stochastic-decision-making optimization" data-media-project="small-body-planning" aria-labelledby="project-small-body-planning">
+            <div class="research-carousel" data-research-carousel role="region" aria-roledescription="carousel" aria-label="small body planning research media">
+              <div id="small-body-planning-media-slides">
+                <figure class="project-media" data-media-slide role="group" aria-roledescription="slide" aria-label="1 of 3">
+                  <div class="research-media-pair"><a data-research-enlarge href="images/research/small-body-planning/01-trajectory-l1-on.png" aria-label="Enlarge: Three-dimensional stochastic proximity trajectories with L1 adaptive control enabled."><span class="research-comparison-label">L1 on</span><img data-research-figure src="images/research/small-body-planning/01-trajectory-l1-on-preview.png" width="1000" height="969" loading="lazy" decoding="async" alt="Three-dimensional stochastic proximity trajectories with L1 adaptive control enabled." /><span class="research-enlarge-label">Enlarge figure</span></a><a data-research-enlarge href="images/research/small-body-planning/01-trajectory-l1-off.png" aria-label="Enlarge: Three-dimensional stochastic proximity trajectories with L1 adaptive control disabled."><span class="research-comparison-label">L1 off</span><img data-research-figure src="images/research/small-body-planning/01-trajectory-l1-off-preview.png" width="1000" height="972" loading="lazy" decoding="async" alt="Three-dimensional stochastic proximity trajectories with L1 adaptive control disabled." /><span class="research-enlarge-label">Enlarge figure</span></a></div>
+                  <figcaption id="small-body-planning-media-caption-1">Three-dimensional stochastic proximity trajectories with and without L1 adaptive control.</figcaption>
+                </figure>
+                <figure class="project-media" data-media-slide role="group" aria-roledescription="slide" aria-label="2 of 3">
+                  <a data-research-enlarge href="images/research/small-body-planning/02-clearance.png" aria-label="Enlarge: Keep-out clearance comparison showing median and lower-tail conditional value-at-risk."><img data-research-figure src="images/research/small-body-planning/02-clearance-preview.png" width="1000" height="640" loading="lazy" decoding="async" alt="Keep-out clearance comparison showing median and lower-tail conditional value-at-risk." /><span class="research-enlarge-label">Enlarge figure</span></a>
+                  <figcaption id="small-body-planning-media-caption-2">Median and lower-tail CVaR of keep-out clearance.</figcaption>
+                </figure>
+                <figure class="project-media" data-media-slide role="group" aria-roledescription="slide" aria-label="3 of 3">
+                  <div class="research-media-pair"><a data-research-enlarge href="images/research/small-body-planning/03-distribution-l1-on.png" aria-label="Enlarge: State distributions and 95% highest-density regions with L1 adaptive control enabled."><span class="research-comparison-label">L1 on</span><img data-research-figure src="images/research/small-body-planning/03-distribution-l1-on-preview.png" width="1000" height="948" loading="lazy" decoding="async" alt="State distributions and 95% highest-density regions with L1 adaptive control enabled." /><span class="research-enlarge-label">Enlarge figure</span></a><a data-research-enlarge href="images/research/small-body-planning/03-distribution-l1-off.png" aria-label="Enlarge: State distributions and 95% highest-density regions with L1 adaptive control disabled."><span class="research-comparison-label">L1 off</span><img data-research-figure src="images/research/small-body-planning/03-distribution-l1-off-preview.png" width="1000" height="990" loading="lazy" decoding="async" alt="State distributions and 95% highest-density regions with L1 adaptive control disabled." /><span class="research-enlarge-label">Enlarge figure</span></a></div>
+                  <figcaption id="small-body-planning-media-caption-3">State distributions and 95% highest-density regions with and without adaptive control.</figcaption>
+                </figure>
+              </div>
+              <div class="research-carousel-controls" data-carousel-controls hidden>
+                <button type="button" data-carousel-previous aria-controls="small-body-planning-media-slides" aria-label="Previous small body planning media slide">Previous</button>
+                <span data-carousel-counter role="status" aria-live="polite" aria-atomic="true">Slide 1 of 3</span>
+                <button type="button" data-carousel-next aria-controls="small-body-planning-media-slides" aria-label="Next small body planning media slide">Next</button>
+              </div>
+            </div>
+            <div class="project-content">
+              <h4 class="project-title" id="project-small-body-planning">Distributionally Robust Planning for Small-Body Proximity Operations</h4>
+              <p class="project-description">Uncertain gravity and disturbances complicate spacecraft guidance near small bodies. This work combines iterative covariance steering with distributionally robust adaptive control for risk-aware collision avoidance under model mismatch.</p>
+              <p class="project-status">Workshop paper — Space Exploration and Sustained Operations Beyond Earth Workshop, IEEE/RSJ IROS 2026.</p>
+              <ul class="project-tags" aria-label="Research categories"><li>Robotics and Autonomy</li><li>Control and Stochastic Decision-Making</li><li>Optimization</li></ul>
+              <ul class="project-links" aria-label="Project resources"><li><a href="https://arxiv.org/abs/2610.12774" target="_blank" rel="noopener">arXiv</a></li></ul>
+            </div>
+          </article>
+          <article class="project-card project-card--media" data-categories="control-stochastic-decision-making optimization" data-media-project="mean-field-control" aria-labelledby="project-mean-field-control">
+            <div class="research-carousel" data-research-carousel role="region" aria-roledescription="carousel" aria-label="mean field control research media">
+              <div id="mean-field-control-media-slides">
+                <figure class="project-media" data-media-slide role="group" aria-roledescription="slide" aria-label="1 of 2">
+                  <a data-research-enlarge href="images/research/mean-field-control/01-control-120-agents.png" aria-label="Enlarge: Complete three-panel comparison of 120-agent networked control across decentralized and two alpha-dominant regimes."><img data-research-figure src="images/research/mean-field-control/01-control-120-agents-preview.png" width="1000" height="303" loading="lazy" decoding="async" alt="Complete three-panel comparison of 120-agent networked control across decentralized and two alpha-dominant regimes." /><span class="research-enlarge-label">Enlarge figure</span></a>
+                  <figcaption id="mean-field-control-media-caption-1">Networked control performance under different diagonal dominance regimes for 120 agents.</figcaption>
+                </figure>
+                <figure class="project-media" data-media-slide role="group" aria-roledescription="slide" aria-label="2 of 2">
+                  <a data-research-enlarge href="images/research/mean-field-control/02-control-60-agents.png" aria-label="Enlarge: Complete three-panel comparison of 60-agent networked control across decentralized and two alpha-dominant regimes."><img data-research-figure src="images/research/mean-field-control/02-control-60-agents-preview.png" width="1000" height="303" loading="lazy" decoding="async" alt="Complete three-panel comparison of 60-agent networked control across decentralized and two alpha-dominant regimes." /><span class="research-enlarge-label">Enlarge figure</span></a>
+                  <figcaption id="mean-field-control-media-caption-2">Comparative networked control performance for 60 agents.</figcaption>
+                </figure>
+              </div>
+              <div class="research-carousel-controls" data-carousel-controls hidden>
+                <button type="button" data-carousel-previous aria-controls="mean-field-control-media-slides" aria-label="Previous mean field control media slide">Previous</button>
+                <span data-carousel-counter role="status" aria-live="polite" aria-atomic="true">Slide 1 of 2</span>
+                <button type="button" data-carousel-next aria-controls="mean-field-control-media-slides" aria-label="Next mean field control media slide">Next</button>
+              </div>
+            </div>
+            <div class="project-content">
+              <h4 class="project-title" id="project-mean-field-control">Networked Control and Mean-Field Optimality under Diagonal Dominance</h4>
+              <p class="project-description">Large populations of interacting agents can make centralized control impractical. This work studies when diagonal dominance allows decentralized control to approach social optimality in large, heterogeneous populations under the paper’s assumptions.</p>
+              <p class="project-status">Published conference paper — IEEE ACC 2026.</p>
+              <ul class="project-tags" aria-label="Research categories"><li>Control and Stochastic Decision-Making</li><li>Optimization</li></ul>
+              <ul class="project-links" aria-label="Project resources"><li><a href="https://arxiv.org/abs/2510.01067" target="_blank" rel="noopener">arXiv</a></li></ul>
+            </div>
+          </article>
+          <article class="project-card project-card--media" data-categories="control-stochastic-decision-making optimization energy-systems" data-media-project="virtual-power-plants" aria-labelledby="project-virtual-power-plants">
+            <div class="research-carousel" data-research-carousel role="region" aria-roledescription="carousel" aria-label="virtual power plants research media">
+              <div id="virtual-power-plants-media-slides">
+                <figure class="project-media" data-media-slide role="group" aria-roledescription="slide" aria-label="1 of 2">
+                  <a data-research-enlarge href="images/research/virtual-power-plants/01-hil.png" aria-label="Enlarge: Distributed optimization and control pipeline linked to real-time hardware-in-the-loop power-system equipment."><img data-research-figure src="images/research/virtual-power-plants/01-hil-preview.png" width="1000" height="257" loading="lazy" decoding="async" alt="Distributed optimization and control pipeline linked to real-time hardware-in-the-loop power-system equipment." /><span class="research-enlarge-label">Enlarge figure</span></a>
+                  <figcaption id="virtual-power-plants-media-caption-1">End-to-end distributed optimization and control platform with hardware-in-the-loop implementation.</figcaption>
+                </figure>
+                <figure class="project-media" data-media-slide role="group" aria-roledescription="slide" aria-label="2 of 2">
+                  <a data-research-enlarge href="images/research/virtual-power-plants/02-system.png" aria-label="Enlarge: Inverter-interfaced energy-resource network, communication layer, and grid-following and grid-forming control hierarchies."><img data-research-figure src="images/research/virtual-power-plants/02-system.png" width="1624" height="750" loading="lazy" decoding="async" alt="Inverter-interfaced energy-resource network, communication layer, and grid-following and grid-forming control hierarchies." /><span class="research-enlarge-label">Enlarge figure</span></a>
+                  <figcaption id="virtual-power-plants-media-caption-2">Distributed optimization-based control architecture for networks of inverter-interfaced energy resources.</figcaption>
+                </figure>
+              </div>
+              <div class="research-carousel-controls" data-carousel-controls hidden>
+                <button type="button" data-carousel-previous aria-controls="virtual-power-plants-media-slides" aria-label="Previous virtual power plants media slide">Previous</button>
+                <span data-carousel-counter role="status" aria-live="polite" aria-atomic="true">Slide 1 of 2</span>
+                <button type="button" data-carousel-next aria-controls="virtual-power-plants-media-slides" aria-label="Next virtual power plants media slide">Next</button>
+              </div>
+            </div>
+            <div class="project-content">
+              <h4 class="project-title" id="project-virtual-power-plants">Distributed Control of Virtual Power Plants</h4>
+              <p class="project-description">Coordinating inverter-based energy resources requires decisions that respect local measurements and network interactions. Related published work develops optimization-based secondary control for voltage regulation and reactive power sharing in microgrids.</p>
+              <p class="project-status">Related published work — IEEE IECON 2024. Journal manuscript — IEEE Transactions on Smart Grid, under review.</p>
+              <ul class="project-tags" aria-label="Research categories"><li>Control and Stochastic Decision-Making</li><li>Optimization</li><li>Energy Systems</li></ul>
+              <ul class="project-links" aria-label="Project resources"><li><a href="https://arxiv.org/abs/2409.19866" target="_blank" rel="noopener">Related paper</a></li><li><a href="https://github.com/vivekkhatana/VPP_Primary_Node/tree/main/Primary_Node_Repo" target="_blank" rel="noopener">Primary-node code</a></li><li><a href="https://github.com/vivekkhatana/VPP_Secondary_Node/tree/main/Secondary_Node_Repo" target="_blank" rel="noopener">Secondary-node code</a></li></ul>
+            </div>
+          </article>
+          <article class="project-card project-card--media" data-categories="control-stochastic-decision-making learning-data-driven-decision-making optimization energy-systems" data-media-project="online-model-updates" aria-labelledby="project-online-model-updates">
+            <div class="research-carousel" data-research-carousel role="region" aria-roledescription="carousel" aria-label="online model updates research media">
+              <div id="online-model-updates-media-slides">
+                <figure class="project-media" data-media-slide role="group" aria-roledescription="slide" aria-label="1 of 2">
+                  <a data-research-enlarge href="images/research/online-model-updates/01-ieee37.png" aria-label="Enlarge: Modified IEEE 37-bus network with photovoltaic energy-source buses indicated."><img data-research-figure src="images/research/online-model-updates/01-ieee37.png" width="928" height="739" loading="lazy" decoding="async" alt="Modified IEEE 37-bus network with photovoltaic energy-source buses indicated." /><span class="research-enlarge-label">Enlarge figure</span></a>
+                  <figcaption id="online-model-updates-media-caption-1">IEEE 37-bus distribution network used for evaluating networked predictive control.</figcaption>
+                </figure>
+                <figure class="project-media" data-media-slide role="group" aria-roledescription="slide" aria-label="2 of 2">
+                  <div class="research-media-pair"><a data-research-enlarge href="images/research/online-model-updates/02-nonlinear-voltage.png" aria-label="Enlarge: Voltage trajectories using online updates of the nonlinear constant-power-load model."><span class="research-comparison-label">Nonlinear model</span><img data-research-figure src="images/research/online-model-updates/02-nonlinear-voltage.png" width="1456" height="1237" loading="lazy" decoding="async" alt="Voltage trajectories using online updates of the nonlinear constant-power-load model." /><span class="research-enlarge-label">Enlarge figure</span></a><a data-research-enlarge href="images/research/online-model-updates/03-linear-voltage.png" aria-label="Enlarge: Voltage trajectories using online updates of the linear LinDistFlow model."><span class="research-comparison-label">Linear model</span><img data-research-figure src="images/research/online-model-updates/03-linear-voltage.png" width="1452" height="1245" loading="lazy" decoding="async" alt="Voltage trajectories using online updates of the linear LinDistFlow model." /><span class="research-enlarge-label">Enlarge figure</span></a></div>
+                  <figcaption id="online-model-updates-media-caption-2">Voltage trajectories with online gradient-based model updates. Voltage trajectories using the linear online gradient-based model update formulation.</figcaption>
+                </figure>
+              </div>
+              <div class="research-carousel-controls" data-carousel-controls hidden>
+                <button type="button" data-carousel-previous aria-controls="online-model-updates-media-slides" aria-label="Previous online model updates media slide">Previous</button>
+                <span data-carousel-counter role="status" aria-live="polite" aria-atomic="true">Slide 1 of 2</span>
+                <button type="button" data-carousel-next aria-controls="online-model-updates-media-slides" aria-label="Next online model updates media slide">Next</button>
+              </div>
+            </div>
+            <div class="project-content">
+              <h4 class="project-title" id="project-online-model-updates">Adaptive Online Model Updates for Networked Predictive Control</h4>
+              <p class="project-description">Predictive control in networked systems depends on models that remain accurate as operating conditions change. This work updates subsystem input-output models from real-time measurements using an online gradient algorithm and a distributed reformulation. Regret analysis and power-distribution simulations study model adaptation while limiting the information exchanged between agents.</p>
+              <p class="project-status">Published conference paper — 60th Annual Allerton Conference on Communication, Control, and Computing, 2024.</p>
+              <ul class="project-tags" aria-label="Research categories"><li>Control and Stochastic Decision-Making</li><li>Learning and Data-Driven Decision-Making</li><li>Optimization</li><li>Energy Systems</li></ul>
+              <ul class="project-links" aria-label="Project resources"><li><a href="https://arxiv.org/pdf/2405.00637" target="_blank" rel="noopener">Paper</a></li><li><a href="https://ieeexplore.ieee.org/abstract/document/10735270" target="_blank" rel="noopener">Publisher</a></li></ul>
+            </div>
+          </article>
+          <article class="project-card project-card--media" data-categories="learning-data-driven-decision-making optimization" data-media-project="distributed-dc-optimization" aria-labelledby="project-distributed-dc-optimization">
+            <div class="research-carousel" data-research-carousel role="region" aria-roledescription="carousel" aria-label="distributed dc optimization research media">
+              <div id="distributed-dc-optimization-media-slides">
+                <figure class="project-media" data-media-slide role="group" aria-roledescription="slide" aria-label="1 of 3">
+                  <a data-research-enlarge href="images/research/distributed-dc-optimization/01-objective-residual.png" aria-label="Enlarge: Objective residual versus iteration for DDC-Consensus and its Inexact-10 and Inexact-100 variants."><img data-research-figure src="images/research/distributed-dc-optimization/01-objective-residual.png" width="1700" height="1491" loading="lazy" decoding="async" alt="Objective residual versus iteration for DDC-Consensus and its Inexact-10 and Inexact-100 variants." /><span class="research-enlarge-label">Enlarge figure</span></a>
+                  <figcaption id="distributed-dc-optimization-media-caption-1">Objective residual comparison for DDC-Consensus and its inexact variants.</figcaption>
+                </figure>
+                <figure class="project-media" data-media-slide role="group" aria-roledescription="slide" aria-label="2 of 3">
+                  <a data-research-enlarge href="images/research/distributed-dc-optimization/02-stationarity-residual.png" aria-label="Enlarge: Stationarity residual versus iteration for DDC-Consensus and its inexact variants."><img data-research-figure src="images/research/distributed-dc-optimization/02-stationarity-residual.png" width="1700" height="1461" loading="lazy" decoding="async" alt="Stationarity residual versus iteration for DDC-Consensus and its inexact variants." /><span class="research-enlarge-label">Enlarge figure</span></a>
+                  <figcaption id="distributed-dc-optimization-media-caption-2">Stationarity residual across distributed optimization iterations.</figcaption>
+                </figure>
+                <figure class="project-media" data-media-slide role="group" aria-roledescription="slide" aria-label="3 of 3">
+                  <a data-research-enlarge href="images/research/distributed-dc-optimization/03-solution-residual.png" aria-label="Enlarge: Solution residual versus iteration for DDC-Consensus and its inexact variants."><img data-research-figure src="images/research/distributed-dc-optimization/03-solution-residual.png" width="1695" height="1452" loading="lazy" decoding="async" alt="Solution residual versus iteration for DDC-Consensus and its inexact variants." /><span class="research-enlarge-label">Enlarge figure</span></a>
+                  <figcaption id="distributed-dc-optimization-media-caption-3">Solution residual comparison under different consensus approximations.</figcaption>
+                </figure>
+              </div>
+              <div class="research-carousel-controls" data-carousel-controls hidden>
+                <button type="button" data-carousel-previous aria-controls="distributed-dc-optimization-media-slides" aria-label="Previous distributed dc optimization media slide">Previous</button>
+                <span data-carousel-counter role="status" aria-live="polite" aria-atomic="true">Slide 1 of 3</span>
+                <button type="button" data-carousel-next aria-controls="distributed-dc-optimization-media-slides" aria-label="Next distributed dc optimization media slide">Next</button>
+              </div>
+            </div>
+            <div class="project-content">
+              <h4 class="project-title" id="project-distributed-dc-optimization">Distributed Difference-of-Convex Optimization</h4>
+              <p class="project-description">Distributed learning and estimation can require minimizing nonsmooth, nonconvex objectives across directed networks. DDC-Consensus combines Moreau-envelope smoothing, local gradient updates, and finite-time approximate consensus for difference-of-convex objectives. The analysis establishes stationarity guarantees under stated assumptions, with a regularized least-squares example illustrating how the method supports decentralized nonconvex optimization.</p>
+              <p class="project-status">Published conference paper — 60th Annual Allerton Conference on Communication, Control, and Computing, 2024.</p>
+              <ul class="project-tags" aria-label="Research categories"><li>Learning and Data-Driven Decision-Making</li><li>Optimization</li></ul>
+              <ul class="project-links" aria-label="Project resources"><li><a href="https://arxiv.org/pdf/2407.16728" target="_blank" rel="noopener">Paper</a></li><li><a href="https://ieeexplore.ieee.org/abstract/document/10735298" target="_blank" rel="noopener">Publisher</a></li></ul>
+            </div>
+          </article>
+          <article class="project-card project-card--media" data-categories="optimization" data-media-project="directed-optimization" aria-labelledby="project-directed-optimization">
+            <div class="research-carousel" data-research-carousel role="region" aria-roledescription="carousel" aria-label="directed optimization research media">
+              <div id="directed-optimization-media-slides">
+                <figure class="project-media" data-media-slide role="group" aria-roledescription="slide" aria-label="1 of 2">
+                  <a data-research-enlarge href="images/research/directed-optimization/01-huber-convergence.png" aria-label="Enlarge: Huber-regression solution residual versus iteration count, with DC-DistADMM algorithm iterations and total iterations shown separately."><img data-research-figure src="images/research/directed-optimization/01-huber-convergence-preview.png" width="1000" height="782" loading="lazy" decoding="async" alt="Huber-regression solution residual versus iteration count, with DC-DistADMM algorithm iterations and total iterations shown separately." /><span class="research-enlarge-label">Enlarge figure</span></a>
+                  <figcaption id="directed-optimization-media-caption-1">Comparative convergence of DC-DistADMM and distributed optimization algorithms for Huber regression.</figcaption>
+                </figure>
+                <figure class="project-media" data-media-slide role="group" aria-roledescription="slide" aria-label="2 of 2">
+                  <a data-research-enlarge href="images/research/directed-optimization/02-huber-time.png" aria-label="Enlarge: Huber-regression convergence comparison plotted against CPU time, retaining the original algorithm legend."><img data-research-figure src="images/research/directed-optimization/02-huber-time-preview.png" width="1000" height="772" loading="lazy" decoding="async" alt="Huber-regression convergence comparison plotted against CPU time, retaining the original algorithm legend." /><span class="research-enlarge-label">Enlarge figure</span></a>
+                  <figcaption id="directed-optimization-media-caption-2">Computational performance comparison in terms of CPU time.</figcaption>
+                </figure>
+              </div>
+              <div class="research-carousel-controls" data-carousel-controls hidden>
+                <button type="button" data-carousel-previous aria-controls="directed-optimization-media-slides" aria-label="Previous directed optimization media slide">Previous</button>
+                <span data-carousel-counter role="status" aria-live="polite" aria-atomic="true">Slide 1 of 2</span>
+                <button type="button" data-carousel-next aria-controls="directed-optimization-media-slides" aria-label="Next directed optimization media slide">Next</button>
+              </div>
+            </div>
+            <div class="project-content">
+              <h4 class="project-title" id="project-directed-optimization">Distributed Optimization over Directed Communication Networks</h4>
+              <p class="project-description">Networked agents must optimize shared objectives without centralized coordination. DC-DistADMM and GradConsensus address constrained optimization over directed communication graphs, with attention to feasibility and convergence.</p>
+              <p class="project-status">Published journal articles — IEEE Transactions on Automatic Control, 2023; IEEE Transactions on Network Science and Engineering, 2024 (issue years).</p>
+              <ul class="project-tags" aria-label="Research categories"><li>Optimization</li></ul>
+              <ul class="project-links" aria-label="Project resources"><li><a href="https://doi.org/10.1109/TAC.2022.3221856" target="_blank" rel="noopener">DC-DistADMM paper</a></li><li><a href="https://doi.org/10.1109/TNSE.2023.3321757" target="_blank" rel="noopener">GradConsensus paper</a></li><li><a href="https://github.com/vivekkhatana/DC-DistADMM" target="_blank" rel="noopener">DC-DistADMM code</a></li><li><a href="https://github.com/vivekkhatana/GradConsensus" target="_blank" rel="noopener">GradConsensus code</a></li></ul>
+            </div>
+          </article>
+          <article class="project-card project-card--media" data-categories="control-stochastic-decision-making optimization energy-systems" data-media-project="microgrid-risk-sharing" aria-labelledby="project-microgrid-risk-sharing">
+            <div class="research-carousel" data-research-carousel role="region" aria-roledescription="carousel" aria-label="microgrid risk sharing research media">
+              <div id="microgrid-risk-sharing-media-slides">
+                <figure class="project-media" data-media-slide role="group" aria-roledescription="slide" aria-label="1 of 3">
+                  <a data-research-enlarge href="images/research/microgrid-risk-sharing/01-network.png" aria-label="Enlarge: Stochastic resource network with local storage Xi(t) at node i and transfers uij(t) and uik(t)."><img data-research-figure src="images/research/microgrid-risk-sharing/01-network.png" width="1186" height="618" loading="lazy" decoding="async" alt="Stochastic resource network with local storage Xi(t) at node i and transfers uij(t) and uik(t)." /><span class="research-enlarge-label">Enlarge figure</span></a>
+                  <figcaption id="microgrid-risk-sharing-media-caption-1">Interconnected stochastic resource network with local storage and inter-node resource transfers.</figcaption>
+                </figure>
+                <figure class="project-media" data-media-slide role="group" aria-roledescription="slide" aria-label="2 of 3">
+                  <a data-research-enlarge href="images/research/microgrid-risk-sharing/02-survival.jpg" aria-label="Enlarge: Survival probability versus rescaled transport capacity for the operating horizons labeled in the supplied plot."><img data-research-figure src="images/research/microgrid-risk-sharing/02-survival-preview.png" width="1000" height="857" loading="lazy" decoding="async" alt="Survival probability versus rescaled transport capacity for the operating horizons labeled in the supplied plot." /><span class="research-enlarge-label">Enlarge figure</span></a>
+                  <figcaption id="microgrid-risk-sharing-media-caption-2">Survival probability as a function of rescaled transport capacity for different operating horizons.</figcaption>
+                </figure>
+                <figure class="project-media" data-media-slide role="group" aria-roledescription="slide" aria-label="3 of 3">
+                  <a data-research-enlarge href="images/research/microgrid-risk-sharing/03-threshold-scaling.jpg" aria-label="Enlarge: Threshold transport capacity versus operating horizon, with the empirical points and fitted scaling curve shown in the supplied figure."><img data-research-figure src="images/research/microgrid-risk-sharing/03-threshold-scaling-preview.png" width="1000" height="814" loading="lazy" decoding="async" alt="Threshold transport capacity versus operating horizon, with the empirical points and fitted scaling curve shown in the supplied figure." /><span class="research-enlarge-label">Enlarge figure</span></a>
+                  <figcaption id="microgrid-risk-sharing-media-caption-3">Empirical power-law scaling of threshold transport capacity with operating horizon.</figcaption>
+                </figure>
+              </div>
+              <div class="research-carousel-controls" data-carousel-controls hidden>
+                <button type="button" data-carousel-previous aria-controls="microgrid-risk-sharing-media-slides" aria-label="Previous microgrid risk sharing media slide">Previous</button>
+                <span data-carousel-counter role="status" aria-live="polite" aria-atomic="true">Slide 1 of 3</span>
+                <button type="button" data-carousel-next aria-controls="microgrid-risk-sharing-media-slides" aria-label="Next microgrid risk sharing media slide">Next</button>
+              </div>
+            </div>
+            <div class="project-content">
+              <h4 class="project-title" id="project-microgrid-risk-sharing">Risk Sharing in Interconnected Microgrids</h4>
+              <p class="project-description">Renewable uncertainty creates a trade-off between local storage and power sharing. This work studies chance-constrained storage sizing and power-transfer policies, including how network connectivity and line capacity affect risk pooling.</p>
+              <p class="project-status">Published conference paper — 61st Allerton Conference on Communication, Control, and Computing, 2025.</p>
+              <ul class="project-tags" aria-label="Research categories"><li>Control and Stochastic Decision-Making</li><li>Optimization</li><li>Energy Systems</li></ul>
+              <ul class="project-links" aria-label="Project resources"><li><a href="https://www.ideals.illinois.edu/items/137370" target="_blank" rel="noopener">Paper and abstract</a></li></ul>
+            </div>
+          </article>
+        </div>
+        <p class="project-filter-empty" hidden>No projects are currently listed in this category.</p>
+        <script>
+          (() => {
+            const section = document.getElementById('selected-projects');
+            const tools = section.querySelector('.project-filter-tools');
+            const buttons = Array.from(section.querySelectorAll('[data-project-filter]'));
+            const cards = Array.from(section.querySelectorAll('.project-gallery > .project-card'));
+            const status = section.querySelector('.project-filter-status');
+            const empty = section.querySelector('.project-filter-empty');
+            const categoryKeys = new Set(buttons.map(button => button.dataset.projectFilter));
+            const categories = new Map(cards.map(card => [card, new Set(
+              (card.dataset.categories || '').split(/\s+/).filter(key => categoryKeys.has(key))
+            )]));
+
+            function selectCategory(button) {
+              const category = button.dataset.projectFilter;
+              let count = 0;
+
+              cards.forEach(card => {
+                const visible = category === 'all' || categories.get(card).has(category);
+                card.hidden = !visible;
+                if (visible) count += 1;
+              });
+
+              buttons.forEach(option => {
+                option.setAttribute('aria-pressed', String(option === button));
+              });
+              status.textContent = category === 'all'
+                ? `Showing all ${count} projects.`
+                : `${count} ${count === 1 ? 'project' : 'projects'} in ${button.textContent.trim()}.`;
+              empty.hidden = count > 0;
+            }
+
+            buttons.forEach(button => {
+              button.addEventListener('click', () => selectCategory(button));
+            });
+            selectCategory(buttons[0]);
+            tools.hidden = false;
+          })();
+        </script>
+      </section>
+      <section class="academic-subsection" id="publications">
+        <div class="pub-meta">
+        <div>
+
+          <h3 class="subsection-heading">Publications</h3>
+        </div>
+        <a class="pub-scholar-link" href="https://scholar.google.com/citations?hl=en&user=l1BYDI0AAAAJ&view_op=list_works" target="_blank">Full list on Google Scholar ↗</a>
+      </div>
+
+      <h4 class="pub-year-label">Peer-Reviewed Journal Articles</h4>
+      <ul class="pub-list">
+        <li><span class="me">V. Khatana</span>, G. Saraswat, S. Patel, and M. V. Salapaka, "GradConsensus: Linearly convergent algorithm for reducing disagreement in multi-agent optimization." <em>IEEE Trans. Network Science and Engineering</em>, vol. 11, no. 1, pp. 1251–1264, 2024 (issue year). <span class="pub-badge badge-j">Journal</span> <a href="https://doi.org/10.1109/TNSE.2023.3321757" target="_blank">doi ↗</a></li>
+        <li>J. Melbourne, G. Saraswat, <span class="me">V. Khatana</span>, S. Patel, and M. V. Salapaka, "Convex decreasing algorithms: Distributed synthesis and finite-time termination in higher dimension." <em>IEEE Trans. Automatic Control</em>, vol. 69, no. 6, pp. 3960–3967, 2024 (issue year). <span class="pub-badge badge-j">Journal</span> <a href="https://doi.org/10.1109/TAC.2023.3344721" target="_blank">doi ↗</a></li>
+        <li><span class="me">V. Khatana</span> and M. V. Salapaka, "Noise resilient distributed average consensus over directed graphs." <em>IEEE Trans. Signal and Information Processing over Networks</em>, vol. 9, pp. 770–785, 2023. <span class="pub-badge badge-j">Journal</span> <a href="https://doi.org/10.1109/TSIPN.2023.3324583" target="_blank">doi ↗</a></li>
+        <li>S. Chakraborty, J. Park, G. Saraswat, T. Meyers, J. Wang, S. Tiwari, <span class="me">V. Khatana</span>, A. Maqsood, A. Somani, and M. V. Salapaka, "Emergency power supply system for critical infrastructures: Design and large scale hardware demonstration." <em>IEEE Access</em>, vol. 11, pp. 114509–114526, 2023. <span class="pub-badge badge-j">Journal</span> <a href="https://doi.org/10.1109/ACCESS.2023.3325198" target="_blank">doi ↗</a></li>
+        <li><span class="me">V. Khatana</span> and M. V. Salapaka, "DC-DistADMM: ADMM algorithm for constrained optimization over directed graphs." <em>IEEE Trans. Automatic Control</em>, vol. 68, no. 9, pp. 5365–5380, 2023 (issue year). <span class="pub-badge badge-j">Journal</span> <a href="https://doi.org/10.1109/TAC.2022.3221856" target="_blank">doi ↗</a></li>
+        <li>G. Saraswat, <span class="me">V. Khatana</span>, S. Patel, and M. V. Salapaka, "Distributed finite-time termination for consensus algorithm in switching topologies." <em>IEEE Trans. Network Science and Engineering</em>, vol. 10, no. 1, pp. 489–499, 2023 (issue year). <span class="pub-badge badge-j">Journal</span> <a href="https://doi.org/10.1109/TNSE.2022.3216286" target="_blank">doi ↗</a></li>
+      </ul>
+
+      <h4 class="pub-year-label">Peer-Reviewed Conference Articles — 2026</h4>
+      <ul class="pub-list">
+        <li><span class="me">V. Khatana</span>, S. Chakraborty, and M. V. Salapaka, "Large-signal stability analysis of optimization-based secondary control for distributed energy resources." <em>62nd Annual Allerton Conference on Communication, Control, and Computing</em>, 2026. <span class="pub-badge badge-c">Conf</span></li>
+        <li><span class="me">V. Khatana</span>, D. Wang, P. Voulgaris, N. Elia, and N. Hovakimyan, "Networked control and mean field problems under diagonal dominance: Decentralized and social optimality." <em>2026 IEEE American Control Conference (ACC)</em>, 2026. <span class="pub-badge badge-c">Conf</span></li>
+      </ul>
+
+      <h4 class="pub-year-label">Peer-Reviewed Conference Articles — 2025</h4>
+      <ul class="pub-list">
+        <li>A. Dey, <span class="me">V. Khatana</span>, A. Mani, and M. V. Salapaka, "Risk sharing among microgrids: Connectivity requirements and optimal control." <em>61st Allerton Conference on Communication, Control, and Computing</em>, 2025. <span class="pub-badge badge-c">Conf</span></li>
+        <li>A. Gahlawat, <span class="me">V. Khatana</span>, D. Wang, S. H. Karumanchi, N. Hovakimyan, and P. Voulgaris, "Wasserstein distributionally robust adaptive covariance steering." <em>64th IEEE Conference on Decision and Control (CDC)</em>, 2025. <span class="pub-badge badge-c">Conf</span></li>
+      </ul>
+
+      <h4 class="pub-year-label">Peer-Reviewed Conference Articles — 2024</h4>
+      <ul class="pub-list">
+        <li><span class="me">V. Khatana</span> and M. V. Salapaka, "Distributed difference of convex optimization." <em>60th Annual Allerton Conference on Communication, Control, and Computing</em>, 2024. <span class="pub-badge badge-c">Conf</span></li>
+        <li><span class="me">V. Khatana</span>, C.-Y. Chang, and W. Wang, "Adaptive online model update algorithm for predictive control in networked systems." <em>60th Annual Allerton Conference on Communication, Control, and Computing</em>, 2024. <span class="pub-badge badge-c">Conf</span></li>
+        <li><span class="me">V. Khatana</span>, S. Chakraborty, and M. V. Salapaka, "A plug and play distributed secondary controller for microgrids with grid-forming inverters." <em>Annual Conference of the IEEE Industrial Electronics Society (IECON)</em>, 2024. <span class="pub-badge badge-c">Conf</span></li>
+        <li><span class="me">V. Khatana</span>, S. Chakraborty, G. Saraswat, P. Sourav, and M. V. Salapaka, "A distributed malicious agent detection scheme for resilient power apportioning in microgrids." <em>Annual Conference of the IEEE Industrial Electronics Society (IECON)</em>, 2024. <span class="pub-badge badge-c">Conf</span></li>
+        <li>A. Dey, <span class="me">V. Khatana</span>, A. Mani, and M. V. Salapaka, "Guaranteeing service in connected microgrids: Storage planning and optimal power sharing policy." <em>IEEE American Control Conference</em>, 2024. <span class="pub-badge badge-c">Conf</span></li>
+      </ul>
+
+      <h4 class="pub-year-label">Peer-Reviewed Conference Articles — 2022</h4>
+      <ul class="pub-list">
+        <li><span class="me">V. Khatana</span>, S. Chakraborty, G. Saraswat, B. Lundstrom, and M. V. Salapaka, "Evaluation of horizon of viability optimization engine for sustained power to critical infrastructure." <em>IEEE Power and Energy Conference at Illinois (PECI)</em>, 2022, pp. 1–8. <span class="pub-badge badge-c">Conf</span></li>
+        <li>J. Wang, S. Chakraborty, <span class="me">V. Khatana</span>, B. Lundstrom, G. Saraswat, and M. Salapaka, "Evaluation of optimal net load management in microgrids using hardware-in-the-loop simulation." <em>IEEE Power &amp; Energy Society Innovative Smart Grid Technologies Conference (ISGT)</em>, 2022, pp. 1–5. <span class="pub-badge badge-c">Conf</span> <a href="https://doi.org/10.1109/ISGT50606.2022.9817515" target="_blank">doi ↗</a></li>
+      </ul>
+
+      <h4 class="pub-year-label">Peer-Reviewed Conference Articles — 2020</h4>
+      <ul class="pub-list">
+        <li><span class="me">V. Khatana</span> and M. V. Salapaka, "D-DistADMM: A O(1/k) distributed ADMM for distributed optimization in directed graph topologies." <em>59th IEEE Conference on Decision and Control (CDC)</em>, 2020, pp. 2992–2997. <span class="pub-badge badge-c">Conf</span> <a href="https://doi.org/10.1109/CDC42340.2020.9304086" target="_blank">doi ↗</a></li>
+        <li><span class="me">V. Khatana</span>, G. Saraswat, S. Patel, and M. V. Salapaka, "Gradient-Consensus method for distributed optimization in directed multi-agent networks." <em>IEEE American Control Conference (ACC)</em>, 2020, pp. 4689–4694. <span class="pub-badge badge-c">Conf</span> <a href="https://doi.org/10.23919/ACC45564.2020.9147544" target="_blank">doi ↗</a></li>
+        <li>S. Patel, <span class="me">V. Khatana</span>, G. Saraswat, and M. V. Salapaka, "Distributed detection of malicious attacks on consensus algorithms with applications in power networks." <em>7th International Conference on Control, Decision and Information Technologies (CoDIT)</em>, 2020, vol. 1, pp. 397–402. <span class="pub-badge badge-c">Conf</span> <a href="https://doi.org/10.1109/CoDIT49905.2020.9263882" target="_blank">doi ↗</a></li>
+        <li>J. Melbourne, G. Saraswat, <span class="me">V. Khatana</span>, S. Patel, and M. V. Salapaka, "On the geometry of consensus algorithms with application to distributed termination in higher dimension." <em>IFAC-PapersOnLine</em>, vol. 53, no. 2, pp. 2951–2956, 21st IFAC World Congress, 2020. <span class="pub-badge badge-c">Conf</span> <a href="https://doi.org/10.1016/j.ifacol.2020.12.971" target="_blank">doi ↗</a></li>
+      </ul>
+
+      <h4 class="pub-year-label">Peer-Reviewed Conference Articles — 2017</h4>
+      <ul class="pub-list">
+        <li><span class="me">V. Khatana</span> and R. Bhimasingu, "Review on three-phase PLLs for grid integration of renewable energy sources." <em>14th IEEE India Council International Conference (INDICON)</em>, 2017, pp. 1–6. <span class="pub-badge badge-c">Conf</span></li>
+      </ul>
+
+      <h4 class="pub-year-label">Workshop Papers — 2026</h4>
+      <ul class="pub-list">
+        <li><span class="me">V. Khatana</span>, Z. Song, N. Hovakimyan, and P. Voulgaris, "Verifier-mediated multi-LLM coordination for multi-robot path planning." <em>Foundation Models in Multi-Robot Systems Workshop, IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</em>, 2026. <span class="pub-badge badge-c">Workshop</span></li>
+        <li><span class="me">V. Khatana</span>, A. Gahlawat, N. Hovakimyan, and P. Voulgaris, "Distributionally robust adaptive iterative covariance steering for small-body proximity operations." <em>Space Exploration and Sustained Operations Beyond Earth Workshop, IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</em>, 2026. <span class="pub-badge badge-c">Workshop</span></li>
+      </ul>
+
+      <h4 class="pub-year-label">Preprints</h4>
+      <ul class="pub-list">
+        <li>A. Dey, <span class="me">V. Khatana</span>, A. Mani, and M. V. Salapaka, "Transactive framework for dynamic energy storage allocation for critical load management." 2021. <a href="https://arxiv.org/abs/2101.05890" target="_blank">arXiv:2101.05890 ↗</a></li>
+        <li>A. Dey, <span class="me">V. Khatana</span>, A. Mani, and M. V. Salapaka, "On Mitigating the Uncertainty in Renewable Generation in Distribution Microgrids." 2020. <a href="https://arxiv.org/abs/2007.08641" target="_blank">arXiv:2007.08641 ↗</a></li>
+      </ul>
+
+      <h4 class="pub-year-label">Manuscripts Under Review</h4>
+      <ul class="pub-list">
+        <li>A. Dey, <span class="me">V. Khatana</span>, A. Mani, and M. V. Salapaka, "Optimal multi-microgrid feedback policies: Guaranteed demand fulfillment under renewable uncertainty." <em>Under Review, IEEE Transactions on Control of Network Systems.</em></li>
+        <li><span class="me">V. Khatana</span>, S. Chakraborty, and M. V. Salapaka, "Distributed control of inverter-interfaced virtual power plants: Design and stability guarantees." <em>Under Review, IEEE Transactions on Smart Grid.</em></li>
+      </ul>
+
+      <h4 class="pub-year-label">Working Papers</h4>
+      <ul class="pub-list working-papers">
+        <li>Risk sharing among microgrids: Connectivity requirements and optimal control.</li>
+        <li>Distributed difference of convex machine learning.</li>
+        <li>Wasserstein distributionally robust stochastic control with safety guarantees.</li>
+      </ul>
+      </section>
+      <section class="academic-subsection" id="funding">
+        <h3 class="subsection-heading">Research Funding</h3>
+        <ul class="news-list compact-chronology">
+          <li><span class="news-date">Awarded 2026</span><div><strong>NSF Future CoRe: Performativity-Aware Intelligent Autonomous Systems (PIAS)</strong><p class="funding-role">Role: Contributor to proposal conception, mathematical formulation, and learning algorithm development for physical AI and robotic navigation.</p></div></li>
+          <li><span class="news-date">Awarded 2023</span><div><strong>ARPA-E OPEN: The Dynamic, Resilient Hybrid Grid</strong><p class="funding-role">Role: Contributor to proposal conception, mathematical formulation, and distributed control algorithm development for renewable energy-interfaced power inverters.</p></div></li>
+        </ul>
+      </section>
+      <section class="academic-subsection" id="res-talks">
+        <span class="anchor-alias" id="media"></span><span class="anchor-alias" id="resources"></span>
+        <h3 class="subsection-heading">Talks &amp; Presentations</h3>
+        <p class="research-intro">Selected invited talks, conference presentations, and outreach. For a complete list see my <a href="https://scholar.google.com/citations?user=l1BYDI0AAAAJ&hl=en" target="_blank">Google Scholar</a> profile.</p>
+        <ul class="news-list presentation-list">
+          <li><span class="news-date">2026</span><div class="presentation-body"><div class="resource-title">IROS 2026 Lightning Talk</div><div class="resource-desc">IEEE/RSJ International Conference on Intelligent Robots and Systems, 2026</div></div></li>
+          <li><span class="news-date">2026</span><div class="presentation-body"><div class="resource-title">Allerton Conference Presentation</div><div class="resource-desc">Allerton Conference on Communication, Control, and Computing, 2026</div><div class="presentation-links"><a href="https://allerton.csl.illinois.edu/" target="_blank" rel="noopener">Conference website</a></div></div></li>
+          <li><span class="news-date">2026</span><div class="presentation-body"><div class="resource-title"><a href="https://aviate.illinois.edu/nasa-uli-annual-review-2026/" target="_blank" rel="noopener">NASA ULI Annual Review — Event Recordings and Slides</a></div><div class="resource-desc">AVIATE Center, University of Illinois Urbana-Champaign · Event organization, 2026 · Event recordings, slides, and photo gallery</div></div></li>
+          <li><span class="news-date">2026</span><div class="presentation-body"><div class="resource-title">Networked Control and Mean Field Problems under Diagonal Dominance</div><div class="resource-desc">2026 IEEE American Control Conference (ACC) — Session co-chair talk on decentralized and social optimality</div></div></li>
+          <li><span class="news-date">2026</span><div class="presentation-body"><div class="resource-title">Architectures for Resilient, Safe and Predictable Autonomy</div><div class="resource-desc">Lightning talk &amp; poster · 12th Midwest Workshop on Control and Game Theory · 2026</div><div class="presentation-links"><a href="https://sites.google.com/view/mwcgt" target="_blank" rel="noopener">Workshop website</a></div></div></li>
+          <li><span class="news-date">2025</span><div class="presentation-body"><div class="resource-title">Allerton Conference Presentation</div><div class="resource-desc">Allerton Conference on Communication, Control, and Computing, 2025</div><div class="presentation-links"><a href="https://allerton.csl.illinois.edu/" target="_blank" rel="noopener">Conference website</a></div></div></li>
+          <li><span class="news-date">2025</span><div class="presentation-body"><div class="resource-title">Wasserstein Distributionally Robust Adaptive Covariance Steering</div><div class="resource-desc">64th IEEE Conference on Decision and Control (CDC), 2025</div></div></li>
+          <li><span class="news-date">2024</span><div class="presentation-body"><div class="resource-title">Distributed Difference of Convex Optimization</div><div class="resource-desc">60th Annual Allerton Conference on Communication, Control, and Computing, 2024</div><div class="presentation-links"><a href="https://allerton.csl.illinois.edu/" target="_blank" rel="noopener">Conference website</a></div></div></li>
+          <li><span class="news-date">2024</span><div class="presentation-body"><div class="resource-title">Adaptive Online Model Update Algorithm for Predictive Control in Networked Systems</div><div class="resource-desc">60th Annual Allerton Conference, 2024</div><div class="presentation-links"><a href="https://allerton.csl.illinois.edu/" target="_blank" rel="noopener">Conference website</a></div></div></li>
+          <li><span class="news-date">2024</span><div class="presentation-body"><div class="resource-title">Data-Enabled Decision-Making in Energy Systems and Markets</div><div class="resource-desc">INFORMS Annual Meeting, Invited Session, Seattle · Oct 2024</div><div class="presentation-links"><a href="https://meetings.informs.org/wordpress/seattle2024/" target="_blank" rel="noopener">Meeting website</a></div></div></li>
+          <li><span class="news-date">2024</span><div class="presentation-body"><div class="resource-title">Distributed Training of Machine Learning Models — Lightning Talk</div><div class="resource-desc">Midwest Machine Learning Symposium, 2024 · Lightning talk &amp; poster</div><div class="presentation-links"><a href="https://midwest-ml.org/2024/" target="_blank" rel="noopener">Symposium website</a></div></div></li>
+          <li><span class="news-date">2024</span><div class="presentation-body"><div class="resource-title">Algorithms for Agreement and Optimality in Networked Dynamical Systems</div><div class="resource-desc">10th Midwest Workshop on Control and Game Theory, Lightning Talk, 2024</div><div class="presentation-links"><a href="https://mwcgt2024.northwestern.edu/" target="_blank" rel="noopener">Workshop website</a></div></div></li>
+          <li><span class="news-date">2024</span><div class="presentation-body"><div class="resource-title">Distributed Decision-Making in Networked Systems — IIT Roorkee Seminar Slides</div><div class="resource-desc">Guest Seminar, Dept. of Electrical Engineering, IIT Roorkee · Feb 2024</div><div class="presentation-links"><a href="https://iitr.ac.in/Departments/Electrical%20Engineering%20Department/static/Activities/Announcements/Technical_Talk.pdf" target="_blank" rel="noopener">Seminar announcement (PDF)</a></div></div></li>
+          <li><span class="news-date">2022</span><div class="presentation-body"><div class="resource-title">Evaluation of Horizon of Viability Optimization Engine for Sustained Power to Critical Infrastructure</div><div class="resource-desc">IEEE Power and Energy Conference at Illinois (PECI), 2022</div></div></li>
+          <li><span class="news-date">2020</span><div class="presentation-body"><div class="resource-title">D-DistADMM &amp; Gradient-Consensus for Distributed Optimization</div><div class="resource-desc">IEEE Conference on Decision and Control (CDC) &amp; IEEE American Control Conference (ACC), 2020</div></div></li>
+        </ul>
+      </section>
+      <section class="academic-subsection" id="res-code">
+        <h3 class="subsection-heading">Research Software</h3>
+        <ul class="resource-list">
+          <li>
+            <div class="resource-body">
+              <div class="resource-title"><a href="https://github.com/vivekkhatana/DC-DistADMM" target="_blank">DC-DistADMM</a></div>
+              <div class="resource-desc">Implementation of Distributed Directed ADMM for constrained optimization over directed graphs (IEEE TAC 2022)</div>
+            </div>
+          </li>
+          <li>
+            <div class="resource-body">
+              <div class="resource-title"><a href="https://github.com/vivekkhatana/GradConsensus" target="_blank">GradConsensus</a></div>
+              <div class="resource-desc">Every-iterate feasible distributed optimization algorithm — linearly convergent gradient-consensus (IEEE TNSE 2023)</div>
+            </div>
+          </li>
+          <li>
+            <div class="resource-body">
+              <div class="resource-title"><a href="https://github.com/vivekkhatana/NRPushSum" target="_blank">NRPushSum</a></div>
+              <div class="resource-desc">First noise-resilient distributed consensus algorithm over directed communication networks (IEEE TSIPN 2023)</div>
+            </div>
+          </li>
+          <li>
+            <div class="resource-body">
+              <div class="resource-title"><a href="https://github.com/vivekkhatana/Horizon_of_Viability_Engine" target="_blank">Horizon of Viability Engine</a></div>
+              <div class="resource-desc">Integer optimization-based cost-optimal generation and load dispatch for sustained power delivery to critical infrastructure (DOE project)</div>
+            </div>
+          </li>
+          <li>
+            <div class="resource-body">
+              <div class="resource-title"><a href="https://github.com/vivekkhatana/VPP_Primary_Node/tree/main/Primary_Node_Repo" target="_blank">Virtual Power Plant (Primary Node)</a></div>
+              <div class="resource-title"><a href="https://github.com/vivekkhatana/VPP_Secondary_Node/tree/main/Secondary_Node_Repo" target="_blank">Virtual Power Plant (Secondary Node)</a></div>
+              <div class="resource-desc">Distributed optimization engines for real-time coordination of distributed energy resources in virtual power plant architectures</div>
+            </div>
+          </li>
+          <li>
+            <div class="resource-body">
+              <div class="resource-title"><a href="https://github.com/Cainiao1053Jr/Human-AI-Reasoning-for-Mission-planning-and-shared-autonomy" target="_blank">Human–AI Reasoning for Mission Planning and Shared Autonomy</a></div>
+              <div class="resource-desc">Python framework for LLM-based mission planning and shared autonomy in multi-agent systems; co-developed with Zijian Song at UIUC</div>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </article>
+
     <article class="section" id="teaching">
-      <p class="section-heading">Academic Service</p>
-      <h2>Teaching</h2>
+      <p class="section-heading">Academic Community</p>
+      <h2>Teaching &amp; Service</h2>
+      <section class="academic-subsection" id="teaching-experience">
+        <h3 class="subsection-heading">Teaching Experience</h3>
+<p style="font-size:0.93rem;color:var(--body);margin-bottom:1.1rem;">I am deeply committed to student success and creating inclusive, intellectually stimulating learning environments. My teaching philosophy centers on developing critical thinkers who understand the real-world impact of their engineering work. To me, effective teaching goes beyond simply delivering content — it’s about fostering curiosity, clarity, and confidence. I currently mentor <strong>graduate and undergraduate</strong> students at UIUC in robotics, AI-enabled safe control, and energy systems.</p>
 
-      <p style="font-size:0.93rem;color:var(--body);margin-bottom:1.1rem;">I am deeply committed to student success and creating inclusive, intellectually stimulating learning environments. My teaching philosophy centers on developing critical thinkers who understand the real-world impact of their engineering work. To me, effective teaching goes beyond simply delivering content — it’s about fostering curiosity, clarity, and confidence. I currently mentor <strong>graduate and undergraduate</strong> students at UIUC in robotics, AI-enabled safe control, and energy systems.</p>
-
-      <p style="font-size:0.82rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--faint);margin-bottom:0.6rem;">University of Minnesota Twin Cities — Instructor of Record</p>
+      <p style="font-size:0.82rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--faint);margin-bottom:0.6rem;">University of Minnesota Twin Cities — Laboratory Instructor</p>
       <ul class="teaching-list">
         <li><span class="t-code">EE 4235</span><span class="t-name">Linear Control Systems Laboratory <span style="color:var(--muted);font-size:0.82rem;">· Fall 2019, 2021, 2023, 2024</span></span></li>
         <li><span class="t-code">EE 4237</span><span class="t-name">State Space Control Laboratory <span style="color:var(--muted);font-size:0.82rem;">· Spring 2020, 2022</span></span></li>
@@ -1254,20 +820,65 @@
         <li><span class="t-code">EE 2361</span><span class="t-name">Introduction to Microcontrollers Laboratory <span style="color:var(--muted);font-size:0.82rem;">· Spring 2021, Fall 2022</span></span></li>
       </ul>
 
-      <p style="font-size:0.82rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--faint);margin:1.4rem 0 0.6rem;">Mentoring</p>
-      <ul class="teaching-list">
-        <li><span class="t-code" style="min-width:90px;">UIUC</span><span class="t-name">Currently mentoring Ph.D. and undergraduate students in robotics, generative AI, and energy systems (2025–present)</span></li>
-        <li><span class="t-code" style="min-width:90px;">UMN</span><span class="t-name">Graduate Student Mentorship Program, ECE Dept. (2023)</span></li>
-        <li><span class="t-code" style="min-width:90px;">IIT Roorkee</span><span class="t-name">Student Mentorship Program, undergraduate research mentoring (2016–2018)</span></li>
-      </ul>
-
+      <p class="research-intro">Laboratory instruction responsibilities included experimental demonstrations, student assessment, and technical guidance.</p>
       <p class="teaching-note" style="margin-top:1.2rem;">
         🏆 <strong>Teaching Assistant Award</strong> — jointly selected by students and faculty, ECE Dept., University of Minnesota Twin Cities, 2021.<br><br>
         Selected student feedback: <em>"Vivek would ask us questions throughout the lab, making sure we were doing more than just following a recipe."</em> · <em>"He gave a lot of background knowledge regarding how things would behave in reality rather than mathematically."</em> · <em>"If it weren't for having such a great TA this lab would have been a nightmare. Instead, I learned a ton."</em>
       </p>
+      </section>
+      <section class="academic-subsection" id="research-mentorship">
+        <h3 class="subsection-heading">Research Mentorship</h3>
+<p class="research-intro">University of Illinois Urbana-Champaign</p>
+
+      <ul class="resource-list">
+        <li><div class="resource-body">
+          <div class="resource-title">8 Ph.D. students · 2025–present</div>
+          <div class="resource-desc">Multi-agent autonomy; distributionally robust adaptive control; safe motion planning under uncertainty; performative AI; conformal calibration for safety-aware control; perception-guided autonomous aerial refueling; eVTOL platform development and hardware integration; and distributed optimization and control of inverter-based distributed energy resources.</div>
+        </div></li>
+        <li><div class="resource-body">
+          <div class="resource-title">1 Master's student · Fall 2025–present</div>
+          <div class="resource-desc">Agentic AI for robotics, including problem formulation, algorithm development, software implementation, and hardware experimentation.</div>
+        </div></li>
+        <li><div class="resource-body">
+          <div class="resource-title">3 undergraduate students and 1 high school student · Fall 2025–present</div>
+          <div class="resource-desc">Mathematical modeling, computer vision, uncertainty-aware navigation, task and motion planning with hierarchical 3D scene graphs, algorithm development, and hands-on Crazyflie quadrotor experimentation.</div>
+        </div></li>
+      </ul>
+
+      <p class="resources-group-title">Student Mentorship Programs</p>
+      <ul class="teaching-list">
+
+        <li><span class="t-code" style="min-width:90px;">UMN</span><span class="t-name">Graduate Student Mentorship Program, ECE Dept. (2023)</span></li>
+        <li><span class="t-code" style="min-width:90px;">IIT Roorkee</span><span class="t-name">Student Mentorship Program, undergraduate research mentoring (2016–2018)</span></li>
+      </ul>
+      </section>
+      <section class="academic-subsection" id="service">
+        <h3 class="subsection-heading">Professional Service</h3>
+
+      <ul class="news-list">
+        <li><span class="news-date">2026</span><span><strong>Session Co-Chair, Large-Scale Systems</strong> — <a href="https://acc2026.a2c2.org/" target="_blank">American Control Conference (ACC)</a>.</span></li>
+        <li><span class="news-date">2026</span><span><strong>Event Organizer, NASA ULI Annual Review</strong> — <a href="https://aviate.illinois.edu/nasa-uli-annual-review-2026/" target="_blank" rel="noopener">AVIATE Center, University of Illinois Urbana-Champaign</a>. Developed the technical program and coordinated stakeholder engagement and logistics for the two-day NASA–academia–industry research conclave.</span></li>
+        <li><span class="news-date">2025–present</span><span><strong>Volunteer</strong> — <a href="https://www.nationalpostdoc.org/" target="_blank">National Postdoctoral Association</a>.</span></li>
+        <li><span class="news-date">2023</span><span><strong>Co-Organizer, Poster Session and Local Arrangements</strong> — 9th Midwest Workshop on Control and Game Theory.</span></li>
+        <li><span class="news-date">2023</span><span><strong>Graduate Student Mentor</strong> — ECE Student Mentorship Program, University of Minnesota.</span></li>
+        <li><span class="news-date">2022–2023</span><span><strong>Volunteer</strong> — IEEE University of Minnesota Student Branch and Twin Cities Section.</span></li>
+        <li><span class="news-date">2016–2018</span><span><strong>Student Mentor</strong> — Student Mentorship Program, Indian Institute of Technology Roorkee.</span></li>
+      </ul>
+
+      <p class="pub-year-label">Peer-Review Service</p>
+      <ul class="resource-list">
+        <li><div class="resource-body">
+          <div class="resource-title">Journals</div>
+          <div class="resource-desc">IEEE Transactions on Automatic Control; IEEE Transactions on Control of Network Systems; IEEE Transactions on Network Science and Engineering; IEEE Transactions on Cybernetics; IEEE Transactions on Power Systems; IEEE Transactions on Smart Grid; IEEE Control Systems Letters; IEEE Robotics and Automation Letters; IEEE Access; Automatica; Systems &amp; Control Letters.</div>
+        </div></li>
+        <li><div class="resource-body">
+          <div class="resource-title">Conferences</div>
+          <div class="resource-desc">AAAI Conference on Artificial Intelligence (AAAI); International Conference on Autonomous Agents and Multiagent Systems (AAMAS); IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS); American Control Conference (ACC); IEEE Conference on Decision and Control (CDC); IEEE Power and Energy Conference at Illinois (PECI).</div>
+        </div></li>
+      </ul>
+      </section>
     </article>
 
-    <!-- CONTACT -->
     <article class="section" id="contact">
       <p class="section-heading">Get in Touch</p>
       <h2>Contact</h2>
@@ -1278,7 +889,9 @@
           <a href="mailto:vkhatana@unr.edu">vkhatana@unr.edu</a>
         </div>
         <div class="contact-card">
-          <h3>Office</h3>
+          <h3>Office — UIUC / AVIATE</h3>
+          <p>Research Affiliate, AVIATE Center</p>
+          <p>University of Illinois Urbana-Champaign</p>
           <p>Dept. of Mechanical Science and Engineering</p>
           <p>105 S Mathews Ave, Urbana, IL 61801</p>
         </div>
@@ -1304,14 +917,5 @@
   Host free on <a href="https://pages.github.com" target="_blank">GitHub Pages</a>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  function toggleSpeakerBio(btn) {
-    const box = document.getElementById('speaker-bio-text');
-    const open = box.style.display === 'block';
-    box.style.display = open ? 'none' : 'block';
-    box.setAttribute('aria-hidden', open);
-    btn.setAttribute('aria-expanded', !open);
-    btn.classList.toggle('open', !open);
-  }
-
-  const sections = document.querySelectorAl
+</body>
+</html>
