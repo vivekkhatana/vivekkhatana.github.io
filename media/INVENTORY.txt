@@ -1,0 +1,151 @@
+RESEARCH MEDIA INVENTORY
+Inventory date: November 25, 2026
+
+Paths below are relative to the repository root. This is a planning document,
+not a runtime asset loader. No research media has been supplied or activated.
+The existing profile.jpeg and bio.jpeg portraits are unrelated to these projects.
+
+DIRECTORY CONVENTIONS
+images/research/<project-id>/  — approved web-ready figures, photos, posters and thumbnails.
+media/research/<project-id>/   — approved small web-ready videos, caption tracks and transcripts.
+Keep raw originals and private review notes outside the repository and preview server root.
+Empty directories are local only: Git tracks files, not empty folders. No .gitkeep
+or empty asset placeholders are used. Real files will carry these directories into Git.
+
+PROJECT INVENTORY
+
+verifier-multi-llm — Verifier-Mediated Multi-LLM Coordination for Multi-Robot Planning
+  Images / figures / video posters: images/research/verifier-multi-llm/
+  Videos / captions / transcripts:  media/research/verifier-multi-llm/
+  Available research media: none supplied.
+  Missing / requested primary asset: Approved geometric-verifier architecture figure or CARLA/Crazyflie coordination video from the public workshop paper.
+  Still needed with supplied assets: captions and descriptive alt text; source
+  dimensions; display order; credits/disclosure approval; video poster and
+  captions/transcript where appropriate. Optional thumbnails are not required.
+
+aerial-refueling — Uncertainty-Aware Vision-Based Aerial Refueling
+  Images / figures / video posters: images/research/aerial-refueling/
+  Videos / captions / transcripts:  media/research/aerial-refueling/
+  Available research media: none supplied.
+  Missing / requested primary asset: Approved estimator/uncertainty-margin architecture figure or FlightGear/JSBSim docking simulation video. Do not imply demonstrated mechanical engagement or fuel transfer.
+  Still needed with supplied assets: captions and descriptive alt text; source
+  dimensions; display order; credits/disclosure approval; video poster and
+  captions/transcript where appropriate. Optional thumbnails are not required.
+
+covariance-steering — Wasserstein Distributionally Robust Adaptive Covariance Steering
+  Images / figures / video posters: images/research/covariance-steering/
+  Videos / captions / transcripts:  media/research/covariance-steering/
+  Available research media: none supplied.
+  Missing / requested primary asset: Approved control-architecture figure or covariance-steering demonstration.
+  Still needed with supplied assets: captions and descriptive alt text; source
+  dimensions; display order; credits/disclosure approval; video poster and
+  captions/transcript where appropriate. Optional thumbnails are not required.
+
+small-body-planning — Distributionally Robust Planning for Small-Body Proximity Operations
+  Images / figures / video posters: images/research/small-body-planning/
+  Videos / captions / transcripts:  media/research/small-body-planning/
+  Available research media: none supplied.
+  Missing / requested primary asset: Approved small-body geometry/keep-out figure or simulation video.
+  Still needed with supplied assets: captions and descriptive alt text; source
+  dimensions; display order; credits/disclosure approval; video poster and
+  captions/transcript where appropriate. Optional thumbnails are not required.
+
+mean-field-control — Networked Control and Mean-Field Optimality under Diagonal Dominance
+  Images / figures / video posters: images/research/mean-field-control/
+  Videos / captions / transcripts:  media/research/mean-field-control/
+  Available research media: none supplied.
+  Missing / requested primary asset: Approved network/controller diagram or illustrative animation.
+  Still needed with supplied assets: captions and descriptive alt text; source
+  dimensions; display order; credits/disclosure approval; video poster and
+  captions/transcript where appropriate. Optional thumbnails are not required.
+
+virtual-power-plants — Distributed Control of Virtual Power Plants
+  Images / figures / video posters: images/research/virtual-power-plants/
+  Videos / captions / transcripts:  media/research/virtual-power-plants/
+  Available research media: none supplied.
+  Missing / requested primary asset: Approved control-architecture figure or inverter/microgrid demonstration; identify which published work it illustrates.
+  Still needed with supplied assets: captions and descriptive alt text; source
+  dimensions; display order; credits/disclosure approval; video poster and
+  captions/transcript where appropriate. Optional thumbnails are not required.
+
+online-model-updates — Adaptive Online Model Updates for Networked Predictive Control
+  Images / figures / video posters: images/research/online-model-updates/
+  Videos / captions / transcripts:  media/research/online-model-updates/
+  Available research media: none supplied.
+  Missing / requested primary asset: Approved online model-update/control architecture or power-distribution simulation figure from the published work.
+  Still needed with supplied assets: captions and descriptive alt text; source
+  dimensions; display order; credits/disclosure approval; video poster and
+  captions/transcript where appropriate. Optional thumbnails are not required.
+
+distributed-dc-optimization — Distributed Difference-of-Convex Optimization
+  Images / figures / video posters: images/research/distributed-dc-optimization/
+  Videos / captions / transcripts:  media/research/distributed-dc-optimization/
+  Available research media: none supplied.
+  Missing / requested primary asset: Approved DDC-Consensus algorithm/directed-network figure or regularized least-squares convergence figure; distinguish this algorithm from DC-DistADMM and GradConsensus.
+  Still needed with supplied assets: captions and descriptive alt text; source
+  dimensions; display order; credits/disclosure approval; video poster and
+  captions/transcript where appropriate. Optional thumbnails are not required.
+
+directed-optimization — Distributed Optimization over Directed Communication Networks
+  Images / figures / video posters: images/research/directed-optimization/
+  Videos / captions / transcripts:  media/research/directed-optimization/
+  Available research media: none supplied.
+  Missing / requested primary asset: Approved directed-graph or convergence figure; include algorithm assumptions and axis labels.
+  Still needed with supplied assets: captions and descriptive alt text; source
+  dimensions; display order; credits/disclosure approval; video poster and
+  captions/transcript where appropriate. Optional thumbnails are not required.
+
+microgrid-risk-sharing — Risk Sharing in Interconnected Microgrids
+  Images / figures / video posters: images/research/microgrid-risk-sharing/
+  Videos / captions / transcripts:  media/research/microgrid-risk-sharing/
+  Available research media: none supplied.
+  Missing / requested primary asset: Approved connectivity/storage-planning figure; identify the published paper and assumptions.
+  Still needed with supplied assets: captions and descriptive alt text; source
+  dimensions; display order; credits/disclosure approval; video poster and
+  captions/transcript where appropriate. Optional thumbnails are not required.
+
+MULTIPLE ASSETS PER PROJECT
+Use a shared numeric prefix to associate display order, video, poster and captions.
+Example filenames only — none of these example files is created:
+  images/research/<project-id>/01-framework.svg
+  images/research/<project-id>/02-simulation-poster.jpg
+  media/research/<project-id>/02-simulation.mp4
+  media/research/<project-id>/02-simulation.webm  (optional alternate encoding)
+  media/research/<project-id>/02-simulation.en.vtt
+  images/research/<project-id>/03-hardware-poster.jpg
+  media/research/<project-id>/03-hardware.mp4
+Use meaningful lowercase filenames with hyphens. Keep project IDs unchanged.
+MP4 and WebM may be alternate encodings of one video rather than separate slides.
+
+FOR EACH REAL ASSET, RECORD
+Filename/relative path; image/video/poster/caption role; display order; descriptive
+caption and alt text; native width/height; video duration/audio; byte size; credits
+and disclosure approval; optimization state; and an optional verified external URL.
+Check duplicates by content/hash before staging. Do not commit unnecessarily large
+raw files or alternate copies without a delivery reason. Preserve originals locally
+before compression and inspect technical labels/axes after optimization.
+
+CURRENT SUPPORT AND FUTURE CAROUSEL
+Existing HTML/CSS/JS supports multiple marked native images and videos under each
+project, intrinsic aspect ratios, figure captions, video posters, native playback
+controls, click-to-play/preload=none, pausing and error fallbacks. Actual cards
+currently retain their existing development placeholders; this setup changes no UI.
+Carousel controls, thumbnail navigation and image fullscreen UI are NOT implemented
+by this directory-only step. Native video fullscreen depends on browser/platform.
+When multiple approved assets arrive, prepare one compact labeled carousel per
+project with previous/next buttons, slide captions and optional labeled thumbnails.
+Keep it manually navigable by keyboard, with a readable no-JS list of media; avoid
+automatic slide changes. Pause videos when their slide is hidden. Preserve natural
+image/video proportions with no figure cropping, and offer fullscreen where useful.
+No audio autoplay or eager download of all videos. Retain native video controls
+and visible fallbacks/external links. Respect reduced motion and preserve card styling.
+
+WORKFLOW
+1. Retain originals outside Git; review disclosure and credits.
+2. Produce appropriately sized web-ready derivatives; use external hosting for
+   large recordings rather than bloating repository history.
+3. Place derivatives in the matching project directories and update this inventory
+   plus media/research-manifest.json only with approved, existing paths.
+4. Integrate media one project at a time, test desktop/mobile and accessible controls,
+   review exact staged files and sizes, and commit on website-redesign.
+5. Do not merge or publish without explicit approval.

@@ -115,8 +115,27 @@ repository files. Preserve them when moving this checkout.
 Existing portraits remain at `images/profile.jpeg` and `images/bio.jpeg`.
 Keep future research figures and video posters under `images/research/<project>/`.
 Small, web-ready video clips and caption tracks can live under
-`media/research/<project>/`. Create these directories only when approved files
-are supplied; the current website still uses its labeled development placeholders.
+`media/research/<project>/`. Matching folders for all ten project IDs have been
+created locally in advance of asset delivery; the current website still uses its
+labeled development placeholders. Empty directories are not tracked by Git, and
+no `.gitkeep` or empty media files are committed. To recreate the directories in
+a fresh checkout, run from the repository root:
+
+```sh
+python3 -c 'import json; from pathlib import Path; projects = json.loads(Path("media/research-manifest.json").read_text())["projects"]; [Path(base, key).mkdir(parents=True, exist_ok=True) for key in projects for base in ("images/research", "media/research")]'
+```
+
+`media/INVENTORY.txt` lists every project, its image/video directories, available
+files and missing media requirements. It also documents multiple-asset naming,
+captions, credits, optimization and the future accessible carousel. No carousel,
+thumbnail controls or image-fullscreen UI is added until actual assets arrive.
+Existing native-video fullscreen availability depends on the browser/platform.
+
+Keep raw originals and private inventory notes in the separate local
+`research-media-originals/` directory beside this checkout, never inside it or the
+preview server root. It has matching project folders and a local-only inventory.
+Retain source files before compression; put only approved web-ready derivatives
+in the website directories. Do not serve the checkout's parent directory.
 
 `media/research-manifest.json` is the asset planning inventory. It is not fetched
 by the homepage and does not create media requests. Every asset URL starts as
