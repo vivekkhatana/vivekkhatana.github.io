@@ -284,18 +284,44 @@
       <section class="academic-subsection" id="selected-projects">
         <h3 class="subsection-heading">Selected Research Projects</h3>
         <div class="project-filter-tools" hidden>
-          <div class="project-filters" role="group" aria-label="Filter research projects by category">
+          <div class="project-filters" role="group" aria-label="Filter selected research projects by research category">
             <button class="project-filter" type="button" data-project-filter="all" aria-pressed="true" aria-controls="selected-project-gallery">All</button>
-            <button class="project-filter" type="button" data-project-filter="robotics" aria-pressed="false" aria-controls="selected-project-gallery">Robotics</button>
-            <button class="project-filter" type="button" data-project-filter="control" aria-pressed="false" aria-controls="selected-project-gallery">Control</button>
-            <button class="project-filter" type="button" data-project-filter="artificial-intelligence" aria-pressed="false" aria-controls="selected-project-gallery">Artificial Intelligence</button>
+            <button class="project-filter" type="button" data-project-filter="robotics-autonomy" aria-pressed="false" aria-controls="selected-project-gallery">Robotics and Autonomy</button>
+            <button class="project-filter" type="button" data-project-filter="control-stochastic-decision-making" aria-pressed="false" aria-controls="selected-project-gallery">Control and Stochastic Decision-Making</button>
+            <button class="project-filter" type="button" data-project-filter="learning-data-driven-decision-making" aria-pressed="false" aria-controls="selected-project-gallery">Learning and Data-Driven Decision-Making</button>
             <button class="project-filter" type="button" data-project-filter="optimization" aria-pressed="false" aria-controls="selected-project-gallery">Optimization</button>
             <button class="project-filter" type="button" data-project-filter="energy-systems" aria-pressed="false" aria-controls="selected-project-gallery">Energy Systems</button>
           </div>
           <p class="project-filter-status" role="status" aria-live="polite" aria-atomic="true"></p>
         </div>
         <div class="project-gallery" id="selected-project-gallery">
-          <article class="project-card" data-categories="control optimization" data-media-project="covariance-steering" aria-labelledby="project-covariance-steering">
+          <article class="project-card" data-categories="robotics-autonomy learning-data-driven-decision-making" data-media-project="verifier-multi-llm" aria-labelledby="project-verifier-multi-llm">
+            <div class="project-media project-media-placeholder" role="group" aria-label="Media placeholder for Verifier-Mediated Multi-LLM Coordination for Multi-Robot Planning">
+              <p class="project-media-label">Development placeholder</p>
+              <p>Research figure or video pending.</p>
+            </div>
+            <div class="project-content">
+              <h4 class="project-title" id="project-verifier-multi-llm">Verifier-Mediated Multi-LLM Coordination for Multi-Robot Planning</h4>
+              <p class="project-description">Independently generated robot plans can conflict after geometric grounding. This work compares centralized LLM planning with decentralized planners coordinated by a geometric verifier. Structured conflict feedback guides targeted replanning, connecting semantic reasoning to execution feasibility. CARLA and Crazyflie evaluations examine coordination as task complexity increases.</p>
+              <p class="project-status">Workshop paper — Foundation Models in Multi-Robot Systems Workshop, IEEE/RSJ IROS 2026.</p>
+              <ul class="project-tags" aria-label="Research categories"><li>Robotics and Autonomy</li><li>Learning and Data-Driven Decision-Making</li></ul>
+              <ul class="project-links" aria-label="Project resources"><li><a href="https://arxiv.org/pdf/2610.12761" target="_blank" rel="noopener">Paper</a></li></ul>
+            </div>
+          </article>
+          <article class="project-card" data-categories="robotics-autonomy control-stochastic-decision-making learning-data-driven-decision-making optimization" data-media-project="aerial-refueling" aria-labelledby="project-aerial-refueling">
+            <div class="project-media project-media-placeholder" role="group" aria-label="Media placeholder for Uncertainty-Aware Vision-Based Aerial Refueling">
+              <p class="project-media-label">Development placeholder</p>
+              <p>Research figure or video pending.</p>
+            </div>
+            <div class="project-content">
+              <h4 class="project-title" id="project-aerial-refueling">Uncertainty-Aware Vision-Based Aerial Refueling</h4>
+              <p class="project-description">Terminal probe-and-drogue docking requires reliable alignment despite uncertain visual estimates and aircraft motion. This architecture fuses vision, differential GPS, and avionics in an extended Kalman filter, then uses conformal calibration and covariance-based uncertainty budgets to set predictive-control margins. High-fidelity simulations assess the trade-off between docking accuracy and corrective control effort.</p>
+              <p class="project-status">Preprint — arXiv, 2026.</p>
+              <ul class="project-tags" aria-label="Research categories"><li>Robotics and Autonomy</li><li>Control and Stochastic Decision-Making</li><li>Learning and Data-Driven Decision-Making</li><li>Optimization</li></ul>
+              <ul class="project-links" aria-label="Project resources"><li><a href="https://arxiv.org/pdf/2610.07501" target="_blank" rel="noopener">Paper</a></li></ul>
+            </div>
+          </article>
+          <article class="project-card" data-categories="robotics-autonomy control-stochastic-decision-making optimization" data-media-project="covariance-steering" aria-labelledby="project-covariance-steering">
             <div class="project-media project-media-placeholder" role="group" aria-label="Media placeholder for Wasserstein Distributionally Robust Adaptive Covariance Steering">
               <p class="project-media-label">Development placeholder</p>
               <p>Research figure or video pending.</p>
@@ -304,11 +330,11 @@
               <h4 class="project-title" id="project-covariance-steering">Wasserstein Distributionally Robust Adaptive Covariance Steering</h4>
               <p class="project-description">Steering state distributions becomes difficult when dynamics and disturbances are uncertain. This work couples L1-adaptive control with Wasserstein distributional certificates to inform covariance-steering safety constraints.</p>
               <p class="project-status">Published conference paper — IEEE CDC 2025.</p>
-              <ul class="project-tags" aria-label="Research categories"><li>Safe Autonomy</li><li>Adaptive Control</li><li>Stochastic Systems</li></ul>
-              <ul class="project-links" aria-label="Project resources"><li><a href="https://arxiv.org/abs/2509.04593" target="_blank" rel="noopener">arXiv</a></li></ul>
+              <ul class="project-tags" aria-label="Research categories"><li>Robotics and Autonomy</li><li>Control and Stochastic Decision-Making</li><li>Optimization</li></ul>
+              <ul class="project-links" aria-label="Project resources"><li><a href="https://arxiv.org/pdf/2509.04593" target="_blank" rel="noopener">Paper</a></li><li><a href="https://ieeexplore.ieee.org/abstract/document/11312198" target="_blank" rel="noopener">Publisher</a></li><li><a href="https://arxiv.org/abs/2509.04593" target="_blank" rel="noopener">arXiv</a></li></ul>
             </div>
           </article>
-          <article class="project-card" data-categories="robotics control optimization" data-media-project="small-body-planning" aria-labelledby="project-small-body-planning">
+          <article class="project-card" data-categories="robotics-autonomy control-stochastic-decision-making optimization" data-media-project="small-body-planning" aria-labelledby="project-small-body-planning">
             <div class="project-media project-media-placeholder" role="group" aria-label="Media placeholder for Distributionally Robust Planning for Small-Body Proximity Operations">
               <p class="project-media-label">Development placeholder</p>
               <p>Research figure or video pending.</p>
@@ -317,11 +343,11 @@
               <h4 class="project-title" id="project-small-body-planning">Distributionally Robust Planning for Small-Body Proximity Operations</h4>
               <p class="project-description">Uncertain gravity and disturbances complicate spacecraft guidance near small bodies. This work combines iterative covariance steering with distributionally robust adaptive control for risk-aware collision avoidance under model mismatch.</p>
               <p class="project-status">Workshop paper — Space Exploration and Sustained Operations Beyond Earth Workshop, IEEE/RSJ IROS 2026.</p>
-              <ul class="project-tags" aria-label="Research categories"><li>Safe Autonomy</li><li>Space Robotics</li><li>Robust Planning</li></ul>
+              <ul class="project-tags" aria-label="Research categories"><li>Robotics and Autonomy</li><li>Control and Stochastic Decision-Making</li><li>Optimization</li></ul>
               <ul class="project-links" aria-label="Project resources"><li><a href="https://arxiv.org/abs/2610.12774" target="_blank" rel="noopener">arXiv</a></li></ul>
             </div>
           </article>
-          <article class="project-card" data-categories="control optimization" data-media-project="mean-field-control" aria-labelledby="project-mean-field-control">
+          <article class="project-card" data-categories="control-stochastic-decision-making optimization" data-media-project="mean-field-control" aria-labelledby="project-mean-field-control">
             <div class="project-media project-media-placeholder" role="group" aria-label="Media placeholder for Networked Control and Mean-Field Optimality under Diagonal Dominance">
               <p class="project-media-label">Development placeholder</p>
               <p>Research figure or video pending.</p>
@@ -330,11 +356,11 @@
               <h4 class="project-title" id="project-mean-field-control">Networked Control and Mean-Field Optimality under Diagonal Dominance</h4>
               <p class="project-description">Large populations of interacting agents can make centralized control impractical. This work studies when diagonal dominance allows decentralized control to approach social optimality in large, heterogeneous populations under the paper’s assumptions.</p>
               <p class="project-status">Published conference paper — IEEE ACC 2026.</p>
-              <ul class="project-tags" aria-label="Research categories"><li>Networked Intelligence</li><li>Decentralized Control</li><li>Mean-Field Systems</li></ul>
+              <ul class="project-tags" aria-label="Research categories"><li>Control and Stochastic Decision-Making</li><li>Optimization</li></ul>
               <ul class="project-links" aria-label="Project resources"><li><a href="https://arxiv.org/abs/2510.01067" target="_blank" rel="noopener">arXiv</a></li></ul>
             </div>
           </article>
-          <article class="project-card" data-categories="control optimization energy-systems" data-media-project="virtual-power-plants" aria-labelledby="project-virtual-power-plants">
+          <article class="project-card" data-categories="control-stochastic-decision-making optimization energy-systems" data-media-project="virtual-power-plants" aria-labelledby="project-virtual-power-plants">
             <div class="project-media project-media-placeholder" role="group" aria-label="Media placeholder for Distributed Control of Virtual Power Plants">
               <p class="project-media-label">Development placeholder</p>
               <p>Research figure or video pending.</p>
@@ -343,8 +369,34 @@
               <h4 class="project-title" id="project-virtual-power-plants">Distributed Control of Virtual Power Plants</h4>
               <p class="project-description">Coordinating inverter-based energy resources requires decisions that respect local measurements and network interactions. Related published work develops optimization-based secondary control for voltage regulation and reactive power sharing in microgrids.</p>
               <p class="project-status">Related published work — IEEE IECON 2024. Journal manuscript — IEEE Transactions on Smart Grid, under review.</p>
-              <ul class="project-tags" aria-label="Research categories"><li>Resilient Energy</li><li>Distributed Control</li><li>Microgrids</li></ul>
+              <ul class="project-tags" aria-label="Research categories"><li>Control and Stochastic Decision-Making</li><li>Optimization</li><li>Energy Systems</li></ul>
               <ul class="project-links" aria-label="Project resources"><li><a href="https://arxiv.org/abs/2409.19866" target="_blank" rel="noopener">Related paper</a></li><li><a href="https://github.com/vivekkhatana/VPP_Primary_Node/tree/main/Primary_Node_Repo" target="_blank" rel="noopener">Primary-node code</a></li><li><a href="https://github.com/vivekkhatana/VPP_Secondary_Node/tree/main/Secondary_Node_Repo" target="_blank" rel="noopener">Secondary-node code</a></li></ul>
+            </div>
+          </article>
+          <article class="project-card" data-categories="control-stochastic-decision-making learning-data-driven-decision-making optimization energy-systems" data-media-project="online-model-updates" aria-labelledby="project-online-model-updates">
+            <div class="project-media project-media-placeholder" role="group" aria-label="Media placeholder for Adaptive Online Model Updates for Networked Predictive Control">
+              <p class="project-media-label">Development placeholder</p>
+              <p>Research figure or video pending.</p>
+            </div>
+            <div class="project-content">
+              <h4 class="project-title" id="project-online-model-updates">Adaptive Online Model Updates for Networked Predictive Control</h4>
+              <p class="project-description">Predictive control in networked systems depends on models that remain accurate as operating conditions change. This work updates subsystem input-output models from real-time measurements using an online gradient algorithm and a distributed reformulation. Regret analysis and power-distribution simulations study model adaptation while limiting the information exchanged between agents.</p>
+              <p class="project-status">Published conference paper — 60th Annual Allerton Conference on Communication, Control, and Computing, 2024.</p>
+              <ul class="project-tags" aria-label="Research categories"><li>Control and Stochastic Decision-Making</li><li>Learning and Data-Driven Decision-Making</li><li>Optimization</li><li>Energy Systems</li></ul>
+              <ul class="project-links" aria-label="Project resources"><li><a href="https://arxiv.org/pdf/2405.00637" target="_blank" rel="noopener">Paper</a></li><li><a href="https://ieeexplore.ieee.org/abstract/document/10735270" target="_blank" rel="noopener">Publisher</a></li></ul>
+            </div>
+          </article>
+          <article class="project-card" data-categories="learning-data-driven-decision-making optimization" data-media-project="distributed-dc-optimization" aria-labelledby="project-distributed-dc-optimization">
+            <div class="project-media project-media-placeholder" role="group" aria-label="Media placeholder for Distributed Difference-of-Convex Optimization">
+              <p class="project-media-label">Development placeholder</p>
+              <p>Research figure or video pending.</p>
+            </div>
+            <div class="project-content">
+              <h4 class="project-title" id="project-distributed-dc-optimization">Distributed Difference-of-Convex Optimization</h4>
+              <p class="project-description">Distributed learning and estimation can require minimizing nonsmooth, nonconvex objectives across directed networks. DDC-Consensus combines Moreau-envelope smoothing, local gradient updates, and finite-time approximate consensus for difference-of-convex objectives. The analysis establishes stationarity guarantees under stated assumptions, with a regularized least-squares example illustrating how the method supports decentralized nonconvex optimization.</p>
+              <p class="project-status">Published conference paper — 60th Annual Allerton Conference on Communication, Control, and Computing, 2024.</p>
+              <ul class="project-tags" aria-label="Research categories"><li>Learning and Data-Driven Decision-Making</li><li>Optimization</li></ul>
+              <ul class="project-links" aria-label="Project resources"><li><a href="https://arxiv.org/pdf/2407.16728" target="_blank" rel="noopener">Paper</a></li><li><a href="https://ieeexplore.ieee.org/abstract/document/10735298" target="_blank" rel="noopener">Publisher</a></li></ul>
             </div>
           </article>
           <article class="project-card" data-categories="optimization" data-media-project="directed-optimization" aria-labelledby="project-directed-optimization">
@@ -356,11 +408,11 @@
               <h4 class="project-title" id="project-directed-optimization">Distributed Optimization over Directed Communication Networks</h4>
               <p class="project-description">Networked agents must optimize shared objectives without centralized coordination. DC-DistADMM and GradConsensus address constrained optimization over directed communication graphs, with attention to feasibility and convergence.</p>
               <p class="project-status">Published journal articles — IEEE Transactions on Automatic Control, 2023; IEEE Transactions on Network Science and Engineering, 2024 (issue years).</p>
-              <ul class="project-tags" aria-label="Research categories"><li>Distributed Optimization</li><li>Directed Networks</li><li>Networked Intelligence</li></ul>
+              <ul class="project-tags" aria-label="Research categories"><li>Optimization</li></ul>
               <ul class="project-links" aria-label="Project resources"><li><a href="https://doi.org/10.1109/TAC.2022.3221856" target="_blank" rel="noopener">DC-DistADMM paper</a></li><li><a href="https://doi.org/10.1109/TNSE.2023.3321757" target="_blank" rel="noopener">GradConsensus paper</a></li><li><a href="https://github.com/vivekkhatana/DC-DistADMM" target="_blank" rel="noopener">DC-DistADMM code</a></li><li><a href="https://github.com/vivekkhatana/GradConsensus" target="_blank" rel="noopener">GradConsensus code</a></li></ul>
             </div>
           </article>
-          <article class="project-card" data-categories="control optimization energy-systems" data-media-project="microgrid-risk-sharing" aria-labelledby="project-microgrid-risk-sharing">
+          <article class="project-card" data-categories="control-stochastic-decision-making optimization energy-systems" data-media-project="microgrid-risk-sharing" aria-labelledby="project-microgrid-risk-sharing">
             <div class="project-media project-media-placeholder" role="group" aria-label="Media placeholder for Risk Sharing in Interconnected Microgrids">
               <p class="project-media-label">Development placeholder</p>
               <p>Research figure or video pending.</p>
@@ -369,7 +421,7 @@
               <h4 class="project-title" id="project-microgrid-risk-sharing">Risk Sharing in Interconnected Microgrids</h4>
               <p class="project-description">Renewable uncertainty creates a trade-off between local storage and power sharing. This work studies chance-constrained storage sizing and power-transfer policies, including how network connectivity and line capacity affect risk pooling.</p>
               <p class="project-status">Published conference paper — 61st Allerton Conference on Communication, Control, and Computing, 2025.</p>
-              <ul class="project-tags" aria-label="Research categories"><li>Resilient Energy</li><li>Risk-Aware Planning</li><li>Networked Infrastructure</li></ul>
+              <ul class="project-tags" aria-label="Research categories"><li>Control and Stochastic Decision-Making</li><li>Optimization</li><li>Energy Systems</li></ul>
               <ul class="project-links" aria-label="Project resources"><li><a href="https://www.ideals.illinois.edu/items/137370" target="_blank" rel="noopener">Paper and abstract</a></li></ul>
             </div>
           </article>
@@ -383,14 +435,17 @@
             const cards = Array.from(section.querySelectorAll('.project-gallery > .project-card'));
             const status = section.querySelector('.project-filter-status');
             const empty = section.querySelector('.project-filter-empty');
-            const categories = new Map(cards.map(card => [card, (card.dataset.categories || '').split(/\s+/)]));
+            const categoryKeys = new Set(buttons.map(button => button.dataset.projectFilter));
+            const categories = new Map(cards.map(card => [card, new Set(
+              (card.dataset.categories || '').split(/\s+/).filter(key => categoryKeys.has(key))
+            )]));
 
             function selectCategory(button) {
               const category = button.dataset.projectFilter;
               let count = 0;
 
               cards.forEach(card => {
-                const visible = category === 'all' || categories.get(card).includes(category);
+                const visible = category === 'all' || categories.get(card).has(category);
                 card.hidden = !visible;
                 if (visible) count += 1;
               });

@@ -131,9 +131,15 @@ The card's `data-media-project` value matches its manifest key.
 | `virtual-power-plants` | Control architecture or inverter/microgrid demonstration, with the related publication identified |
 | `directed-optimization` | Directed-graph or convergence figure with assumptions and labeled axes |
 | `microgrid-risk-sharing` | Connectivity/storage-planning figure with its paper and assumptions identified |
+| `verifier-multi-llm` | Geometric-verifier architecture or approved CARLA/Crazyflie demonstration |
+| `aerial-refueling` | Estimator/control framework or approved FlightGear/JSBSim docking simulation |
+| `online-model-updates` | Online model-update/control architecture or power-distribution simulation figure |
+| `distributed-dc-optimization` | DDC-Consensus diagram or regularized least-squares convergence figure |
 
-Two other project drafts remain private. Their media requirements are kept in
-the existing private review package outside this checkout, not in this manifest.
+Private prototype material remains in the separate review package outside this
+checkout. Newly authorized gallery descriptions use only the supplied public
+papers; their disclosure does not authorize copying private drafts, manuscript
+submission details, or prototype pages into the website.
 Do not add private titles, assets, or paths to tracked files before disclosure is
 approved.
 
@@ -338,3 +344,42 @@ Regression checks should compare external URL sets and academic content against
 the preceding commit, verify all old fragments and project back links, exercise
 native disclosures with/without JS and keyboard input, and check desktop/mobile
 navigation plus every project filter. Publication lists remain fully visible.
+
+## Research gallery categories and paper identities
+
+The gallery has ten unique cards. Filters use the following keys and visible
+labels, shared by each card's category tags:
+
+- `all`: All.
+- `robotics-autonomy`: Robotics and Autonomy.
+- `control-stochastic-decision-making`: Control and Stochastic Decision-Making.
+- `learning-data-driven-decision-making`: Learning and Data-Driven Decision-Making.
+- `optimization`: Optimization.
+- `energy-systems`: Energy Systems.
+
+Assign multiple keys to one card's `data-categories`; never duplicate a card to
+appear in multiple filters. The filter script reads the keys from the buttons,
+uses sets for category membership, and derives accessible status text from the
+visible label. Keep labels, tags and keys consistent when editing. Filters and
+tags wrap at the existing font sizes; no JavaScript is required to read the cards.
+
+New paper-to-card mappings:
+
+- `verifier-multi-llm`: arXiv:2610.12761, an IROS 2026 Foundation Models in
+  Multi-Robot Systems workshop paper. It is not the separate private prototype.
+- `aerial-refueling`: arXiv:2610.07501, publicly listed as a preprint; no
+  peer-reviewed venue is claimed. Its evaluation is simulation-based.
+- `online-model-updates`: IEEE 10735270 / arXiv:2405.00637, Allerton 2024.
+- `distributed-dc-optimization`: IEEE 10735298 / arXiv:2407.16728, Allerton 2024.
+  DDC-Consensus is distinct from DC-DistADMM/GradConsensus in the existing
+  `directed-optimization` card.
+- IEEE 11312198 / arXiv:2509.04593 remains the existing `covariance-steering`
+  card, now also assigned to Robotics and Autonomy.
+
+Publisher-page access was restricted during review. The corresponding public
+author manuscripts were read for abstract, methodology and contributions;
+publisher-supplied Crossref records establish the three IEEE identifiers and
+venues. Paper links point to accessible author PDFs, with separate publisher
+links where applicable. New descriptions are 40–60 words and contain no invented
+quantitative results. The media manifest includes all ten cards with null asset
+paths until approved media arrives; PDFs used for review are not committed.

@@ -399,6 +399,8 @@
     #selected-projects .project-filters { display: flex; flex-wrap: wrap; gap: 0.4rem; }
     #selected-projects .project-filter {
       min-height: 2.5rem;
+      max-width: 100%;
+      min-width: 0;
       padding: 0.45rem 0.75rem;
       border: 1px solid var(--rule);
       border-radius: var(--radius);
@@ -408,6 +410,8 @@
       font-size: 0.78rem;
       font-weight: 500;
       line-height: 1.4;
+      text-align: left;
+      overflow-wrap: break-word;
       cursor: pointer;
       transition: none;
     }
@@ -470,7 +474,7 @@
     #selected-projects .project-tags,
     #selected-projects .project-links { display: flex; flex-wrap: wrap; gap: 0.35rem 0.65rem; list-style: none; }
     #selected-projects .project-tags { margin: 0.65rem 0; }
-    #selected-projects .project-tags li { padding: 0.12rem 0.45rem; border-radius: 3px; background: var(--accent-lt); color: var(--accent); font-size: 0.68rem; font-weight: 600; line-height: 1.5; }
+    #selected-projects .project-tags li { padding: 0.12rem 0.45rem; border-radius: 3px; background: var(--accent-lt); color: var(--accent); font-size: 0.68rem; font-weight: 600; line-height: 1.5; max-width: 100%; overflow-wrap: break-word; }
     #selected-projects .project-links a { font-size: 0.78rem; font-weight: 600; }
     #selected-projects .project-links a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 

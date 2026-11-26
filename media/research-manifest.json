@@ -159,6 +159,106 @@
         "loopPreview": false
       },
       "externalVideo": null
+    },
+    "verifier-multi-llm": {
+      "headingId": "project-verifier-multi-llm",
+      "title": "Verifier-Mediated Multi-LLM Coordination for Multi-Robot Planning",
+      "status": "awaiting-user-assets",
+      "requiredMedia": "Approved geometric-verifier architecture figure or CARLA/Crazyflie coordination video from the public workshop paper.",
+      "figure": {
+        "src": null,
+        "alt": null,
+        "width": null,
+        "height": null,
+        "caption": null
+      },
+      "video": {
+        "mp4": null,
+        "webm": null,
+        "poster": null,
+        "posterAlt": null,
+        "width": null,
+        "height": null,
+        "captions": null,
+        "transcript": null,
+        "loopPreview": false
+      },
+      "externalVideo": null
+    },
+    "aerial-refueling": {
+      "headingId": "project-aerial-refueling",
+      "title": "Uncertainty-Aware Vision-Based Aerial Refueling",
+      "status": "awaiting-user-assets",
+      "requiredMedia": "Approved estimator/uncertainty-margin architecture figure or FlightGear/JSBSim docking simulation video. Do not imply demonstrated mechanical engagement or fuel transfer.",
+      "figure": {
+        "src": null,
+        "alt": null,
+        "width": null,
+        "height": null,
+        "caption": null
+      },
+      "video": {
+        "mp4": null,
+        "webm": null,
+        "poster": null,
+        "posterAlt": null,
+        "width": null,
+        "height": null,
+        "captions": null,
+        "transcript": null,
+        "loopPreview": false
+      },
+      "externalVideo": null
+    },
+    "online-model-updates": {
+      "headingId": "project-online-model-updates",
+      "title": "Adaptive Online Model Updates for Networked Predictive Control",
+      "status": "awaiting-user-assets",
+      "requiredMedia": "Approved online model-update/control architecture or power-distribution simulation figure from the published work.",
+      "figure": {
+        "src": null,
+        "alt": null,
+        "width": null,
+        "height": null,
+        "caption": null
+      },
+      "video": {
+        "mp4": null,
+        "webm": null,
+        "poster": null,
+        "posterAlt": null,
+        "width": null,
+        "height": null,
+        "captions": null,
+        "transcript": null,
+        "loopPreview": false
+      },
+      "externalVideo": null
+    },
+    "distributed-dc-optimization": {
+      "headingId": "project-distributed-dc-optimization",
+      "title": "Distributed Difference-of-Convex Optimization",
+      "status": "awaiting-user-assets",
+      "requiredMedia": "Approved DDC-Consensus algorithm/directed-network figure or regularized least-squares convergence figure; distinguish this algorithm from DC-DistADMM and GradConsensus.",
+      "figure": {
+        "src": null,
+        "alt": null,
+        "width": null,
+        "height": null,
+        "caption": null
+      },
+      "video": {
+        "mp4": null,
+        "webm": null,
+        "poster": null,
+        "posterAlt": null,
+        "width": null,
+        "height": null,
+        "captions": null,
+        "transcript": null,
+        "loopPreview": false
+      },
+      "externalVideo": null
     }
   }
 }
