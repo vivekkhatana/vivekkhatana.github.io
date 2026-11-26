@@ -49,7 +49,9 @@
           "label": "Large-ρ setting",
           "audio": false,
           "frameCount": 251,
-          "frameDelaySeconds": 0.02
+          "frameDelaySeconds": 0.02,
+          "bytes": 742459,
+          "posterBytes": 35630
         },
         {
           "type": "video",
@@ -65,7 +67,9 @@
           "label": "Small-ρ setting",
           "audio": false,
           "frameCount": 251,
-          "frameDelaySeconds": 0.02
+          "frameDelaySeconds": 0.02,
+          "bytes": 889556,
+          "posterBytes": 36971
         },
         {
           "type": "image",
@@ -81,7 +85,9 @@
               "previewHeight": 590,
               "alt": "Covariance-steering controller and L1 distributionally robust adaptive-control feedback around the uncertain system.",
               "label": null,
-              "sourceOriginal": "Arch.png"
+              "sourceOriginal": "Arch.png",
+              "bytes": 112852,
+              "previewBytes": 73875
             }
           ]
         }
@@ -126,7 +132,9 @@
               "previewHeight": 969,
               "alt": "Three-dimensional stochastic proximity trajectories with L1 adaptive control enabled.",
               "label": "L1 on",
-              "sourceOriginal": "trajectory_3d_l1_on.png"
+              "sourceOriginal": "trajectory_3d_l1_on.png",
+              "bytes": 840434,
+              "previewBytes": 237397
             },
             {
               "type": "image",
@@ -138,7 +146,9 @@
               "previewHeight": 972,
               "alt": "Three-dimensional stochastic proximity trajectories with L1 adaptive control disabled.",
               "label": "L1 off",
-              "sourceOriginal": "trajectory_3d_l1_off.png"
+              "sourceOriginal": "trajectory_3d_l1_off.png",
+              "bytes": 938673,
+              "previewBytes": 247297
             }
           ]
         },
@@ -156,7 +166,9 @@
               "previewHeight": 640,
               "alt": "Keep-out clearance comparison showing median and lower-tail conditional value-at-risk.",
               "label": null,
-              "sourceOriginal": "clearance.png"
+              "sourceOriginal": "clearance.png",
+              "bytes": 269217,
+              "previewBytes": 137847
             }
           ]
         },
@@ -174,7 +186,9 @@
               "previewHeight": 948,
               "alt": "State distributions and 95% highest-density regions with L1 adaptive control enabled.",
               "label": "L1 on",
-              "sourceOriginal": "covariance_hdr_l1_on.png"
+              "sourceOriginal": "covariance_hdr_l1_on.png",
+              "bytes": 257954,
+              "previewBytes": 160914
             },
             {
               "type": "image",
@@ -186,7 +200,9 @@
               "previewHeight": 990,
               "alt": "State distributions and 95% highest-density regions with L1 adaptive control disabled.",
               "label": "L1 off",
-              "sourceOriginal": "covariance_hdr_l1_off.png"
+              "sourceOriginal": "covariance_hdr_l1_off.png",
+              "bytes": 250111,
+              "previewBytes": 173049
             }
           ]
         }
@@ -231,7 +247,9 @@
               "previewHeight": 303,
               "alt": "Complete three-panel comparison of 120-agent networked control across decentralized and two alpha-dominant regimes.",
               "label": null,
-              "sourceOriginal": "caseB_alpha_N120.png"
+              "sourceOriginal": "caseB_alpha_N120.png",
+              "bytes": 620059,
+              "previewBytes": 103786
             }
           ]
         },
@@ -249,7 +267,9 @@
               "previewHeight": 303,
               "alt": "Complete three-panel comparison of 60-agent networked control across decentralized and two alpha-dominant regimes.",
               "label": null,
-              "sourceOriginal": "caseB_alpha_N60.png"
+              "sourceOriginal": "caseB_alpha_N60.png",
+              "bytes": 627610,
+              "previewBytes": 104568
             }
           ]
         }
@@ -294,7 +314,9 @@
               "previewHeight": 257,
               "alt": "Distributed optimization and control pipeline linked to real-time hardware-in-the-loop power-system equipment.",
               "label": null,
-              "sourceOriginal": "HIL.pdf"
+              "sourceOriginal": "HIL.pdf",
+              "bytes": 1092041,
+              "previewBytes": 298308
             }
           ]
         },
@@ -312,7 +334,9 @@
               "previewHeight": 750,
               "alt": "Inverter-interfaced energy-resource network, communication layer, and grid-following and grid-forming control hierarchies.",
               "label": null,
-              "sourceOriginal": "system.pdf"
+              "sourceOriginal": "system.pdf",
+              "bytes": 214317,
+              "previewBytes": 214317
             }
           ]
         }
@@ -321,14 +345,14 @@
     "directed-optimization": {
       "headingId": "project-directed-optimization",
       "title": "Distributed Optimization over Directed Communication Networks",
-      "status": "awaiting-user-assets",
+      "status": "media-integrated",
       "requiredMedia": "Approved directed-graph or convergence figure; include algorithm assumptions and axis labels.",
       "figure": {
-        "src": null,
-        "alt": null,
-        "width": null,
-        "height": null,
-        "caption": null
+        "src": "images/research/directed-optimization/01-huber-convergence.png",
+        "alt": "Huber-regression solution residual versus iteration count, with DC-DistADMM algorithm iterations and total iterations shown separately.",
+        "width": 1747,
+        "height": 1366,
+        "caption": "Comparative convergence of DC-DistADMM and distributed optimization algorithms for Huber regression."
       },
       "video": {
         "mp4": null,
@@ -341,19 +365,61 @@
         "transcript": null,
         "loopPreview": false
       },
-      "externalVideo": null
+      "externalVideo": null,
+      "slides": [
+        {
+          "type": "image",
+          "caption": "Comparative convergence of DC-DistADMM and distributed optimization algorithms for Huber regression.",
+          "assets": [
+            {
+              "type": "image",
+              "src": "images/research/directed-optimization/01-huber-convergence.png",
+              "preview": "images/research/directed-optimization/01-huber-convergence-preview.png",
+              "width": 1747,
+              "height": 1366,
+              "previewWidth": 1000,
+              "previewHeight": 782,
+              "alt": "Huber-regression solution residual versus iteration count, with DC-DistADMM algorithm iterations and total iterations shown separately.",
+              "label": null,
+              "sourceOriginal": "huber_sol.eps",
+              "bytes": 164224,
+              "previewBytes": 156072
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "caption": "Computational performance comparison in terms of CPU time.",
+          "assets": [
+            {
+              "type": "image",
+              "src": "images/research/directed-optimization/02-huber-time.png",
+              "preview": "images/research/directed-optimization/02-huber-time-preview.png",
+              "width": 1745,
+              "height": 1348,
+              "previewWidth": 1000,
+              "previewHeight": 772,
+              "alt": "Huber-regression convergence comparison plotted against CPU time, retaining the original algorithm legend.",
+              "label": null,
+              "sourceOriginal": "huber_sol_time.eps",
+              "bytes": 142165,
+              "previewBytes": 126815
+            }
+          ]
+        }
+      ]
     },
     "microgrid-risk-sharing": {
       "headingId": "project-microgrid-risk-sharing",
       "title": "Risk Sharing in Interconnected Microgrids",
-      "status": "awaiting-user-assets",
+      "status": "media-integrated",
       "requiredMedia": "Approved connectivity/storage-planning figure; identify the published paper and assumptions.",
       "figure": {
-        "src": null,
-        "alt": null,
-        "width": null,
-        "height": null,
-        "caption": null
+        "src": "images/research/microgrid-risk-sharing/01-network.png",
+        "alt": "Stochastic resource network with local storage Xi(t) at node i and transfers uij(t) and uik(t).",
+        "width": 1186,
+        "height": 618,
+        "caption": "Interconnected stochastic resource network with local storage and inter-node resource transfers."
       },
       "video": {
         "mp4": null,
@@ -366,12 +432,75 @@
         "transcript": null,
         "loopPreview": false
       },
-      "externalVideo": null
+      "externalVideo": null,
+      "slides": [
+        {
+          "type": "image",
+          "caption": "Interconnected stochastic resource network with local storage and inter-node resource transfers.",
+          "assets": [
+            {
+              "type": "image",
+              "src": "images/research/microgrid-risk-sharing/01-network.png",
+              "preview": "images/research/microgrid-risk-sharing/01-network.png",
+              "width": 1186,
+              "height": 618,
+              "previewWidth": 1186,
+              "previewHeight": 618,
+              "alt": "Stochastic resource network with local storage Xi(t) at node i and transfers uij(t) and uik(t).",
+              "label": null,
+              "sourceOriginal": "multi_node_system.pdf",
+              "bytes": 51886,
+              "previewBytes": 51886
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "caption": "Survival probability as a function of rescaled transport capacity for different operating horizons.",
+          "assets": [
+            {
+              "type": "image",
+              "src": "images/research/microgrid-risk-sharing/02-survival.jpg",
+              "preview": "images/research/microgrid-risk-sharing/02-survival-preview.png",
+              "width": 2046,
+              "height": 1758,
+              "previewWidth": 1000,
+              "previewHeight": 857,
+              "alt": "Survival probability versus rescaled transport capacity for the operating horizons labeled in the supplied plot.",
+              "label": null,
+              "sourceOriginal": "sim1.jpg",
+              "bytes": 449940,
+              "previewBytes": 191947
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "caption": "Empirical power-law scaling of threshold transport capacity with operating horizon.",
+          "assets": [
+            {
+              "type": "image",
+              "src": "images/research/microgrid-risk-sharing/03-threshold-scaling.jpg",
+              "preview": "images/research/microgrid-risk-sharing/03-threshold-scaling-preview.png",
+              "width": 2070,
+              "height": 1686,
+              "previewWidth": 1000,
+              "previewHeight": 814,
+              "alt": "Threshold transport capacity versus operating horizon, with the empirical points and fitted scaling curve shown in the supplied figure.",
+              "label": null,
+              "sourceOriginal": "sim2.jpg",
+              "bytes": 314510,
+              "previewBytes": 136490
+            }
+          ]
+        }
+      ],
+      "verificationNote": "Author verification pending: exact source/publication association of the supplied network and scaling figures. Captions supplied by the author; no claim these are numbered figures in the linked paper."
     },
     "verifier-multi-llm": {
       "headingId": "project-verifier-multi-llm",
       "title": "Verifier-Mediated Multi-LLM Coordination for Multi-Robot Planning",
-      "status": "prototype-awaiting-review",
+      "status": "media-integrated",
       "requiredMedia": "Approved geometric-verifier architecture figure or CARLA/Crazyflie coordination video from the public workshop paper.",
       "figure": {
         "src": "images/research/verifier-multi-llm/02-framework.png",
@@ -496,7 +625,9 @@
           "durationSeconds": 173.758333,
           "sourceOriginal": "AAR.mp4",
           "posterTimeSeconds": 87,
-          "audio": true
+          "audio": true,
+          "bytes": 17238931,
+          "posterBytes": 122756
         }
       ]
     },
@@ -539,7 +670,9 @@
               "previewHeight": 739,
               "alt": "Modified IEEE 37-bus network with photovoltaic energy-source buses indicated.",
               "label": null,
-              "sourceOriginal": "IEEE37.eps"
+              "sourceOriginal": "IEEE37.eps",
+              "bytes": 39802,
+              "previewBytes": 39802
             }
           ]
         },
@@ -557,7 +690,9 @@
               "previewHeight": 1237,
               "alt": "Voltage trajectories using online updates of the nonlinear constant-power-load model.",
               "label": "Nonlinear model",
-              "sourceOriginal": "online_gd_varying_etak.eps"
+              "sourceOriginal": "online_gd_varying_etak.eps",
+              "bytes": 147141,
+              "previewBytes": 147141
             },
             {
               "type": "image",
@@ -569,7 +704,9 @@
               "previewHeight": 1245,
               "alt": "Voltage trajectories using online updates of the linear LinDistFlow model.",
               "label": "Linear model",
-              "sourceOriginal": "online_linear_gd_varying_etak.eps"
+              "sourceOriginal": "online_linear_gd_varying_etak.eps",
+              "bytes": 154649,
+              "previewBytes": 154649
             }
           ]
         }
@@ -579,14 +716,14 @@
     "distributed-dc-optimization": {
       "headingId": "project-distributed-dc-optimization",
       "title": "Distributed Difference-of-Convex Optimization",
-      "status": "awaiting-user-assets",
+      "status": "media-integrated",
       "requiredMedia": "Approved DDC-Consensus algorithm/directed-network figure or regularized least-squares convergence figure; distinguish this algorithm from DC-DistADMM and GradConsensus.",
       "figure": {
-        "src": null,
-        "alt": null,
-        "width": null,
-        "height": null,
-        "caption": null
+        "src": "images/research/distributed-dc-optimization/01-objective-residual.png",
+        "alt": "Objective residual versus iteration for DDC-Consensus and its Inexact-10 and Inexact-100 variants.",
+        "width": 1700,
+        "height": 1491,
+        "caption": "Objective residual comparison for DDC-Consensus and its inexact variants."
       },
       "video": {
         "mp4": null,
@@ -599,7 +736,69 @@
         "transcript": null,
         "loopPreview": false
       },
-      "externalVideo": null
+      "externalVideo": null,
+      "slides": [
+        {
+          "type": "image",
+          "caption": "Objective residual comparison for DDC-Consensus and its inexact variants.",
+          "assets": [
+            {
+              "type": "image",
+              "src": "images/research/distributed-dc-optimization/01-objective-residual.png",
+              "preview": "images/research/distributed-dc-optimization/01-objective-residual.png",
+              "width": 1700,
+              "height": 1491,
+              "previewWidth": 1700,
+              "previewHeight": 1491,
+              "alt": "Objective residual versus iteration for DDC-Consensus and its Inexact-10 and Inexact-100 variants.",
+              "label": null,
+              "sourceOriginal": "fres_inexact_compare.pdf",
+              "bytes": 99685,
+              "previewBytes": 99685
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "caption": "Stationarity residual across distributed optimization iterations.",
+          "assets": [
+            {
+              "type": "image",
+              "src": "images/research/distributed-dc-optimization/02-stationarity-residual.png",
+              "preview": "images/research/distributed-dc-optimization/02-stationarity-residual.png",
+              "width": 1700,
+              "height": 1461,
+              "previewWidth": 1700,
+              "previewHeight": 1461,
+              "alt": "Stationarity residual versus iteration for DDC-Consensus and its inexact variants.",
+              "label": null,
+              "sourceOriginal": "station_inexact_compare.pdf",
+              "bytes": 95680,
+              "previewBytes": 95680
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "caption": "Solution residual comparison under different consensus approximations.",
+          "assets": [
+            {
+              "type": "image",
+              "src": "images/research/distributed-dc-optimization/03-solution-residual.png",
+              "preview": "images/research/distributed-dc-optimization/03-solution-residual.png",
+              "width": 1695,
+              "height": 1452,
+              "previewWidth": 1695,
+              "previewHeight": 1452,
+              "alt": "Solution residual versus iteration for DDC-Consensus and its inexact variants.",
+              "label": null,
+              "sourceOriginal": "sol_inexact_compare.pdf",
+              "bytes": 83203,
+              "previewBytes": 83203
+            }
+          ]
+        }
+      ]
     }
   }
 }

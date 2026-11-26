@@ -116,8 +116,8 @@ Existing portraits remain at `images/profile.jpeg` and `images/bio.jpeg`.
 Keep future research figures and video posters under `images/research/<project>/`.
 Small, web-ready video clips and caption tracks can live under
 `media/research/<project>/`. Matching folders for all ten project IDs have been
-created locally in advance of asset delivery; the current website still uses its
-labeled development placeholders. Empty directories are not tracked by Git, and
+created locally in advance of asset delivery; all ten cards now use the supplied
+research media. Empty directories are not tracked by Git, and
 no `.gitkeep` or empty media files are committed. To recreate the directories in
 a fresh checkout, run from the repository root:
 
@@ -127,13 +127,16 @@ python3 -c 'import json; from pathlib import Path; projects = json.loads(Path("m
 
 `media/INVENTORY.txt` lists every project, its image/video directories, available
 files and missing media requirements. It also documents multiple-asset naming,
-captions, credits and optimization. The Multi-LLM card now demonstrates the
-accessible carousel and image enlargement described below; other cards await review.
+captions, credits and optimization. All ten cards use the approved accessible
+carousel and image enlargement described below. Single-visual projects hide
+carousel controls; paired comparisons retain individual enlargement links.
 Existing native-video fullscreen availability depends on the browser/platform.
 
-Keep raw originals and private inventory notes in the separate local
-`research-media-originals/` directory beside this checkout, never inside it or the
-preview server root. It has matching project folders and a local-only inventory.
+Keep archival originals and private inventory notes in the separate local
+`research-media-originals/` directory beside this checkout, outside the preview
+server root. It has matching project folders and a local-only inventory.
+The originally supplied intake copies remain untouched and ignored in
+`media/research/`; do not stage those raw duplicates or deploy them by bulk copying.
 Retain source files before compression; put only approved web-ready derivatives
 in the website directories. Do not serve the checkout's parent directory.
 
@@ -229,7 +232,7 @@ recovery link if the player had keyboard focus when it failed.
 
 ### Playback and fallbacks
 
-The Multi-LLM prototype uses a `data-research-carousel` container with native
+Project cards use a `data-research-carousel` container with native
 `figure.project-media[data-media-slide]` slides. Keep every slide visible in the
 HTML: the existing media script progressively shows one at a time, reveals
 Previous/Next buttons and announces the counter. Enter/Space activate buttons;
@@ -255,6 +258,30 @@ has 1200px preview and 3200px detailed PNG versions; posters are actual video
 frames (Route 1 at 27s). Do not commit the raw duplicate figure/video. Audio is
 preserved; descriptive captions are not timed captions or transcripts. Obtain
 accurate caption tracks if the audio contains meaningful speech.
+
+The aerial-refueling MP4 retains its supplied bytes and a poster at 87 seconds.
+Covariance-steering GIFs are delivered as muted, click-to-play MP4 previews with
+all 251 frames and their original 20ms spacing (5.02s). Keep the large-rho and
+small-rho settings distinct; enable looping only through `data-preview`, never
+static autoplay or loop attributes. The existing reduced-motion and data-saving
+handling disables looping. GIF originals remain local, outside Git.
+
+`.research-media-pair` groups the requested comparisons on one slide, with a
+visible label and separate image link for each member. Do not flatten paired
+scientific figures into a composite that prevents individual enlargement.
+The mean-field figures retain the complete three-panel layout at up to 3200px.
+PDF/EPS exports use high-resolution PNG because the installed conversion tools
+cannot produce faithful SVG. HIL cropping removes only slide whitespace and
+the page number; scientific labels are retained. Retain smaller original JPEG
+encodings where appropriate. Use a separate preview only when it reduces the
+transfer size; some plots are already smaller as detailed PNGs.
+
+The online-model comparison labels distinguish linear LinDistFlow from the
+nonlinear constant-power-load model, checked against Section VI-B of
+https://arxiv.org/html/2405.00637v2. The supplied microgrid network/scaling
+figures still need author verification of their exact publication association;
+this is recorded in the manifest and inventory. Do not invent figure numbers,
+publication links or attribution. No new publication status is implied by media.
 
 `scripts/research-media.js` enhances only marked media inside Selected Research
 Projects. It also initializes marked media inserted later into that section.

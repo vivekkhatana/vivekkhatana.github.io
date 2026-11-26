@@ -132,37 +132,44 @@ online-model-updates — Adaptive Online Model Updates for Networked Predictive 
 distributed-dc-optimization — Distributed Difference-of-Convex Optimization
   Images / figures / video posters: images/research/distributed-dc-optimization/
   Videos / captions / transcripts:  media/research/distributed-dc-optimization/
-  Supplied local originals (not committed or activated yet):
-    fres_inexact_compare.pdf (27,902 bytes)
-    sol_inexact_compare.pdf (27,200 bytes)
-    station_inexact_compare.pdf (27,072 bytes)
-  Awaiting prototype approval: conversion, poster extraction where applicable,
-  scientific-label inspection and carousel integration. See supplied captions
-  and ordering in the project request; do not activate guessed assets.
-  Publication/methodology checks remain pending where requested.
+  Integrated media in requested order:
+    Slide 1: Objective residual comparison for DDC-Consensus and its inexact variants.
+      fres_inexact_compare.pdf -> images/research/distributed-dc-optimization/01-objective-residual.png (99,685 bytes; 1700x1491)
+    Slide 2: Stationarity residual across distributed optimization iterations.
+      station_inexact_compare.pdf -> images/research/distributed-dc-optimization/02-stationarity-residual.png (95,680 bytes; 1700x1461)
+    Slide 3: Solution residual comparison under different consensus approximations.
+      sol_inexact_compare.pdf -> images/research/distributed-dc-optimization/03-solution-residual.png (83,203 bytes; 1695x1452)
+  Original assets backed up byte-for-byte outside Git. Detailed images open
+  individually in the existing accessible lightbox; no thumbnails or auto-advance.
 
 directed-optimization — Distributed Optimization over Directed Communication Networks
   Images / figures / video posters: images/research/directed-optimization/
   Videos / captions / transcripts:  media/research/directed-optimization/
-  Supplied local originals (not committed or activated yet):
-    huber_sol.eps (142,760 bytes)
-    huber_sol_time.eps (104,854 bytes)
-  Awaiting prototype approval: conversion, poster extraction where applicable,
-  scientific-label inspection and carousel integration. See supplied captions
-  and ordering in the project request; do not activate guessed assets.
-  Publication/methodology checks remain pending where requested.
+  Integrated media in requested order:
+    Slide 1: Comparative convergence of DC-DistADMM and distributed optimization algorithms for Huber regression.
+      huber_sol.eps -> images/research/directed-optimization/01-huber-convergence.png (164,224 bytes; 1747x1366)
+      Preview: images/research/directed-optimization/01-huber-convergence-preview.png (156,072 bytes)
+    Slide 2: Computational performance comparison in terms of CPU time.
+      huber_sol_time.eps -> images/research/directed-optimization/02-huber-time.png (142,165 bytes; 1745x1348)
+      Preview: images/research/directed-optimization/02-huber-time-preview.png (126,815 bytes)
+  Original assets backed up byte-for-byte outside Git. Detailed images open
+  individually in the existing accessible lightbox; no thumbnails or auto-advance.
 
 microgrid-risk-sharing — Risk Sharing in Interconnected Microgrids
   Images / figures / video posters: images/research/microgrid-risk-sharing/
   Videos / captions / transcripts:  media/research/microgrid-risk-sharing/
-  Supplied local originals (not committed or activated yet):
-    multi_node_system.pdf (38,879 bytes)
-    sim1.jpg (449,940 bytes)
-    sim2.jpg (314,510 bytes)
-  Awaiting prototype approval: conversion, poster extraction where applicable,
-  scientific-label inspection and carousel integration. See supplied captions
-  and ordering in the project request; do not activate guessed assets.
-  Publication/methodology checks remain pending where requested.
+  Integrated media in requested order:
+    Slide 1: Interconnected stochastic resource network with local storage and inter-node resource transfers.
+      multi_node_system.pdf -> images/research/microgrid-risk-sharing/01-network.png (51,886 bytes; 1186x618)
+    Slide 2: Survival probability as a function of rescaled transport capacity for different operating horizons.
+      sim1.jpg -> images/research/microgrid-risk-sharing/02-survival.jpg (449,940 bytes; 2046x1758; efficient original JPEG bytes retained)
+      Preview: images/research/microgrid-risk-sharing/02-survival-preview.png (191,947 bytes)
+    Slide 3: Empirical power-law scaling of threshold transport capacity with operating horizon.
+      sim2.jpg -> images/research/microgrid-risk-sharing/03-threshold-scaling.jpg (314,510 bytes; 2070x1686; efficient original JPEG bytes retained)
+      Preview: images/research/microgrid-risk-sharing/03-threshold-scaling-preview.png (136,490 bytes)
+  Author verification pending: exact source/publication association of the supplied network and scaling figures. Captions supplied by the author; no claim these are numbered figures in the linked paper.
+  Original assets backed up byte-for-byte outside Git. Detailed images open
+  individually in the existing accessible lightbox; no thumbnails or auto-advance.
 
 MULTIPLE ASSETS PER PROJECT
 Use a shared numeric prefix to associate display order, video, poster and captions.
@@ -186,13 +193,20 @@ raw files or alternate copies without a delivery reason. Preserve originals loca
 before compression and inspect technical labels/axes after optimization.
 
 CURRENT SUPPORT
-The Multi-LLM prototype uses the existing research-media.js enhancement: manually
+All ten cards use the existing research-media.js enhancement: manually
 navigated carousel, Previous/Next and counter, no thumbnail strip or automatic
 advancement. All slides remain visible without JavaScript. Videos have native
 controls, preload=none, actual-frame posters, error fallbacks and file links;
 hidden slides, filtered projects and off-screen playback are paused. Images use
 contain sizing with a native modal enlargement and actual-size view. Escape and
-Close restore focus. Other nine cards remain unchanged pending review.
+Close restore focus. Aerial refueling has one visual and hides carousel controls.
+Spacecraft and online-model comparisons have individual labeled image links.
+GIF animation timing is retained in controllable MP4s, with looping disabled
+under reduced motion. PDF/EPS assets use high-resolution PNG: no faithful SVG
+converter is installed. Native tools and Ghostscript were used without adding
+dependencies. Originals remain intact locally with verified backups outside Git.
+Meaningful speech, if present in supplied videos, still needs accurate timed
+captions/transcripts; supplied descriptive captions are not transcript tracks.
 
 WORKFLOW
 1. Retain originals outside Git; review disclosure and credits.
