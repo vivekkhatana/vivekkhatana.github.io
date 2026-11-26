@@ -1,5 +1,5 @@
 {
-  "description": "Planning inventory only; not fetched by the homepage. Null values mean no approved asset supplied. No media path is activated until an existing file or verified external URL is approved.",
+  "description": "Asset inventory; not fetched by the homepage. The Multi-LLM carousel is a local development prototype awaiting review; other projects have no activated media. Null values mean no web asset assigned.",
   "defaults": {
     "preload": "none",
     "autoplay": false,
@@ -163,27 +163,94 @@
     "verifier-multi-llm": {
       "headingId": "project-verifier-multi-llm",
       "title": "Verifier-Mediated Multi-LLM Coordination for Multi-Robot Planning",
-      "status": "awaiting-user-assets",
+      "status": "prototype-awaiting-review",
       "requiredMedia": "Approved geometric-verifier architecture figure or CARLA/Crazyflie coordination video from the public workshop paper.",
       "figure": {
-        "src": null,
-        "alt": null,
-        "width": null,
-        "height": null,
-        "caption": null
+        "src": "images/research/verifier-multi-llm/02-framework.png",
+        "alt": "Feasibility-aware multi-robot planning framework showing symbolic task planning, geometric grounding, verification, targeted replanning, and execution.",
+        "width": 3200,
+        "height": 1801,
+        "caption": "Framework integrating symbolic planning, geometric grounding, execution-level verification, and targeted replanning."
       },
       "video": {
-        "mp4": null,
+        "mp4": "media/research/verifier-multi-llm/Single-Crazyflie_Hardware_Experiment_Route1.mp4",
         "webm": null,
-        "poster": null,
-        "posterAlt": null,
-        "width": null,
-        "height": null,
+        "poster": "images/research/verifier-multi-llm/01-route1-poster.jpg",
+        "posterAlt": "Crazyflie laboratory flight with a planned path inset and virtual obstacles marked in red.",
+        "width": 1280,
+        "height": 720,
         "captions": null,
         "transcript": null,
         "loopPreview": false
       },
-      "externalVideo": null
+      "externalVideo": null,
+      "slides": [
+        {
+          "type": "video",
+          "sourceOriginal": "Single-Crazyflie_Hardware_Experiment_Route1.mp4",
+          "src": "media/research/verifier-multi-llm/Single-Crazyflie_Hardware_Experiment_Route1.mp4",
+          "bytes": 1812078,
+          "width": 1280,
+          "height": 720,
+          "caption": "Hardware demonstration of feasibility-aware LLM-based trajectory planning.",
+          "alt": "Crazyflie laboratory flight with a planned path inset and virtual obstacles marked in red.",
+          "poster": "images/research/verifier-multi-llm/01-route1-poster.jpg",
+          "posterTimeSeconds": 27,
+          "posterBytes": 146867,
+          "durationSeconds": 54.666,
+          "audio": true,
+          "captions": null,
+          "transcript": null
+        },
+        {
+          "type": "image",
+          "sourceOriginal": "Fig4HD.png",
+          "src": "images/research/verifier-multi-llm/02-framework.png",
+          "bytes": 5594135,
+          "width": 3200,
+          "height": 1801,
+          "caption": "Framework integrating symbolic planning, geometric grounding, execution-level verification, and targeted replanning.",
+          "alt": "Feasibility-aware multi-robot planning framework showing symbolic task planning, geometric grounding, verification, targeted replanning, and execution.",
+          "preview": "images/research/verifier-multi-llm/02-framework-preview.png",
+          "previewWidth": 1200,
+          "previewHeight": 675,
+          "previewBytes": 1167106
+        },
+        {
+          "type": "video",
+          "sourceOriginal": "Two-Crazyflie_Multi-agent_Coordination.mp4",
+          "src": "media/research/verifier-multi-llm/03-coordination.mp4",
+          "bytes": 5254633,
+          "width": 1920,
+          "height": 1080,
+          "caption": "Multi-agent coordination and execution of jointly planned trajectories.",
+          "alt": "Gazebo simulation of two Crazyflie robots following coordinated paths, alongside a dual-robot path preview.",
+          "poster": "images/research/verifier-multi-llm/03-coordination-poster.jpg",
+          "posterTimeSeconds": 65,
+          "posterBytes": 140551,
+          "durationSeconds": 131.133,
+          "audio": true,
+          "captions": null,
+          "transcript": null
+        },
+        {
+          "type": "video",
+          "sourceOriginal": "Single-Crazyflie_Hardware_Experiment_Route2.mp4",
+          "src": "media/research/verifier-multi-llm/Single-Crazyflie_Hardware_Experiment_Route2.mp4",
+          "bytes": 1009134,
+          "width": 1280,
+          "height": 720,
+          "caption": "Hardware demonstration of an alternative obstacle-avoiding trajectory.",
+          "alt": "Crazyflie laboratory flight along an alternative planned obstacle-avoiding route.",
+          "poster": "images/research/verifier-multi-llm/04-route2-poster.jpg",
+          "posterTimeSeconds": 25,
+          "posterBytes": 145492,
+          "durationSeconds": 50.034,
+          "audio": true,
+          "captions": null,
+          "transcript": null
+        }
+      ]
     },
     "aerial-refueling": {
       "headingId": "project-aerial-refueling",

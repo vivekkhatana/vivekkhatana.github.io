@@ -2,7 +2,9 @@ RESEARCH MEDIA INVENTORY
 Inventory date: November 25, 2026
 
 Paths below are relative to the repository root. This is a planning document,
-not a runtime asset loader. No research media has been supplied or activated.
+not a runtime asset loader. Research originals have been supplied for all ten
+projects. Only the Multi-LLM development prototype is activated, pending review.
+The remaining nine projects await prototype approval before conversion/integration.
 The existing profile.jpeg and bio.jpeg portraits are unrelated to these projects.
 
 DIRECTORY CONVENTIONS
@@ -17,92 +19,129 @@ PROJECT INVENTORY
 verifier-multi-llm — Verifier-Mediated Multi-LLM Coordination for Multi-Robot Planning
   Images / figures / video posters: images/research/verifier-multi-llm/
   Videos / captions / transcripts:  media/research/verifier-multi-llm/
-  Available research media: none supplied.
-  Missing / requested primary asset: Approved geometric-verifier architecture figure or CARLA/Crazyflie coordination video from the public workshop paper.
-  Still needed with supplied assets: captions and descriptive alt text; source
-  dimensions; display order; credits/disclosure approval; video poster and
-  captions/transcript where appropriate. Optional thumbnails are not required.
+  Available web media, in display order:
+    Single-Crazyflie_Hardware_Experiment_Route1.mp4 -> media/research/verifier-multi-llm/Single-Crazyflie_Hardware_Experiment_Route1.mp4 (1,812,078 bytes)
+      Caption: Hardware demonstration of feasibility-aware LLM-based trajectory planning.
+      Poster: images/research/verifier-multi-llm/01-route1-poster.jpg (146,867 bytes), frame at 27s.
+    Fig4HD.png -> images/research/verifier-multi-llm/02-framework.png (5,594,135 bytes)
+      Caption: Framework integrating symbolic planning, geometric grounding, execution-level verification, and targeted replanning.
+      Card preview: images/research/verifier-multi-llm/02-framework-preview.png (1,167,106 bytes); detailed image loads on enlargement.
+    Two-Crazyflie_Multi-agent_Coordination.mp4 -> media/research/verifier-multi-llm/03-coordination.mp4 (5,254,633 bytes)
+      Caption: Multi-agent coordination and execution of jointly planned trajectories.
+      Poster: images/research/verifier-multi-llm/03-coordination-poster.jpg (140,551 bytes), frame at 65s.
+    Single-Crazyflie_Hardware_Experiment_Route2.mp4 -> media/research/verifier-multi-llm/Single-Crazyflie_Hardware_Experiment_Route2.mp4 (1,009,134 bytes)
+      Caption: Hardware demonstration of an alternative obstacle-avoiding trajectory.
+      Poster: images/research/verifier-multi-llm/04-route2-poster.jpg (145,492 bytes), frame at 25s.
+  Route 1 and Route 2 video bytes are unchanged. Coordination uses a
+  passthrough MP4 remux for metadata-first delivery; no video/audio re-encoding.
+  Figure: full uncropped canvas retained, 6688x3764 -> 3200x1801 detail
+  and 1200x675 preview. Originals remain local and backed up outside Git.
+  Audio is present; no timed captions/transcripts were supplied. Do not infer speech.
 
 aerial-refueling — Uncertainty-Aware Vision-Based Aerial Refueling
   Images / figures / video posters: images/research/aerial-refueling/
   Videos / captions / transcripts:  media/research/aerial-refueling/
-  Available research media: none supplied.
-  Missing / requested primary asset: Approved estimator/uncertainty-margin architecture figure or FlightGear/JSBSim docking simulation video. Do not imply demonstrated mechanical engagement or fuel transfer.
-  Still needed with supplied assets: captions and descriptive alt text; source
-  dimensions; display order; credits/disclosure approval; video poster and
-  captions/transcript where appropriate. Optional thumbnails are not required.
+  Supplied local originals (not committed or activated yet):
+    AAR.mp4 (17,238,931 bytes)
+  Awaiting prototype approval: conversion, poster extraction where applicable,
+  scientific-label inspection and carousel integration. See supplied captions
+  and ordering in the project request; do not activate guessed assets.
+  Publication/methodology checks remain pending where requested.
 
 covariance-steering — Wasserstein Distributionally Robust Adaptive Covariance Steering
   Images / figures / video posters: images/research/covariance-steering/
   Videos / captions / transcripts:  media/research/covariance-steering/
-  Available research media: none supplied.
-  Missing / requested primary asset: Approved control-architecture figure or covariance-steering demonstration.
-  Still needed with supplied assets: captions and descriptive alt text; source
-  dimensions; display order; credits/disclosure approval; video poster and
-  captions/transcript where appropriate. Optional thumbnails are not required.
+  Supplied local originals (not committed or activated yet):
+    Arch.png (178,375 bytes)
+    nominal_vs_L1_sample_paths_large_rho.gif (1,853,898 bytes)
+    nominal_vs_tru_sample_paths_small_rho.gif (2,288,484 bytes)
+  Awaiting prototype approval: conversion, poster extraction where applicable,
+  scientific-label inspection and carousel integration. See supplied captions
+  and ordering in the project request; do not activate guessed assets.
+  Publication/methodology checks remain pending where requested.
 
 small-body-planning — Distributionally Robust Planning for Small-Body Proximity Operations
   Images / figures / video posters: images/research/small-body-planning/
   Videos / captions / transcripts:  media/research/small-body-planning/
-  Available research media: none supplied.
-  Missing / requested primary asset: Approved small-body geometry/keep-out figure or simulation video.
-  Still needed with supplied assets: captions and descriptive alt text; source
-  dimensions; display order; credits/disclosure approval; video poster and
-  captions/transcript where appropriate. Optional thumbnails are not required.
+  Supplied local originals (not committed or activated yet):
+    clearance.png (272,305 bytes)
+    covariance_hdr_l1_off.png (252,849 bytes)
+    covariance_hdr_l1_on.png (261,677 bytes)
+    trajectory_3d_l1_off.png (973,398 bytes)
+    trajectory_3d_l1_on.png (877,023 bytes)
+  Awaiting prototype approval: conversion, poster extraction where applicable,
+  scientific-label inspection and carousel integration. See supplied captions
+  and ordering in the project request; do not activate guessed assets.
+  Publication/methodology checks remain pending where requested.
 
 mean-field-control — Networked Control and Mean-Field Optimality under Diagonal Dominance
   Images / figures / video posters: images/research/mean-field-control/
   Videos / captions / transcripts:  media/research/mean-field-control/
-  Available research media: none supplied.
-  Missing / requested primary asset: Approved network/controller diagram or illustrative animation.
-  Still needed with supplied assets: captions and descriptive alt text; source
-  dimensions; display order; credits/disclosure approval; video poster and
-  captions/transcript where appropriate. Optional thumbnails are not required.
+  Supplied local originals (not committed or activated yet):
+    caseB_alpha_N120.png (1,175,026 bytes)
+    caseB_alpha_N60.png (1,215,762 bytes)
+  Awaiting prototype approval: conversion, poster extraction where applicable,
+  scientific-label inspection and carousel integration. See supplied captions
+  and ordering in the project request; do not activate guessed assets.
+  Publication/methodology checks remain pending where requested.
 
 virtual-power-plants — Distributed Control of Virtual Power Plants
   Images / figures / video posters: images/research/virtual-power-plants/
   Videos / captions / transcripts:  media/research/virtual-power-plants/
-  Available research media: none supplied.
-  Missing / requested primary asset: Approved control-architecture figure or inverter/microgrid demonstration; identify which published work it illustrates.
-  Still needed with supplied assets: captions and descriptive alt text; source
-  dimensions; display order; credits/disclosure approval; video poster and
-  captions/transcript where appropriate. Optional thumbnails are not required.
+  Supplied local originals (not committed or activated yet):
+    HIL.pdf (844,041 bytes)
+    system.pdf (196,122 bytes)
+  Awaiting prototype approval: conversion, poster extraction where applicable,
+  scientific-label inspection and carousel integration. See supplied captions
+  and ordering in the project request; do not activate guessed assets.
+  Publication/methodology checks remain pending where requested.
 
 online-model-updates — Adaptive Online Model Updates for Networked Predictive Control
   Images / figures / video posters: images/research/online-model-updates/
   Videos / captions / transcripts:  media/research/online-model-updates/
-  Available research media: none supplied.
-  Missing / requested primary asset: Approved online model-update/control architecture or power-distribution simulation figure from the published work.
-  Still needed with supplied assets: captions and descriptive alt text; source
-  dimensions; display order; credits/disclosure approval; video poster and
-  captions/transcript where appropriate. Optional thumbnails are not required.
+  Supplied local originals (not committed or activated yet):
+    IEEE37.eps (38,896 bytes)
+    online_gd_varying_etak.eps (134,126 bytes)
+    online_linear_gd_varying_etak.eps (140,638 bytes)
+  Awaiting prototype approval: conversion, poster extraction where applicable,
+  scientific-label inspection and carousel integration. See supplied captions
+  and ordering in the project request; do not activate guessed assets.
+  Publication/methodology checks remain pending where requested.
 
 distributed-dc-optimization — Distributed Difference-of-Convex Optimization
   Images / figures / video posters: images/research/distributed-dc-optimization/
   Videos / captions / transcripts:  media/research/distributed-dc-optimization/
-  Available research media: none supplied.
-  Missing / requested primary asset: Approved DDC-Consensus algorithm/directed-network figure or regularized least-squares convergence figure; distinguish this algorithm from DC-DistADMM and GradConsensus.
-  Still needed with supplied assets: captions and descriptive alt text; source
-  dimensions; display order; credits/disclosure approval; video poster and
-  captions/transcript where appropriate. Optional thumbnails are not required.
+  Supplied local originals (not committed or activated yet):
+    fres_inexact_compare.pdf (27,902 bytes)
+    sol_inexact_compare.pdf (27,200 bytes)
+    station_inexact_compare.pdf (27,072 bytes)
+  Awaiting prototype approval: conversion, poster extraction where applicable,
+  scientific-label inspection and carousel integration. See supplied captions
+  and ordering in the project request; do not activate guessed assets.
+  Publication/methodology checks remain pending where requested.
 
 directed-optimization — Distributed Optimization over Directed Communication Networks
   Images / figures / video posters: images/research/directed-optimization/
   Videos / captions / transcripts:  media/research/directed-optimization/
-  Available research media: none supplied.
-  Missing / requested primary asset: Approved directed-graph or convergence figure; include algorithm assumptions and axis labels.
-  Still needed with supplied assets: captions and descriptive alt text; source
-  dimensions; display order; credits/disclosure approval; video poster and
-  captions/transcript where appropriate. Optional thumbnails are not required.
+  Supplied local originals (not committed or activated yet):
+    huber_sol.eps (142,760 bytes)
+    huber_sol_time.eps (104,854 bytes)
+  Awaiting prototype approval: conversion, poster extraction where applicable,
+  scientific-label inspection and carousel integration. See supplied captions
+  and ordering in the project request; do not activate guessed assets.
+  Publication/methodology checks remain pending where requested.
 
 microgrid-risk-sharing — Risk Sharing in Interconnected Microgrids
   Images / figures / video posters: images/research/microgrid-risk-sharing/
   Videos / captions / transcripts:  media/research/microgrid-risk-sharing/
-  Available research media: none supplied.
-  Missing / requested primary asset: Approved connectivity/storage-planning figure; identify the published paper and assumptions.
-  Still needed with supplied assets: captions and descriptive alt text; source
-  dimensions; display order; credits/disclosure approval; video poster and
-  captions/transcript where appropriate. Optional thumbnails are not required.
+  Supplied local originals (not committed or activated yet):
+    multi_node_system.pdf (38,879 bytes)
+    sim1.jpg (449,940 bytes)
+    sim2.jpg (314,510 bytes)
+  Awaiting prototype approval: conversion, poster extraction where applicable,
+  scientific-label inspection and carousel integration. See supplied captions
+  and ordering in the project request; do not activate guessed assets.
+  Publication/methodology checks remain pending where requested.
 
 MULTIPLE ASSETS PER PROJECT
 Use a shared numeric prefix to associate display order, video, poster and captions.
@@ -125,20 +164,14 @@ Check duplicates by content/hash before staging. Do not commit unnecessarily lar
 raw files or alternate copies without a delivery reason. Preserve originals locally
 before compression and inspect technical labels/axes after optimization.
 
-CURRENT SUPPORT AND FUTURE CAROUSEL
-Existing HTML/CSS/JS supports multiple marked native images and videos under each
-project, intrinsic aspect ratios, figure captions, video posters, native playback
-controls, click-to-play/preload=none, pausing and error fallbacks. Actual cards
-currently retain their existing development placeholders; this setup changes no UI.
-Carousel controls, thumbnail navigation and image fullscreen UI are NOT implemented
-by this directory-only step. Native video fullscreen depends on browser/platform.
-When multiple approved assets arrive, prepare one compact labeled carousel per
-project with previous/next buttons, slide captions and optional labeled thumbnails.
-Keep it manually navigable by keyboard, with a readable no-JS list of media; avoid
-automatic slide changes. Pause videos when their slide is hidden. Preserve natural
-image/video proportions with no figure cropping, and offer fullscreen where useful.
-No audio autoplay or eager download of all videos. Retain native video controls
-and visible fallbacks/external links. Respect reduced motion and preserve card styling.
+CURRENT SUPPORT
+The Multi-LLM prototype uses the existing research-media.js enhancement: manually
+navigated carousel, Previous/Next and counter, no thumbnail strip or automatic
+advancement. All slides remain visible without JavaScript. Videos have native
+controls, preload=none, actual-frame posters, error fallbacks and file links;
+hidden slides, filtered projects and off-screen playback are paused. Images use
+contain sizing with a native modal enlargement and actual-size view. Escape and
+Close restore focus. Other nine cards remain unchanged pending review.
 
 WORKFLOW
 1. Retain originals outside Git; review disclosure and credits.

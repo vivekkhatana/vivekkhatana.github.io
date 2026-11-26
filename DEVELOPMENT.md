@@ -127,8 +127,8 @@ python3 -c 'import json; from pathlib import Path; projects = json.loads(Path("m
 
 `media/INVENTORY.txt` lists every project, its image/video directories, available
 files and missing media requirements. It also documents multiple-asset naming,
-captions, credits, optimization and the future accessible carousel. No carousel,
-thumbnail controls or image-fullscreen UI is added until actual assets arrive.
+captions, credits and optimization. The Multi-LLM card now demonstrates the
+accessible carousel and image enlargement described below; other cards await review.
 Existing native-video fullscreen availability depends on the browser/platform.
 
 Keep raw originals and private inventory notes in the separate local
@@ -138,7 +138,7 @@ Retain source files before compression; put only approved web-ready derivatives
 in the website directories. Do not serve the checkout's parent directory.
 
 `media/research-manifest.json` is the asset planning inventory. It is not fetched
-by the homepage and does not create media requests. Every asset URL starts as
+by the homepage and does not create media requests. Unassigned asset URLs are
 `null`; fill a field only after the file exists or an external URL is verified.
 The card's `data-media-project` value matches its manifest key.
 
@@ -228,6 +228,33 @@ it is available without JavaScript too. The error handler can focus this
 recovery link if the player had keyboard focus when it failed.
 
 ### Playback and fallbacks
+
+The Multi-LLM prototype uses a `data-research-carousel` container with native
+`figure.project-media[data-media-slide]` slides. Keep every slide visible in the
+HTML: the existing media script progressively shows one at a time, reveals
+Previous/Next buttons and announces the counter. Enter/Space activate buttons;
+Left/Right and Home/End work within the control bar. Native video seeking keeps
+its own keyboard controls. There is no automatic advancement or thumbnail strip.
+Controls stay hidden for a single slide, and all assets remain a readable list
+when JavaScript is disabled. Hiding a slide pauses its videos without restarting
+them on return. Use `.project-card--media` for the 43% desktop media column;
+the existing narrow-container breakpoint stacks it above the description.
+
+Wrap figures in an ordinary `a[data-research-enlarge]` linking to the detailed
+image. The same media script opens a shared native modal dialog with a caption,
+Close button, actual-size toggle and keyboard-scrollable viewing area. Escape
+closes it and returns focus to the figure link. Without dialog support or
+JavaScript, the link opens the image normally. Keep technical figures uncropped
+on white backgrounds; a smaller preview avoids downloading the detailed image
+until requested. Native video controls provide fullscreen where supported.
+
+Multi-LLM originals are backed up outside the checkout. The two single-robot
+videos retain their supplied bytes; the two-robot video uses passthrough remuxing
+to move MP4 metadata before the video stream without recompression. The figure
+has 1200px preview and 3200px detailed PNG versions; posters are actual video
+frames (Route 1 at 27s). Do not commit the raw duplicate figure/video. Audio is
+preserved; descriptive captions are not timed captions or transcripts. Obtain
+accurate caption tracks if the audio contains meaningful speech.
 
 `scripts/research-media.js` enhances only marked media inside Selected Research
 Projects. It also initializes marked media inserted later into that section.

@@ -1,2 +1,6 @@
 # Finder metadata is local to macOS and is not website content.
 .DS_Store
+
+# Supplied Multi-LLM sources retained locally; use the web derivatives instead.
+/media/research/verifier-multi-llm/Fig4HD.png
+/media/research/verifier-multi-llm/Two-Crazyflie_Multi-agent_Coordination.mp4

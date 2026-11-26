@@ -445,6 +445,7 @@
     }
 
     #selected-projects .project-card--text-only { grid-template-columns: 1fr; }
+    #selected-projects .project-card--media { grid-template-columns: minmax(0, 0.43fr) minmax(0, 0.57fr); }
     #selected-projects .project-content { min-width: 0; }
     #selected-projects .project-media { min-width: 0; margin: 0; }
     #selected-projects .project-media img,
@@ -458,6 +459,45 @@
     #selected-projects .project-media-fallback { margin-top: 0.5rem; font-size: 0.78rem; line-height: 1.5; color: var(--muted); }
     #selected-projects .project-media a[data-external-video] { font-size: 0.78rem; font-weight: 600; }
     #selected-projects .project-media a[data-external-video]:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+    /* Media stays usable as a list when JavaScript is unavailable. */
+    #selected-projects .research-carousel { min-width: 0; }
+    #selected-projects .research-carousel .project-media + .project-media { margin-top: 1rem; }
+    #selected-projects .research-carousel[data-carousel-ready] .project-media { margin: 0; }
+    #selected-projects .research-carousel [hidden] { display: none; }
+    #selected-projects .research-carousel img,
+    #selected-projects .research-carousel video { background: var(--white); }
+    #selected-projects .research-carousel-controls {
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 0.4rem; margin-top: 0.65rem;
+      font-size: 0.75rem; color: var(--muted);
+    }
+    #selected-projects .research-carousel-controls button,
+    .research-lightbox button {
+      font: inherit; color: var(--accent); background: var(--white);
+      border: 1px solid var(--rule); border-radius: var(--radius);
+      padding: 0.4rem 0.55rem; min-height: 32px; cursor: pointer;
+    }
+    #selected-projects .research-enlarge-label { display: block; margin-top: 0.3rem; font-size: 0.75rem; }
+    #selected-projects [data-research-enlarge] { display: block; }
+    #selected-projects [data-research-enlarge]:focus-visible,
+    #selected-projects .research-carousel-controls button:focus-visible,
+    .research-lightbox button:focus-visible,
+    .research-lightbox-view:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+    .research-lightbox {
+      width: min(96vw, 1600px); max-width: 96vw; max-height: 94vh; max-height: 94dvh;
+      margin: auto; padding: clamp(0.6rem, 2vw, 1.25rem);
+      border: 1px solid var(--rule); border-radius: var(--radius);
+      color: var(--body); background: var(--white); font: inherit;
+    }
+    .research-lightbox::backdrop { background: rgba(0, 0, 0, 0.7); }
+    .research-lightbox [hidden] { display: none; }
+    .research-lightbox-toolbar { display: flex; align-items: center; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 0.6rem; font-size: 0.8rem; }
+    .research-lightbox-title { margin-right: auto; font-weight: 600; color: var(--ink); }
+    .research-lightbox-view { overflow: auto; max-height: 70vh; max-height: 70dvh; background: var(--white); }
+    .research-lightbox-view img { display: block; max-width: 100%; max-height: 70vh; max-height: 70dvh; width: auto; height: auto; object-fit: contain; margin: auto; }
+    .research-lightbox-view[data-zoomed] img { max-width: none; max-height: none; margin: 0; }
+    .research-lightbox-caption { margin-top: 0.6rem; font-size: 0.8rem; line-height: 1.5; }
 
     #selected-projects .project-media-placeholder {
       aspect-ratio: 4/3;
@@ -488,7 +528,8 @@
     #selected-projects .project-links a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
     @container main-content (max-width: 40rem) {
-      #selected-projects .project-card { grid-template-columns: 1fr; }
+      #selected-projects .project-card,
+      #selected-projects .project-card--media { grid-template-columns: 1fr; }
       #selected-projects .project-media-placeholder { aspect-ratio: 16/9; }
     }
 
