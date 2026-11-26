@@ -8,22 +8,22 @@ there is no dependency installation or build step.
 From the repository checkout:
 
 ```sh
-cd /Users/vivek/Desktop/Personal/Website/website-repository
 git branch --show-current
 git status --short
-python3 -m http.server 8000 --bind 127.0.0.1
+python3 -m http.server 8000
 ```
 
 Confirm the branch is `website-redesign` and inspect any existing changes before
-editing. Open <http://127.0.0.1:8000/> in a browser. Keep the server terminal open;
+editing. Open the address printed by the server in a browser. Keep the terminal open;
 press Ctrl+C in that terminal to stop it. Refresh the browser after edits. Use a
 hard refresh if an old image or stylesheet remains cached.
 
-If port 8000 is already occupied, use 8001 in both the command and URL. Serve the
+If port 8000 is already occupied, use 8001 in the command and browser address. Serve the
 repository root, where `index.html` and `images/` live, rather than its parent
-directory or the older loose HTML copy. The server binds only to this computer.
+directory or the older loose HTML copy. To restrict access to this computer,
+append `--bind` followed by your system's loopback interface address.
 
-In a restricted agent environment, starting the server and accessing localhost
+In a restricted agent environment, starting and accessing the local preview server
 may require permission. Neither command publishes the site. Python's server does
 not implement hosting-specific `_headers` behavior. Google Fonts and external
 document links require an internet connection.
@@ -97,6 +97,24 @@ checks verified the CV viewer and seminar PDF without disabling TLS verification
 
 These artifacts are local comparison files, not deployed assets or tracked
 repository files. Preserve them when moving this checkout.
+
+## Approved release checks — November 2026
+
+The baseline failures above are historical. Speaker biography and navigation now
+use native disclosures and the shared navigation script. The unused Cloudflare
+email-decoder reference was removed for release; all email links already use
+`mailto:`. `favicon.ico` is derived from the approved network SVG icon.
+
+GitHub Pages publishes the root of `main` using its existing build process.
+`_config.yml` excludes development instructions, planning inventories and the
+generic unlinked project template from the published site. It adds no theme,
+plugin, local dependency or framework. Preserve the original backup branch and
+annotated tag when releasing; never force-push or rewrite them.
+
+The existing external Google Drive CV viewer and PDF download were verified.
+The owner explicitly approved retaining that link unchanged for this release
+without copying the CV PDF into Git. Keep the private application CV and local
+inspection files outside the repository.
 
 ## Checks for subsequent changes
 
@@ -327,7 +345,7 @@ the approved HTML; it is documentation, not an automatic renderer.
 ## Standalone research project pages
 
 `projects/template.html` is a generic, unlinked scaffold, not a published research
-claim. Preview it at <http://127.0.0.1:8000/projects/template.html>. Its `noindex`
+claim. Preview `projects/template.html` using the local server. Its `noindex`
 directive discourages indexing; it does not provide privacy. Keep private drafts
 outside this checkout and outside the server's document root. The named prototype
 is kept separately for private review and must not be copied into the website
