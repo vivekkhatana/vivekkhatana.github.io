@@ -242,7 +242,6 @@
 
     /* ── CONTENT ── */
     #content {
-      --reading-width: 75ch;
       flex: 1 1 auto;
       width: 100%;
       min-width: 0;
@@ -253,14 +252,6 @@
       overflow-wrap: break-word;
     }
 
-    #content .bio-body p,
-    #content .research-intro,
-    #content .teaching-note,
-    #teaching-experience > p { max-inline-size: var(--reading-width); }
-    #content .pub-list,
-    #content .news-list,
-    #content .resource-list,
-    #content .teaching-list { max-inline-size: 90ch; }
     #content figure { max-inline-size: 100%; min-inline-size: 0; }
     #content img, #content video { max-inline-size: 100%; height: auto; }
 
@@ -296,7 +287,6 @@
     ───────────────────────────────────────── */
     .bio-wrap {
       display: block;     /* block so float works */
-      max-inline-size: calc(75ch + clamp(12rem, 25cqw, 18.75rem) + 1.8rem);
     }
 
     /* clearfix so section border clears the float */
@@ -488,7 +478,7 @@
 
     #selected-projects .project-media-label { font-weight: 600; }
     #selected-projects .project-title { font-size: 0.98rem; font-weight: 600; line-height: 1.45; color: var(--ink); margin-bottom: 0.5rem; overflow-wrap: anywhere; }
-    #selected-projects .project-description { font-size: 0.85rem; line-height: 1.65; color: var(--body); max-inline-size: 70ch; }
+    #selected-projects .project-description { font-size: 0.85rem; line-height: 1.65; color: var(--body); }
     #selected-projects .project-status { margin: 0.65rem 0; font-size: 0.75rem; line-height: 1.5; color: var(--muted); }
     #selected-projects .project-tags,
     #selected-projects .project-links { display: flex; flex-wrap: wrap; gap: 0.35rem 0.65rem; list-style: none; }
